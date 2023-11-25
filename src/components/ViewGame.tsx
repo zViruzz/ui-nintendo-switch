@@ -25,7 +25,7 @@ function ViewGame () {
       >
         {game.map(({ name, id, urlImage }) => (
           <li
-            className="grow-0 shrink-0 grid grid-rows-[4rem_minmax(50px,_400px)] box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 "
+            className="grow-0 shrink-0 grid 2xl:grid-rows-[4rem_minmax(50px,_390px)] xl:grid-rows-[4rem_minmax(50px,_340px)] box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 "
             key={id}
             tabIndex={0}
           >
