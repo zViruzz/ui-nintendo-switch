@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      content: {
+        'home': 'url("/src/assets/home.svg")',
+      },
+      listStyleImage: {
+        checkmark: 'url("/src/assets/typescript.png")',
+      },
       boxShadow: {
         'Nbutton': '0px 0px 8px 5px rgb(0 0 0 / 0.1)',
       },

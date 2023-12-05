@@ -5,19 +5,21 @@ import { options } from '../../static/settingOptions'
 
 function Setting () {
   return (
-    <div className="grid grid-rows-[6rem_1fr] grid-cols-[1fr_2fr] h-full w-full pt-4">
-      <header className="col-span-2 px-12 flex justify-between flex-col divide-y divide-zinc-300 ">
-        <div className='flex items-center text-4xl w-full h-full px-10 gap-4'>
-          <SettingIcon width={55} height={55} />
+    <div className="grid grid-rows-[6rem_1fr] grid-cols-[38.3rem_1fr] h-full w-full pt-8">
+      <header className="col-span-2 px-12 flex justify-between flex-col gap-1">
+        <div className='flex items-center text-[3rem] w-full h-full px-[2.5rem] gap-4'>
+          <SettingIcon width={95} height={95} />
           <h2>Configuracion de la consola</h2>
         </div>
-        <div></div>
+        <div className='w-full h-[1px] bg-[#ffffff] shrink-0' />
       </header>
-      <nav className="pl-20 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
+      <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
         <OptionList options={options} />
       </nav>
-      <section className='px-16 py-14 text-4xl'>
-        <Outlet />
+      <section className='pr-12 overflow-auto scrollbar-hide '>
+        <div className='px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'>
+          <Outlet />
+        </div>
       </section>
     </div>
   )

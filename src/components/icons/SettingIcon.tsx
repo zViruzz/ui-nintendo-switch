@@ -3,28 +3,17 @@ import { type SVGProps } from 'react'
 const SettingIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
     width="1em"
     height="1em"
-    fill="none"
-    viewBox="0 0 48 48"
     {...props}
   >
-    <path fill="#fff" fillOpacity={0.01} d="M0 0h48v48H0z" />
-    <circle
-      cx={24}
-      cy={24}
-      r={15}
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={4}
-    />
     <path
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={4}
-      d="M24 39v5M39 23h5M4 23h5M24 4v5M34.607 34.607l3.535 3.535M33.9 12.686l3.535-3.535M9.15 37.435l3.536-3.535M9.858 9.858l3.535 3.535"
+      fill="#fff"
+      fillRule="evenodd"
+      d="M12.75 3v3.046a5.97 5.97 0 0 1 2.93 1.214l2.154-2.154 1.06 1.06-2.154 2.155a5.97 5.97 0 0 1 1.214 2.929H21v1.5h-3.046a5.971 5.971 0 0 1-1.214 2.93l2.154 2.154-1.06 1.06-2.155-2.154a5.97 5.97 0 0 1-2.929 1.214V21h-1.5v-3.046a5.97 5.97 0 0 1-2.93-1.214l-2.153 2.154-1.061-1.06 2.154-2.155a5.97 5.97 0 0 1-1.214-2.929H3v-1.5h3.046A5.97 5.97 0 0 1 7.26 8.32L5.106 6.167l1.06-1.06L8.321 7.26a5.97 5.97 0 0 1 2.929-1.214V3h1.5ZM12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z"
+      clipRule="evenodd"
     />
   </svg>
 )

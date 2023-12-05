@@ -17,20 +17,20 @@ function ViewGame () {
   // }
 
   return (
-    <div className="">
+    <div className="flex ">
       <ul
         ref={listGame}
-        className="w-full h-full flex overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x pl-32 gap-4"
+        className="w-full flex overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x pl-40 pt-[0.6%] gap-5"
         // onWheel={handleScroll}
       >
         {game.map(({ name, id, urlImage }) => (
           <li
-            className="grow-0 shrink-0 grid 2xl:grid-rows-[4rem_minmax(50px,_390px)] xl:grid-rows-[4rem_minmax(50px,_340px)] box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 "
+            className=" grow-0 shrink-0 grid 2xl:grid-rows-[4rem_minmax(50px,_390px)] xl:grid-rows-[4rem_minmax(50px,_340px)] box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 "
             key={id}
             tabIndex={0}
           >
             <div className="">
-              <div className='absolute top-0 left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 opacity-0 transition-all text-center text-[#15bffd] text-4xl'>
+              <div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 opacity-0 transition-all text-center text-[#15bffd] text-[2.5rem]'>
                 {name}
               </div>
             </div>

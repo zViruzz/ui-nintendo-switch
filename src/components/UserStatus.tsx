@@ -4,25 +4,25 @@ import { getDate } from '../utils/getDate'
 
 function UserStatus () {
   return (
-    <div className='flex justify-between items-center px-20'>
+    <div className='flex justify-between items-center px-24'>
       <div>
         <div className='border-zinc-700 border-4 rounded-full shadow-Nbutton'>
           <img
-            className='w-20 rounded-full'
+            className='w-[5.3rem] rounded-full'
             src="https://media.discordapp.net/attachments/1096563688628039680/1096563983374352446/newImage.jpeg"
             alt="User"
           />
         </div>
       </div>
-      <div className='text-4xl flex items-center'>
+      <div className='text-[2.35rem] flex items-center font-medium'>
         <span>
           {getDate()}
         </span>
-        <WifiIcon width={50} height={50} className='mx-4' />
+        <WifiIcon width={58} height={58} className='mx-4' />
         <span className='flex items-end mr-2'>
-          100<div className='text-2xl'>%</div>
+          100<div className='text-[1.6rem] leading-relaxed'>%</div>
         </span>
-        <BatteryIcon width={55} height={55} />
+        <BatteryIcon width={59} height={59} />
       </div>
     </div>
   )
