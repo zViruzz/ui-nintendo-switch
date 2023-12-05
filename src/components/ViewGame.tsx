@@ -1,27 +1,10 @@
-import { type WheelEvent, useRef } from 'react'
 import { game } from '../static/game'
 
 function ViewGame () {
-  const listGame = useRef(null)
-  const scrollValue = useRef(100)
-
-  // const handleScroll = (event) => {
-  //   console.log(event.target.scrollTop, event.target.scrollLeft)
-  // }
-  // const handleScroll = (event: WheelEvent) => {
-  //   const list = listGame.current
-  //   scrollValue.current += 100
-  //   list.scrollLeft = scrollValue.current
-
-  //   console.log(list.scrollTop, list.scrollLeft)
-  // }
-
   return (
     <div className="flex ">
       <ul
-        ref={listGame}
         className="w-full flex overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x pl-40 pt-[0.6%] gap-5"
-        // onWheel={handleScroll}
       >
         {game.map(({ name, id, urlImage }) => (
           <li
