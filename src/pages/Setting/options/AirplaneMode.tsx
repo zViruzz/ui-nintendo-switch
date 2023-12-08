@@ -13,7 +13,7 @@ function AirplaneMode () {
       <div className='w-full h-[1px] bg-[#ffffff34] shrink-0' />
       <SelectionSetting>
         <button
-          className='bg-transparent border-transparent flex justify-between items-center w-full h-full'
+          className='bg-transparent border-transparent flex justify-between items-center w-full h-full p-0'
           onClick={handleClick}
           >
           <div>
