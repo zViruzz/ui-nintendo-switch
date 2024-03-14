@@ -1,6 +1,7 @@
 import WifiIcon from './icons/WifiIcon'
 import BatteryIcon from './icons/BatteryIcon'
 import { getDate } from '../utils/getDate'
+import profileMario from '../../public/ns-mario-profile.jpg'
 
 function UserStatus () {
   return (
@@ -9,7 +10,7 @@ function UserStatus () {
         <div className='border-zinc-700 border-4 rounded-full shadow-Nbutton'>
           <img
             className='w-[5.3rem] rounded-full'
-            src="https://media.discordapp.net/attachments/1096563688628039680/1096563983374352446/newImage.jpeg"
+            src={profileMario}
             alt="User"
           />
         </div>

@@ -13,6 +13,11 @@ import ScreenBrightness from './pages/Setting/options/ScreenBrightness.tsx'
 import AirplaneMode from './pages/Setting/options/AirplaneMode.tsx'
 import HealthSecurity from './pages/Setting/options/HealthSecurity.tsx'
 import Bluetooth from './pages/Setting/options/Bluetooth.tsx'
+import LockScreen from './pages/Setting/options/LockScreen.tsx'
+import ParentalControl from './pages/Setting/options/ParentalControl.tsx'
+import Internet from './pages/Setting/options/Internet.tsx'
+import DataManagement from './pages/Setting/options/DataManagement.tsx'
+import SettingUser from './pages/Setting/options/SettingUser.tsx'
 
 const router = createBrowserRouter([
   {
@@ -46,23 +51,23 @@ const router = createBrowserRouter([
           },
           {
             path: '/setting/lock-screen',
-            element: <HealthSecurity />
+            element: <LockScreen />
           },
           {
             path: '/setting/parental-control',
-            element: <HealthSecurity />
+            element: <ParentalControl />
           },
           {
             path: '/setting/internet',
-            element: <HealthSecurity />
+            element: <Internet />
           },
           {
             path: '/setting/data-management',
-            element: <HealthSecurity />
+            element: <DataManagement />
           },
           {
             path: '/setting/setting-user',
-            element: <HealthSecurity />
+            element: <SettingUser />
           },
           {
             path: '/setting/mii',

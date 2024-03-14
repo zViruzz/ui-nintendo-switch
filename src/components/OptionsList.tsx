@@ -17,7 +17,7 @@ function OptionList ({ options }: OptionListProps) {
   const option5 = options.slice(14, 17)
 
   return (
-    <ul className='flex flex-col overflow-y-scroll scroll-smooth snap-y scrollbar-hide h-full w-full text-[2.26rem] leading-tight px-5 pr-10 py-12'>
+    <ul className='flex flex-col overflow-y-scroll scroll-smooth snap-y scrollbar-hide h-full w-full text-[2.26rem] leading-tight px-5 pr-10 py-12 '>
       <List data={option1} />
       <div className='w-full h-[1px] bg-[#ffffff34] shrink-0 my-5'/>
       <List data={option2} />

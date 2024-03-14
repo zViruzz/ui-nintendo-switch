@@ -39,9 +39,10 @@ function MenuHome () {
 function ButtonMenu ({ children, router, text }: { children: ReactNode, router: string, text: string }) {
   return (
     <li
-      className='grid justify-center text-[#15bffd] text-center text-[2.5rem] h-[11rem] relative group'
+      className='grid justify-center text-[#15bffd] text-center text-[2.5rem] relative group cursor-pointer'
     >
-      <div className='bg-[#505050] rounded-full w-[8.1rem] h-[8.1rem] grid place-content-center text-[#d9d9d9] outline-8 outline-[#15bffd] group-hover:outline  group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
+
+      <div className='bg-[#505050] rounded-full w-[8.1em] h-[8.1em] grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline  group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
         <Link to={router}>
           {children}
         </Link>

@@ -1,4 +1,5 @@
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
+import healthSecurityilus from '../../../assets/healthSecurityilus.png'
 
 function HealthSecurity () {
   return (
@@ -8,8 +9,8 @@ function HealthSecurity () {
           Para consultar informacion mas detallada sobre el uso de la consola Nintendo Switch y sus funciones, visita el sitio de soporte de Nintendo desde una computadora o un dispositivo inteligente.
         </p>
         <div className="bg-[#3b3d3e] w-full h-[23.8rem] rounded-sm grid grid-rows-[2fr_1.1fr]">
-          <div>
-
+          <div className='flex items-center justify-center'>
+            <img className='w-[13rem]' src={healthSecurityilus} alt="" />
           </div>
           <div className='text-center'>
             <div className='text-[2.4rem] leading-tight'>
