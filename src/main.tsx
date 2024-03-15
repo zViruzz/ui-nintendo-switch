@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home/>
       },
       {
         path: '/setting',
@@ -107,6 +107,7 @@ const router = createBrowserRouter([
   }
 ])
 
+// eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />

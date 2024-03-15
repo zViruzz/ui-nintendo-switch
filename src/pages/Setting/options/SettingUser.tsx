@@ -1,6 +1,6 @@
 import profileUserUrl from '../../../assets/edu.png'
 import Line from '../../../components/Line'
-import Detailtext from '../../../components/layouts/Detailtext'
+import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
 function SettingUser () {

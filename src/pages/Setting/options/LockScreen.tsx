@@ -1,4 +1,4 @@
-import Detailtext from '../../../components/layouts/Detailtext'
+import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
 
 function LockScreen () {

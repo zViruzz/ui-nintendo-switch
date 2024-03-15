@@ -10,7 +10,7 @@ import ChatIcon from './icons/ChatIcon'
 function MenuHome () {
   return (
     <nav className='grid w-full h-full '>
-      <ul className='grid grid-cols-6 mx-auto w-[61rem] grid-rows-1'>
+      <ul className='flex justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
         <ButtonMenu router='setting' text='Noticias'>
           <ChatIcon width={75} height={75} />
         </ButtonMenu>
@@ -39,10 +39,10 @@ function MenuHome () {
 function ButtonMenu ({ children, router, text }: { children: ReactNode, router: string, text: string }) {
   return (
     <li
-      className='grid justify-center text-[#15bffd] text-center text-[2.5rem] relative group cursor-pointer'
+      className='grid text-[#15bffd] text-center text-[2.5rem]  relative group cursor-pointer'
     >
 
-      <div className='bg-[#505050] rounded-full w-[8.1rem] h-[8.1rem] grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline  group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
+      <div className='bg-[#505050] rounded-full max-w-[8.1rem] max-h-[8.1rem]  w-[7.1rem] h-[7.1rem] grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline  group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
         <Link to={router}>
           {children}
         </Link>

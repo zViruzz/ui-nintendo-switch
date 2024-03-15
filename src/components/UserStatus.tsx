@@ -1,7 +1,7 @@
 import WifiIcon from './icons/WifiIcon'
 import BatteryIcon from './icons/BatteryIcon'
 import { getDate } from '../utils/getDate'
-import profileMario from '../../public/ns-mario-profile.jpg'
+import profileMario from '../assets/ns-mario-profile.jpg'
 
 function UserStatus () {
   return (
