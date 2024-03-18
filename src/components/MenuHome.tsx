@@ -6,11 +6,12 @@ import PowerIcon from './icons/PowerIcon'
 import GalleryIcon from './icons/GalleryIcon'
 import ShoppingBagIcon from './icons/ShoppingBagIcon'
 import ChatIcon from './icons/ChatIcon'
+import huhSound from '../assets/huh.mp3'
 
 function MenuHome () {
   return (
-    <nav className='grid w-full h-full '>
-      <ul className='flex justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
+    <nav className='w-full h-full '>
+      <ul className='flex  justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
         <ButtonMenu router='setting' text='Noticias'>
           <ChatIcon width={75} height={75} />
         </ButtonMenu>
@@ -37,17 +38,23 @@ function MenuHome () {
 }
 
 function ButtonMenu ({ children, router, text }: { children: ReactNode, router: string, text: string }) {
+  const sound = new window.Audio(huhSound)
+
   return (
     <li
-      className='grid text-[#15bffd] text-center text-[2.5rem]  relative group cursor-pointer'
+      onMouseDown={() => {
+        sound.play()
+        console.log('huh')
+      }}
+      className='ButtonMenu text-[#15bffd]  text-center text-[2.5rem]  relative group cursor-pointer'
     >
 
-      <div className='bg-[#505050] rounded-full max-w-[8.1rem] max-h-[8.1rem]  w-[7.1rem] h-[7.1rem] grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline  group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
+      <div className='bg-[#505050] w-full h-full  rounded-full grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline group-hover:animate-wiggle shadow-Nbutton transition-all duration-100'>
         <Link to={router}>
           {children}
         </Link>
       </div>
-      <div className='absolute top-[8.4rem] left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-hover:opacity-100 opacity-0 transition-all text-center '>
+      <div className='absolute left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-hover:opacity-100 opacity-0 transition-all text-center '>
         {text}
       </div>
     </li>

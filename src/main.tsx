@@ -18,6 +18,17 @@ import ParentalControl from './pages/Setting/options/ParentalControl.tsx'
 import Internet from './pages/Setting/options/Internet.tsx'
 import DataManagement from './pages/Setting/options/DataManagement.tsx'
 import SettingUser from './pages/Setting/options/SettingUser.tsx'
+import Users from './pages/Users/Users.tsx'
+import Profile from './pages/Users/Options/Profile.tsx'
+import FriendList from './pages/Users/Options/FriendList.tsx'
+import Trending from './pages/Users/Options/Trending.tsx'
+import OnlinePlayInvites from './pages/Users/Options/OnlinePlayInvites.tsx'
+import FriendSuggestions from './pages/Users/Options/FriendSuggestions.tsx'
+import AddFriends from './pages/Users/Options/AddFriends.tsx'
+import UserSettings from './pages/Users/Options/UserSettings.tsx'
+import { Provider } from 'react-redux'
+import { store } from './redux/store.ts'
+import EditIcon from './pages/EditIcon/EditIcon.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +38,45 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
+      },
+      {
+        path: '/edit-icon',
+        element: <EditIcon/>
+      },
+      {
+        path: '/users',
+        element: <Users />,
+        children: [
+          {
+            path: '/users/profile',
+            element: <Profile />
+          },
+          {
+            path: '/users/friend-list',
+            element: <FriendList />
+          },
+          {
+            path: '/users/trending',
+            element: <Trending />
+          },
+          {
+            path: '/users/online-play-invites',
+            element: <OnlinePlayInvites />
+          },
+          {
+            path: '/users/friend-suggestions',
+            element: <FriendSuggestions />
+          },
+          {
+            path: '/users/add-friends',
+            element: <AddFriends />
+          },
+          {
+            path: '/users/user-settings',
+            element: <UserSettings />
+          }
+        ]
       },
       {
         path: '/setting',
@@ -110,6 +159,8 @@ const router = createBrowserRouter([
 // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 )

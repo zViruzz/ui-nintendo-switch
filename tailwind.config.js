@@ -18,6 +18,7 @@ export default {
       colors: {
         outlineColor1: '#15bffd',
         outlineColor2: '#ff0000',
+        'outlineColor3': '#ffffff34',
       },
       animation: {
         wiggle: 'wiggle 1s infinite',

@@ -3,7 +3,6 @@ import MenuHome from '../components/MenuHome'
 import ViewGame from '../components/ViewGame'
 import { Helmet } from 'react-helmet'
 import previeImageMeta from '../assets/nintendo-switch-ui.webp'
-
 function Home ({ lang = 'es' }: { lang?: string }) {
   const ogTitle = 'Nintendo Switch UI'
   const ogImage = previeImageMeta
@@ -17,7 +16,7 @@ function Home ({ lang = 'es' }: { lang?: string }) {
         <meta property="og:image" content={ogImage} />
       </Helmet>
       <section className='grid grid-rows-[20%_minmax(100px,_1fr)_22%] h-full w-full '>
-        <UserStatus/>
+        <UserStatus />
         <ViewGame />
         <MenuHome />
       </section>
