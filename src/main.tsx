@@ -28,7 +28,7 @@ import AddFriends from './pages/Users/Options/AddFriends.tsx'
 import UserSettings from './pages/Users/Options/UserSettings.tsx'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
-import EditIcon from './pages/EditIcon/EditIcon.tsx'
+import EditIconLayout from './pages/EditIcon/Layout.tsx'
 
 const router = createBrowserRouter([
   {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/edit-icon',
-        element: <EditIcon/>
+        element: <EditIconLayout />
       },
       {
         path: '/users',

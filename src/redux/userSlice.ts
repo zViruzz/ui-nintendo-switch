@@ -1,4 +1,5 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
+import marioProfile from '../assets/ns-mario-profile.jpg'
 
 interface UserType {
   username: string
@@ -8,7 +9,7 @@ interface UserType {
 
 const initialState: UserType = {
   username: 'null',
-  avatarUrl: '',
+  avatarUrl: marioProfile,
   email: 'nintendo@gmail.com'
 }
 

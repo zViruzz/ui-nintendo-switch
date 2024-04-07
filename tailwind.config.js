@@ -16,6 +16,7 @@ export default {
         'Nbutton': '0px 0px 8px 5px rgb(0 0 0 / 0.1)',
       },
       colors: {
+        BlueHight: '#1f2227',
         outlineColor1: '#15bffd',
         outlineColor2: '#ff0000',
         'outlineColor3': '#ffffff34',
