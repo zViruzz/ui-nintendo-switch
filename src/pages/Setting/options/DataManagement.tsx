@@ -27,23 +27,17 @@ export function DataManagement () {
       </div>
 
       <div className='mt-16'>
-        <Line />
-        <div
-          className='box-border px-5  h-[6.7rem] w-full shrink-0  flex items-center gap-4 hover:outline outline-[6px] outline-[#78f0f5] group hover:z-10 relative rounded-[0.5px] transition-all duration-100 hover:animate-wiggle text-[2.5rem] '
-          tabIndex={0}
-        >
-          <div className='flex justify-between w-full opacity-40'>
-            Mover datos entre la consola y una tarjeta microSD
-          </div>
-        </div>
-        <Line />
+
+        <SelectionSetting className='border-gray border-y' disabled={true}>
+          Mover datos entre la consola y una tarjeta microSD
+        </SelectionSetting>
         <SelectionSetting>
           Archivo rápido
         </SelectionSetting>
 
         <Line />
 
-        <div className='text-[1.8rem] px-7 py-2 opacity-40 h-[6.3rem] w-full '>
+        <div className='text-[1.8rem] px-7 py-2 text-description h-[6.3rem] w-full '>
           Esta opción permite archivar los programas seleccionados para liberar espacio.
         </div>
 

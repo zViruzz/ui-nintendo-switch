@@ -14,15 +14,15 @@ function SelectionSwitch ({ children, className }: Props) {
 
   return (
     <>
-      <SelectionSetting className={className}>
+      <SelectionSetting tabIndex={-1} className={className}>
         <button
-          className='bg-transparent border-transparent flex justify-between items-center w-full h-full p-0'
+          className='bg-transparent border-transparent flex justify-between items-center w-full h-full px-5 outline-wiggle-focus focus-visible:bg-blueHight'
           onClick={handleClick}
         >
           <div>
             {children}
           </div>
-          <div className={`text-[2.2rem] ${value ? 'text-inherit' : 'text-[#9e9e9e]'}`}>
+          <div className={`text-[2.2rem] ${value ? 'text-secodary' : 'text-disabled'}`}>
             {value ? 'Si' : 'No'}
           </div>
         </button>

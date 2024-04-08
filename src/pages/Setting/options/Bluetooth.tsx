@@ -1,4 +1,3 @@
-import Line from '../../../components/Line'
 import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
@@ -6,13 +5,9 @@ export function Bluetooth () {
   return (
     <div className=" h-full w-full flex flex-col">
 
-      <div>
-        <Line />
-        <SelectionSetting>
+      <SelectionSetting className='border-gray border-y'>
           Añadir dispositivo
-        </SelectionSetting>
-        <Line />
-      </div>
+      </SelectionSetting>
 
       <Detailtext>
         <p>Es necesario volver a conectar los dispositivos para usar audio por Bluetooth.</p>

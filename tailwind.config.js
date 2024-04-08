@@ -17,6 +17,9 @@ export default {
       },
       colors: {
         gray: '#ffffff34',
+        table: '#393a3c',
+        disabled: '#6b6b6b',
+        description: '#939393',
         secodary: '#00ffc9',
         blueHight: '#1f2227',
         outlineEffect1: '#15bffd',

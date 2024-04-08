@@ -5,7 +5,7 @@ export function ScreenBrightness () {
   return (
     <div className=" h-full w-full flex flex-col">
       <SelectionSwitch className='border-y border-gray'>
-        Modo avion
+        Brillo automático
       </SelectionSwitch>
 
       <div
