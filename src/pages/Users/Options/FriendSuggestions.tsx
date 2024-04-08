@@ -1,9 +1,5 @@
-import React from 'react'
-
-function FriendSuggestions () {
+export function FriendSuggestions () {
   return (
     <div>FriendSuggestions</div>
   )
 }
-
-export default FriendSuggestions

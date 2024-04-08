@@ -16,10 +16,11 @@ export default {
         'Nbutton': '0px 0px 8px 5px rgb(0 0 0 / 0.1)',
       },
       colors: {
-        BlueHight: '#1f2227',
-        outlineColor1: '#15bffd',
-        outlineColor2: '#ff0000',
-        'outlineColor3': '#ffffff34',
+        gray: '#ffffff34',
+        secodary: '#00ffc9',
+        blueHight: '#1f2227',
+        outlineEffect1: '#15bffd',
+        outlineEffect2: '#71ffe0',
       },
       animation: {
         wiggle: 'wiggle 1s infinite',

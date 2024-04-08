@@ -1,32 +1,12 @@
-import { useState } from 'react'
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
 import BrightnessIcon from '../../../components/icons/BrightnessIcon'
+import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
 
-function ScreenBrightness () {
-  const [isAutoBrightness, setIsAutoBrightness] = useState(false)
-  const handleClick = () => {
-    setIsAutoBrightness(!isAutoBrightness)
-  }
-
+export function ScreenBrightness () {
   return (
     <div className=" h-full w-full flex flex-col">
-      <div>
-        <div className='w-full h-[1px] bg-[#ffffff34] shrink-0' />
-        <SelectionSetting>
-          <button
-            className='bg-transparent border-transparent flex justify-between items-center w-full h-full'
-            onClick={handleClick}
-          >
-            <div>
-              Brillo automatico
-            </div>
-            <div className={`text-[2.2rem] ${isAutoBrightness ? 'text-inherit' : 'text-[#9e9e9e]'}`}>
-              {isAutoBrightness ? 'Si' : 'No'}
-            </div>
-          </button>
-        </SelectionSetting>
-        <div className='w-full h-[1px] bg-[#ffffff34] shrink-0 ' />
-      </div>
+      <SelectionSwitch className='border-y border-gray'>
+        Modo avion
+      </SelectionSwitch>
 
       <div
         className='box-border p-5 h-[6.9rem] w-full shrink-0  flex items-center gap-12 group hover:z-10 relative rounded-[0.5px]  '
@@ -46,5 +26,3 @@ function ScreenBrightness () {
     </div>
   )
 }
-
-export default ScreenBrightness

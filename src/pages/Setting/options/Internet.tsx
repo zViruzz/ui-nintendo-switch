@@ -1,7 +1,7 @@
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 import Line from '../../../components/Line'
 
-function Internet () {
+export function Internet () {
   return (
     <div className='h-full w-full flex flex-col gap-10'>
       <div>

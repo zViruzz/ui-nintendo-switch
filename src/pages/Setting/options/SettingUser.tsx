@@ -3,7 +3,7 @@ import Line from '../../../components/Line'
 import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
-function SettingUser () {
+export function SettingUser () {
   return (
     <div className='w-full h-full flex flex-col'>
       <div className='flex gap-3 px-2'>
@@ -42,5 +42,3 @@ function SettingUser () {
     </div>
   )
 }
-
-export default SettingUser

@@ -1,9 +1,5 @@
-import React from 'react'
-
-function OnlinePlayInvites () {
+export function OnlinePlayInvites () {
   return (
     <div>OnlinePlayInvites</div>
   )
 }
-
-export default OnlinePlayInvites

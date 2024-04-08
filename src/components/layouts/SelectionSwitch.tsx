@@ -1,8 +1,12 @@
-import { useState } from 'react'
-import Line from '../Line'
+import { type ReactNode, useState } from 'react'
 import SelectionSetting from './SelectionSetting'
 
-function SelectionSwitch ({ name }: { name: string }) {
+interface Props {
+  children: ReactNode
+  className?: string
+}
+
+function SelectionSwitch ({ children, className }: Props) {
   const [value, setValue] = useState(false)
   const handleClick = () => {
     setValue(!value)
@@ -10,21 +14,20 @@ function SelectionSwitch ({ name }: { name: string }) {
 
   return (
     <>
-      <Line />
-      <SelectionSetting>
+      <SelectionSetting className={className}>
         <button
           className='bg-transparent border-transparent flex justify-between items-center w-full h-full p-0'
           onClick={handleClick}
         >
           <div>
-            {name}
+            {children}
           </div>
           <div className={`text-[2.2rem] ${value ? 'text-inherit' : 'text-[#9e9e9e]'}`}>
             {value ? 'Si' : 'No'}
           </div>
         </button>
       </SelectionSetting >
-      <Line />
+
     </>
   )
 }

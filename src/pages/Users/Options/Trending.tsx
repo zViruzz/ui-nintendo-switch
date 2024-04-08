@@ -1,9 +1,5 @@
-import React from 'react'
-
-function Trending () {
+export function Trending () {
   return (
     <div>Trending</div>
   )
 }
-
-export default Trending

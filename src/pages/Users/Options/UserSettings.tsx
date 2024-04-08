@@ -1,9 +1,5 @@
-import React from 'react'
-
-function UserSettings () {
+export function UserSettings () {
   return (
     <div>UserSettings</div>
   )
 }
-
-export default UserSettings

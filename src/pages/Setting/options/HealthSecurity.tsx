@@ -1,7 +1,7 @@
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 import healthSecurityilus from '../../../assets/healthSecurityilus.png'
 
-function HealthSecurity () {
+export function HealthSecurity () {
   return (
     <div className="h-full w-full flex flex-col gap-8">
       <div className="px-6 flex flex-col gap-2">
@@ -26,19 +26,14 @@ function HealthSecurity () {
       </div>
 
       <div>
-        <div className='w-full h-[1px] bg-[#ffffff34]'></div>
-        <SelectionSetting>
+        <SelectionSetting className='border-t border-gray'>
           Informacion sobre salud y seguridad
         </SelectionSetting>
-        <div className='w-full h-[1px] bg-[#ffffff34]'></div>
-        <SelectionSetting>
+        <SelectionSetting className='border-y border-gray'>
           Historial de errores
         </SelectionSetting>
-        <div className='w-full h-[1px] bg-[#ffffff34]'></div>
       </div>
 
     </div>
   )
 }
-
-export default HealthSecurity

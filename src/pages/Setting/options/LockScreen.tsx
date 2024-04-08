@@ -1,11 +1,13 @@
 import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
 
-function LockScreen () {
+export function LockScreen () {
   return (
     <div className="h-full w-full flex flex-col">
       <div>
-        <SelectionSwitch name='Bloquear la consola en el modo de espera'/>
+        <SelectionSwitch className='border-y border-gray'>
+          Bloquear la consola en el modo de espera
+        </SelectionSwitch>
       </div>
       <div>
         <Detailtext>
@@ -15,5 +17,3 @@ function LockScreen () {
     </div>
   )
 }
-
-export default LockScreen

@@ -2,7 +2,7 @@ import Line from '../../../components/Line'
 import ParentalControlIcon from '../../../assets/ParentalControlIcon.png'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
-function ParentalControl () {
+export function ParentalControl () {
   return (
     <div className="h-full w-full flex flex-col gap-14">
       <div className='flex gap-10'>
@@ -37,5 +37,3 @@ function ParentalControl () {
     </div>
   )
 }
-
-export default ParentalControl

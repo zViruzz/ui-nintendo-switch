@@ -1,9 +1,5 @@
-import React from 'react'
-
-function FriendList () {
+export function FriendList () {
   return (
     <div>FriendList</div>
   )
 }
-
-export default FriendList

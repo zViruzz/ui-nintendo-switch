@@ -1,34 +1,25 @@
+import { AddFriends, FriendList, FriendSuggestions, OnlinePlayInvites, Profile, Trending, UserSettings } from './pages/Users/Options'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom'
-import React from 'react'
+  AirplaneMode,
+  Bluetooth,
+  DataManagement,
+  HealthSecurity,
+  Internet,
+  LockScreen,
+  ParentalControl,
+  ScreenBrightness,
+  SettingUser
+} from './pages/Setting/options'
 import ReactDOM from 'react-dom/client'
 import Error from './pages/Error.tsx'
 import Home from './pages/Home.tsx'
+import React from 'react'
 import App from './App.tsx'
 import './index.css'
-import Setting from './pages/Setting/Setting.tsx'
-import ScreenBrightness from './pages/Setting/options/ScreenBrightness.tsx'
-import AirplaneMode from './pages/Setting/options/AirplaneMode.tsx'
-import HealthSecurity from './pages/Setting/options/HealthSecurity.tsx'
-import Bluetooth from './pages/Setting/options/Bluetooth.tsx'
-import LockScreen from './pages/Setting/options/LockScreen.tsx'
-import ParentalControl from './pages/Setting/options/ParentalControl.tsx'
-import Internet from './pages/Setting/options/Internet.tsx'
-import DataManagement from './pages/Setting/options/DataManagement.tsx'
-import SettingUser from './pages/Setting/options/SettingUser.tsx'
-import Users from './pages/Users/Users.tsx'
-import Profile from './pages/Users/Options/Profile.tsx'
-import FriendList from './pages/Users/Options/FriendList.tsx'
-import Trending from './pages/Users/Options/Trending.tsx'
-import OnlinePlayInvites from './pages/Users/Options/OnlinePlayInvites.tsx'
-import FriendSuggestions from './pages/Users/Options/FriendSuggestions.tsx'
-import AddFriends from './pages/Users/Options/AddFriends.tsx'
-import UserSettings from './pages/Users/Options/UserSettings.tsx'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
-import EditIconLayout from './pages/EditIcon/Layout.tsx'
+import { EditIcon, Setting, Users } from './pages'
 
 const router = createBrowserRouter([
   {
@@ -42,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/edit-icon',
-        element: <EditIconLayout />
+        element: <EditIcon />
       },
       {
         path: '/users',

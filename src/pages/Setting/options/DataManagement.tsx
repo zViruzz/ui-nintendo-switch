@@ -1,7 +1,7 @@
 import Line from '../../../components/Line'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
-function DataManagement () {
+export function DataManagement () {
   return (
     <div className="h-full w-full">
       <div className="grid grid-cols-2 px-3 gap-[4.8rem]">
@@ -91,5 +91,3 @@ function DataManagement () {
     </div>
   )
 }
-
-export default DataManagement

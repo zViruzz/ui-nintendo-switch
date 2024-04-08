@@ -1,30 +1,12 @@
-import { useState } from 'react'
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
+import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
 
-function AirplaneMode () {
-  const [isAirplaneMode, setIsAirplaneMode] = useState(false)
-  const handleClick = () => {
-    setIsAirplaneMode(!isAirplaneMode)
-  }
-
+export function AirplaneMode () {
   return (
     <div className=" h-full w-full flex flex-col">
 
-      <div className='w-full h-[1px] bg-[#ffffff34] shrink-0' />
-      <SelectionSetting>
-        <button
-          className='bg-transparent border-transparent flex justify-between items-center w-full h-full p-0'
-          onClick={handleClick}
-          >
-          <div>
-            Modo avion
-          </div>
-          <div className={`text-[2.2rem] ${isAirplaneMode ? 'text-inherit' : 'text-[#9e9e9e]'}`}>
-            {isAirplaneMode ? 'Si' : 'No'}
-          </div>
-        </button>
-      </SelectionSetting>
-      <div className='w-full h-[1px] bg-[#ffffff34] shrink-0 ' />
+      <SelectionSwitch className='border-y border-gray'>
+        Modo avion
+      </SelectionSwitch>
 
       <div className='py-3 pl-6 text-[1.83rem] text-[#8c8c8c] leading-snug'>
         <p>Todas las comunicaciones inalamnricas, como Wi-Fi o Bluetooth, se desactivarán.</p>
@@ -38,5 +20,3 @@ function AirplaneMode () {
     </div>
   )
 }
-
-export default AirplaneMode

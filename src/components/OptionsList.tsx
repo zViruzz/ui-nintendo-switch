@@ -29,7 +29,7 @@ function OptionList ({ options }: OptionListProps) {
           return (
             <Link to={`${pathParent}${item.path}`} key={index}>
               <li
-                className='hover:bg-[#1f2227] box-border p-4 h-[6.8rem] shrink-0  w-full flex items-center gap-4 hover:outline outline-[7px] outline-[#78f0f5] group hover:z-10 relative rounded-[0.1px] transition-all duration-100 hover:animate-wiggle'
+                className='hover:bg-blueHight box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 outline-wiggle group hover:z-10 relative rounded-[0.1px] transition-all duration-100 '
                 tabIndex={0}
               >
                 <div className={`group-hover:bg-[#00ffc9] group-focus:bg-[#00ffc9] h-[100%] w-[8px] ${currentUrl === item.path ? 'bg-[#00ffc9]' : ''}`} />

@@ -2,7 +2,7 @@ import Line from '../../../components/Line'
 import Detailtext from '../../../components/layouts/DetailText'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
-function Bluetooth () {
+export function Bluetooth () {
   return (
     <div className=" h-full w-full flex flex-col">
 
