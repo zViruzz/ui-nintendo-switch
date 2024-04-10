@@ -1,4 +1,3 @@
-import Line from '../../../components/Line'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 
 export function DataManagement () {
@@ -8,11 +7,11 @@ export function DataManagement () {
         <div>
           <h4>Memoria de consola</h4>
           <div className=" w-full h-6 rounded-sm border-2 p-[3px]">
-            <div className="bg-white w-1/2 h-full"></div>
+            <div className="bg-white w-2/3 h-full"></div>
           </div>
           <div className="flex text-3xl text-[1.7rem] justify-between px-1 pt-4">
             <p>Espacio libre</p>
-            <p className="text-[2.4rem]">15.5 <span className="text-[2rem]">GB</span></p>
+            <p className="text-[2.4rem]">25.5 <span className="text-[2rem]">GB</span></p>
           </div>
         </div>
 
@@ -31,56 +30,31 @@ export function DataManagement () {
         <SelectionSetting className='border-gray border-y' disabled={true}>
           Mover datos entre la consola y una tarjeta microSD
         </SelectionSetting>
-        <SelectionSetting>
+        <SelectionSetting className='border-gray border-b'>
           Archivo rápido
         </SelectionSetting>
-
-        <Line />
 
         <div className='text-[1.8rem] px-7 py-2 text-description h-[6.3rem] w-full '>
           Esta opción permite archivar los programas seleccionados para liberar espacio.
         </div>
 
-        <Line />
-
-        <SelectionSetting>
+        <SelectionSetting className='border-gray border-y' >
           Gestionar programa
         </SelectionSetting>
 
-        <Line />
-
-        <div className='h-[6rem] w-full '>
-        </div>
-
-        <Line />
-
-        <SelectionSetting>
-          Gestionar de datos en la nube
+        <SelectionSetting className='border-gray mt-[5.9rem] border-y' >
+          Guardado de datos en la nube
         </SelectionSetting>
-
-        <Line />
-
-        <SelectionSetting>
+        <SelectionSetting className='border-gray  '>
           Transferencia de datos de guardado
         </SelectionSetting>
-
-        <Line />
-
-        <SelectionSetting>
+        <SelectionSetting className='border-gray  border-y'>
           Gestionar capturas y videos
         </SelectionSetting>
 
-        <Line />
-
-        <div className='h-[10rem] w-full '>
-        </div>
-
-        <Line />
-        <SelectionSetting>
+        <SelectionSetting className='border-gray mt-[10rem] border-y'>
           Borrar datos de guardado
         </SelectionSetting>
-        <Line />
-
       </div>
     </div>
   )

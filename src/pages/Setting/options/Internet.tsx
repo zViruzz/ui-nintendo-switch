@@ -3,15 +3,14 @@ import SelectionSetting from '../../../components/layouts/SelectionSetting'
 export function Internet () {
   return (
     <div className='h-full w-full flex flex-col gap-10'>
-      <div>
 
+      <div>
         <SelectionSetting className='border-y border-gray'>
           Configuración de internet
         </SelectionSetting>
         <SelectionSetting className='border-b border-gray'>
           Prueba de conexión
         </SelectionSetting>
-
       </div>
 
       <div>
