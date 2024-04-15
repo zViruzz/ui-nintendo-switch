@@ -1,16 +1,83 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useAppSelector } from '../../redux/hooks'
+import Edu from '../../assets/edu.png'
 import Mario from '../../assets/ns-mario-profile-pg.png'
+import SelectionGrid from '../../components/layouts/SelectionGrid'
+import { changeBackground } from '../../redux/userSlice'
+import { useDispatch } from 'react-redux'
+
+const listColors = [
+  { name: 'Rojo', color: '#ff0000' },
+  { name: 'Negro', color: '#000000' },
+  { name: 'Amarillo', color: '#ffe100' },
+  { name: 'Azul', color: '#0000ff' },
+  { name: 'Verde', color: '#00ff00' },
+  { name: 'Blanco', color: '#ffffff' },
+  { name: 'Gris', color: '#808080' },
+  { name: 'Naranja', color: '#ff7f00' },
+  { name: 'Morado', color: '#800080' },
+  { name: 'Rosa', color: '#ff69b4' },
+  { name: 'Marrón', color: '#964b00' },
+  { name: 'Azul claro', color: '#add8e6' },
+  { name: 'Verde claro', color: '#90ee90' },
+  { name: 'Amarillo claro', color: '#ffffe0' },
+  { name: 'Naranja claro', color: '#ffa500' },
+  { name: 'Rosado', color: '#ffc0cb' },
+  { name: 'Turquesa', color: '#40e0d0' },
+  { name: 'Lila', color: '#c8a2c8' },
+  { name: 'Verde oliva', color: '#808000' },
+  { name: 'Amarillo limón', color: '#f5d033' },
+  { name: 'Celeste', color: '#b0e0e6' },
+  { name: 'Aguamarina', color: '#7fffd4' },
+  { name: 'Beige', color: '#f5f5dc' },
+  { name: 'Cian', color: '#00ffff' },
+  { name: 'Violeta', color: '#8a2be2' },
+  { name: 'Turquesa oscuro', color: '#00ced1' },
+  { name: 'Fucsia', color: '#ff00ff' },
+  { name: 'Melocotón', color: '#ffdab9' },
+  { name: 'Índigo', color: '#4b0082' },
+  { name: 'Plata', color: '#c0c0c0' },
+  { name: 'Oro', color: '#ffd700' },
+  { name: 'lol', color: '#4b0022' },
+  { name: 'lol', color: '#422022' },
+  { name: 'lol', color: '#4f5a22' },
+  { name: 'lol', color: '#4b0092' },
+  { name: 'sia', color: '#c0c0c4' },
+  { name: 'fasdj', color: '#ffd720' }
+  // Puedes seguir agregando más colores según sea necesario
+]
 
 function EditIcon () {
-  const user = useAppSelector((state) => state.user)
+  const { character, background } = useAppSelector((state) => state.user)
+  const dispatch = useDispatch()
   const [isHiddenBackground, setHiddenBackground] = useState(true)
   const [isHiddenCharacter, setHiddenCharacter] = useState(true)
-  // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   const file = event.target.files
-  //   if (file === null) return
-  //   console.log('si')
-  // }
+
+  console.log('🚀 ~ Mario:', Mario)
+
+  const canvasRef = useRef <HTMLCanvasElement>(null)
+  const [selectedBackground, setSelectedBackground] = useState(background)
+  const [overlayImage, setOverlayImage] = useState(character)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (canvas === null) return
+    const ctx = canvas.getContext('2d')
+    if (ctx === null) return
+
+    ctx.fillStyle = selectedBackground
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    if (overlayImage !== null) {
+      const overlayImg = new Image()
+      overlayImg.src = overlayImage
+
+      overlayImg.onload = () => {
+        // Ajusta la posición y el tamaño según tus necesidades
+        ctx.drawImage(overlayImg, 0, 0, canvas.width, canvas.height)
+      }
+    }
+  }, [overlayImage, selectedBackground])
 
   const handleClickCharacter = () => {
     setHiddenCharacter(false)
@@ -28,7 +95,7 @@ function EditIcon () {
   const characters = Array.from({ length: 40 }, (_, i) => i + 1)
 
   return (
-    <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5 relative">
+    <div className="grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5 relative">
       <header className="col-span-2 px-12 flex justify-between flex-col">
         <div className='flex items-center text-[3rem] w-full h-full px-[3rem] gap-4'>
 
@@ -43,13 +110,13 @@ function EditIcon () {
           <div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px_]'>
             <button
               onClick={handleClickCharacter}
-              className='hover:bg-BlueHight bg-transparent border-0 outline-wiggle hover:z-10 flex items-center px-10'
+              className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
             >
               Personaje/Mii
             </button>
             <button
               onClick={handleClickBackground}
-              className='hover:bg-BlueHight bg-transparent border-0 outline-wiggle hover:z-10 flex items-center px-10'
+              className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border- border-gray'
             >
               Fondo
             </button>
@@ -62,31 +129,45 @@ function EditIcon () {
 
             {/* ------------ */}
             <div className={`${isHiddenCharacter ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]`}>
-              <div className={`${isHiddenCharacter ? 'opacity-0 -translate-x-14' : 'opacity-100'}  min-h-full  transition-all bg-[#353535] ease-in-out grid grid-rows-[1fr_6.4fr] `}>
-                <div className='px-12'>
-                  <div className='border-b-[2px] h-full flex items-center pt-6 px-[3.2rem]'>
-                    Personaje/Mii
-                  </div>
-                </div>
-                <div className='overflow-scroll scrollbar-hide pl-[11.7%] pr-[9%] pt-[4%] max-h-full w-full grid grid-cols-6 gap-[15px]'>
-                  {characters.map(i => (
-                    <img
-                      className='outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle hover:bg-BlueHight'
-                      tabIndex={0}
-                      key={i}
-                      src={Mario}
-                      alt="mario"
-                    />
-                  ))}
-                </div>
-              </div>
+              <SelectionGrid title='Personaje/Mii' isHidden={isHiddenCharacter}>
+                {characters.map(i => (
+                  <img
+                    className='outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle hover:bg-BlueHight'
+                    tabIndex={0}
+                    key={i}
+                    src={Mario}
+                    onClick={() => {
+                      setOverlayImage(Edu)
+                      handleClickOutside()
+                    }}
+                    alt="mario"
+                  />
+                ))}
+
+              </SelectionGrid>
               <div onClick={handleClickOutside} />
             </div>
 
-            <div className={`${isHiddenBackground ? 'opacity-0 invisible' : 'opacity-100'} absolute w-screen h-full top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]`}>
-              <div className='bg-neutral-700 '>
-                Fondo
-              </div>
+            <div className={`${isHiddenBackground ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]`}>
+              <SelectionGrid title='Fondo' isHidden={isHiddenBackground}>
+                {listColors.map(({ color }) => {
+                  return (
+                    <div
+                      key={color}
+                      className={'outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'}
+                      style={{
+                        backgroundColor: color
+                      }}
+                      onClick={() => {
+                        setSelectedBackground(color)
+                        dispatch(changeBackground(color))
+                        handleClickOutside()
+                      }}
+                      tabIndex={0}
+                    />
+                  )
+                })}
+              </SelectionGrid>
               <div onClick={handleClickOutside} />
             </div>
             {/* ------------ */}
@@ -94,11 +175,12 @@ function EditIcon () {
         </div>
 
         <div className=' flex justify-center py-[18%]'>
-          <img
+          {/* <img
             className='h-[23.7rem] w-[23.7rem]'
             src={user.avatarUrl}
             alt="profile"
-          />
+          /> */}
+          <canvas ref={canvasRef} width={379} height={379} className='h-[23.7rem] w-[23.7rem]' />
         </div>
       </section>
 
