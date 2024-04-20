@@ -7,7 +7,7 @@ interface Props {
 }
 export default function SelectionGrid ({ isHidden, title, children }: Props) {
   return (
-    <div className={`${isHidden ? 'opacity-0 -translate-x-14' : 'opacity-100'}  min-h-full  transition-all bg-[#353535] ease-in-out grid grid-rows-[1fr_6.4fr] `}>
+    <div className={`${isHidden ? 'opacity-0 -translate-x-14' : 'opacity-100 delay-100'}  min-h-full  transition-all bg-[#353535] ease-in-out grid grid-rows-[1fr_6.4fr]  `}>
       <div className='px-12'>
         <div className='border-b-[2px] h-full flex items-center pt-6 px-[3.2rem]'>
           {title}

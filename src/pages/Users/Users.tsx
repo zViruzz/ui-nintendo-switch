@@ -2,6 +2,7 @@ import { useAppSelector } from '../../redux/hooks'
 import { Outlet } from 'react-router-dom'
 import OptionList from '../../components/OptionsList'
 import marioProfile from '../../assets/ns-mario-profile.jpg'
+import Header from '../../components/Header'
 
 const options = [
   { name: 'Perfil', path: '/profile' },
@@ -19,17 +20,16 @@ function Users () {
   const user = useAppSelector((state) => state.user)
   return (
     <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5">
-      <header className="col-span-2 px-12 flex justify-between flex-col">
-        <div className='flex items-center text-[3rem] w-full h-full px-[3rem] gap-4'>
+
+      <Header>
           <img
             className='w-20 h-20 rounded-full'
             src={marioProfile}
             alt="profile"
           />
           <h2>Pagina de {user.username}</h2>
-        </div>
-        <div className='w-full h-[1px] bg-[#ffffff] shrink-0' />
-      </header>
+      </Header>
+
       <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
         <OptionList options={options} />
       </nav>

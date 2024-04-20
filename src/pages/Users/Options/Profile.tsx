@@ -9,7 +9,6 @@ export function Profile () {
           className='shrink-0 outline-[#15bffd] hover:outline outline-8 hover:animate-wiggle outline-offset-4 '
         >
           <Link to='/edit-icon'>
-
             <img className='w-full h-full cursor-pointer' src={profileMario} alt="avatar" />
           </Link>
         </div>
