@@ -27,10 +27,13 @@ function OptionList ({ options }: OptionListProps) {
             )
           }
           return (
-            <Link to={`${pathParent}${item.path}`} key={index}>
+            <Link
+              to={`${pathParent}${item.path}`}
+              key={index}
+              className='outline-wiggle-focus focus:bg-blueHight group hover:bg-blueHight'
+            >
               <li
-                className='hover:bg-blueHight box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 outline-wiggle group hover:z-10 relative rounded-[0.1px] transition-all duration-100 '
-                tabIndex={0}
+                className=' box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 hover:z-10 relative rounded-[0.1px] transition-all duration-100 '
               >
                 <div className={`group-hover:bg-[#00ffc9] group-focus:bg-[#00ffc9] h-[100%] w-[8px] ${currentUrl === item.path ? 'bg-[#00ffc9]' : ''}`} />
                 <div className={`group-hover:text-[#00ffc9] group-focus:text-[#00ffc9]  ${currentUrl === item.path ? 'text-[#00ffc9]' : ''}`}>

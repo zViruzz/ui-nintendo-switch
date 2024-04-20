@@ -53,8 +53,6 @@ function EditIcon () {
   const [isHiddenBackground, setHiddenBackground] = useState(true)
   const [isHiddenCharacter, setHiddenCharacter] = useState(true)
 
-  console.log('🚀 ~ Mario:', Mario)
-
   const canvasRef = useRef <HTMLCanvasElement>(null)
   const [selectedBackground, setSelectedBackground] = useState(background)
   const [overlayImage, setOverlayImage] = useState(character)
@@ -148,13 +146,14 @@ function EditIcon () {
               <div onClick={handleClickOutside} />
             </div>
 
-            <div className={`${isHiddenBackground ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]`}>
+            <div className={`${isHiddenBackground ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]  `}>
               <SelectionGrid title='Fondo' isHidden={isHiddenBackground}>
                 {listColors.map(({ color }) => {
                   return (
+
                     <div
                       key={color}
-                      className={'outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'}
+                      className={'aspect-square  outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'}
                       style={{
                         backgroundColor: color
                       }}

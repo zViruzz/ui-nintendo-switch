@@ -13,7 +13,7 @@ export default function SelectionGrid ({ isHidden, title, children }: Props) {
           {title}
         </div>
       </div>
-      <div className='overflow-scroll scrollbar-hide pl-[11.7%] pr-[9%] pt-[4%] max-h-full w-full grid grid-cols-6 gap-[15px] '>
+      <div className='overflow-scroll scrollbar-hide pl-[11.7%] pr-[9%] pt-[4%] max-h-full w-full grid grid-cols-6 gap-[15px] aspect-square'>
         {children}
       </div>
     </div>
