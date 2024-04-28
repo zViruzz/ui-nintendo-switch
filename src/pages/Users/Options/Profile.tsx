@@ -1,5 +1,5 @@
-import profileMario from '../../../assets/ns-mario-profile.jpg'
 import { Link } from 'react-router-dom'
+import CharacterProfile from '../../../components/CharacterProfile'
 export function Profile () {
   return (
     <>
@@ -9,7 +9,7 @@ export function Profile () {
           className='shrink-0 outline-[#15bffd] hover:outline outline-8 hover:animate-wiggle outline-offset-4 '
         >
           <Link to='/edit-icon'>
-            <img className='w-full h-full cursor-pointer' src={profileMario} alt="avatar" />
+            <CharacterProfile className='w-full h-full' />
           </Link>
         </div>
 
