@@ -20,6 +20,8 @@ import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
 import { EditIcon, Setting, Users } from './pages'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
 
 const router = createBrowserRouter([
   {
@@ -147,11 +149,14 @@ const router = createBrowserRouter([
   }
 ])
 
+const persistor = persistStore(store)
 // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <PersistGate persistor={persistor} >
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
+    </PersistGate>
   </React.StrictMode>
 )
