@@ -9,7 +9,7 @@ export interface UserType {
 }
 
 const initialState: UserType = {
-  username: 'null',
+  username: 'Nintendo',
   background: '#ff0000',
   character: mario,
   email: 'nintendo@gmail.com'

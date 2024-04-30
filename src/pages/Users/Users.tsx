@@ -1,8 +1,8 @@
 import { useAppSelector } from '../../redux/hooks'
 import { Outlet } from 'react-router-dom'
 import OptionList from '../../components/OptionsList'
-import marioProfile from '../../assets/ns-mario-profile.jpg'
 import Header from '../../components/Header'
+import CharacterProfile from '../../components/CharacterProfile'
 
 const options = [
   { name: 'Perfil', path: '/profile' },
@@ -22,11 +22,7 @@ function Users () {
     <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5">
 
       <Header>
-          <img
-            className='w-20 h-20 rounded-full'
-            src={marioProfile}
-            alt="profile"
-          />
+        <CharacterProfile className='w-20 h-20 rounded-full' />
           <h2>Pagina de {user.username}</h2>
       </Header>
 

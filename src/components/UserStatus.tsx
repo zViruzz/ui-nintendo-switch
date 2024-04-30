@@ -1,9 +1,9 @@
 import WifiIcon from './icons/WifiIcon'
 import BatteryIcon from './icons/BatteryIcon'
 import { getDate } from '../utils/getDate'
-import profileMario from '../assets/ns-mario-profile.jpg'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../redux/hooks'
+import CharacterProfile from './CharacterProfile'
 
 function UserStatus () {
   const user = useAppSelector((state) => state.user)
@@ -12,13 +12,7 @@ function UserStatus () {
     <div className='flex justify-between items-center px-24'>
       <div className='group relative'>
         <Link to='users/profile'>
-          <div className='border-zinc-700 border-4 rounded-full shadow-Nbutton  group-hover:animate-wiggle group-hover:outline outline-[6px]'>
-            <img
-              className='w-[5.3rem] rounded-full'
-              src={user.avatarUrl === '' ? profileMario : user.avatarUrl}
-              alt="User"
-            />
-          </div>
+            <CharacterProfile className='border-zinc-700 border-4 rounded-full shadow-Nbutton  group-hover:animate-wiggle group-hover:outline outline-[6px] w-[6.3rem]'/>
         </Link>
         <div className='text-[#15bffd] text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-hover:opacity-100 opacity-0 transition-all text-center '>
           Pagina de {user.username}
