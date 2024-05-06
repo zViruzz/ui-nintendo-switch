@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom'
 import CharacterProfile from '../../../components/CharacterProfile'
 import EditName from '../../../components/EditName'
 import { useState } from 'react'
+import { useAppSelector } from '../../../redux/hooks'
+import PokemonUnite from '../../../assets/images/pokemon-unite.webp'
+
 export function Profile () {
   const [isHiddenEditName, setIsHiddenEditName] = useState(true)
+  const { username } = useAppSelector((state) => state.user)
 
   return (
     <div className='flex gap-[6.7rem] flex-col'>
@@ -25,7 +29,7 @@ export function Profile () {
             className='text-5xl border-t-[1px] border-gray flex justify-between items-center px-5'
             onClick={() => { setIsHiddenEditName(false) }}
           >
-            <h1>Profile</h1>
+            <h1>{username}</h1>
             <div className='w-5 h-5 bg-slate-600'></div>
           </div>
           <div className='border-t-[1px] border-gray flex justify-between items-center px-5'>
@@ -38,8 +42,9 @@ export function Profile () {
         </div>
       </div>
 
-      <div className='bg-black'>
-        <div className='flex justify-between'>
+      <div>
+
+        <div className='flex justify-between mb-2'>
           <div className='flex items-center gap-3'>
             <div className={'bg-description h-[65%] w-[8px]'} />
             <h3>Play Activity</h3>
@@ -47,6 +52,37 @@ export function Profile () {
           <div className='bg-description h-8 w-8'>
           </div>
         </div>
+
+        {/* -----------------------} */}
+        <div className='flex flex-col [&>div]:p-5   divide-y divide-gray border-t-gray border-solid border-t-[1px]'>
+
+          <div className='flex gap-4 items-center'>
+            <img src={PokemonUnite} className='w-32 h-32' />
+            <div className='flex flex-col gap-5'>
+              <h4 className='text-4xl'>Pokémon UNITE</h4>
+              <p className='text-3xl text-description'>Tiempo jugado 5 o mas</p>
+            </div>
+          </div>
+
+          <div className='flex gap-4 items-center'>
+            <img src={PokemonUnite} className='w-32 h-32' />
+            <div className='flex flex-col gap-5'>
+              <h4 className='text-4xl'>Pokémon UNITE</h4>
+              <p className='text-3xl text-description'>Tiempo jugado 5 o mas</p>
+            </div>
+          </div>
+
+          <div className='flex gap-4 items-center'>
+            <img src={PokemonUnite} className='w-32 h-32' />
+            <div className='flex flex-col gap-5'>
+              <h4 className='text-4xl'>Pokémon UNITE</h4>
+              <p className='text-3xl text-description'>Tiempo jugado 5 o mas</p>
+            </div>
+          </div>
+
+        </div>
+        {/* -----------------------} */}
+
       </div>
     </div>
   )
