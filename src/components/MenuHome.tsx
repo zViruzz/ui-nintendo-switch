@@ -7,28 +7,30 @@ import GalleryIcon from './icons/GalleryIcon'
 import ShoppingBagIcon from './icons/ShoppingBagIcon'
 import ChatIcon from './icons/ChatIcon'
 import huhSound from '../assets/huh.mp3'
+import { useTranslation } from 'react-i18next'
 
 function MenuHome () {
+  const { t } = useTranslation()
   return (
     <nav className='w-full h-full '>
       <ul className='flex  justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
-        <ButtonMenu router='setting' text='Noticias'>
+        <ButtonMenu router='setting' text={t('home.menu.news')}>
           <ChatIcon width={75} height={75} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text='Nintendo eShop'>
+        <ButtonMenu router='setting' text={t('home.menu.eshop')}>
           <ShoppingBagIcon width={70} height={70} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text='Album'>
+        <ButtonMenu router='setting' text={t('home.menu.album')}>
           <GalleryIcon width={75} height={75} />
         </ButtonMenu>
 
-        <ButtonMenu router='setting' text='Controles'>
+        <ButtonMenu router='setting' text={t('home.menu.controllers')}>
           <ControllerIcon width={83} height={83} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text='Configuracion de la consola'>
+        <ButtonMenu router='setting' text={t('home.menu.settings')}>
           <SettingIcon width={82} height={82} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text='Modo de espera'>
+        <ButtonMenu router='setting' text={t('home.menu.sleep-mode')}>
           <PowerIcon width={75} height={75} />
         </ButtonMenu>
 

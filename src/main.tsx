@@ -23,6 +23,9 @@ import { EditIcon, Setting, Users } from './pages'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
+import './i18n.ts'
+import System from './pages/Setting/options/System.tsx'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -141,7 +144,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/setting/system',
-            element: <HealthSecurity />
+            element: <System />
           }
         ]
       }
@@ -150,6 +153,7 @@ const router = createBrowserRouter([
 ])
 
 const persistor = persistStore(store)
+
 // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
