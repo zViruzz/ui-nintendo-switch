@@ -1,9 +1,20 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import SettingIcon from '../../components/icons/SettingIcon'
 import OptionList from '../../components/OptionsList'
 import { options } from '../../static/settingOptions'
+import { useEffect } from 'react'
+import { useControllerContext } from '../../context/controller'
 
 function Setting () {
+  const { controllerButtonB } = useControllerContext()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    controllerButtonB('Back', () => {
+      navigate('/')
+    })
+  }, [])
+
   return (
     <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5">
       <header className="col-span-2 px-12 flex justify-between flex-col">

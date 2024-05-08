@@ -3,10 +3,18 @@ import MenuHome from '../components/MenuHome'
 import ViewGame from '../components/ViewGame'
 import { Helmet } from 'react-helmet'
 import previeImageMeta from '../assets/nintendo-switch-ui.webp'
+import { useControllerContext } from '../context/controller'
+import { useEffect } from 'react'
 function Home ({ lang = 'es' }: { lang?: string }) {
   const ogTitle = 'Nintendo Switch UI'
   const ogImage = previeImageMeta
   const ogDescription = lang === 'es' ? 'Inteface de nintendo switch usando tecnologia web' : 'Nintendo switch interface using web technology'
+
+  const { controllerButtonB, controllerButtonA } = useControllerContext()
+  useEffect(() => {
+    controllerButtonB('', () => {})
+    controllerButtonA('Start', () => {})
+  }, [])
 
   return (
     <>
