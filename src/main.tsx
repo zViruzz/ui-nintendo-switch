@@ -14,7 +14,6 @@ import {
 import ReactDOM from 'react-dom/client'
 import Error from './pages/Error.tsx'
 import Home from './pages/Home.tsx'
-import React from 'react'
 import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux'
@@ -25,6 +24,7 @@ import { persistStore } from 'redux-persist'
 
 import './i18n.ts'
 import System from './pages/Setting/options/System.tsx'
+import { Suspense } from 'react'
 
 const router = createBrowserRouter([
   {
@@ -156,11 +156,11 @@ const persistor = persistStore(store)
 
 // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <PersistGate persistor={persistor} >
-      <Provider store={store}>
+  <PersistGate persistor={persistor} >
+    <Provider store={store}>
+      <Suspense fallback="loading">
         <RouterProvider router={router} />
-      </Provider>
-    </PersistGate>
-  </React.StrictMode>
+      </Suspense>
+    </Provider>
+  </PersistGate >
 )

@@ -4,13 +4,15 @@ import OptionList from '../../components/OptionsList'
 import { options } from '../../static/settingOptions'
 import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
+import { useTranslation } from 'react-i18next'
 
 function Setting () {
   const { controllerButtonB } = useControllerContext()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   useEffect(() => {
-    controllerButtonB('Back', () => {
+    controllerButtonB(t('controller.buttonB.back'), () => {
       navigate('/')
     })
   }, [])

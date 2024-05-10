@@ -44,9 +44,10 @@ function ButtonMenu ({ children, router, text }: { children: ReactNode, router: 
   const sound = new window.Audio(huhSound)
   const { controllerButtonA } = useControllerContext()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const handleFocus = () => {
-    controllerButtonA('OK', () => {
+    controllerButtonA(t('controller.buttonA.ok'), () => {
       sound.play()
       navigate(router)
     })

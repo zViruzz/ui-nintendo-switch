@@ -1,8 +1,11 @@
 import { useAppSelector } from '../../redux/hooks'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import OptionList from '../../components/OptionsList'
 import Header from '../../components/Header'
 import CharacterProfile from '../../components/CharacterProfile'
+import { useEffect } from 'react'
+import { useControllerContext } from '../../context/controller'
+import { useTranslation } from 'react-i18next'
 
 const options = [
   { name: 'Perfil', path: '/profile' },
@@ -17,6 +20,18 @@ const options = [
 ]
 
 function Users () {
+  const { controllerButtonB, controllerButtonA } = useControllerContext()
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+
+  useEffect(() => {
+    controllerButtonB(t('controller.buttonB.back'), () => {
+      navigate('/')
+    })
+    controllerButtonA(t('controller.buttonA.ok'), () => {
+    })
+  }, [])
+
   const user = useAppSelector((state) => state.user)
   return (
     <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5">
