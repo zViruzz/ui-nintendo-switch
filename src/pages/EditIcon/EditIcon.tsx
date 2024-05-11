@@ -52,7 +52,12 @@ function EditIcon () {
               Fondo
             </button>
             <div className='w-full flex justify-center items-center'>
-              <button className='bg-[#01ffc9] outline-wiggle outline-offset-2 text-black rounded-lg h-32 w-[63%] '>
+              <button
+              className='bg-[#01ffc9] outline-wiggle-focus outline-offset-2 text-black rounded-lg h-32 w-[63%]'
+              onClick={() => {
+                history.back()
+              }}
+              >
                 Aceptar
               </button>
             </div>

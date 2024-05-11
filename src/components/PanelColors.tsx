@@ -12,8 +12,7 @@ function PanelColors ({ isHiddenBackground, handleClickAction, handleClickOutsid
       <SelectionGrid title='Fondo' isHidden={isHiddenBackground}>
         {listColors.map(({ color }) => {
           return (
-
-            <div
+            <button
               key={color}
               className={'aspect-square  outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'}
               style={{

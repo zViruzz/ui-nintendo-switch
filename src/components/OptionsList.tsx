@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 interface Option {
   name: string
@@ -13,6 +13,16 @@ function OptionList ({ options }: OptionListProps) {
   const location = useLocation()
   const currentUrl = `/${location.pathname.split('/').pop()}`
   const pathParent = `/${location.pathname.split('/')[1]}`
+  const navigate = useNavigate()
+
+  const handleClickLink = () => {
+    const section = document.querySelector('.section-focus')
+    if (section instanceof HTMLDivElement) section.focus()
+  }
+
+  const handleFocusLink = (path: string) => {
+    navigate(`${pathParent}${path}`)
+  }
 
   return (
     <ul className='flex flex-col overflow-y-scroll scroll-smooth snap-y scrollbar-hide h-full w-full text-[2.26rem] leading-tight px-5 pr-10 py-12 '>
@@ -30,6 +40,8 @@ function OptionList ({ options }: OptionListProps) {
             <Link
               to={`${pathParent}${item.path}`}
               key={index}
+              onFocus={() => { handleFocusLink(item.path) }}
+              onClick={handleClickLink}
               className='outline-wiggle-focus focus:bg-blueHight group hover:bg-blueHight'
             >
               <li

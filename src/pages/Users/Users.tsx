@@ -38,14 +38,17 @@ function Users () {
 
       <Header>
         <CharacterProfile className='w-20 h-20 rounded-full' />
-          <h2>Pagina de {user.username}</h2>
+        <h2>Pagina de {user.username}</h2>
       </Header>
 
       <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
         <OptionList options={options} />
       </nav>
       <section className='pr-12 overflow-auto scrollbar-hide '>
-        <div className='px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'>
+        <div
+          tabIndex={-1}
+          className='section-focus focus-within:outline-none px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'
+        >
           <Outlet />
         </div>
       </section>
