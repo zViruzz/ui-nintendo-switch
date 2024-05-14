@@ -11,6 +11,7 @@ interface Props {
 function EditName ({ isHidden, setIsHidden }: Props) {
   const { username } = useAppSelector((state) => state.user)
   const containerRef = useRef<HTMLDivElement>(null)
+  const containerInputRef = useRef<HTMLFormElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const [name, setName] = useState<string>(username)
   const dispatch = useDispatch()
@@ -35,21 +36,34 @@ function EditName ({ isHidden, setIsHidden }: Props) {
 
   useEffect(() => {
     function handleClickOutside (event: MouseEvent) {
-      if (containerRef.current !== null &&
-        !containerRef.current.contains(event.target as Node)
+      if (containerInputRef.current !== null &&
+        !containerInputRef.current.contains(event.target as Node)
       ) {
         setIsHidden(true)
       }
     }
 
+    function handleClickEsc (event: KeyboardEvent) {
+      if (containerRef.current === null) return
+      if (containerRef.current.classList.contains('invisible')) return
+      if (event.key === 'Escape') {
+        setIsHidden(true)
+        setName(username)
+      }
+    }
+
+    document.addEventListener('keydown', handleClickEsc)
+
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleClickEsc)
     }
   }, [])
 
   return (
     <div
+      ref={containerRef}
       className={`${isHidden ? 'invisible ' : 'visible backdrop-blur-md bg-[#00000090]'}  ease-in-out transition-all w-screen h-screen  absolute top-0 left-0  grid grid-rows-3  `}
     >
 
@@ -59,9 +73,12 @@ function EditName ({ isHidden, setIsHidden }: Props) {
 
       <div
         className='grid place-content-center'
-        ref={containerRef}
+
       >
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          ref={containerInputRef}
+        >
           <input
             onChange={handleChange}
             className='bg-transparent focus-within:outline-none focus-within:border-b-4 border-white rounded-t-lg w-[37rem] text-6xl px-5'

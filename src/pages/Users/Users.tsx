@@ -7,22 +7,22 @@ import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
 import { useTranslation } from 'react-i18next'
 
-const options = [
-  { name: 'Perfil', path: '/profile' },
-  { name: 'line', path: '' },
-  { name: 'Lista de amigos', path: '/friend-list' },
-  { name: 'Tendencias', path: '/trending' },
-  { name: 'Invitaciones para jugar en linea', path: '/online-play-invites' },
-  { name: 'Sugerencias de amistad', path: '/friend-suggestions' },
-  { name: 'Añadir amigo', path: '/add-friends' },
-  { name: 'line', path: '' },
-  { name: 'Ajustes de usuario', path: '/user-settings' }
-]
-
 function Users () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
   const navigate = useNavigate()
   const { t } = useTranslation()
+
+  const options = [
+    { name: t('users.options.profile'), path: '/profile' },
+    { name: 'line', path: '' },
+    { name: t('users.options.fiend-list'), path: '/friend-list' },
+    { name: t('users.options.trending'), path: '/trending' },
+    { name: t('users.options.online-play-invites'), path: '/online-play-invites' },
+    { name: t('users.options.friend-suggestions'), path: '/friend-suggestions' },
+    { name: t('users.options.add-friends'), path: '/add-friends' },
+    { name: 'line', path: '' },
+    { name: t('users.options.user-setting'), path: '/user-settings' }
+  ]
 
   useEffect(() => {
     controllerButtonB(t('controller.buttonB.back'), () => {

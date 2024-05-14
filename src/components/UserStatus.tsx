@@ -11,10 +11,13 @@ function UserStatus () {
   return (
     <div className='flex justify-between items-center px-24'>
       <div className='group relative'>
-        <Link to='users/profile'>
-            <CharacterProfile className='border-zinc-700 border-4 rounded-full shadow-Nbutton  group-hover:animate-wiggle group-hover:outline outline-[6px] w-[6.3rem]'/>
+        <Link
+          to='users/profile'
+          className='group-focus-within:outline-wiggle-focus group-focus-within:block group-focus-within:rounded-full group-hover:outline-wiggle-focus group-hover:block group-hover:rounded-full'
+        >
+          <CharacterProfile className='border-zinc-700 border-4 rounded-full shadow-Nbutton w-[6.3rem]' />
         </Link>
-        <div className='text-[#15bffd] text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-hover:opacity-100 opacity-0 transition-all text-center '>
+        <div className='text-[#15bffd] text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-focus-within:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center '>
           Pagina de {user.username}
         </div>
       </div>

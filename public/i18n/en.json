@@ -6,5 +6,39 @@
   "home.menu.settings": "System Settings",
   "home.menu.sleep-mode": "Sleep Mode",
   "controller.buttonA.ok": "Ok",
-  "controller.buttonB.back": "Back"
+  "controller.buttonB.back": "Back",
+
+  "setting.options": "Settings",
+  "setting.options.health-security": "Suppot/Health & safety",
+  "setting.options.airplane-mode": "Airplane Mode",
+  "setting.options.screen-brighness": "Screen Brightness",
+  "setting.options.bluetooth": "Bluetooth Audio",
+  "setting.options.lock-screen": "Screen Lock",
+  "setting.options.parental-control": "Parental Controls",
+  "setting.options.internet": "Internet",
+  "setting.options.data-management": "Data Management",
+  "setting.options.setting-user": "Users",
+  "setting.options.mii": "Mii",
+  "setting.options.amiibo": "amiibo",
+  "setting.options.theme": "Themes",
+  "setting.options.notifications": "Notifications",
+  "setting.options.standby-mode": "Sleep Mode",
+  "setting.options.controls-sensors": "Controllers and Sensors",
+  "setting.options.tv-settings": "TV Setting",
+  "setting.options.system": "System",
+
+  "users.options.profile": "Profile",
+  "users.options.friend-list": "Friend List",
+  "users.options.trending": "Trending",
+  "users.options.online-play-invites": "Online Play Invites",
+  "users.options.friend-suggestions": "Friend Suggestion",
+  "users.options.add-friends": "Add Friend",
+  "users.options.user-settings": "User Setting",
+  
+  "users.profile.offline": "Offline",
+  "users.profile.friend-code": "Firend code",
+  "users.profile.play-activity": "Play Activity",
+  "users.profile.playerd-time": "Played for {{time}} hours or more"
+
+
 }

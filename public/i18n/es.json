@@ -6,5 +6,37 @@
   "home.menu.settings": "Configuracion de la consola",
   "home.menu.sleep-mode": "Modo de espera",
   "controller.buttonA.ok": "Aceptar",
-  "controller.buttonB.back": "Atrás"
+  "controller.buttonB.back": "Atrás",
+  
+  "setting.options": "Settings",
+  "setting.options.health-security": "Ayuda/Salud y seguridad",
+  "setting.options.airplane-mode": "Modo avión",
+  "setting.options.screen-brighness": "Brillo de pantalla",
+  "setting.options.bluetooth": "Audio a través de Bluetooth",
+  "setting.options.lock-screen": "Bloquear pantalla",
+  "setting.options.parental-control": "Control parental",
+  "setting.options.internet": "Internet",
+  "setting.options.data-management": "Gestión de datos",
+  "setting.options.setting-user": "Usuarios",
+  "setting.options.mii": "Mii",
+  "setting.options.amiibo": "amiibo",
+  "setting.options.theme": "Temas",
+  "setting.options.notifications": "Notificaciones",
+  "setting.options.standby-mode": "Modo de espera",
+  "setting.options.controls-sensors": "Controles y sensores",
+  "setting.options.tv-settings": "Ajustes de TV",
+  "setting.options.system": "Consola",
+
+  "users.options.profile": "Perfil",
+  "users.options.friend-list": "Lista de amigos",
+  "users.options.trending": "Tendencias",
+  "users.options.online-play-invites": "Invitaciones para jugar en linea",
+  "users.options.friend-suggestions": "Sugerencias de amistad",
+  "users.options.add-friends": "Añadir amigo",
+  "users.options.user-settings": "Ajustes de usuario",
+
+  "users.profile.offline": "Sin conexión",
+  "users.profile.friend-code": "Clave de amigo",
+  "users.profile.play-activity": "Historial de juego",
+  "users.profile.playerd-time": "He jugado {{time}} horas o mas"
 }

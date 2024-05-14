@@ -1,7 +1,6 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import SettingIcon from '../../components/icons/SettingIcon'
 import OptionList from '../../components/OptionsList'
-import { options } from '../../static/settingOptions'
 import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
 import { useTranslation } from 'react-i18next'
@@ -10,6 +9,30 @@ function Setting () {
   const { controllerButtonB } = useControllerContext()
   const navigate = useNavigate()
   const { t } = useTranslation()
+
+  const options = [
+    { name: t('setting.options.health-security'), path: '/health-security' },
+    { name: 'line', path: '' },
+    { name: t('setting.options.airplane-mode'), path: '/airplane-mode' },
+    { name: t('setting.options.screen-brighness'), path: '/screen-brightness' },
+    { name: t('setting.options.bluetooth'), path: '/bluetooth' },
+    { name: t('setting.options.lock-screen'), path: '/lock-screen' },
+    { name: 'line', path: '' },
+    { name: t('setting.options.parental-control'), path: '/parental-control' },
+    { name: t('setting.options.internet'), path: '/internet' },
+    { name: t('setting.options.data-management'), path: '/data-management' },
+    { name: t('setting.options.setting-user'), path: '/setting-user' },
+    { name: t('setting.options.mii'), path: '/mii' },
+    { name: t('setting.options.amiibo'), path: '/amiibo' },
+    { name: 'line', path: '' },
+    { name: t('setting.options.theme'), path: '/theme' },
+    { name: t('setting.options.notifications'), path: '/notifications' },
+    { name: t('setting.options.standby-mode'), path: '/standby-mode' },
+    { name: 'line', path: '' },
+    { name: t('setting.options.controls-sensors'), path: '/controls-sensors' },
+    { name: t('setting.options.tv-settings'), path: '/tv-settings' },
+    { name: t('setting.options.system'), path: '/system' }
+  ]
 
   useEffect(() => {
     controllerButtonB(t('controller.buttonB.back'), () => {
