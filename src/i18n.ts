@@ -18,6 +18,10 @@ const getCurrentHost =
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     : import.meta.env.VITE_HOST_URL || process.env.VITE_HOST_URL
 
+console.log('🚀 ~ process.env.VITE_HOST_URL:', process.env.VITE_HOST_URL)
+console.log('🚀 ~ import.meta.env.VITE_HOST_URL:', import.meta.env.VITE_HOST_URL)
+console.log(process.env)
+
 i18n
   .use(i18nBackend)
   .use(initReactI18next)
