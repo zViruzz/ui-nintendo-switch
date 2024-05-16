@@ -16,9 +16,9 @@ const getCurrentHost =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5173'
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    : import.meta.env.VITE_HOST_URL || process.env.VITE_HOST_URL
+    : import.meta.env.VITE_HOST_URL || process.env.HOST_URL
 
-console.log('🚀 ~ process.env.VITE_HOST_URL:', process.env.VITE_HOST_URL)
+console.log('🚀 ~ process.env.VITE_HOST_URL:', process.env.HOST_URL)
 console.log('🚀 ~ import.meta.env.VITE_HOST_URL:', import.meta.env.VITE_HOST_URL)
 console.log(process.env)
 
