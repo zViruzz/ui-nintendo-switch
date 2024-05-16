@@ -15,7 +15,8 @@ const getLang = () => {
 const getCurrentHost =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5173'
-    : import.meta.env.VITE_HOST_URL
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    : import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
 i18n
   .use(i18nBackend)
@@ -29,34 +30,6 @@ i18n
     backend: {
       loadPath: `${getCurrentHost}/i18n/{{lng}}.json`
     }
-    // resources: {
-    //   en: {
-    //     translation: {
-    //       'home.menu.news': 'News',
-    //       'home.menu.eshop': 'Nintendo eShop',
-    //       'home.menu.album': 'Album',
-    //       'home.menu.controllers': 'Controllers',
-    //       'home.menu.settings': 'System Settings',
-    //       'home.menu.sleep-mode': 'Sleep Mode',
-
-    //       'controller.buttonA.ok': 'Ok',
-    //       'controller.buttonB.back': 'Back'
-    //     }
-    //   },
-    //   es: {
-    //     translation: {
-    //       'home.menu.news': 'Noticias',
-    //       'home.menu.eshop': 'Nintendo eShop',
-    //       'home.menu.album': 'Album',
-    //       'home.menu.controllers': 'Controles',
-    //       'home.menu.settings': 'Configuracion de la consola',
-    //       'home.menu.sleep-mode': 'Modo de espera',
-
-    //       'controller.buttonA.ok': 'Aceptar',
-    //       'controller.buttonB.back': 'Atrás'
-    //     }
-    //   }
-    // }
   })
 
 export default i18n
