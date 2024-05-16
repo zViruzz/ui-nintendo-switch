@@ -1,6 +1,6 @@
+import './global.css'
 import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
-import './global.css'
 import { ControllerProvider } from './context/controller'
 
 function App () {

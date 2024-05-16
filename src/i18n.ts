@@ -15,7 +15,7 @@ const getLang = () => {
 const getCurrentHost =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5173'
-    : 'LINK TO PROD'
+    : import.meta.env.VITE_HOST_URL
 
 i18n
   .use(i18nBackend)

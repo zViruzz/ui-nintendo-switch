@@ -15,7 +15,7 @@ function Users () {
   const options = [
     { name: t('users.options.profile'), path: '/profile' },
     { name: 'line', path: '' },
-    { name: t('users.options.fiend-list'), path: '/friend-list' },
+    { name: t('users.options.friend-list'), path: '/friend-list' },
     { name: t('users.options.trending'), path: '/trending' },
     { name: t('users.options.online-play-invites'), path: '/online-play-invites' },
     { name: t('users.options.friend-suggestions'), path: '/friend-suggestions' },
