@@ -21,7 +21,7 @@ function Users () {
     { name: t('users.options.friend-suggestions'), path: '/friend-suggestions' },
     { name: t('users.options.add-friends'), path: '/add-friends' },
     { name: 'line', path: '' },
-    { name: t('users.options.user-setting'), path: '/user-settings' }
+    { name: t('users.options.user-settings'), path: '/user-settings' }
   ]
 
   useEffect(() => {

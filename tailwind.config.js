@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'res': 'repeat(auto-fill, minmax(20rem, 1fr))',
+      },
       content: {
         'home': 'url("/src/assets/home.svg")',
       },
@@ -14,12 +17,14 @@ export default {
       },
       boxShadow: {
         'Nbutton': '0px 0px 8px 5px rgb(0 0 0 / 0.1)',
+        'button': '0px 2px 4px 1px rgba(0,0,0,0.75)',
       },
       colors: {
         gray: '#ffffff34',
         table: '#393a3c',
         disabled: '#6b6b6b',
         description: '#939393',
+        primary: '#2d2d2d',
         secodary: '#00ffc9',
         blueHight: '#1f2227',
         outlineEffect1: '#15bffd',
