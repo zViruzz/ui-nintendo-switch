@@ -15,6 +15,9 @@ export default function TrendingItem ({ url, title, label }: Props) {
           className='outline-wiggle-focus outline-offset-[3px] bg-transparent p-0'
           onClick={() => {
             selectionTrending({ title, label, url })
+            console.log('🚀 ~ TrendingItem ~ title:', title)
+            const div = document.querySelector(`#${title}`)
+            console.log('🚀 ~ TrendingItem ~ div:', div)
           }}
         >
           <img

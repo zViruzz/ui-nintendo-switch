@@ -1,5 +1,6 @@
 import pokemonUnite from '../../../assets/images/pokemon-unite.webp'
 import gameThumbnail from '../../../assets/images/vivi.jpg'
+import FaceIcon from '../../../components/icons/FaceIcon'
 import TrendingView from '../../../components/layouts/TrendingView'
 import TrendingItem from '../../../components/TrendingItem'
 import { TrendingProvider } from '../../../context/trending'
@@ -9,7 +10,7 @@ export function Trending () {
     <TrendingProvider>
       <div>
         <div className='mb-10'>
-          <p>Check out what games are trending with your friends!</p>
+          <p><FaceIcon className='inline w-9 h-9' /> Check out what games are trending with your friends!</p>
         </div>
 
         <div className="grid grid-cols-res h-full gap-5">
@@ -35,7 +36,7 @@ export function Trending () {
           />
         </div>
 
-        <TrendingView/>
+        <TrendingView />
       </div>
     </TrendingProvider>
   )

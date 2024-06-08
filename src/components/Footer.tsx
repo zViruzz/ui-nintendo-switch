@@ -19,12 +19,12 @@ function Footer () {
         <div>
           <NSwitchIcon width={100} height={60} />
         </div>
-        <div className='flex text-4xl h-full gap-10'>
+        <div className='flex text-4xl h-full gap-8'>
           {
             buttonB.text === ''
               ? null
               : <button
-                className='flex my-2 gap-6 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] focus-visible:outline-none'
+                className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] focus-visible:outline-none'
                 onClick={handleButtonBClick}
               >
                 <div className="bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] ">
@@ -40,7 +40,7 @@ function Footer () {
             buttonA.text === ''
               ? null
               : <button
-                className='flex my-2 gap-6 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] focus-visible:outline-none'
+                className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] focus-visible:outline-none'
                 onClick={handleButtonAClick}
               >
                 <div className="bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] ">
