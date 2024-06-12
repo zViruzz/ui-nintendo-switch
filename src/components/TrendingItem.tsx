@@ -1,12 +1,12 @@
 import { useTrendingContext } from '../context/trending'
 
 interface Props {
+  id: string
   title: string
   url: string
-  label: string
 }
 
-export default function TrendingItem ({ url, title, label }: Props) {
+export default function TrendingItem ({ id, url, title }: Props) {
   const { selectionTrending } = useTrendingContext()
   return (
     <>
@@ -14,10 +14,12 @@ export default function TrendingItem ({ url, title, label }: Props) {
         <button
           className='outline-wiggle-focus outline-offset-[3px] bg-transparent p-0'
           onClick={() => {
-            selectionTrending({ title, label, url })
-            console.log('🚀 ~ TrendingItem ~ title:', title)
-            const div = document.querySelector(`#${title}`)
-            console.log('🚀 ~ TrendingItem ~ div:', div)
+            selectionTrending({ id, title, url })
+            console.log('🚀 ~ TrendingItem ~ id:', id)
+            setTimeout(() => {
+              const div = document.getElementById(id)?.focus()
+              console.log('🚀 ~ TrendingItem ~ div:', div)
+            }, 1000)
           }}
         >
           <img
@@ -26,7 +28,7 @@ export default function TrendingItem ({ url, title, label }: Props) {
             alt="Pokemon unite"
           />
         </button>
-        <p>{label}</p>
+        <p></p>
       </div>
     </>
   )

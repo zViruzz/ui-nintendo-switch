@@ -10,6 +10,7 @@ export default function TrendingView () {
   const { t } = useTranslation()
   const {
     selectItem: {
+      id,
       title,
       url
     },
@@ -23,8 +24,6 @@ export default function TrendingView () {
     controllerButtonA(t('controller.buttonA.ok'), () => {
     })
   }, [])
-
-  // 16.2
 
   return (
     <section id={title} className={`${isHiddenMenu ? 'invisible' : 'visible'} absolute top-0 h-screen w-screen left-0 flex`}>
@@ -42,7 +41,7 @@ export default function TrendingView () {
               <h2 className='text-5xl grow mt-[6.5rem] px-10'>
                 {title}
               </h2>
-              <button className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'>Start</button>
+              <button id={id} className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'>Start</button>
             </div>
           </div>
 

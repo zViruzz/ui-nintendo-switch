@@ -6,18 +6,18 @@ interface Props {
 
 interface ContextTrendingProps {
   selectItem: {
+    id: string
     title: string
-    label: string
     url: string
   }
   isHiddenMenu: boolean
-  selectionTrending: ({ url, title, label }: { title: string, url: string, label: string }) => void
+  selectionTrending: ({ id, url, title }: { id: string, title: string, url: string }) => void
 }
 
 export const TrendingContext = createContext<ContextTrendingProps>({
   selectItem: {
+    id: '',
     title: '',
-    label: '',
     url: ''
   },
   isHiddenMenu: true,
@@ -26,16 +26,16 @@ export const TrendingContext = createContext<ContextTrendingProps>({
 
 export const TrendingProvider: React.FC<Props> = ({ children }) => {
   const [selectItem, setSelectItem] = useState({
+    id: '',
     title: '',
-    label: '',
     url: ''
   })
   const [isHiddenMenu, setIsHiddenMenu] = useState(true)
 
-  const selectionTrending = ({ url, title, label }: { title: string, url: string, label: string }) => {
+  const selectionTrending = ({ id, url, title }: { id: string, title: string, url: string }) => {
     setSelectItem({
+      id,
       title,
-      label,
       url
     })
     setIsHiddenMenu(false)
@@ -43,8 +43,7 @@ export const TrendingProvider: React.FC<Props> = ({ children }) => {
   }
 
   return (
-    <TrendingContext.Provider value={{ selectionTrending, selectItem, isHiddenMenu }}
-    >
+    <TrendingContext.Provider value={{ selectionTrending, selectItem, isHiddenMenu }}>
       {children}
     </TrendingContext.Provider>
   )
