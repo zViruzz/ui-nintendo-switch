@@ -39,7 +39,6 @@ export const TrendingProvider: React.FC<Props> = ({ children }) => {
       url
     })
     setIsHiddenMenu(false)
-    console.log('dsafkjsdfkj')
   }
 
   return (

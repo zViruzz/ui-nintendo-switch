@@ -15,11 +15,13 @@ export default function TrendingItem ({ id, url, title }: Props) {
           className='outline-wiggle-focus outline-offset-[3px] bg-transparent p-0'
           onClick={() => {
             selectionTrending({ id, title, url })
-            console.log('🚀 ~ TrendingItem ~ id:', id)
             setTimeout(() => {
-              const div = document.getElementById(id)?.focus()
-              console.log('🚀 ~ TrendingItem ~ div:', div)
-            }, 1000)
+              const btn = document.getElementById(id)
+
+              if (btn instanceof HTMLButtonElement) {
+                btn.focus()
+              }
+            }, 250)
           }}
         >
           <img

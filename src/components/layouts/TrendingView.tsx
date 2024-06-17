@@ -4,6 +4,7 @@ import { useControllerContext } from '../../context/controller'
 import { useTrendingContext } from '../../context/trending'
 import Footer from '../Footer'
 import ArrowIcon from '../icons/ArrowIcon'
+import profileUser from '../../assets/images/vivi.jpg'
 
 export default function TrendingView () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
@@ -29,7 +30,7 @@ export default function TrendingView () {
     <section id={title} className={`${isHiddenMenu ? 'invisible' : 'visible'} absolute top-0 h-screen w-screen left-0 flex`}>
       <div className='flex items-center basis-[9.4rem] bg-[#11192094] backdrop-blur-2xl'>
         <button className='rounded-none bg-transparent border-none w-full h-40 grid place-content-center'>
-          <ArrowIcon className='w-[3.7rem] h-[3.7rem]'/>
+          <ArrowIcon className='w-[3.7rem] h-[3.7rem]' />
         </button>
       </div>
 
@@ -41,14 +42,37 @@ export default function TrendingView () {
               <h2 className='text-5xl grow mt-[6.5rem] px-10'>
                 {title}
               </h2>
-              <button id={id} className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'>Start</button>
+              <button
+                onClick={() => {
+                  console.log('asdasdasdasdasd')
+                }}
+                id={id}
+                className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'
+              >
+                Start
+              </button>
             </div>
           </div>
 
-          <div>
-            <p></p>
-            <div>
-              <p>Friendss</p>
+          <div className='mt-14'>
+            <div className='flex justify-between mb-2'>
+              <div className='flex items-center gap-3'>
+                <div className={'bg-description h-[65%] w-[8px]'} />
+                <h3>Friends whohave played this game</h3>
+              </div>
+            </div>
+
+            <div className='mt-10'>
+              <div className='flex gap-5 px-16'>
+                <img
+                  className='w-20 h-20 rounded-full'
+                  src={profileUser}
+                  alt="profile user friend" />
+                  <div >
+                    <h3>Mr beast</h3>
+                    <p className='text-neutral-400 text-2xl'>Played for 5 hours or more</p>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
