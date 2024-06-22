@@ -1,4 +1,7 @@
 {
+"start.message.title": "Nintendo",
+"start.message.description": "Welcome to the Nintendo Switch UI. This page is designed for use in full-screen mode, with a 16:9 aspect ratio, to ensure the best possible visual experience. We hope you enjoy your visit.",
+
   "home.menu.news": "News",
   "home.menu.eshop": "Nintendo eShop",
   "home.menu.album": "Album",

@@ -1,4 +1,7 @@
 {
+  "start.message.title": "Nintendo",
+  "start.message.description": "Bienvenidos a la interfaz de Nintendo Switch UI. Esta página está diseñada para su uso en pantalla completa, con una relación de aspecto de 16:9, para garantizar la mejor experiencia visual posible. Esperamos que disfrute de su visita.",
+
   "home.menu.news": "Noticias",
   "home.menu.eshop": "Nintendo eShop",
   "home.menu.album": "Album",
