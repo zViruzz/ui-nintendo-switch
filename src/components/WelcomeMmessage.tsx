@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import NintendoSwitchLogoIcon from './icons/NintendoSwitchLogoIcon'
 
 export default function WelcomeMmessage () {
-  // const firstTime = window.localStorage.getItem('firstTime') !== null
-  const [hiddenMessage, setHiddenMessage] = useState(false)
+  const firstTime = window.localStorage.getItem('firstTime') !== null
+  const [hiddenMessage, setHiddenMessage] = useState(firstTime)
   const { t } = useTranslation()
 
   useEffect(() => {
