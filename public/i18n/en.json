@@ -1,7 +1,8 @@
 {
-"start.message.title": "Nintendo",
-"start.message.description": "Welcome to the Nintendo Switch UI. This page is designed for use in full-screen mode, with a 16:9 aspect ratio, to ensure the best possible visual experience. We hope you enjoy your visit.",
-
+  "welcom.message.welcom": "Welcome to the Nintendo Switch UI",
+  "welcom.message.suggestion": "This page is designed for use in full-screen mode, with a 16:9 aspect ratio, to ensure the best possible visual experience. We hope you enjoy your visit.",
+  "welcom.message.note": "The site is still under development.",
+  
   "home.menu.news": "News",
   "home.menu.eshop": "Nintendo eShop",
   "home.menu.album": "Album",
@@ -42,6 +43,4 @@
   "users.profile.friend-code": "Firend code",
   "users.profile.play-activity": "Play Activity",
   "users.profile.playerd-time": "Played for {{time}} hours or more"
-
-
 }

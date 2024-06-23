@@ -20,6 +20,7 @@ export default {
         'button': '0px 2px 4px 1px rgba(0,0,0,0.75)',
       },
       colors: {
+        'gray-message': '#484848',
         gray: '#ffffff34',
         table: '#393a3c',
         disabled: '#6b6b6b',
