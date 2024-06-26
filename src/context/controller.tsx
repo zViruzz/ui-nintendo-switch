@@ -1,12 +1,20 @@
 import { createContext, useContext, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+
+type controllerButtonType = ({ text, action, route }: {
+  text: string
+  route?: string
+  action?: () => void
+}) => void
 
 interface Props {
   children: JSX.Element | JSX.Element[]
 }
 
 interface ContextProps {
-  controllerButtonA: (text: string, action: () => void) => void
-  controllerButtonB: (text: string, action: () => void) => void
+  controllerButtonA: controllerButtonType
+  controllerButtonB: controllerButtonType
   buttonA: {
     text: string
     onClick: () => void
@@ -18,8 +26,8 @@ interface ContextProps {
 }
 
 export const ControllerContext = createContext<ContextProps>({
-  controllerButtonA: () => {},
-  controllerButtonB: () => {},
+  controllerButtonA: () => { },
+  controllerButtonB: () => { },
   buttonA: {
     text: '',
     onClick: () => { }
@@ -31,6 +39,9 @@ export const ControllerContext = createContext<ContextProps>({
 })
 
 export const ControllerProvider: React.FC<Props> = ({ children }) => {
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+
   const [buttonA, setButtonA] = useState({
     text: '',
     onClick: () => { }
@@ -41,17 +52,28 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
     onClick: () => { }
   })
 
-  const controllerButtonA = (text: string, action: () => void) => {
+  const controllerButtonA: controllerButtonType = ({ text, action, route }) => {
+    console.log('🚀 ~ text:', text)
     setButtonA({
-      text,
-      onClick: action
+      text: t(text),
+      onClick: () => {
+        if (route !== undefined) {
+          navigate(route)
+        }
+        if (action !== undefined) action()
+      }
     })
   }
 
-  const controllerButtonB = (text: string, action: () => void) => {
+  const controllerButtonB: controllerButtonType = ({ text, action, route }) => {
     setButtonB({
-      text,
-      onClick: action
+      text: t(text),
+      onClick: () => {
+        if (route !== undefined) {
+          navigate(route)
+        }
+        if (action !== undefined) action()
+      }
     })
   }
 

@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import SettingIcon from '../../components/icons/SettingIcon'
 import OptionList from '../../components/OptionsList'
 import { useEffect } from 'react'
@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 
 function Setting () {
   const { controllerButtonB } = useControllerContext()
-  const navigate = useNavigate()
   const { t } = useTranslation()
 
   const options = [
@@ -35,8 +34,9 @@ function Setting () {
   ]
 
   useEffect(() => {
-    controllerButtonB(t('controller.buttonB.back'), () => {
-      navigate('/')
+    controllerButtonB({
+      text: 'controller.buttonB.back',
+      route: '/'
     })
   }, [])
 

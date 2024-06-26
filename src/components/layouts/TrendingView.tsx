@@ -1,17 +1,13 @@
 import { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useControllerContext } from '../../context/controller'
 import { useTrendingContext } from '../../context/trending'
 import Footer from '../Footer'
 import ArrowIcon from '../icons/ArrowIcon'
 import profileUser from '../../assets/images/vivi.jpg'
 import { trendingList } from '../../pages/Users/Options'
-import { useNavigate } from 'react-router-dom'
 
 export default function TrendingView () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
-  const navigate = useNavigate()
-  const { t } = useTranslation()
   const {
     selectionTrending,
     isHiddenMenu,
@@ -26,17 +22,23 @@ export default function TrendingView () {
   useEffect(() => {
     if (isHiddenMenu) {
       console.log('first hidden')
-      controllerButtonB(t('controller.buttonB.back'), () => {
-        navigate('/')
+      controllerButtonB({
+        text: 'controller.buttonB.back',
+        route: '/'
       })
 
       return
     }
 
-    controllerButtonB(t('controller.buttonB.back'), () => {
-      setIsHiddenMenu(true)
+    controllerButtonB({
+      text: 'controller.buttonB.back',
+      action: () => {
+        setIsHiddenMenu(true)
+      }
     })
-    controllerButtonA(t('controller.buttonA.ok'), () => {
+
+    controllerButtonA({
+      text: 'controller.buttonA.ok'
     })
   }, [isHiddenMenu])
 

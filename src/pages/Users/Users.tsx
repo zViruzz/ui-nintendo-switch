@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../redux/hooks'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import OptionList from '../../components/OptionsList'
 import Header from '../../components/Header'
 import CharacterProfile from '../../components/CharacterProfile'
@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next'
 
 function Users () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
-  const navigate = useNavigate()
   const { t } = useTranslation()
 
   const options = [
@@ -25,11 +24,12 @@ function Users () {
   ]
 
   useEffect(() => {
-    controllerButtonB(t('controller.buttonB.back'), () => {
-      console.log('bvack')
-      navigate('/')
+    controllerButtonB({
+      text: 'controller.buttonB.back',
+      route: '/'
     })
-    controllerButtonA(t('controller.buttonA.ok'), () => {
+    controllerButtonA({
+      text: 'controller.buttonA.ok'
     })
   }, [])
 

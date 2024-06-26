@@ -1,5 +1,6 @@
 export * from './EditIcon'
 export * from './Setting'
+export * from './News'
 export * from './Users'
 export * from './Error'
 export * from './Home'

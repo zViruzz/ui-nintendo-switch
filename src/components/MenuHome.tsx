@@ -1,17 +1,18 @@
 import { type ReactNode } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SettingIcon from './icons/SettingIcon'
 import ControllerIcon from './icons/ControllerIcon'
 import PowerIcon from './icons/PowerIcon'
 import GalleryIcon from './icons/GalleryIcon'
 import ShoppingBagIcon from './icons/ShoppingBagIcon'
 import ChatIcon from './icons/ChatIcon'
-import huhSound from '../assets/huh.mp3'
+// import huhSound from '../assets/huh.mp3'
 import { useTranslation } from 'react-i18next'
 import { useControllerContext } from '../context/controller'
 
 function MenuHome () {
   const { t } = useTranslation()
+
   return (
     <nav className='w-full h-full '>
       <ul className='flex  justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
@@ -41,15 +42,16 @@ function MenuHome () {
 }
 
 function ButtonMenu ({ children, router, text }: { children: ReactNode, router: string, text: string }) {
-  const sound = new window.Audio(huhSound)
+  // const sound = new window.Audio(huhSound)
   const { controllerButtonA } = useControllerContext()
-  const navigate = useNavigate()
-  const { t } = useTranslation()
 
   const handleFocus = () => {
-    controllerButtonA(t('controller.buttonA.ok'), () => {
-      sound.play()
-      navigate(router)
+    controllerButtonA({
+      text: 'controller.buttonA.ok',
+      route: router,
+      action: () => {
+        console.log('huh')
+      }
     })
   }
 

@@ -12,10 +12,14 @@ function Home ({ lang = 'es' }: { lang?: string }) {
 
   const { controllerButtonB, controllerButtonA } = useControllerContext()
   useEffect(() => {
-    controllerButtonB('', () => {})
-    controllerButtonA('Start', () => {})
-  }, [])
+    controllerButtonA({
+      text: 'controller.buttonA.ok'
+    })
 
+    controllerButtonB({
+      text: 'controller.buttonB.back'
+    })
+  }, [])
   return (
     <>
       <Helmet>
