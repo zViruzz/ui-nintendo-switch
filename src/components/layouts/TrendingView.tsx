@@ -5,39 +5,76 @@ import { useTrendingContext } from '../../context/trending'
 import Footer from '../Footer'
 import ArrowIcon from '../icons/ArrowIcon'
 import profileUser from '../../assets/images/vivi.jpg'
+import { trendingList } from '../../pages/Users/Options'
+import { useNavigate } from 'react-router-dom'
 
 export default function TrendingView () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const {
+    selectionTrending,
+    isHiddenMenu,
+    setIsHiddenMenu,
     selectItem: {
       id,
       title,
       url
-    },
-    isHiddenMenu
+    }
   } = useTrendingContext()
 
   useEffect(() => {
+    if (isHiddenMenu) {
+      console.log('first hidden')
+      controllerButtonB(t('controller.buttonB.back'), () => {
+        navigate('/')
+      })
+
+      return
+    }
+
     controllerButtonB(t('controller.buttonB.back'), () => {
-      history.back()
+      setIsHiddenMenu(true)
     })
     controllerButtonA(t('controller.buttonA.ok'), () => {
     })
-  }, [])
+  }, [isHiddenMenu])
+
+  const handleClickPrev = () => {
+    const index = trendingList.findIndex(item => item.id === id)
+    const nub = index - 1
+    if (nub < 0) return
+    const { id: newId, name: newTitle, urlImage: newUrl } = trendingList[nub]
+    selectionTrending({ id: newId, title: newTitle, url: newUrl })
+  }
+
+  const handleClickNext = () => {
+    const index = trendingList.findIndex(item => item.id === id)
+    const nub = index + 1
+    if (nub >= trendingList.length) return
+    const { id: newId, name: newTitle, urlImage: newUrl } = trendingList[nub]
+    selectionTrending({ id: newId, title: newTitle, url: newUrl })
+  }
 
   return (
     <section id={title} className={`${isHiddenMenu ? 'invisible' : 'visible'} absolute top-0 h-screen w-screen left-0 flex`}>
-      <div className='flex items-center basis-[9.4rem] bg-[#11192094] backdrop-blur-2xl'>
-        <button className='rounded-none bg-transparent border-none w-full h-40 grid place-content-center'>
+      <div className='flex items-center justify-center basis-[9.4rem] bg-[#11192094] backdrop-blur-2xl'>
+        <button
+          onClick={handleClickPrev}
+          className='rounded-full bg-transparent border-none p-7 active:bg-secodary/20 transition-colors'
+        >
           <ArrowIcon className='w-[3.7rem] h-[3.7rem]' />
         </button>
       </div>
 
-      <div className='bg-[#484848] grow grid grid-rows-[8fr_1fr] '>
-        <div className='mt-20 px-[8.7rem]'>
+      <div className='bg-[#484848] grow grid grid-rows-[8fr_1fr]'>
+        <div className='mt-20 px-[8.7rem] TransitionOpacitySlide' key={id}>
           <div className='flex gap-12'>
-            <img className='w-[24rem] h-[24rem]' src={url} alt="" />
+            <img
+              className='w-[24rem] h-[24rem]'
+              src={url}
+              alt={title}
+            />
             <div className=' w-full flex flex-col'>
               <h2 className='text-5xl grow mt-[6.5rem] px-10'>
                 {title}
@@ -68,10 +105,10 @@ export default function TrendingView () {
                   className='w-20 h-20 rounded-full'
                   src={profileUser}
                   alt="profile user friend" />
-                  <div >
-                    <h3>Mr beast</h3>
-                    <p className='text-neutral-400 text-2xl'>Played for 5 hours or more</p>
-                  </div>
+                <div >
+                  <h3>Mr beast</h3>
+                  <p className='text-neutral-400 text-2xl'>Played for 5 hours or more</p>
+                </div>
               </div>
             </div>
           </div>
@@ -79,8 +116,11 @@ export default function TrendingView () {
         <Footer />
       </div>
 
-      <div className='flex items-center basis-[9.4rem] bg-[#11192094] backdrop-blur-2xl'>
-        <button className='rounded-none bg-transparent border-none w-full h-40 grid place-content-center rotate-180'>
+      <div className='flex items-center justify-center basis-[9.4rem] bg-[#11192094] backdrop-blur-2xl'>
+        <button
+          onClick={handleClickNext}
+          className='rounded-full bg-transparent border-none p-7 active:bg-secodary/20 transition-colors rotate-180'
+        >
           <ArrowIcon className='w-[3.7rem] h-[3.7rem]' />
         </button>
       </div>

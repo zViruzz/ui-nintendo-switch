@@ -9,7 +9,6 @@ export default function WelcomeMmessage () {
 
   useEffect(() => {
     if (window.localStorage.getItem('firstTime') === null) {
-      console.log('create hidden message')
       window.localStorage.setItem('firstTime', 'false')
     }
   }, [])

@@ -26,6 +26,7 @@ function Users () {
 
   useEffect(() => {
     controllerButtonB(t('controller.buttonB.back'), () => {
+      console.log('bvack')
       navigate('/')
     })
     controllerButtonA(t('controller.buttonA.ok'), () => {

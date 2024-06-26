@@ -18,12 +18,12 @@ export const game = [
   },
 
   {
-    id: '5',
+    id: '4',
     name: 'Super Mario Maker 2',
     urlImage: 'https://th.bing.com/th/id/R.268123175c53d3ffb984dc21541eb80d?rik=J2KRXLIs3gUu6A&pid=ImgRaw&r=0'
   },
   {
-    id: '6',
+    id: '5',
     name: 'Animal Crossing',
     urlImage: 'https://www.mobygames.com/images/covers/l/632236-animal-crossing-new-horizons-nintendo-switch-front-cover.jpg'
   }
