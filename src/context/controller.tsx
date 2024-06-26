@@ -53,7 +53,6 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
   })
 
   const controllerButtonA: controllerButtonType = ({ text, action, route }) => {
-    console.log('🚀 ~ text:', text)
     setButtonA({
       text: t(text),
       onClick: () => {

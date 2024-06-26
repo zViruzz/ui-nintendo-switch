@@ -47,13 +47,17 @@ function Setting () {
           <SettingIcon width={79} height={79} />
           <h2>Configuracion de la consola</h2>
         </div>
-        <div className='w-full h-[1px] bg-[#ffffff] shrink-0'/>
+        <div className='w-full h-[1px] bg-[#ffffff] shrink-0' />
       </header>
       <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
         <OptionList options={options} />
       </nav>
+
       <section className='pr-12 overflow-auto scrollbar-hide '>
-        <div className='px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'>
+        <div
+          tabIndex={-1}
+          className='section-focus focus:outline-none px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'
+        >
           <Outlet />
         </div>
       </section>

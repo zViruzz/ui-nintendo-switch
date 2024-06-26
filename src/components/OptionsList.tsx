@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useControllerContext } from '../context/controller'
 
 interface Option {
   name: string
@@ -10,6 +11,8 @@ interface OptionListProps {
 }
 
 function OptionList ({ options }: OptionListProps) {
+  const { controllerButtonA } = useControllerContext()
+
   const location = useLocation()
   const currentUrl = `/${location.pathname.split('/').pop()}`
   const pathParent = `/${location.pathname.split('/')[1]}`
@@ -22,6 +25,13 @@ function OptionList ({ options }: OptionListProps) {
 
   const handleFocusLink = (path: string) => {
     navigate(`${pathParent}${path}`)
+    controllerButtonA({
+      text: 'controller.buttonA.ok',
+      action: () => {
+        const section = document.querySelector('.section-focus')
+        if (section instanceof HTMLDivElement) section.focus()
+      }
+    })
   }
 
   return (
