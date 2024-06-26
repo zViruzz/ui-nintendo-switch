@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
 
-export default function News () {
+export default function Album () {
   const { controllerButtonB } = useControllerContext()
 
   useEffect(() => {

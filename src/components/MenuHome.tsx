@@ -5,7 +5,7 @@ import ControllerIcon from './icons/ControllerIcon'
 import PowerIcon from './icons/PowerIcon'
 import GalleryIcon from './icons/GalleryIcon'
 import ShoppingBagIcon from './icons/ShoppingBagIcon'
-import ChatIcon from './icons/ChatIcon'
+import NewsIcon from './icons/NewsIcon'
 // import huhSound from '../assets/huh.mp3'
 import { useTranslation } from 'react-i18next'
 import { useControllerContext } from '../context/controller'
@@ -16,17 +16,17 @@ function MenuHome () {
   return (
     <nav className='w-full h-full '>
       <ul className='flex  justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
-        <ButtonMenu router='setting' text={t('home.menu.news')}>
-          <ChatIcon width={75} height={75} />
+        <ButtonMenu router='news' text={t('home.menu.news')}>
+          <NewsIcon width={75} height={75} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text={t('home.menu.eshop')}>
+        <ButtonMenu router='eshop' text={t('home.menu.eshop')}>
           <ShoppingBagIcon width={70} height={70} />
         </ButtonMenu>
-        <ButtonMenu router='setting' text={t('home.menu.album')}>
+        <ButtonMenu router='album' text={t('home.menu.album')}>
           <GalleryIcon width={75} height={75} />
         </ButtonMenu>
 
-        <ButtonMenu router='setting' text={t('home.menu.controllers')}>
+        <ButtonMenu router='controllers' text={t('home.menu.controllers')}>
           <ControllerIcon width={83} height={83} />
         </ButtonMenu>
         <ButtonMenu router='setting' text={t('home.menu.settings')}>

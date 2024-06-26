@@ -18,7 +18,7 @@ import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
-import { EditIcon, Setting, Users, News } from './pages'
+import { EditIcon, Setting, Users, News, Eshop, Album, Controllers } from './pages'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
@@ -43,6 +43,18 @@ const router = createBrowserRouter([
       {
         path: '/news',
         element: <News />
+      },
+      {
+        path: '/eshop',
+        element: <Eshop />
+      },
+      {
+        path: '/album',
+        element: <Album />
+      },
+      {
+        path: '/controllers',
+        element: <Controllers />
       },
       {
         path: '/users',
