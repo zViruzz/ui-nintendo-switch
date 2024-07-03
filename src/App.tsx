@@ -3,17 +3,20 @@ import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
 import { ControllerProvider } from './context/controller'
 import WelcomeMmessage from './components/WelcomeMmessage'
+import { AnimatePresence } from 'framer-motion'
 
 function App () {
   return (
     <>
-      <ControllerProvider>
+      <AnimatePresence>
+        <ControllerProvider>
           <main>
-          <WelcomeMmessage/>
-          <Outlet />
-        </main>
-        <Footer />
-      </ControllerProvider>
+            <WelcomeMmessage />
+            <Outlet />
+          </main>
+          <Footer />
+        </ControllerProvider>
+      </AnimatePresence>
     </>
   )
 }

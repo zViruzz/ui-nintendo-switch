@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Outlet } from 'react-router-dom'
 import SettingIcon from '../../components/icons/SettingIcon'
 import OptionList from '../../components/OptionsList'
@@ -41,7 +42,14 @@ function Setting () {
   }, [])
 
   return (
-    <div className="grid grid-rows-[1fr_7.5fr]   grid-cols-[38.3rem_1fr] h-full w-full pt-5">
+    <motion.div
+      className='grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
+
       <header className="col-span-2 px-12 flex justify-between flex-col">
         <div className='flex items-center text-[3rem] w-full h-full px-[3rem] gap-4'>
           <SettingIcon width={79} height={79} />
@@ -54,14 +62,15 @@ function Setting () {
       </nav>
 
       <section className='pr-12 overflow-auto scrollbar-hide '>
-        <div
+          <div
           tabIndex={-1}
           className='section-focus focus:outline-none px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'
         >
           <Outlet />
-        </div>
+          </div>
       </section>
-    </div>
+    </motion.div>
+
   )
 }
 

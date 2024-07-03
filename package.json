@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "2.2.3",
+    "framer-motion": "^11.2.12",
     "i18next": "^23.11.3",
     "i18next-http-backend": "^2.5.1",
     "pushin": "6.0.1",
