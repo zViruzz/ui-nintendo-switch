@@ -19,6 +19,7 @@ import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
 import { EditIcon, Setting, Users, News, Eshop, Album, Controllers } from './pages'
+import { ControllersRoot } from './pages/Controllers/ControllersRoot/ControllersRoot.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
@@ -54,7 +55,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/controllers',
-        element: <Controllers />
+        element: <Controllers />,
+        children: [
+          {
+            path: '/controllers',
+            element: <ControllersRoot/>
+          },
+          {
+            path: '/controllers/find-controllers',
+            element: <div>Cooming soon</div>
+          },
+          {
+            path: '/controllers/new-controllers',
+            element: <div>Cooming soon</div>
+          }
+        ]
       },
       {
         path: '/users',
