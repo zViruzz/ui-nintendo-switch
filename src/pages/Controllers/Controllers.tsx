@@ -24,13 +24,11 @@ export default function Controllers () {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-    {/* <div className='w-full h-full grid place-content-center text-5xl'> */}
       <div className='absolute w-screen h-screen p-16 bg-[#0c1720b1] backdrop-blur-md transition-all'>
         <div className='bg-gray-message w-full h-full rounded-xl grid grid-rows-[1fr_7.5fr] grid-cols-[1fr_42rem]'>
           <Outlet />
         </div>
       </div>
-    {/* </div> */}
     </motion.div>
 
   )

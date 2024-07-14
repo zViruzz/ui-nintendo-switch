@@ -38,7 +38,7 @@ export function ControllersRoot () {
       <nav className='min-h-full pr-12 bg-gradient-to-t from-transparent from-5% via-[#4e4e4e] via-50% to-transparent to-100% text-secodary text-[2.6rem]'>
         <ul className='h-full w-full pl-12 pt-10 flex flex-col justify-evenly hover:[&>li>a]:bg-[#252d328a] focus-visible:[&>li>a]:bg-[#252d328a] [&>li>a]:outline-wiggle-focus [&>li]:w-full [&>li]:h-[7.4rem] [&>li>a]:w-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-5'>
           <li>
-            <Link to='/controllers'>
+            <Link to='/change-grip-or-order'>
               Change Grid/Order
             </Link>
           </li>
