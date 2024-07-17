@@ -18,7 +18,7 @@ import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
-import { EditIcon, Setting, Users, News, Eshop, Album, Controllers, ChangeGripOrOrder } from './pages'
+import { EditIcon, Setting, Users, News, Eshop, Album, Controllers, ChangeGripOrOrder, FindControllers, NewControllers } from './pages'
 import { ControllersRoot } from './pages/Controllers/ControllersRoot/ControllersRoot.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/change-grip-or-order',
-        element: <ChangeGripOrOrder/>
+        element: <ChangeGripOrOrder />
       },
       {
         path: '/controllers',
@@ -63,15 +63,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: '/controllers',
-            element: <ControllersRoot/>
+            element: <ControllersRoot />
           },
           {
             path: '/controllers/find-controllers',
-            element: <div>Cooming soon</div>
+            element: <FindControllers />
           },
           {
             path: '/controllers/new-controllers',
-            element: <div>Cooming soon</div>
+            element: <NewControllers />
           }
         ]
       },
