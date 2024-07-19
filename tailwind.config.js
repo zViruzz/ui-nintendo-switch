@@ -8,6 +8,7 @@ export default {
     extend: {
       gridTemplateColumns: {
         'res': 'repeat(auto-fill, minmax(20rem, 1fr))',
+        'res-controllers': 'repeat(auto-fill, minmax(min(100%, 14rem), 1fr))',
       },
       content: {
         'home': 'url("/src/assets/home.svg")',
@@ -17,7 +18,7 @@ export default {
       },
       boxShadow: {
         'Nbutton': '0px 0px 8px 5px rgb(0 0 0 / 0.1)',
-        'button': '0px 2px 4px 1px rgba(0,0,0,0.75)',
+        'button': '0px 2px 4px 1px rgba(0,0,0,0.40)',
       },
       colors: {
         'gray-message': '#484848',
@@ -28,6 +29,7 @@ export default {
         primary: '#2d2d2d',
         secodary: '#00ffc9',
         blueHight: '#1f2227',
+        blueHightTransparent: '#1f222794',
         outlineEffect1: '#15bffd',
         outlineEffect2: '#71ffe0',
       },

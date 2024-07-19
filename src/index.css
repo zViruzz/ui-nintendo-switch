@@ -22,7 +22,7 @@
   .outline-wiggle {
     @apply outline-[#15bffd] hover:outline outline-[7px] hover:animate-wiggle rounded-[1px];
   }
-  
+
   .outline-wiggle-focus {
     @apply outline-[#15bffd] focus-visible:outline outline-[7px] focus-visible:animate-wiggle rounded-[1px] hover:animate-wiggle hover:outline;
   }

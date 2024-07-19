@@ -6,7 +6,7 @@ import BatteryIcon from '../../../components/icons/BatteryIcon'
 
 export function ControllersRoot () {
   return (
-    <>
+    <div className='w-full h-full grid grid-rows-[1fr_7.5fr] grid-cols-[1fr_42rem]'>
       <Header>
         <ControllerIcon width={83} height={83} />
         <h2>Controllers</h2>
@@ -59,6 +59,6 @@ export function ControllersRoot () {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   )
 }
