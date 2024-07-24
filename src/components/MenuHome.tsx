@@ -14,8 +14,11 @@ function MenuHome () {
   const { t } = useTranslation()
 
   return (
-    <nav className='w-full h-full '>
-      <ul className='flex  justify-center mx-auto w-[61rem] grid-rows-1 gap-5'>
+    <nav className='w-full h-full'>
+      <ul className='flex justify-center w-full gap-[1.7%]'>
+        <ButtonMenu router='news' text={t('home.menu.news')}>
+          <NewsIcon width={75} height={75} />
+        </ButtonMenu>
         <ButtonMenu router='news' text={t('home.menu.news')}>
           <NewsIcon width={75} height={75} />
         </ButtonMenu>
@@ -64,7 +67,7 @@ function ButtonMenu ({ children, router, text }: { children: ReactNode, router: 
       className='ButtonMenu text-[#15bffd]  text-center text-[2.5rem]  relative group cursor-pointer'
     >
 
-      <div className='bg-[#505050] w-full h-full  rounded-full grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline group-focus-within:outline  group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'>
+      <div className='bg-[#505050] w-full h-full rounded-full grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline group-focus-within:outline group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'>
         <Link
           onFocus={handleFocus}
           className='h-full w-full rounded-full group-focus-within:outline-none' to={router}>

@@ -1,5 +1,5 @@
 .TransitionOpacitySlide {
-	animation: cardTransitionText 0.3s ease-in-out;
+  animation: cardTransitionText 0.3s ease-in-out;
 }
 
 @keyframes cardTransitionText {
@@ -27,6 +27,11 @@
   .ButtonMenu {
     width: 7.1rem;
     height: 7.1rem;
+  }
+
+  .ButtonMenu svg {
+    width: 4.1rem;
+    height: 4.1rem;
   }
 }
 
