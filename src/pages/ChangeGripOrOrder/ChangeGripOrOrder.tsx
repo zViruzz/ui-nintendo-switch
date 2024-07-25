@@ -3,7 +3,11 @@ import { motion } from 'framer-motion'
 import { useControllerContext } from '../../context/controller'
 
 export default function ChangeGripOrOrder () {
-  const { controllerButtonB } = useControllerContext()
+  const { controllerButtonB, buttonB } = useControllerContext()
+
+  const handleClickB = () => {
+    buttonB.onClick()
+  }
 
   useEffect(() => {
     controllerButtonB({
@@ -37,8 +41,19 @@ export default function ChangeGripOrOrder () {
         <div className='flex justify-center items-center'>Pres when youre ready</div>
 
       </div>
-      <div></div>
-
+      <div className='flex justify-end px-[3.5%] text-4xl [&>button]:flex [&>button]:justify-center [&>button]:items-center [&>button]:gap-[10%]'>
+        <button>controller not connecting</button>
+        <button>{'(Hold) Search'}</button>
+        <button
+          className=' w-[10%]'
+          onClick={handleClickB}
+        >
+          <div className="bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] ">
+            B
+          </div>
+          Back
+        </button>
+      </div>
     </motion.div>
 
   )

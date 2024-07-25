@@ -1,3 +1,4 @@
+import '@fontsource/roboto/500.css'
 import WifiIcon from './icons/WifiIcon'
 import BatteryIcon from './icons/BatteryIcon'
 import { getDate } from '../utils/getDate'

@@ -12,9 +12,9 @@ function Footer () {
   }
 
   return (
-    <footer className="mx-12 divide-y border-t">
+    <footer className="mx-[2.5%] border-t-2">
 
-      <div className='flex justify-between items-center h-full px-8'>
+      <div className='flex justify-between items-center h-full px-[1.8%]'>
 
         <div>
           <NSwitchIcon width={100} height={60} />
@@ -24,6 +24,7 @@ function Footer () {
             buttonB.text === ''
               ? null
               : <button
+                id='buttonB'
                 className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-none'
                 onClick={handleButtonBClick}
               >
@@ -40,6 +41,7 @@ function Footer () {
             buttonA.text === ''
               ? null
               : <button
+                id='buttonA'
                 className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-none'
                 onClick={handleButtonAClick}
               >

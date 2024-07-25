@@ -1,4 +1,5 @@
 import './global.css'
+import '@fontsource/roboto'
 import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
 import { ControllerProvider } from './context/controller'

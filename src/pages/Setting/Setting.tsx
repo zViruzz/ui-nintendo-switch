@@ -5,6 +5,7 @@ import OptionList from '../../components/OptionsList'
 import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
 import { useTranslation } from 'react-i18next'
+import Header from '../../components/Header'
 
 function Setting () {
   const { controllerButtonB } = useControllerContext()
@@ -43,31 +44,29 @@ function Setting () {
 
   return (
     <motion.div
-      className='grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5'
+      className='grid grid-rows-[1fr_7.5fr] grid-cols-[1fr_2.12fr] h-full w-full pt-[1.1%]'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
 
-      <header className="col-span-2 px-12 flex justify-between flex-col">
-        <div className='flex items-center text-[3rem] w-full h-full px-[3rem] gap-4'>
-          <SettingIcon width={79} height={79} />
-          <h2>Configuracion de la consola</h2>
-        </div>
-        <div className='w-full h-[1px] bg-[#ffffff] shrink-0' />
-      </header>
-      <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
+      <Header>
+        <SettingIcon className='xl:w-[79px] xl:h-[79px] w-[59px] h-[59px]' />
+        <h2 className='xl:text-5xl lg:text-4xl md:text-4xl text-3xl'>Configuracion de la consola</h2>
+      </Header>
+
+      <nav className="pl-24 min-h-full bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">
         <OptionList options={options} />
       </nav>
 
-      <section className='pr-12 overflow-auto scrollbar-hide '>
-          <div
+      <section className='pr-12 overflow-auto scrollbar-hide'>
+        <div
           tabIndex={-1}
-          className='section-focus focus:outline-none px-[5.75rem] py-[4.2rem] text-4xl text-[2.1rem] leading-normal'
+          className='section-focus focus:outline-none px-[5.75rem] py-[4.2rem] text-[2.1rem] leading-normal'
         >
           <Outlet />
-          </div>
+        </div>
       </section>
     </motion.div>
 

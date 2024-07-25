@@ -5,7 +5,7 @@ export function DataManagement () {
     <div className="h-full w-full">
       <div className="grid grid-cols-2 px-3 gap-[4.8rem]">
         <div>
-          <h4>Memoria de consola</h4>
+          <h4 className='text-4xl leading-normal'>Memoria de consola</h4>
           <div className=" w-full h-6 rounded-sm border-2 p-[3px]">
             <div className="bg-white w-2/3 h-full"></div>
           </div>

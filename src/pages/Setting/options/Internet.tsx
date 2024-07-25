@@ -16,7 +16,7 @@ export function Internet () {
         </div>
 
         <div>
-          <div className='bg-table p-5 flex justify-between'>
+          <div className='bg-table p-7 flex justify-between xl:text-4xl  text-3xl'>
             <span>
               Estado del a conexión
             </span>

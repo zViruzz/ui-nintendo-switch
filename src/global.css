@@ -46,3 +46,15 @@
     height: 4.1rem;
   }
 }
+
+@media (max-height: 800px) {
+  .ButtonMenu {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .ButtonMenu svg {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+}
