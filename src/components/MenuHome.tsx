@@ -16,9 +16,9 @@ function MenuHome () {
   return (
     <nav className='w-full h-full'>
       <ul className='flex justify-center w-full gap-[1.7%]'>
-        <ButtonMenu router='news' text={t('home.menu.news')}>
+        {/* <ButtonMenu router='news' text={t('home.menu.news')}>
           <NewsIcon width={75} height={75} />
-        </ButtonMenu>
+        </ButtonMenu> */}
         <ButtonMenu router='news' text={t('home.menu.news')}>
           <NewsIcon width={75} height={75} />
         </ButtonMenu>
