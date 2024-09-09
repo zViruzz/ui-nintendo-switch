@@ -18,7 +18,8 @@ function Home () {
   return (
     <>
       <motion.section
-        className='grid grid-rows-[1fr_3fr_1.15fr] h-full w-full'
+        // className='grid grid-rows-[1fr_3fr_1.15fr] h-full w-full'
+        className='grid grid-rows-[1fr_3fr_1.85fr] h-screen w-screen '
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
