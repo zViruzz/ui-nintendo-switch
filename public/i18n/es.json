@@ -42,5 +42,32 @@
   "users.profile.offline": "Sin conexión",
   "users.profile.friend-code": "Clave de amigo",
   "users.profile.play-activity": "Historial de juego",
-  "users.profile.playerd-time": "He jugado {{time}} horas o mas"
+  "users.profile.playerd-time": "He jugado {{time}} horas o mas",
+
+  "users.user-setting.profile-settings": "Configuracion de perfil",
+  "users.user-setting.nickname": "Apodo",
+  "users.user-setting.edit-icon": "Cambiar icono",
+  "users.user-setting.play-activity-setting": "actividad de juegos configuracion",
+
+  "users.user-setting.nintendo-account": "Cuenta de nintendo",
+  "users.user-setting.nintendo-account.option1": "chekear tu informacion de cuenta",
+  "users.user-setting.nintendo-account.option2": "code qr", 
+
+  "users.user-setting.nintendo-switch-ol": "Nintendo Switch Online",
+  "users.user-setting.nintendo-switch-ol.option1": "Revisar suscripcion",
+
+  "users.user-setting.nintendo-eshop": "Nintendo eShop",
+  "users.user-setting.nintendo-eshop.option1": "Configuracion de Nintendo eShop ",
+  "users.user-setting.nintendo-eshop.description": "Compruebe sus métodos de pago, el software que puede volver a descargar y mucho más.",
+  "users.user-setting.nintendo-eshop.option2": "Actualizar el progreso de la descarga",
+
+  "users.user-setting.friend-functions": "Funciones de amigo",
+  "users.user-setting.friend-functions.option1": "Configuracion de amigos",
+  "users.user-setting.friend-functions.option2": "Gestionar la lista de usuarios bloqueados",
+
+  "users.user-setting.album": "Album",
+  "users.user-setting.album.option1": "Publicar en las redes sociales",
+
+  "users.user-setting.user-support": "Asistencia al usuario",
+  "users.user-setting.user-support.option1": "Número de atención al cliente"
 }

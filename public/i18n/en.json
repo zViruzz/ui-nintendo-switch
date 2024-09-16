@@ -42,5 +42,32 @@
   "users.profile.offline": "Offline",
   "users.profile.friend-code": "Firend code",
   "users.profile.play-activity": "Play Activity",
-  "users.profile.playerd-time": "Played for {{time}} hours or more"
+  "users.profile.playerd-time": "Played for {{time}} hours or more",
+
+  "users.user-setting.profile-settings": "Profile Settings",
+  "users.user-setting.nickname": "Nickname",
+  "users.user-setting.edit-icon": "Edit Icon",
+  "users.user-setting.play-activity-setting": "Play Activity Settings",
+
+  "users.user-setting.nintendo-account": "Nintendo Account",
+  "users.user-setting.nintendo-account.option1": "Check Your Account Information",
+  "users.user-setting.nintendo-account.option2": "Display Qr Code To Check In",
+
+  "users.user-setting.nintendo-switch-ol": "Nintendo Switch Online",
+  "users.user-setting.nintendo-switch-ol.option1": "Check Your Subscription",
+
+  "users.user-setting.nintendo-eshop": "Nintendo eShop",
+  "users.user-setting.nintendo-eshop.option1": "Nintendo eShop Settings",
+  "users.user-setting.nintendo-eshop.description": "Check your payment methods, redownloadable software, and more.",
+  "users.user-setting.nintendo-eshop.option2": "Update Download Progress",
+
+  "users.user-setting.friend-functions": "Friend Functions",
+  "users.user-setting.friend-functions.option1": "Friend Settings",
+  "users.user-setting.friend-functions.option2": "Manage Blocked-User List",
+
+  "users.user-setting.album": "Album",
+  "users.user-setting.album.option1": "Posting to Social Media",
+
+  "users.user-setting.user-support": "User Support",
+  "users.user-setting.user-support.option1": "Number for Customer Support"
 }

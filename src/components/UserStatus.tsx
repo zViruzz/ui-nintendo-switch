@@ -14,7 +14,7 @@ function UserStatus () {
       <div className='group relative'>
         <Link
           to='users/profile'
-          className='group-focus-within:outline-wiggle-focus group-focus-within:block group-focus-within:rounded-full group-hover:outline-wiggle-focus group-hover:block group-hover:rounded-full'
+          className='group-focus-within:outline-wiggle-focus group-focus-within:block group-focus-within:rounded-full group-hover:outline-wiggle-focus group-hover:block group-hover:rounded-full group-hover:outline group-hover:animate-wiggle'
         >
           <CharacterProfile className='border-zinc-700 border-4 rounded-full shadow-Nbutton w-[6.3rem]' />
         </Link>
