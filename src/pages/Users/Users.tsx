@@ -45,9 +45,9 @@ function Users () {
     >
 
       {/* <div className="grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5"> */}
-        <Header>
+      <Header title={`Pagina de ${user.username}`}>
           <CharacterProfile className='w-20 h-20 rounded-full' />
-          <h2>Pagina de {user.username}</h2>
+          {/* <h2>Pagina de {user.username}</h2> */}
         </Header>
 
         <nav className="pl-24 min-h-full  bg-gradient-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%">

@@ -64,7 +64,7 @@ function EditName ({ isHidden, setIsHidden }: Props) {
   return (
     <div
       ref={containerRef}
-      className={`${isHidden ? 'invisible ' : 'visible backdrop-blur-md bg-[#00000090]'}  ease-in-out transition-all w-screen h-screen  absolute top-0 left-0  grid grid-rows-3  `}
+      className={`${isHidden ? 'invisible ' : 'visible backdrop-blur-md bg-[#00000090]'}  ease-in-out transition-all w-screen h-screen  absolute top-0 left-0  grid grid-rows-3 z-50`}
     >
 
       <div className='ml-48 mt-20 text-4xl'>

@@ -5,6 +5,7 @@ import Header from '../../components/Header'
 import CharacterProfile from '../../components/CharacterProfile'
 import PanelCharacter from '../../components/PanelCharacter'
 import PanelColors from '../../components/PanelColors'
+import OpacityPageTransition from '../../components/transitions/OpacityPageTransition'
 
 function EditIcon () {
   const dispatch = useDispatch()
@@ -30,59 +31,63 @@ function EditIcon () {
   }
 
   return (
-    <div className="grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5 relative">
-      <Header className={`${isHiddenCharacter ? 'opacity-100 delay-100' : 'opacity-0'} ease-in-out transition-opacity `}>
-        <h2>Diseño del icono</h2>
-      </Header>
+    <OpacityPageTransition>
 
-      <section className='grid grid-cols-[1fr_45%] w-screen text-[40px]'>
+      <div className="grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5 relative">
+        <Header className={`${isHiddenCharacter ? 'opacity-100 delay-100' : 'opacity-0'} ease-in-out transition-opacity `}>
+          <h2>Diseño del icono</h2>
+        </Header>
 
-        <div className='ml-12'>
-          <div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px_]'>
-            <button
-              onClick={handleClickCharacter}
-              className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
-            >
-              Personaje/Mii
-            </button>
-            <button
-              onClick={handleClickBackground}
-              className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
-            >
-              Fondo
-            </button>
-            <div className='w-full flex justify-center items-center'>
+        <section className='grid grid-cols-[1fr_45%] w-screen text-[40px]'>
+
+          <div className='ml-12'>
+            <div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px_]'>
               <button
-              className='bg-[#01ffc9] outline-wiggle-focus outline-offset-2 text-black rounded-lg h-32 w-[63%]'
-              onClick={() => {
-                history.back()
-              }}
+                onClick={handleClickCharacter}
+                className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
               >
-                Aceptar
+                Personaje/Mii
               </button>
+              <button
+                onClick={handleClickBackground}
+                className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
+              >
+                Fondo
+              </button>
+              <div className='w-full flex justify-center items-center'>
+                <button
+                  className='bg-[#01ffc9] outline-wiggle-focus outline-offset-2 text-black rounded-lg h-32 w-[63%]'
+                  onClick={() => {
+                    history.back()
+                  }}
+                >
+                  Aceptar
+                </button>
+              </div>
+
+              {/* ------------ */}
+              <PanelCharacter
+                isHiddenCharacter={isHiddenCharacter}
+                handleClickOutside={handleClickOutside}
+                handleClickAction={actionCharacter}
+              />
+              <PanelColors
+                handleClickAction={actionColor}
+                handleClickOutside={handleClickOutside}
+                isHiddenBackground={isHiddenBackground}
+              />
+              {/* ------------ */}
             </div>
-
-            {/* ------------ */}
-            <PanelCharacter
-              isHiddenCharacter={isHiddenCharacter}
-              handleClickOutside={handleClickOutside}
-              handleClickAction={actionCharacter}
-            />
-            <PanelColors
-              handleClickAction={actionColor}
-              handleClickOutside={handleClickOutside}
-              isHiddenBackground={isHiddenBackground}
-            />
-            {/* ------------ */}
           </div>
-        </div>
 
-        <div className=' flex justify-center py-[18%]'>
-          <CharacterProfile className='h-[23.7rem] w-[23.7rem]' />
-        </div>
-      </section>
+          <div className=' flex justify-center py-[18%]'>
+            <CharacterProfile className='h-[23.7rem] w-[23.7rem]' />
+          </div>
+        </section>
 
-    </div>
+      </div>
+    </OpacityPageTransition >
+
   )
 }
 

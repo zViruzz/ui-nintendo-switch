@@ -1,4 +1,6 @@
 export * from './EditIcon'
+export * from './PlayActivitySettings'
+
 export * from './Setting'
 export * from './News'
 export * from './Eshop'
