@@ -4,6 +4,7 @@ import MenuHome from '../components/MenuHome'
 import ViewGame from '../components/ViewGame'
 import { useControllerContext } from '../context/controller'
 import { useEffect } from 'react'
+
 function Home () {
   const { controllerButtonB, controllerButtonA } = useControllerContext()
   useEffect(() => {

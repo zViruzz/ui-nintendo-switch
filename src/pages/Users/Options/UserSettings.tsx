@@ -7,15 +7,18 @@ import Subheading from '../../../components/layouts/Subheading'
 import { useState } from 'react'
 import EditName from '../../../components/EditName'
 import { Link } from 'react-router-dom'
+import QrMessage from '../../../components/QrMessage'
 
 export function UserSettings () {
   const [isHiddenEditName, setIsHiddenEditName] = useState(true)
+  const [isHiddenQrMessage, setIsHiddenQrMessage] = useState(true)
   const { t } = useTranslation()
   const { username, email } = useAppSelector((state) => state.user)
 
   return (
     <ListPageTransition>
       <EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
+      <QrMessage/>
 
       <div>
         <div className='mb-28'>
@@ -66,7 +69,14 @@ export function UserSettings () {
           <SelectionSetting className='border-y border-gray flex justify-between' >
             {t('users.user-setting.nintendo-account.option1')}
           </SelectionSetting>
-          <SelectionSetting className='border-b border-gray flex justify-between' >
+          <SelectionSetting
+            className='border-b border-gray flex justify-between'
+            as='button'
+            onClick={() => {
+              console.log('qr')
+              setIsHiddenQrMessage(false)
+            }}
+            >
             {t('users.user-setting.nintendo-account.option2')}
           </SelectionSetting>
         </div>

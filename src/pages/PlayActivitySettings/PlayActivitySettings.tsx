@@ -7,7 +7,9 @@ export default function PlayActivitySettings () {
     <OpacityPageTransition>
       <PageBasicLayout>
         <Header title='Play activity setting'/>
-
+        <div>
+          Coming soon
+        </div>
       </PageBasicLayout>
     </OpacityPageTransition>
   )

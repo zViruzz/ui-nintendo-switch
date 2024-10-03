@@ -34,13 +34,6 @@
   }
 }
 
-button {
-  background-color: black;
-  padding: 12px;
-  border: solid 1px #242424;
-  border-radius: 10px;
-}
-
 #root {
   display: grid;
   height: 100vh;
