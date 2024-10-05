@@ -72,6 +72,7 @@ export default function TrendingView() {
 				<button
 					onClick={handleClickPrev}
 					className='rounded-full bg-transparent border-none p-7 active:bg-secodary/20 transition-colors'
+					type='button'
 				>
 					<ArrowIcon className='w-[3.7rem] h-[3.7rem]' />
 				</button>
@@ -93,11 +94,12 @@ export default function TrendingView() {
 								{title}
 							</h2>
 							<button
+								id={id}
+								className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'
+								type='button'
 								onClick={() => {
 									console.log('asdasdasdasdasd')
 								}}
-								id={id}
-								className='w-full h-[6.5rem] bg-[#515151] outline-wiggle-focus shadow-button'
 							>
 								Start
 							</button>
@@ -136,6 +138,7 @@ export default function TrendingView() {
 				<button
 					onClick={handleClickNext}
 					className='rounded-full bg-transparent border-none p-7 active:bg-secodary/20 transition-colors rotate-180'
+					type='button'
 				>
 					<ArrowIcon className='w-[3.7rem] h-[3.7rem]' />
 				</button>

@@ -36,6 +36,7 @@ export function Profile() {
 							onClick={() => {
 								setIsHiddenEditName(false)
 							}}
+							type='button'
 						>
 							<h1>{username}</h1>
 							<PencilIcon
@@ -80,6 +81,7 @@ export function Profile() {
 							<button
 								key={id}
 								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left'
+								type='button'
 							>
 								<img src={urlImage} className='w-32 h-32' />
 								<div className='flex flex-col gap-5'>

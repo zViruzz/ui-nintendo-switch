@@ -37,6 +37,7 @@ export default function WelcomeMmessage() {
 					<button
 						onClick={handleClick}
 						className='bg-blue-hight-focus outline-wiggle-focus focus:bg-opacity-40 hover:bg-opacity-40 bg-transparent border-0 border-t-2 border-t-white border-opacity-20 text-secodary w-full h-full rounded-sm text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75'
+						type='button'
 					>
 						OK
 					</button>

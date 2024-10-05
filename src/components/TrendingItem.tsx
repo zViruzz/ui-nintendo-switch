@@ -13,6 +13,7 @@ export default function TrendingItem({ id, url, title }: Props) {
 			<div className=' text-neutral-400 text-2xl text-center mb-10'>
 				<button
 					className='outline-wiggle-focus outline-offset-[3px] bg-transparent p-0'
+					type='button'
 					onClick={() => {
 						selectionTrending({ id, title, url })
 						setTimeout(() => {

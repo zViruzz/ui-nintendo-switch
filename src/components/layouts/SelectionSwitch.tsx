@@ -17,6 +17,7 @@ function SelectionSwitch({ children, className }: Props) {
 			<SelectionSetting tabIndex={-1} className={className}>
 				<button
 					className='bg-transparent border-transparent flex justify-between items-center w-full h-full px-5 outline-wiggle-focus focus-visible:bg-blueHight'
+					type='button'
 					onClick={handleClick}
 				>
 					<div>{children}</div>

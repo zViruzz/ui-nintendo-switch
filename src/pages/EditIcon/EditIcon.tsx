@@ -52,12 +52,14 @@ function EditIcon() {
 							<button
 								onClick={handleClickCharacter}
 								className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
+								type='button'
 							>
 								Personaje/Mii
 							</button>
 							<button
 								onClick={handleClickBackground}
 								className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
+								type='button'
 							>
 								Fondo
 							</button>
@@ -67,6 +69,7 @@ function EditIcon() {
 									onClick={() => {
 										history.back()
 									}}
+									type='button'
 								>
 									Aceptar
 								</button>

@@ -84,9 +84,13 @@ export default function ChangeGripOrOrder() {
 				</div>
 			</div>
 			<div className='flex justify-end px-[3.5%] text-4xl [&>button]:flex [&>button]:justify-center [&>button]:items-center [&>button]:gap-[10%]'>
-				<button>controller not connecting</button>
-				<button>{'(Hold) Search'}</button>
-				<button className=' w-[10%]' onClick={handleClickB}>
+				<button type='button'>controller not connecting</button>
+				<button type='button'>{'(Hold) Search'}</button>
+				<button
+					className=' w-[10%]'
+					onClick={handleClickB}
+					type='button'
+				>
 					<div className='bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] '>
 						B
 					</div>

@@ -22,6 +22,7 @@ function PanelColors({
 							className={
 								'aspect-square  outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'
 							}
+							type='button'
 							style={{
 								backgroundColor: color,
 							}}
