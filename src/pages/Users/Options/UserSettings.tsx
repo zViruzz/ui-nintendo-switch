@@ -15,10 +15,17 @@ export function UserSettings () {
   const { t } = useTranslation()
   const { username, email } = useAppSelector((state) => state.user)
 
+  const onToggleHiddenQrMessage = () => {
+    setIsHiddenQrMessage(prev => !prev)
+  }
+
   return (
     <ListPageTransition>
       <EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
-      <QrMessage/>
+      <QrMessage
+        isHidden={isHiddenQrMessage}
+        onClickClose={onToggleHiddenQrMessage}
+      />
 
       <div>
         <div className='mb-28'>
@@ -35,7 +42,7 @@ export function UserSettings () {
             <div>{t('users.user-setting.nickname')}</div>
             <div
               className='text-secodary bg-transparent p-0'
-              >
+            >
               {username}
             </div>
           </SelectionSetting>
@@ -74,9 +81,9 @@ export function UserSettings () {
             as='button'
             onClick={() => {
               console.log('qr')
-              setIsHiddenQrMessage(false)
+              onToggleHiddenQrMessage()
             }}
-            >
+          >
             {t('users.user-setting.nintendo-account.option2')}
           </SelectionSetting>
         </div>
