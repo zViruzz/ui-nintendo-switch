@@ -1,95 +1,94 @@
 .dialogue-cloud {
-  position: relative;
-  color: white;
-  background-color: #1e2224;
-  border: 3px solid #595959;
-  border-radius: 15px;
-  max-width: 100%;
-  height: 100%;
+	position: relative;
+	color: white;
+	background-color: #1e2224;
+	border: 3px solid #595959;
+	border-radius: 15px;
+	max-width: 100%;
+	height: 100%;
 }
 
 .dialogue-cloud:after,
 .dialogue-cloud:before {
-  content: '';
-  position: absolute;
-  left: -18px;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 20px solid transparent;
+	content: "";
+	position: absolute;
+	left: -18px;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
 }
 
 .dialogue-cloud:after {
-  border-right-color: #1e2224;
-  border-left: 0;
-  margin-top: -22px;
+	border-right-color: #1e2224;
+	border-left: 0;
+	margin-top: -22px;
 }
 
 .dialogue-cloud:before {
-  border-right-color: #595959;
-  border-left: 0;
-  margin-top: -22px;
-  margin-left: -4px;
+	border-right-color: #595959;
+	border-left: 0;
+	margin-top: -22px;
+	margin-left: -4px;
 }
 
-
 .TransitionOpacitySlide {
-  animation: cardTransitionText 0.3s ease-in-out;
+	animation: cardTransitionText 0.3s ease-in-out;
 }
 
 @keyframes cardTransitionText {
-  0% {
-    opacity: 0;
-    transform: translateX(3rem);
-  }
+	0% {
+		opacity: 0;
+		transform: translateX(3rem);
+	}
 
-  50% {
-    opacity: 0.5;
-    transform: translateX(0);
-  }
+	50% {
+		opacity: 0.5;
+		transform: translateX(0);
+	}
 
-  100% {
-    opacity: 1;
-  }
+	100% {
+		opacity: 1;
+	}
 }
 
 .ButtonMenu {
-  width: 8.1rem;
-  height: 8.1rem;
+	width: 8.1rem;
+	height: 8.1rem;
 }
 
 @media (max-height: 1000px) {
-  .ButtonMenu {
-    width: 7.1rem;
-    height: 7.1rem;
-  }
+	.ButtonMenu {
+		width: 7.1rem;
+		height: 7.1rem;
+	}
 
-  .ButtonMenu svg {
-    width: 4.1rem;
-    height: 4.1rem;
-  }
+	.ButtonMenu svg {
+		width: 4.1rem;
+		height: 4.1rem;
+	}
 }
 
 @media (max-height: 900px) {
-  .ButtonMenu {
-    width: 6.1rem;
-    height: 6.1rem;
-  }
+	.ButtonMenu {
+		width: 6.1rem;
+		height: 6.1rem;
+	}
 
-  .ButtonMenu svg {
-    width: 4.1rem;
-    height: 4.1rem;
-  }
+	.ButtonMenu svg {
+		width: 4.1rem;
+		height: 4.1rem;
+	}
 }
 
 @media (max-height: 800px) {
-  .ButtonMenu {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
+	.ButtonMenu {
+		width: 5.5rem;
+		height: 5.5rem;
+	}
 
-  .ButtonMenu svg {
-    width: 3.1rem;
-    height: 3.1rem;
-  }
+	.ButtonMenu svg {
+		width: 3.1rem;
+		height: 3.1rem;
+	}
 }

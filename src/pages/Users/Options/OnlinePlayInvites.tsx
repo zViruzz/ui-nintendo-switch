@@ -1,5 +1,3 @@
-export function OnlinePlayInvites () {
-  return (
-    <div>OnlinePlayInvites</div>
-  )
+export function OnlinePlayInvites() {
+	return <div>OnlinePlayInvites</div>
 }

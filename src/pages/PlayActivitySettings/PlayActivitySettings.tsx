@@ -2,15 +2,13 @@ import Header from '../../components/Header'
 import PageBasicLayout from '../../components/layouts/PageBasicLayout'
 import OpacityPageTransition from '../../components/transitions/OpacityPageTransition'
 
-export default function PlayActivitySettings () {
-  return (
-    <OpacityPageTransition>
-      <PageBasicLayout>
-        <Header title='Play activity setting'/>
-        <div>
-          Coming soon
-        </div>
-      </PageBasicLayout>
-    </OpacityPageTransition>
-  )
+export default function PlayActivitySettings() {
+	return (
+		<OpacityPageTransition>
+			<PageBasicLayout>
+				<Header title='Play activity setting' />
+				<div>Coming soon</div>
+			</PageBasicLayout>
+		</OpacityPageTransition>
+	)
 }

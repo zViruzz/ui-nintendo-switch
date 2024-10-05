@@ -1,5 +1,3 @@
-export function Sound () {
-  return (
-    <div>Sound</div>
-  )
+export function Sound() {
+	return <div>Sound</div>
 }

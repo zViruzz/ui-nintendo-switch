@@ -1,5 +1,3 @@
-export function AddFriends () {
-  return (
-    <div>AddFriends</div>
-  )
+export function AddFriends() {
+	return <div>AddFriends</div>
 }

@@ -1,5 +1,3 @@
-export function FriendSuggestions () {
-  return (
-    <div>FriendSuggestions</div>
-  )
+export function FriendSuggestions() {
+	return <div>FriendSuggestions</div>
 }
