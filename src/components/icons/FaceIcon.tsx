@@ -7,6 +7,7 @@ const FaceIcon = (props: SVGProps<SVGSVGElement>) => (
 		viewBox='0 0 24 24'
 		width='1em'
 		height='1em'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

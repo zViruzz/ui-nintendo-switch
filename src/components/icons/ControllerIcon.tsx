@@ -8,6 +8,7 @@ const ControllerIcon = (props: SVGProps<SVGSVGElement>) => (
 		fill='none'
 		transform='rotate(45)'
 		viewBox='10 0 48 48'
+		aria-hidden='true'
 		{...props}
 	>
 		<g id='SVGRepo_bgCarrier' strokeWidth='0'></g>

@@ -5,6 +5,7 @@ const QuestionIcon = (props: SVGProps<SVGSVGElement>) => (
 		xmlns='http://www.w3.org/2000/svg'
 		fill='none'
 		viewBox='3 3 18 18'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

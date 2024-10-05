@@ -6,6 +6,7 @@ const NintendoSwitchLogoIcon = (props: SVGProps<SVGSVGElement>) => (
 		width='1em'
 		height='1em'
 		fill='none'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

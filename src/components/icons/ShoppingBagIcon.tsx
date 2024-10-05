@@ -7,6 +7,7 @@ const ShoppingBagIcon = (props: SVGProps<SVGSVGElement>) => (
 		height='1em'
 		fill='none'
 		viewBox='0 1 24 24'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

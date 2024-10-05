@@ -7,6 +7,7 @@ const SettingIcon = (props: SVGProps<SVGSVGElement>) => (
 		viewBox='2 2 20 20'
 		width='1em'
 		height='1em'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

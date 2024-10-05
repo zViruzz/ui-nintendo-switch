@@ -8,6 +8,7 @@ const BatteryIcon = (props: SVGProps<SVGSVGElement>) => (
 		fill='#fff'
 		stroke='#fff'
 		viewBox='0 0 512 512'
+		aria-hidden='true'
 		{...props}
 	>
 		<path

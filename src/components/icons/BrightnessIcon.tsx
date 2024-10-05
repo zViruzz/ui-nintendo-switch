@@ -9,6 +9,7 @@ const BrightnessIcon = (props: SVGProps<SVGSVGElement>) => (
 		fill='#fff'
 		stroke='#fff'
 		viewBox='0 0 512 512'
+		aria-hidden='true'
 		{...props}
 	>
 		<path d='M256 145.455c-60.955 0-110.545 49.591-110.545 110.545S195.045 366.545 256 366.545 366.545 316.955 366.545 256 316.955 145.455 256 145.455zM238.545 0h34.909v110.545h-34.909z' />

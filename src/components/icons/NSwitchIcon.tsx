@@ -6,6 +6,7 @@ const NSwitchIcon = (props: SVGProps<SVGSVGElement>) => (
 		viewBox='20 23 60 55'
 		width='1em'
 		height='1em'
+		aria-hidden='true'
 		{...props}
 	>
 		<path
