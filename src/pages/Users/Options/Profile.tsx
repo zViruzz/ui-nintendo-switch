@@ -83,7 +83,11 @@ export function Profile() {
 								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left'
 								type='button'
 							>
-								<img src={urlImage} className='w-32 h-32' />
+								<img
+									src={urlImage}
+									className='w-32 h-32'
+									alt={name}
+								/>
 								<div className='flex flex-col gap-5'>
 									<h4 className='text-4xl'>{name}</h4>
 									<p className='text-3xl text-description'>

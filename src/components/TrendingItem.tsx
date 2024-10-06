@@ -27,7 +27,7 @@ export default function TrendingItem({ id, url, title }: Props) {
 				>
 					<img className='' src={url} alt='Pokemon unite' />
 				</button>
-				<p></p>
+				<p />
 			</div>
 		</>
 	)

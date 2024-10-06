@@ -23,7 +23,6 @@ export default function TrendingView() {
 				text: 'controller.buttonB.back',
 				route: '/',
 			})
-
 			return
 		}
 

@@ -9,7 +9,7 @@ export function DataManagement() {
 						Memoria de consola
 					</h4>
 					<div className=' w-full h-6 rounded-sm border-2 p-[3px]'>
-						<div className='bg-white w-2/3 h-full'></div>
+						<div className='bg-white w-2/3 h-full' />
 					</div>
 					<div className='flex text-3xl text-[1.7rem] justify-between px-1 pt-4'>
 						<p>Espacio libre</p>
@@ -21,7 +21,7 @@ export function DataManagement() {
 
 				<div className='opacity-40'>
 					<h4>Tarjeta microSD</h4>
-					<div className=' w-full h-6 rounded-sm border-2 p-[3px]'></div>
+					<div className=' w-full h-6 rounded-sm border-2 p-[3px]' />
 					<div className='flex text-3xl text-[1.7rem] justify-between px-1 pt-4'>
 						<p>No se detecta la tarjeta microSD</p>
 					</div>

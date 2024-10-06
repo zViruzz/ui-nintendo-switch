@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { type CanvasHTMLAttributes, useEffect, useRef } from 'react'
 import { useAppSelector } from '../redux/hooks'
 
-function CharacterProfile(props: any) {
+function CharacterProfile({
+	...props
+}: CanvasHTMLAttributes<HTMLCanvasElement>) {
 	const { character, background } = useAppSelector(
 		(state) => state.user,
 	)

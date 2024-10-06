@@ -23,7 +23,7 @@ export function AirplaneMode() {
 						<li>
 							También podrás cambiar estos ajustes mediante la
 							configuración de acceso rápido (manten oprimido
-							<span className='after:content-home pl-[0.40rem]'></span>
+							<span className='after:content-home pl-[0.40rem]' />
 							).
 						</li>
 					</ul>

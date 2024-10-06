@@ -27,7 +27,7 @@ export default function QrMessage({ isHidden, onClickClose }: Props) {
 				]}
 			>
 				<div className='flex justify-center items-center pb-20'>
-					<div className='bg-black w-[30rem] h-[30rem]'></div>
+					<div className='bg-black w-[30rem] h-[30rem]' />
 				</div>
 			</CardMessage>
 		</>

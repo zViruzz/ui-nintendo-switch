@@ -43,8 +43,8 @@ export default function FindControllers() {
 							src={controllersRightUrl}
 							alt='controllers left url'
 						/>
-						<div></div>
-						<div></div>
+						<div />
+						<div />
 					</div>
 				</div>
 				<div />

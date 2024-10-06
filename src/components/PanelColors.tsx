@@ -34,6 +34,7 @@ function PanelColors({
 					)
 				})}
 			</SelectionGrid>
+			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 			<div onClick={handleClickOutside} />
 		</div>
 	)

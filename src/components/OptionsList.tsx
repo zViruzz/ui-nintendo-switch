@@ -41,14 +41,14 @@ function OptionList({ options }: OptionListProps) {
 					return (
 						<div
 							className='w-full h-[1px] bg-[#ffffff34] shrink-0 my-5'
-							key={index}
+							key={`${item.name}${index}`}
 						/>
 					)
 				}
 				return (
 					<Link
 						to={`${pathParent}${item.path}`}
-						key={index}
+						key={`${item.name}${index}`}
 						onFocus={() => {
 							handleFocusLink(item.path)
 						}}
