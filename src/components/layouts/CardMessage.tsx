@@ -1,4 +1,9 @@
-import type { HTMLAttributes, ReactNode } from 'react'
+import {
+	type HTMLAttributes,
+	type ReactNode,
+	useEffect,
+	useRef,
+} from 'react'
 
 interface ButtonMessageType {
 	label: string
@@ -19,12 +24,30 @@ export default function CardMessage({
 	column = true,
 	...otherProps
 }: Props) {
+	const modalRef = useRef<HTMLDivElement>(null)
+	useEffect(() => {
+		const disableTabbingBehind = (disable: boolean) => {
+			const focusableElements = document.querySelectorAll(
+				'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+			)
+			for (const element of focusableElements) {
+				if (!modalRef.current?.contains(element)) {
+					;(element as HTMLElement).setAttribute(
+						'tabIndex',
+						disable ? '-1' : '0',
+					)
+				}
+			}
+		}
+		disableTabbingBehind(!hiddenMessage)
+	}, [hiddenMessage])
+
 	return (
 		<div
 			className={`${hiddenMessage ? 'invisible opacity-0' : 'visible'} absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all top-0 left-0`}
-			onBlur={() => {
-				console.log('out')
-			}}
+			ref={modalRef}
+			id='card-message'
+			tabIndex={-1}
 			{...otherProps}
 		>
 			<div className='bg-gray-message w-[72rem]  rounded-lg flex flex-col relative'>

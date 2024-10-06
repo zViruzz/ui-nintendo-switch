@@ -1,5 +1,7 @@
 export * from './EditIcon'
 export * from './PlayActivitySettings'
+export * from './FriendSettings'
+export * from './BlockedUserList'
 
 export * from './Setting'
 export * from './News'

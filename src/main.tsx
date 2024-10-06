@@ -29,11 +29,13 @@ import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import {
 	Album,
+	BlockedUserList,
 	ChangeGripOrOrder,
 	Controllers,
 	EditIcon,
 	Eshop,
 	FindControllers,
+	FriendSettings,
 	NewControllers,
 	News,
 	PlayActivitySettings,
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
 			{
 				path: '/edit-icon',
 				element: <EditIcon />,
+			},
+			{
+				path: '/users/user-settings/friend-settings',
+				element: <FriendSettings />,
+			},
+			{
+				path: '/users/user-settings/blocked-user-list',
+				element: <BlockedUserList />,
 			},
 			{
 				path: '/play-activity-settings',

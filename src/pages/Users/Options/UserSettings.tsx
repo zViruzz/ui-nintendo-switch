@@ -81,6 +81,12 @@ export function UserSettings() {
 						onClick={() => {
 							console.log('qr')
 							onToggleHiddenQrMessage()
+
+							setTimeout(() => {
+								const section =
+									document.querySelector('#card-message')
+								if (section instanceof HTMLDivElement) section.focus()
+							}, 200)
 						}}
 					>
 						{t('users.user-setting.nintendo-account.option2')}
@@ -123,10 +129,18 @@ export function UserSettings() {
 						<h3>{t('users.user-setting.friend-functions')}</h3>
 					</Subheading>
 
-					<SelectionSetting className='border-y border-gray flex justify-between'>
+					<SelectionSetting
+						className='border-y border-gray flex justify-between'
+						as={Link}
+						to='/users/user-settings/friend-settings'
+					>
 						{t('users.user-setting.friend-functions.option1')}
 					</SelectionSetting>
-					<SelectionSetting className='border-b border-gray flex justify-between'>
+					<SelectionSetting
+						className='border-b border-gray flex justify-between'
+						as={Link}
+						to='/users/user-settings/blocked-user-list'
+					>
 						{t('users.user-setting.friend-functions.option2')}
 					</SelectionSetting>
 				</div>
