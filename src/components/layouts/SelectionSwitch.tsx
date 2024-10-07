@@ -1,4 +1,5 @@
 import { type ReactNode, useState } from 'react'
+import cn from '../../utils/cn'
 import SelectionSetting from './SelectionSetting'
 
 interface Props {
@@ -14,19 +15,18 @@ function SelectionSwitch({ children, className }: Props) {
 
 	return (
 		<>
-			<SelectionSetting tabIndex={-1} className={className}>
-				<button
-					className='bg-transparent border-transparent flex justify-between items-center w-full h-full px-5 outline-wiggle-focus focus-visible:bg-blueHight'
-					type='button'
-					onClick={handleClick}
+			<SelectionSetting
+				className={cn('flex justify-between items-center', className)}
+				as='button'
+				onClick={handleClick}
+				type='button'
+			>
+				<div>{children}</div>
+				<div
+					className={`text-[2.2rem] ${value ? 'text-secodary' : 'text-disabled'}`}
 				>
-					<div>{children}</div>
-					<div
-						className={`text-[2.2rem] ${value ? 'text-secodary' : 'text-disabled'}`}
-					>
-						{value ? 'Si' : 'No'}
-					</div>
-				</button>
+					{value ? 'Si' : 'No'}
+				</div>
 			</SelectionSetting>
 		</>
 	)

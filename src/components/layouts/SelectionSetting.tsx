@@ -1,7 +1,8 @@
-import type { ElementType, HTMLAttributes, ReactNode } from 'react'
+import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
+import { tv } from 'tailwind-variants'
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-	as?: ElementType
+interface Props extends Omit<AllHTMLAttributes<HTMLElement>, 'as'> {
+	as?: string | ElementType
 	children: ReactNode
 	className?: string
 	to?: string
@@ -10,16 +11,30 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 function SelectionSetting({
-	as: Component = 'div',
+	as: Component = 'button',
 	children,
 	disabled = false,
 	tabIndex = 0,
 	className = '',
 	...otherProps
 }: Props) {
+	const layout = tv({
+		base: 'relative box-border flex h-[6.7rem] w-full shrink-0 items-center gap-4 rounded-[0.5px] px-5 text-[2.5rem] transition-all duration-100 hover:z-10',
+		variants: {
+			disabled: {
+				true: 'text-disabled',
+				false:
+					'outline-wiggle outline-wiggle-focus hover:bg-blueHight focus-visible:bg-blueHight',
+			},
+		},
+	})
+
 	return (
 		<Component
-			className={`${disabled ? 'text-disabled' : 'hover:bg-blueHight focus-visible:bg-blueHight outline-wiggle outline-wiggle-focus'} box-border  h-[6.7rem] w-full shrink-0  flex items-center gap-4 hover:z-10 relative rounded-[0.5px] transition-all duration-100 text-[2.5rem]  ${className} ${tabIndex === -1 ? 'px-0' : 'px-5'} `}
+			className={layout({
+				disabled: disabled,
+				className: className,
+			})}
 			tabIndex={disabled ? -1 : tabIndex}
 			{...otherProps}
 		>

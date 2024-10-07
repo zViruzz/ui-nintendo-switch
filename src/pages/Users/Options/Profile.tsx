@@ -6,13 +6,61 @@ import EditName from '../../../components/EditName'
 import PencilIcon from '../../../components/icons/PencilIcon'
 import QuestionIcon from '../../../components/icons/QuestionIcon'
 import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import { useCardMessageContext } from '../../../context/cardMessage'
 import { useAppSelector } from '../../../redux/hooks'
 import { game } from '../../../static/game'
 
 export function Profile() {
+	const { onToggleHidden, settingMessage } = useCardMessageContext()
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
 	const { username } = useAppSelector((state) => state.user)
 	const { t } = useTranslation()
+
+	const handleClickOnline = () => {
+		settingMessage({
+			isHidden: false,
+			column: true,
+			children: (
+				<div className='flex justify-center items-center pb-20'>
+					<p>
+						If this is not selected in-game, he or she will be
+						displayed as offline even if you are connected to the
+						internet
+					</p>
+				</div>
+			),
+			buttons: {
+				label: 'Ok',
+				onClick: () => {
+					onToggleHidden(true)
+					console.log('click Close')
+				},
+			},
+		})
+	}
+
+	const handleClickInfo = () => {
+		settingMessage({
+			isHidden: false,
+			column: true,
+			children: (
+				<div className='flex justify-center items-center pb-20'>
+					<p>
+						If this is not selected in-game, he or she will be
+						displayed as offline even if you are connected to the
+						internet
+					</p>
+				</div>
+			),
+			buttons: {
+				label: 'Ok',
+				onClick: () => {
+					onToggleHidden(true)
+					console.log('click Close')
+				},
+			},
+		})
+	}
 
 	return (
 		<ListPageTransition>
@@ -45,14 +93,18 @@ export function Profile() {
 								height={34}
 							/>
 						</button>
-						<div className='border-t-[1px] border-gray flex justify-between items-center px-5'>
+						<button
+							type='button'
+							className='outline-wiggle-focus bg-blue-hight-focus flex items-center justify-between border-t-[1px] border-gray px-5'
+							onClick={handleClickOnline}
+						>
 							<p>{t('users.profile.offline')}</p>
 							<QuestionIcon
 								className='text-[#a0a0a0]'
 								width={40}
 								height={40}
 							/>
-						</div>
+						</button>
 						<div className='text-2xl border-t-[1px] border-gray flex justify-between items-center px-5'>
 							<p>
 								{t('users.profile.friend-code')} : SW-3742-456
@@ -68,19 +120,25 @@ export function Profile() {
 							<div className={'bg-description h-[65%] w-[8px]'} />
 							<h3>{t('users.profile.play-activity')}</h3>
 						</div>
-						<QuestionIcon
-							className='text-[#a0a0a0] mr-5'
-							width={40}
-							height={40}
-						/>
+						<button
+							className='outline-wiggle-focus h-[40px] w-[40px] rounded-full outline-offset-[-3px]'
+							type='button'
+							onClick={handleClickInfo}
+						>
+							<QuestionIcon
+								className='text-[#a0a0a0] mr-5'
+								width={40}
+								height={40}
+							/>
+						</button>
 					</div>
 
 					{/* -----------------------} */}
-					<div className='flex flex-col [&>div]:p-5   divide-y divide-gray border-y-gray border-solid border-y-[1px]'>
+					<div className='flex flex-col [&>div]:p-5  divide-y divide-gray border-y-gray border-solid border-y-[1px]'>
 						{game.slice(0, 3).map(({ id, urlImage, name }) => (
 							<button
 								key={id}
-								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left'
+								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left p-4'
 								type='button'
 							>
 								<img

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { tv } from 'tailwind-variants'
 import { useCardMessageContext } from '../../context/cardMessage'
 
 export default function CardMessage() {
@@ -22,6 +23,18 @@ export default function CardMessage() {
 		disableTabbingBehind(!setting.isHidden)
 	}, [setting.isHidden])
 
+	const buttonsContainer = tv({
+		base: 'w-full flex',
+		variants: {
+			disabled: {
+				true: 'flex-col',
+				false: 'flex-row divide-x-2 divide-opacity-20 divide-white',
+			},
+		},
+	})
+
+	console.log('buttonsContainer', buttonsContainer())
+
 	return (
 		<div
 			className={`${setting.isHidden ? 'invisible opacity-0' : 'visible'} absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all top-0 left-0`}
@@ -34,7 +47,7 @@ export default function CardMessage() {
 					{setting.children}
 				</div>
 				<div
-					className={`w-full flex ${setting.column ? 'flex-col' : 'flex-row divide-x-2 divide-opacity-20 divide-white'} `}
+					className={buttonsContainer({ disabled: setting.column })}
 				>
 					{Array.isArray(setting.buttons) ? (
 						setting.buttons.map((item) => (
