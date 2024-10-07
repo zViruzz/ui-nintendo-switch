@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { tv } from 'tailwind-variants'
 import { useCardMessageContext } from '../../context/cardMessage'
+import cn from '../../utils/cn'
 
 export default function CardMessage() {
 	const { setting } = useCardMessageContext()
@@ -33,11 +34,12 @@ export default function CardMessage() {
 		},
 	})
 
-	console.log('buttonsContainer', buttonsContainer())
-
 	return (
 		<div
-			className={`${setting.isHidden ? 'invisible opacity-0' : 'visible'} absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all top-0 left-0`}
+			className={cn(
+				'absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all top-0 left-0',
+				setting.isHidden ? 'invisible opacity-0' : 'visible',
+			)}
 			ref={modalRef}
 			id='card-message'
 			tabIndex={-1}
