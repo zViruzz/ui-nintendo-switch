@@ -11,13 +11,13 @@ import { useAppSelector } from '../../../redux/hooks'
 
 export function UserSettings() {
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
-	const { setSetting, onToggleHidden } = useCardMessageContext()
+	const { onToggleHidden, settingMessage } = useCardMessageContext()
 
 	const { t } = useTranslation()
 	const { username, email } = useAppSelector((state) => state.user)
 
 	const onToggleHiddenQrMessage = () => {
-		setSetting({
+		settingMessage({
 			isHidden: false,
 			column: true,
 			children: (
@@ -43,16 +43,36 @@ export function UserSettings() {
 		})
 	}
 
+	const onToggleMessageSupport = () => {
+		settingMessage({
+			isHidden: false,
+			column: true,
+			children: (
+				<div className='pb-20 flex items-center flex-col'>
+					<p className='leading-loose text-4xl'>
+						0590 - 2490 - 3728 - 6564 - 9837 - 7
+					</p>
+					<p className='text-3xl text-description'>
+						This number may be required for your inquiry.
+					</p>
+				</div>
+			),
+			buttons: {
+				label: 'Close',
+				onClick: () => {
+					onToggleHidden(true)
+					console.log('click Close')
+				},
+			},
+		})
+	}
+
 	return (
 		<ListPageTransition>
 			<EditName
 				isHidden={isHiddenEditName}
 				setIsHidden={setIsHiddenEditName}
 			/>
-			{/* <QrMessage
-				isHidden={isHiddenQrMessage}
-				onClickClose={onToggleHiddenQrMessage}
-			/> */}
 
 			<div>
 				<div className='mb-28'>
@@ -102,16 +122,7 @@ export function UserSettings() {
 					<SelectionSetting
 						className='border-b border-gray flex justify-between'
 						as='button'
-						onClick={() => {
-							console.log('qr')
-							onToggleHiddenQrMessage()
-
-							setTimeout(() => {
-								const section =
-									document.querySelector('#card-message')
-								if (section instanceof HTMLDivElement) section.focus()
-							}, 200)
-						}}
+						onClick={onToggleHiddenQrMessage}
 					>
 						{t('users.user-setting.nintendo-account.option2')}
 					</SelectionSetting>
@@ -184,7 +195,11 @@ export function UserSettings() {
 						<h3>{t('users.user-setting.user-support')}</h3>
 					</Subheading>
 
-					<SelectionSetting className='border-y border-gray flex justify-between'>
+					<SelectionSetting
+						className='border-y border-gray flex justify-between'
+						as='button'
+						onClick={onToggleMessageSupport}
+					>
 						{t('users.user-setting.user-support.option1')}
 					</SelectionSetting>
 				</div>
