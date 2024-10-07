@@ -3,20 +3,44 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import CharacterProfile from '../../../components/CharacterProfile'
 import EditName from '../../../components/EditName'
-import QrMessage from '../../../components/QrMessage'
 import SelectionSetting from '../../../components/layouts/SelectionSetting'
 import Subheading from '../../../components/layouts/Subheading'
 import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import { useCardMessageContext } from '../../../context/cardMessage'
 import { useAppSelector } from '../../../redux/hooks'
 
 export function UserSettings() {
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
-	const [isHiddenQrMessage, setIsHiddenQrMessage] = useState(true)
+	const { setSetting, onToggleHidden } = useCardMessageContext()
+
 	const { t } = useTranslation()
 	const { username, email } = useAppSelector((state) => state.user)
 
 	const onToggleHiddenQrMessage = () => {
-		setIsHiddenQrMessage((prev) => !prev)
+		setSetting({
+			isHidden: false,
+			column: true,
+			children: (
+				<div className='flex justify-center items-center pb-20'>
+					<div className='bg-black w-[30rem] h-[30rem]' />
+				</div>
+			),
+			buttons: [
+				{
+					label: 'About Checking in',
+					onClick: () => {
+						console.log('click About Checking in')
+					},
+				},
+				{
+					label: 'Close',
+					onClick: () => {
+						onToggleHidden(true)
+						console.log('click Close')
+					},
+				},
+			],
+		})
 	}
 
 	return (
@@ -25,10 +49,10 @@ export function UserSettings() {
 				isHidden={isHiddenEditName}
 				setIsHidden={setIsHiddenEditName}
 			/>
-			<QrMessage
+			{/* <QrMessage
 				isHidden={isHiddenQrMessage}
 				onClickClose={onToggleHiddenQrMessage}
-			/>
+			/> */}
 
 			<div>
 				<div className='mb-28'>
