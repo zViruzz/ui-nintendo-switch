@@ -1,5 +1,6 @@
 import { characters } from '../static/characters'
 import SelectionGrid from '../ui/SelectionGrid'
+import cn from '../utils/cn'
 
 function PanelCharacter({
 	isHiddenCharacter,
@@ -12,7 +13,10 @@ function PanelCharacter({
 }) {
 	return (
 		<div
-			className={`${isHiddenCharacter ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]`}
+			className={cn(
+				'h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]',
+				isHiddenCharacter && 'invisible',
+			)}
 		>
 			<SelectionGrid
 				title='Personaje/Mii'

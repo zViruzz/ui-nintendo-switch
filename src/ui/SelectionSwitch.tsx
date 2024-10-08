@@ -1,4 +1,6 @@
+import { disableInstantTransitions } from 'framer-motion'
 import { type ReactNode, useState } from 'react'
+import { tv } from 'tailwind-variants'
 import cn from '../utils/cn'
 import SelectionSetting from './SelectionSetting'
 
@@ -13,6 +15,16 @@ function SelectionSwitch({ children, className }: Props) {
 		setValue(!value)
 	}
 
+	const isOn = tv({
+		base: 'text-[2.2rem]',
+		variants: {
+			disabled: {
+				true: 'text-secodary',
+				false: 'text-disabled',
+			},
+		},
+	})
+
 	return (
 		<>
 			<SelectionSetting
@@ -22,9 +34,7 @@ function SelectionSwitch({ children, className }: Props) {
 				type='button'
 			>
 				<div>{children}</div>
-				<div
-					className={`text-[2.2rem] ${value ? 'text-secodary' : 'text-disabled'}`}
-				>
+				<div className={isOn({ disabled: value })}>
 					{value ? 'Si' : 'No'}
 				</div>
 			</SelectionSetting>

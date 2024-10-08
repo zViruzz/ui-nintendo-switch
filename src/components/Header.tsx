@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import cn from '../utils/cn'
 
 interface Props {
 	children?: ReactNode
@@ -9,7 +10,10 @@ interface Props {
 function Header({ children, className = '', title }: Props) {
 	return (
 		<header
-			className={`${className} col-span-2 px-[2.5%] flex justify-between flex-col`}
+			className={cn(
+				'col-span-2 px-[2.5%] flex justify-between flex-col',
+				className,
+			)}
 		>
 			<div className='flex items-center text-[3rem] w-full h-full px-[2.6%] gap-4 border-b-2 '>
 				{children}

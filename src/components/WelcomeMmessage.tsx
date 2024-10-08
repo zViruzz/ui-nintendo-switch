@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import NintendoSwitchLogoIcon from '../icons/NintendoSwitchLogoIcon'
+import cn from '../utils/cn'
 
 export default function WelcomeMmessage() {
 	const firstTime = window.localStorage.getItem('firstTime') !== null
@@ -19,7 +20,10 @@ export default function WelcomeMmessage() {
 
 	return (
 		<div
-			className={`${hiddenMessage ? 'invisible opacity-0' : 'visible'} absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all`}
+			className={cn(
+				'absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all',
+				hiddenMessage ? 'invisible opacity-0' : 'visible',
+			)}
 		>
 			<div className='bg-gray-message w-[72rem] h-[35rem] rounded-lg flex flex-col relative'>
 				<NintendoSwitchLogoIcon className='absolute h-[8rem] w-auto top-7 right-10 opacity-30' />

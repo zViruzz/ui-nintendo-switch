@@ -8,6 +8,7 @@ import {
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../redux/hooks'
 import { changeUsername } from '../redux/userSlice'
+import cn from '../utils/cn'
 
 interface Props {
 	isHidden: boolean
@@ -71,7 +72,12 @@ function EditName({ isHidden, setIsHidden }: Props) {
 	return (
 		<div
 			ref={containerRef}
-			className={`${isHidden ? 'invisible ' : 'visible backdrop-blur-md bg-[#00000090]'}  ease-in-out transition-all w-screen h-screen  absolute top-0 left-0  grid grid-rows-3 z-50`}
+			className={cn(
+				'absolute left-0 top-0 z-50  grid h-screen w-screen  grid-rows-3 transition-all ease-in-out',
+				isHidden
+					? 'invisible'
+					: 'visible bg-[#00000090] backdrop-blur-md',
+			)}
 		>
 			<div className='ml-48 mt-20 text-4xl'>
 				<h2>Introduce un apodo.</h2>
@@ -81,7 +87,7 @@ function EditName({ isHidden, setIsHidden }: Props) {
 				<form onSubmit={handleSubmit} ref={containerInputRef}>
 					<input
 						onChange={handleChange}
-						className='bg-transparent focus-within:outline-none focus-within:border-b-4 border-white rounded-t-lg w-[37rem] text-6xl px-5'
+						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl focus-within:border-b-4 focus-within:outline-none'
 						ref={inputRef}
 						type='text'
 						value={name}

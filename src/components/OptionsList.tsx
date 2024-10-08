@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useControllerContext } from '../context/controller'
+import cn from '../utils/cn'
 
 interface Option {
 	name: string
@@ -57,7 +58,12 @@ function OptionList({ options }: OptionListProps) {
 					>
 						<li className=' box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 hover:z-10 relative rounded-[0.1px] transition-all duration-100 '>
 							<div
-								className={`group-hover:bg-[#00ffc9] group-focus:bg-[#00ffc9] h-[100%] w-[8px] ${currentUrl === item.path ? 'bg-[#00ffc9]' : ''}`}
+								className={cn(
+									'group-hover:bg-[#00ffc9] group-focus:bg-[#00ffc9] h-[100%] w-[8px]',
+									{
+										'bg-[#00ffc9]': currentUrl === item.path,
+									},
+								)}
 							/>
 							<div
 								className={`group-hover:text-[#00ffc9] group-focus:text-[#00ffc9]  ${currentUrl === item.path ? 'text-[#00ffc9]' : ''}`}

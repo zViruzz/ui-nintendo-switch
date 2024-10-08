@@ -1,5 +1,6 @@
 import { listColors } from '../static/colors'
 import SelectionGrid from '../ui/SelectionGrid'
+import cn from '../utils/cn'
 
 function PanelColors({
 	isHiddenBackground,
@@ -12,7 +13,11 @@ function PanelColors({
 }) {
 	return (
 		<div
-			className={`${isHiddenBackground ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]  `}
+			className={cn(
+				'absolute left-0 top-0 z-20 grid h-full w-screen grid-cols-[1.46fr_1fr]',
+				isHiddenBackground && 'invisible',
+			)}
+			// className={`${isHiddenBackground ? 'invisible' : ''} h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]  `}
 		>
 			<SelectionGrid title='Fondo' isHidden={isHiddenBackground}>
 				{listColors.map(({ color }) => {
