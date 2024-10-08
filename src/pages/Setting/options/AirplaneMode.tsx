@@ -1,5 +1,5 @@
-import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function AirplaneMode() {
 	return (

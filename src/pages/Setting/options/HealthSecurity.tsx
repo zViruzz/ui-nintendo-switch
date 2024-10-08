@@ -1,6 +1,6 @@
 import healthSecurityilus from '../../../assets/healthSecurityilus.png'
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import SelectionSetting from '../../../ui/SelectionSetting'
 
 export function HealthSecurity() {
 	return (

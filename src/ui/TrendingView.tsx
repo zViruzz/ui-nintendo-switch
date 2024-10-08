@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-import profileUser from '../../assets/images/vivi.jpg'
-import { useControllerContext } from '../../context/controller'
-import { useTrendingContext } from '../../context/trending'
-import { trendingList } from '../../pages/Users/Options'
-import Footer from '../Footer'
+import profileUser from '../assets/images/vivi.jpg'
+import Footer from '../components/Footer'
+import { useControllerContext } from '../context/controller'
+import { useTrendingContext } from '../context/trending'
 import ArrowIcon from '../icons/ArrowIcon'
+import { trendingList } from '../pages/Users/Options'
 
 export default function TrendingView() {
 	const { controllerButtonB, controllerButtonA } =

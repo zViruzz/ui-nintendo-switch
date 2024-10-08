@@ -1,10 +1,10 @@
 import '@fontsource/roboto/500.css'
 import { Link } from 'react-router-dom'
+import BatteryIcon from '../icons/BatteryIcon'
+import WifiIcon from '../icons/WifiIcon'
 import { useAppSelector } from '../redux/hooks'
 import { getDate } from '../utils/getDate'
 import CharacterProfile from './CharacterProfile'
-import BatteryIcon from './icons/BatteryIcon'
-import WifiIcon from './icons/WifiIcon'
 
 function UserStatus() {
 	const user = useAppSelector((state) => state.user)

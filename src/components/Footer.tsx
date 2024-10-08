@@ -1,5 +1,5 @@
 import { useControllerContext } from '../context/controller'
-import NSwitchIcon from './icons/NSwitchIcon'
+import NSwitchIcon from '../icons/NSwitchIcon'
 
 function Footer() {
 	const { buttonA, buttonB } = useControllerContext()

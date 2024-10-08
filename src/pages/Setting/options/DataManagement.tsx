@@ -1,4 +1,4 @@
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
+import SelectionSetting from '../../../ui/SelectionSetting'
 
 export function DataManagement() {
 	return (

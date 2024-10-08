@@ -1,9 +1,9 @@
 import TrendingItem from '../../../components/TrendingItem'
-import FaceIcon from '../../../components/icons/FaceIcon'
-import TrendingView from '../../../components/layouts/TrendingView'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
 import { TrendingProvider } from '../../../context/trending'
+import FaceIcon from '../../../icons/FaceIcon'
 import { game } from '../../../static/game'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import TrendingView from '../../../ui/TrendingView'
 
 export const trendingList = [
 	{ ...game[1] },

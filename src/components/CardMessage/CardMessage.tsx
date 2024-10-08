@@ -1,11 +1,15 @@
 import { useEffect, useRef } from 'react'
 import { tv } from 'tailwind-variants'
 import { useCardMessageContext } from '../../context/cardMessage'
-import cn from '../../utils/cn'
+import {
+	button,
+	constainerCard,
+	content,
+	styles,
+} from './CardMessageStyles'
 
 export default function CardMessage() {
 	const { setting } = useCardMessageContext()
-
 	const modalRef = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		const disableTabbingBehind = (disable: boolean) => {
@@ -36,18 +40,13 @@ export default function CardMessage() {
 
 	return (
 		<div
-			className={cn(
-				'absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all top-0 left-0',
-				setting.isHidden ? 'invisible opacity-0' : 'visible',
-			)}
+			className={styles.constainer({ disabled: setting.isHidden })}
 			ref={modalRef}
 			id='card-message'
 			tabIndex={-1}
 		>
-			<div className='bg-gray-message w-[72rem]  rounded-lg flex flex-col relative'>
-				<div className='w-full h-full text-4xl px-28 pt-20'>
-					{setting.children}
-				</div>
+			<div className={constainerCard()}>
+				<div className={content()}>{setting.children}</div>
 				<div
 					className={buttonsContainer({ disabled: setting.column })}
 				>
@@ -55,7 +54,7 @@ export default function CardMessage() {
 						setting.buttons.map((item) => (
 							<button
 								type='button'
-								className='bg-blue-hight-focus outline-wiggle-focus focus:bg-opacity-40 hover:bg-opacity-40 bg-transparent border-0 border-t-2 border-t-white border-opacity-20 text-secodary w-full h-[6.7rem] rounded-sm text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75'
+								className={button()}
 								key={item.label}
 								onClick={item.onClick}
 							>
@@ -65,7 +64,7 @@ export default function CardMessage() {
 					) : (
 						<button
 							type='button'
-							className='bg-blue-hight-focus outline-wiggle-focus focus:bg-opacity-40 hover:bg-opacity-40 bg-transparent border-0 border-t-2 border-t-white border-opacity-20 text-secodary w-full h-[6.7rem] rounded-sm text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75'
+							className={button()}
 							key={setting.buttons.label}
 							onClick={setting.buttons.onClick}
 						>

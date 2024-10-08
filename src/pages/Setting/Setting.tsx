@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'
-import SettingIcon from '../../components/icons/SettingIcon'
 import { useControllerContext } from '../../context/controller'
+import SettingIcon from '../../icons/SettingIcon'
 
 function Setting() {
 	const { controllerButtonB } = useControllerContext()

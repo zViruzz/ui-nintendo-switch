@@ -1,6 +1,6 @@
-import BrightnessIcon from '../../../components/icons/BrightnessIcon'
-import SelectionSwitch from '../../../components/layouts/SelectionSwitch'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import BrightnessIcon from '../../../icons/BrightnessIcon'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function ScreenBrightness() {
 	return (

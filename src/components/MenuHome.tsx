@@ -3,12 +3,12 @@ import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useControllerContext } from '../context/controller'
-import ControllerIcon from './icons/ControllerIcon'
-import GalleryIcon from './icons/GalleryIcon'
-import NewsIcon from './icons/NewsIcon'
-import PowerIcon from './icons/PowerIcon'
-import SettingIcon from './icons/SettingIcon'
-import ShoppingBagIcon from './icons/ShoppingBagIcon'
+import ControllerIcon from '../icons/ControllerIcon'
+import GalleryIcon from '../icons/GalleryIcon'
+import NewsIcon from '../icons/NewsIcon'
+import PowerIcon from '../icons/PowerIcon'
+import SettingIcon from '../icons/SettingIcon'
+import ShoppingBagIcon from '../icons/ShoppingBagIcon'
 
 function MenuHome() {
 	const { t } = useTranslation()

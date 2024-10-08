@@ -1,7 +1,7 @@
 import profileUserUrl from '../../../assets/edu.png'
-import Detailtext from '../../../components/layouts/DetailText'
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import Detailtext from '../../../ui/DetailText'
+import SelectionSetting from '../../../ui/SelectionSetting'
 
 export function SettingUser() {
 	return (

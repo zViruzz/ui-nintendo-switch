@@ -4,11 +4,11 @@ import CharacterProfile from '../../components/CharacterProfile'
 import Header from '../../components/Header'
 import PanelCharacter from '../../components/PanelCharacter'
 import PanelColors from '../../components/PanelColors'
-import OpacityPageTransition from '../../components/transitions/OpacityPageTransition'
 import {
 	changeBackground,
 	changeCharacter,
 } from '../../redux/userSlice'
+import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 function EditIcon() {
 	const dispatch = useDispatch()

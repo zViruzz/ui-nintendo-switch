@@ -1,6 +1,6 @@
 import Header from '../../components/Header'
-import PageBasicLayout from '../../components/layouts/PageBasicLayout'
-import OpacityPageTransition from '../../components/transitions/OpacityPageTransition'
+import OpacityPageTransition from '../../transitions/OpacityPageTransition'
+import PageBasicLayout from '../../ui/PageBasicLayout'
 
 export default function PlayActivitySettings() {
 	return (

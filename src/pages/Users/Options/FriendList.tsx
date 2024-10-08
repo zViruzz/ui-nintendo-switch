@@ -1,5 +1,5 @@
 import viruzProfile from '../../../assets/images/vivi.jpg'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
+import ListPageTransition from '../../../transitions/ListPageTransition'
 export function FriendList() {
 	return (
 		<ListPageTransition>

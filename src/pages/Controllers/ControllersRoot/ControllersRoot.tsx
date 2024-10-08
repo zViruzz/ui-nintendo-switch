@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import nintendoSwitchIcon from '../../../assets/images/nintendo-switch.webp'
 import Header from '../../../components/Header'
-import BatteryIcon from '../../../components/icons/BatteryIcon'
-import ControllerIcon from '../../../components/icons/ControllerIcon'
+import BatteryIcon from '../../../icons/BatteryIcon'
+import ControllerIcon from '../../../icons/ControllerIcon'
 
 export function ControllersRoot() {
 	return (

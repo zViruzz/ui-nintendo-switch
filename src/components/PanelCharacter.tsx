@@ -1,5 +1,5 @@
 import { characters } from '../static/characters'
-import SelectionGrid from './layouts/SelectionGrid'
+import SelectionGrid from '../ui/SelectionGrid'
 
 function PanelCharacter({
 	isHiddenCharacter,

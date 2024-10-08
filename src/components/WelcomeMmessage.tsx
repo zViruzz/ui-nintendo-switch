@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import NintendoSwitchLogoIcon from './icons/NintendoSwitchLogoIcon'
+import NintendoSwitchLogoIcon from '../icons/NintendoSwitchLogoIcon'
 
 export default function WelcomeMmessage() {
 	const firstTime = window.localStorage.getItem('firstTime') !== null

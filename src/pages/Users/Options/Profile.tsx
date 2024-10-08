@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import CharacterProfile from '../../../components/CharacterProfile'
 import EditName from '../../../components/EditName'
-import PencilIcon from '../../../components/icons/PencilIcon'
-import QuestionIcon from '../../../components/icons/QuestionIcon'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
 import { useCardMessageContext } from '../../../context/cardMessage'
+import PencilIcon from '../../../icons/PencilIcon'
+import QuestionIcon from '../../../icons/QuestionIcon'
 import { useAppSelector } from '../../../redux/hooks'
 import { game } from '../../../static/game'
+import ListPageTransition from '../../../transitions/ListPageTransition'
 
 export function Profile() {
 	const { onToggleHidden, settingMessage } = useCardMessageContext()

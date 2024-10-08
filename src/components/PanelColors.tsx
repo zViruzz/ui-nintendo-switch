@@ -1,5 +1,5 @@
 import { listColors } from '../static/colors'
-import SelectionGrid from './layouts/SelectionGrid'
+import SelectionGrid from '../ui/SelectionGrid'
 
 function PanelColors({
 	isHiddenBackground,

@@ -1,5 +1,5 @@
 import { type ReactNode, useState } from 'react'
-import cn from '../../utils/cn'
+import cn from '../utils/cn'
 import SelectionSetting from './SelectionSetting'
 
 interface Props {

@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import CharacterProfile from '../../../components/CharacterProfile'
 import EditName from '../../../components/EditName'
-import SelectionSetting from '../../../components/layouts/SelectionSetting'
-import Subheading from '../../../components/layouts/Subheading'
-import ListPageTransition from '../../../components/transitions/ListPageTransition'
 import { useCardMessageContext } from '../../../context/cardMessage'
 import { useAppSelector } from '../../../redux/hooks'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import SelectionSetting from '../../../ui/SelectionSetting'
+import Subheading from '../../../ui/Subheading'
 
 export function UserSettings() {
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
