@@ -9,7 +9,7 @@ import {
 } from './CardMessageStyles'
 
 export default function CardMessage() {
-	const { setting } = useCardMessageContext()
+	const { setting, onToggleHidden } = useCardMessageContext()
 	const modalRef = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		const disableTabbingBehind = (disable: boolean) => {
@@ -56,7 +56,12 @@ export default function CardMessage() {
 								type='button'
 								className={button()}
 								key={item.label}
-								onClick={item.onClick}
+								onClick={() => {
+									if (item.isCloseButton) {
+										onToggleHidden(true)
+									}
+									item.onClick()
+								}}
 							>
 								{item.label}
 							</button>
@@ -66,7 +71,14 @@ export default function CardMessage() {
 							type='button'
 							className={button()}
 							key={setting.buttons.label}
-							onClick={setting.buttons.onClick}
+							onClick={() => {
+								if (!Array.isArray(setting.buttons)) {
+									if (setting.buttons.isCloseButton) {
+										onToggleHidden(true)
+									}
+									setting.buttons.onClick()
+								}
+							}}
 						>
 							{setting.buttons.label}
 						</button>

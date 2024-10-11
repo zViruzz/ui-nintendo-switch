@@ -14,7 +14,7 @@ import {
 export default function PlayActivitySettings() {
 	const { controllerButtonB, controllerButtonA } =
 		useControllerContext()
-	const { settingMessage, onToggleHidden } = useCardMessageContext()
+	const { settingMessage } = useCardMessageContext()
 
 	useEffect(() => {
 		controllerButtonB({
@@ -30,13 +30,16 @@ export default function PlayActivitySettings() {
 		settingMessage({
 			isHidden: false,
 			column: false,
-			children: <div>Your play activity will be deleted.</div>,
+			children: (
+				<div className='text-center pb-24 pt-5'>
+					Your play activity will be deleted.
+				</div>
+			),
 			buttons: [
 				{
 					label: 'Cancel',
-					onClick: () => {
-						onToggleHidden(true)
-					},
+					isCloseButton: true,
+					onClick: () => {},
 				},
 				{
 					label: 'Delete',

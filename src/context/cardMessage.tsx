@@ -5,16 +5,19 @@ import {
 	useState,
 } from 'react'
 
-interface ButtonMessageType {
+type ButtonMessageType = {
 	label: string
+	isCloseButton?: boolean
 	onClick: () => void
 }
+// | { label: string; isCloseButton: true; onClick?: never } // onClick no requerido
+// | { label: string; isCloseButton?: false; onClick: () => void } // onClick requerido si no es close button
 
 interface settingInterface {
 	isHidden: boolean
 	children: ReactNode
 	column: boolean
-	buttons: ButtonMessageType[] | ButtonMessageType
+	buttons: ButtonMessageType | ButtonMessageType[]
 }
 
 interface Props {
