@@ -1,6 +1,6 @@
 import Header from '../../components/Header'
-import PageBasicLayout from '../../ui/PageBasicLayout'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
+import PageBasicLayout from '../../ui/PageBasicLayout'
 
 export default function BlockedUserList() {
 	return (
