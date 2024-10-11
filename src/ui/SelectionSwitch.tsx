@@ -1,4 +1,3 @@
-import { disableInstantTransitions } from 'framer-motion'
 import { type ReactNode, useState } from 'react'
 import { tv } from 'tailwind-variants'
 import cn from '../utils/cn'
