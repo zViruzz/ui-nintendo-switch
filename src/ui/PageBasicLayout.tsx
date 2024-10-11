@@ -3,7 +3,6 @@ import cn from '../utils/cn'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
 	children: ReactNode
-	className: string
 }
 
 export default function PageBasicLayout({
