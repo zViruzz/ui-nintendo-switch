@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import { useCardMessageContext } from '../../context/cardMessage'
 import { useControllerContext } from '../../context/controller'
+import { useOptionsMenuContext } from '../../context/optionsMenu'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 import PageBasicLayout from '../../ui/PageBasicLayout'
 import SelectionSetting from '../../ui/SelectionSetting'
@@ -15,11 +16,12 @@ export default function PlayActivitySettings() {
 	const { controllerButtonB, controllerButtonA } =
 		useControllerContext()
 	const { settingMessage } = useCardMessageContext()
+	const { configureListOptions } = useOptionsMenuContext()
 
 	useEffect(() => {
 		controllerButtonB({
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/users/user-settings',
 		})
 		controllerButtonA({
 			text: 'controller.buttonA.ok',
@@ -48,6 +50,30 @@ export default function PlayActivitySettings() {
 			],
 		})
 	}
+	const handleClickMenuDisplayPlan = () => {
+		console.log('clickmenudisplayplan')
+		configureListOptions({
+			isHidden: false,
+			options: [
+				{
+					label: 'All Users',
+					isOn: true,
+				},
+				{
+					label: 'Friends',
+					isOn: false,
+				},
+				{
+					label: 'Best friends',
+					isOn: false,
+				},
+				{
+					label: 'No One',
+					isOn: false,
+				},
+			],
+		})
+	}
 
 	return (
 		<OpacityPageTransition>
@@ -55,7 +81,10 @@ export default function PlayActivitySettings() {
 				<Header title='Play activity setting' />
 				<main className={constainerMain()}>
 					<div className={containerOptions()}>
-						<SelectionSetting className='border-y border-gray flex justify-between last:[&>div]:text-secodary'>
+						<SelectionSetting
+							className='border-y border-gray flex justify-between last:[&>div]:text-secodary'
+							onClick={handleClickMenuDisplayPlan}
+						>
 							<div>Display plan activity to:</div>
 							<div>All Users</div>
 						</SelectionSetting>

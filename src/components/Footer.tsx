@@ -1,7 +1,13 @@
+import type { HTMLAttributes } from 'react'
 import { useControllerContext } from '../context/controller'
 import NSwitchIcon from '../icons/NSwitchIcon'
+import cn from '../utils/cn'
 
-function Footer() {
+interface Props extends HTMLAttributes<HTMLDivElement> {
+	className?: string
+}
+
+function Footer({ className, ...otherProps }: Props) {
 	const { buttonA, buttonB } = useControllerContext()
 
 	const handleButtonAClick = () => {
@@ -12,7 +18,10 @@ function Footer() {
 	}
 
 	return (
-		<footer className='mx-[2.5%] border-t-2'>
+		<footer
+			className={cn('px-[2.5%] border-t-2', className)}
+			{...otherProps}
+		>
 			<div className='flex justify-between items-center h-full px-[1.8%]'>
 				<div>
 					<NSwitchIcon width={100} height={60} />
