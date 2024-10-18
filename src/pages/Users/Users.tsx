@@ -1,16 +1,13 @@
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 import CharacterProfile from '../../components/CharacterProfile'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'
-import { useControllerContext } from '../../context/controller'
+import useControllers from '../../hooks/useControllers'
 import { useAppSelector } from '../../redux/hooks'
 
 function Users() {
-	const { controllerButtonB, controllerButtonA } =
-		useControllerContext()
 	const { t } = useTranslation()
 
 	const options = [
@@ -34,15 +31,15 @@ function Users() {
 		},
 	]
 
-	useEffect(() => {
-		controllerButtonB({
-			text: 'controller.buttonB.back',
-			route: '/',
-		})
-		controllerButtonA({
+	useControllers({
+		settingButtonA: {
 			text: 'controller.buttonA.ok',
-		})
-	}, [])
+		},
+		settingButtonB: {
+			text: 'controller.buttonB.back',
+			route: -1,
+		},
+	})
 
 	const user = useAppSelector((state) => state.user)
 	return (

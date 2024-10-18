@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import { useCardMessageContext } from '../../context/cardMessage'
-import { useControllerContext } from '../../context/controller'
 import { useOptionsMenuContext } from '../../context/optionsMenu'
+import useControllers from '../../hooks/useControllers'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 import PageBasicLayout from '../../ui/PageBasicLayout'
 import SelectionSetting from '../../ui/SelectionSetting'
@@ -13,29 +12,26 @@ import {
 } from './PlayActivitySettingsStyles'
 
 export default function PlayActivitySettings() {
-	const { controllerButtonB, controllerButtonA } =
-		useControllerContext()
 	const { settingMessage } = useCardMessageContext()
-	const { configureListOptions } = useOptionsMenuContext()
+	const { configureListOptions, listOptions } = useOptionsMenuContext()
 
-	useEffect(() => {
-		controllerButtonB({
-			text: 'controller.buttonB.back',
-			route: '/users/user-settings',
-		})
-		controllerButtonA({
+	useControllers({
+		settingButtonA: {
 			text: 'controller.buttonA.ok',
-		})
-	}, [])
+		},
+		settingButtonB: {
+			text: 'controller.buttonB.back',
+			route: -1,
+		},
+		dependence: listOptions.isHidden,
+	})
 
 	const handleClickDeletePlayActivity = () => {
 		settingMessage({
 			isHidden: false,
 			column: false,
 			children: (
-				<div className='text-center pb-24 pt-5'>
-					Your play activity will be deleted.
-				</div>
+				<div className='text-center pb-24 pt-5'>Your play activity will be deleted.</div>
 			),
 			buttons: [
 				{
@@ -57,19 +53,15 @@ export default function PlayActivitySettings() {
 			options: [
 				{
 					label: 'All Users',
-					isOn: true,
 				},
 				{
 					label: 'Friends',
-					isOn: false,
 				},
 				{
 					label: 'Best friends',
-					isOn: false,
 				},
 				{
 					label: 'No One',
-					isOn: false,
 				},
 			],
 		})
@@ -89,11 +81,10 @@ export default function PlayActivitySettings() {
 							<div>All Users</div>
 						</SelectionSetting>
 						<div className={detailSetting()}>
-							Information on thwn you started p;aying a sofware title
-							and how long you have playerd Information on thwn you
-							started p;aying a sofware title and how long you have
-							playerdInformation on thwn you started p;aying a sofware
-							title and how long you have playerd
+							Information on thwn you started p;aying a sofware title and how long you
+							have playerd Information on thwn you started p;aying a sofware title and how
+							long you have playerdInformation on thwn you started p;aying a sofware title
+							and how long you have playerd
 						</div>
 						<SelectionSetting
 							className='border-y border-gray'

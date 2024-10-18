@@ -1,24 +1,21 @@
 import { createContext, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { type To, useNavigate } from 'react-router-dom'
 
-type controllerButtonType = ({
-	text,
-	action,
-	route,
-}: {
+export interface ControllerButtonParams {
 	text: string
-	route?: string
+	route?: To | number
 	action?: () => void
-}) => void
+}
+
 
 interface Props {
 	children: JSX.Element | JSX.Element[]
 }
 
 interface ContextProps {
-	controllerButtonA: controllerButtonType
-	controllerButtonB: controllerButtonType
+	controllerButtonA: (params: ControllerButtonParams) => void
+	controllerButtonB: (params: ControllerButtonParams) => void
 	buttonA: {
 		text: string
 		onClick: () => void
@@ -56,32 +53,32 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
 		onClick: () => {},
 	})
 
-	const controllerButtonA: controllerButtonType = ({
-		text,
-		action,
-		route,
-	}) => {
+	const controllerButtonA = ({ text, action, route }: ControllerButtonParams) => {
 		setButtonA({
 			text: t(text),
 			onClick: () => {
 				if (route !== undefined) {
-					navigate(route)
+					if (typeof route === 'string') {
+						navigate(route) // Navegar a una ruta específica
+					} else if (typeof route === 'number') {
+						navigate(route) // Navegar en el historial
+					}
 				}
 				if (action !== undefined) action()
 			},
 		})
 	}
 
-	const controllerButtonB: controllerButtonType = ({
-		text,
-		action,
-		route,
-	}) => {
+	const controllerButtonB = ({ text, action, route }: ControllerButtonParams) => {
 		setButtonB({
 			text: t(text),
 			onClick: () => {
 				if (route !== undefined) {
-					navigate(route)
+					if (typeof route === 'string') {
+						navigate(route) // Navegar a una ruta específica
+					} else if (typeof route === 'number') {
+						navigate(route) // Navegar en el historial
+					}
 				}
 				if (action !== undefined) action()
 			},
@@ -102,5 +99,4 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
 	)
 }
 
-export const useControllerContext = (): ContextProps =>
-	useContext(ControllerContext)
+export const useControllerContext = (): ContextProps => useContext(ControllerContext)

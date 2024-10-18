@@ -3,8 +3,7 @@ import { useControllerContext } from './controller'
 
 type Option = {
 	label: string
-	isOn: boolean
-	onClick?: () => void
+	isOn?: boolean
 }
 
 interface ListOptions {
@@ -21,6 +20,7 @@ interface ContextProps {
 	setListOptions: (setting: ListOptions) => void
 	onToggleHidden: (bol: boolean) => void
 	configureListOptions: (setting: ListOptions) => void
+	activeOption: (index: number) => void
 }
 
 export const OptionsMenuContext = createContext<ContextProps>({
@@ -30,29 +30,22 @@ export const OptionsMenuContext = createContext<ContextProps>({
 			{
 				label: 'Ok',
 				isOn: false,
-				onClick: () => {
-					console.log('Close')
-				},
 			},
 		],
 	},
+	activeOption: () => {},
 	setListOptions: () => {},
 	onToggleHidden: () => {},
 	configureListOptions: () => {},
 })
 
-export const OptionsMenuProvider: React.FC<Props> = ({
-	children,
-}) => {
+export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	const [listOptions, setListOptions] = useState<ListOptions>({
 		isHidden: true,
 		options: [
 			{
 				label: 'Close',
 				isOn: false,
-				onClick: () => {
-					console.log('click Close')
-				},
 			},
 		],
 	})
@@ -62,7 +55,6 @@ export const OptionsMenuProvider: React.FC<Props> = ({
 	const configureOptionsList = (listOptions: ListOptions) => {
 		setListOptions(listOptions)
 
-		// TODO: Arreglar esto, sobre escribe la configuracion de la pagina donde se llamo
 		controllerButtonB({
 			text: 'controller.buttonB.back',
 			action: () => {
@@ -84,9 +76,23 @@ export const OptionsMenuProvider: React.FC<Props> = ({
 		}))
 	}
 
+	const activeOption = (index: number) => {
+		setListOptions((prev) => ({
+			...prev,
+			options: prev.options.map((option, i) => {
+				if (i === index) {
+					return { ...option, isOn: true }
+				}
+
+				return { ...option, isOn: false }
+			}),
+		}))
+	}
+
 	return (
 		<OptionsMenuContext.Provider
 			value={{
+				activeOption,
 				listOptions,
 				setListOptions,
 				onToggleHidden,
@@ -98,5 +104,4 @@ export const OptionsMenuProvider: React.FC<Props> = ({
 	)
 }
 
-export const useOptionsMenuContext = (): ContextProps =>
-	useContext(OptionsMenuContext)
+export const useOptionsMenuContext = (): ContextProps => useContext(OptionsMenuContext)

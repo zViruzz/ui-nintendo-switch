@@ -2,10 +2,12 @@ import { motion } from 'framer-motion'
 import Footer from '../../components/Footer'
 
 import { useOptionsMenuContext } from '../../context/optionsMenu'
+import CheckIcon from '../../icons/CheckIcon'
+import SelectionSetting from '../../ui/SelectionSetting'
 import Header from '../Header'
 
 export default function OptionsMenu() {
-	const { listOptions, onToggleHidden } = useOptionsMenuContext()
+	const { listOptions, onToggleHidden, activeOption } = useOptionsMenuContext()
 
 	if (listOptions.isHidden === true) {
 		return <></>
@@ -19,25 +21,31 @@ export default function OptionsMenu() {
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.12 }}
 		>
-			<div className=' grid grid-rows-[3fr_4fr]'>
+			<div className=' grid grid-rows-[3fr_5fr]'>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-				<div
-					className='bg-[#0c1720b1]'
-					onClick={() => onToggleHidden(true)}
-				/>
+				<div className='bg-[#0c1720b1]' onClick={() => onToggleHidden(true)} />
 
-				<div className='bg-neutral-700'>
+				<div className='bg-neutral-700 grid grid-rows-[1fr_4fr] grid-cols-1'>
 					<Header title='Display play activity to:' />
-					{listOptions.options.map((option) => {
-						return (
-							<div
-								key={option.label}
-								className='w-full  flex justify-center items-center'
-							>
-								{option.label}
-							</div>
-						)
-					})}
+					<div className='flex justify-center flex-col px-[20%]'>
+						{listOptions.options.map((option) => {
+							return (
+								<SelectionSetting
+									onClick={() => activeOption(listOptions.options.indexOf(option))}
+									key={option.label}
+									className='border-b first:border-t border-description flex justify-between'
+								>
+									<div> {option.label}</div>
+
+									{option.isOn && (
+										<div>
+											<CheckIcon />
+										</div>
+									)}
+								</SelectionSetting>
+							)
+						})}
+					</div>
 				</div>
 			</div>
 			<Footer className='bg-neutral-700' />
