@@ -1,9 +1,4 @@
-import {
-	type ReactNode,
-	createContext,
-	useContext,
-	useState,
-} from 'react'
+import { type ReactNode, createContext, useContext, useState } from 'react'
 
 type ButtonMessageType = {
 	label: string
@@ -50,9 +45,7 @@ export const CardMessageContext = createContext<ContextProps>({
 	settingMessage: () => {},
 })
 
-export const CardMessageProvider: React.FC<Props> = ({
-	children,
-}) => {
+export const CardMessageProvider: React.FC<Props> = ({ children }) => {
 	const [setting, setSetting] = useState<settingInterface>({
 		isHidden: true,
 		column: true,
@@ -92,5 +85,4 @@ export const CardMessageProvider: React.FC<Props> = ({
 	)
 }
 
-export const useCardMessageContext = (): ContextProps =>
-	useContext(CardMessageContext)
+export const useCardMessageContext = (): ContextProps => useContext(CardMessageContext)

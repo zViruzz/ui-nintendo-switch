@@ -33,3 +33,9 @@ function App() {
 }
 
 export default App
+
+// Exec=/usr/bin/microsoft-edge-stable --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+
+// /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/edge --file-forwarding com.microsoft.Edge @@u %U @@
+// /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/edge com.microsoft.Edge
+// /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/edge com.microsoft.Edge --inprivate
