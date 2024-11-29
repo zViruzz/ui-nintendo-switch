@@ -1,10 +1,4 @@
-import {
-	type ChangeEvent,
-	type FormEvent,
-	useEffect,
-	useRef,
-	useState,
-} from 'react'
+import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../redux/hooks'
 import { changeUsername } from '../redux/userSlice'
@@ -74,9 +68,7 @@ function EditName({ isHidden, setIsHidden }: Props) {
 			ref={containerRef}
 			className={cn(
 				'absolute left-0 top-0 z-50  grid h-screen w-screen  grid-rows-3 transition-all ease-in-out',
-				isHidden
-					? 'invisible'
-					: 'visible bg-[#00000090] backdrop-blur-md',
+				isHidden ? 'invisible' : 'visible bg-[#00000090] backdrop-blur-md',
 			)}
 		>
 			<div className='ml-48 mt-20 text-4xl'>
@@ -93,9 +85,7 @@ function EditName({ isHidden, setIsHidden }: Props) {
 						value={name}
 						maxLength={10}
 					/>
-					<div className='flex justify-end text-disabled'>
-						{name.length} / 10
-					</div>
+					<div className='flex justify-end text-disabled'>{name.length} / 10</div>
 				</form>
 			</div>
 		</div>
