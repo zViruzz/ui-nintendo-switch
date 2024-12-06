@@ -9,6 +9,7 @@ import NewsIcon from '../icons/NewsIcon'
 import PowerIcon from '../icons/PowerIcon'
 import SettingIcon from '../icons/SettingIcon'
 import ShoppingBagIcon from '../icons/ShoppingBagIcon'
+import useControllers from '../hooks/useControllers'
 
 function MenuHome() {
 	const { t } = useTranslation()
@@ -29,16 +30,10 @@ function MenuHome() {
 					<GalleryIcon width={75} height={75} />
 				</ButtonMenu>
 
-				<ButtonMenu
-					router='controllers'
-					text={t('home.menu.controllers')}
-				>
+				<ButtonMenu router='controllers' text={t('home.menu.controllers')}>
 					<ControllerIcon width={83} height={83} />
 				</ButtonMenu>
-				<ButtonMenu
-					router='setting/airplane-mode'
-					text={t('home.menu.settings')}
-				>
+				<ButtonMenu router='setting/airplane-mode' text={t('home.menu.settings')}>
 					<SettingIcon width={82} height={82} />
 				</ButtonMenu>
 				<ButtonMenu router='setting' text={t('home.menu.sleep-mode')}>

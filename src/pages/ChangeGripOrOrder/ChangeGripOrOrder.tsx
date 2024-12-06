@@ -5,6 +5,8 @@ import controllersIllust4 from '../../assets/images/change-grip-or-order-control
 import controllersIllust from '../../assets/images/change-grip-or-order-controllers.webp'
 import controllersIllust2 from '../../assets/images/change-grip-or-order-controllers2.webp'
 import { useControllerContext } from '../../context/controller'
+import ButtonBIcon from '../../icons/ButtonBIcon'
+import ButtonAIcon from '../../icons/ButtonAIcon'
 
 export default function ChangeGripOrOrder() {
 	const { controllerButtonB, buttonB } = useControllerContext()
@@ -33,39 +35,21 @@ export default function ChangeGripOrOrder() {
 		>
 			<div className='flex justify-center items-center'>
 				<div className='h-[47%]'>
-					<img
-						className='h-full'
-						src={controllersIllust}
-						alt='controllers'
-					/>
+					<img className='h-full' src={controllersIllust} alt='controllers' />
 				</div>
 				<div className='w-[39%] h-full px-[4%] py-[1.6%]'>
 					<div className='dialogue-cloud flex flex-col'>
 						<div className='grid grid-cols-[1fr_1fr] items-center justify-center justify-items-center flex-1'>
-							<img
-								className='h-[65px]'
-								src={controllersIllust3}
-								alt=''
-							/>
-							<img
-								className='h-[65px]'
-								src={controllersIllust4}
-								alt=''
-							/>
+							<img className='h-[65px]' src={controllersIllust3} alt='' />
+							<img className='h-[65px]' src={controllersIllust4} alt='' />
 						</div>
 						<div className='basis-[27%]'>
-							<p className='text-[2.1rem] text-center'>
-								Two players are also supported.
-							</p>
+							<p className='text-[2.1rem] text-center'>Two players are also supported.</p>
 						</div>
 					</div>
 				</div>
 				<div className='h-[45%]'>
-					<img
-						className='h-full'
-						src={controllersIllust2}
-						alt='controllers'
-					/>
+					<img className='h-full' src={controllersIllust2} alt='controllers' />
 				</div>
 			</div>
 
@@ -79,21 +63,19 @@ export default function ChangeGripOrOrder() {
 					<div>3</div>
 					<div>4</div>
 				</div>
-				<div className='flex justify-center items-center'>
-					Pres when youre ready
-				</div>
+				<div className='flex justify-center items-center'>Pres when youre ready</div>
 			</div>
 			<div className='flex justify-end px-[3.5%] text-4xl [&>button]:flex [&>button]:justify-center [&>button]:items-center [&>button]:gap-[10%]'>
-				<button type='button'>controller not connecting</button>
+				<button type='button'>
+					controller not connecting
+					<ButtonAIcon width={45} height={45} />
+				</button>
 				<button type='button'>{'(Hold) Search'}</button>
-				<button
-					className=' w-[10%]'
-					onClick={handleClickB}
-					type='button'
-				>
-					<div className='bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] '>
-						B
-					</div>
+				<button className='' onClick={handleClickB} type='button'>
+					<ButtonBIcon width={55} height={55} />
+					{/* <div className='bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] '> */}
+					{/* 	B */}
+					{/* </div> */}
 					Back
 				</button>
 			</div>

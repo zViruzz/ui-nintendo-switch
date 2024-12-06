@@ -2,6 +2,8 @@ import type { HTMLAttributes } from 'react'
 import { useControllerContext } from '../context/controller'
 import NSwitchIcon from '../icons/NSwitchIcon'
 import cn from '../utils/cn'
+import ButtonAIcon from '../icons/ButtonAIcon'
+import ButtonBIcon from '../icons/ButtonBIcon'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
 	className?: string
@@ -18,10 +20,7 @@ function Footer({ className, ...otherProps }: Props) {
 	}
 
 	return (
-		<footer
-			className={cn('px-[2.5%] border-t-2', className)}
-			{...otherProps}
-		>
+		<footer className={cn('px-[2.5%] border-t-2', className)} {...otherProps}>
 			<div className='flex justify-between items-center h-full px-[1.8%]'>
 				<div>
 					<NSwitchIcon width={100} height={60} />
@@ -34,8 +33,8 @@ function Footer({ className, ...otherProps }: Props) {
 							type='button'
 							onClick={handleButtonBClick}
 						>
-							<div className='bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] '>
-								B
+							<div>
+								<ButtonBIcon width={42} height={42} />
 							</div>
 							<p>{buttonB.text}</p>
 						</button>
@@ -48,8 +47,8 @@ function Footer({ className, ...otherProps }: Props) {
 							type='button'
 							onClick={handleButtonAClick}
 						>
-							<div className='bg-white text-[#2d2d2d] font-bold h-[38px] w-[38px] flex justify-center items-center rounded-full text-[1.7rem] '>
-								A
+							<div>
+								<ButtonAIcon width={42} height={42} />
 							</div>
 							<p>{buttonA.text === '' ? 'Start' : buttonA.text}</p>
 						</button>

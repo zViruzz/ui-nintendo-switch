@@ -1,22 +1,19 @@
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import MenuHome from '../components/MenuHome'
 import UserStatus from '../components/UserStatus'
 import ViewGame from '../components/ViewGame'
-import { useControllerContext } from '../context/controller'
+import useControllers from '../hooks/useControllers'
 
 function Home() {
-	const { controllerButtonB, controllerButtonA } =
-		useControllerContext()
-	useEffect(() => {
-		controllerButtonA({
+	useControllers({
+		settingButtonA: {
 			text: 'controller.buttonA.ok',
-		})
-
-		controllerButtonB({
+		},
+		settingButtonB: {
 			text: 'controller.buttonB.back',
-		})
-	}, [])
+		},
+	})
+
 	return (
 		<>
 			<motion.section

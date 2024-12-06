@@ -33,11 +33,7 @@ function ViewGame() {
 							</div>
 						</div>
 						<div className='flex outline-offset-4 outline-8 outline-[#15bffd]  group-focus:outline group-hover:outline group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100 2xl:w-[385px] 2xl:h-[385px] xl:w-[340px] xl:h-[300px] w-[300px] h-[300px]'>
-							<img
-								src={urlImage}
-								className='object-cover w-full h-full'
-								alt={name}
-							/>
+							<img src={urlImage} className='object-cover w-full h-full' alt={name} />
 						</div>
 						{/* </li> */}
 					</SwiperSlide>
