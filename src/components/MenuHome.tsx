@@ -68,12 +68,12 @@ function ButtonMenu({
 				// sound.play()
 				console.log('huh')
 			}}
-			className='ButtonMenu text-[#15bffd]  text-center text-[2.5rem]  relative group cursor-pointer'
+			className='ButtonMenu text-[#15bffd]  text-center text-[2.5rem] relative group cursor-pointer'
 		>
-			<div className='bg-[#505050] w-full h-full rounded-full grid place-content-center text-[#d9d9d9] outline-8 group-hover:outline group-focus-within:outline group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'>
+			<div className='bg-[#505050] w-full h-full rounded-full grid place-content-center text-[#d9d9d9] group-hover:outline-8 group-focus-within:outline-8 group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'>
 				<Link
 					onFocus={handleFocus}
-					className='h-full w-full rounded-full group-focus-within:outline-none'
+					className='h-full w-full rounded-full group-focus-within:outline-hidden'
 					to={router}
 				>
 					{children}

@@ -23,9 +23,8 @@ export function Profile() {
 			children: (
 				<div className='flex justify-center items-center pb-20'>
 					<p>
-						If this is not selected in-game, he or she will be
-						displayed as offline even if you are connected to the
-						internet
+						If this is not selected in-game, he or she will be displayed as offline even
+						if you are connected to the internet
 					</p>
 				</div>
 			),
@@ -46,9 +45,8 @@ export function Profile() {
 			children: (
 				<div className='flex justify-center items-center pb-20'>
 					<p>
-						If this is not selected in-game, he or she will be
-						displayed as offline even if you are connected to the
-						internet
+						If this is not selected in-game, he or she will be displayed as offline even
+						if you are connected to the internet
 					</p>
 				</div>
 			),
@@ -65,14 +63,11 @@ export function Profile() {
 	return (
 		<ListPageTransition>
 			<div className='flex gap-[6.7rem] flex-col'>
-				<EditName
-					isHidden={isHiddenEditName}
-					setIsHidden={setIsHiddenEditName}
-				/>
+				<EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
 
 				<div className='h-[20.5rem] flex gap-12 '>
 					<Link
-						className='shrink-0  outline-wiggle-focus outline-8 outline-offset-4 '
+						className='shrink-0 outline-wiggle-focus outline-offset-4 transition-all duration-100 '
 						to='/edit-icon'
 					>
 						<CharacterProfile className='w-full h-full' />
@@ -87,11 +82,7 @@ export function Profile() {
 							type='button'
 						>
 							<h1>{username}</h1>
-							<PencilIcon
-								className='text-[#a0a0a0]'
-								width={34}
-								height={34}
-							/>
+							<PencilIcon className='text-[#a0a0a0]' width={34} height={34} />
 						</button>
 						<button
 							type='button'
@@ -99,17 +90,10 @@ export function Profile() {
 							onClick={handleClickOnline}
 						>
 							<p>{t('users.profile.offline')}</p>
-							<QuestionIcon
-								className='text-[#a0a0a0]'
-								width={40}
-								height={40}
-							/>
+							<QuestionIcon className='text-[#a0a0a0]' width={40} height={40} />
 						</button>
 						<div className='text-2xl border-t-[1px] border-gray flex justify-between items-center px-5'>
-							<p>
-								{t('users.profile.friend-code')} : SW-3742-456
-								7-4367-2344
-							</p>
+							<p>{t('users.profile.friend-code')} : SW-3742-456 7-4367-2344</p>
 						</div>
 					</div>
 				</div>
@@ -125,11 +109,7 @@ export function Profile() {
 							type='button'
 							onClick={handleClickInfo}
 						>
-							<QuestionIcon
-								className='text-[#a0a0a0] mr-5'
-								width={40}
-								height={40}
-							/>
+							<QuestionIcon className='text-[#a0a0a0] mr-5' width={40} height={40} />
 						</button>
 					</div>
 
@@ -141,11 +121,7 @@ export function Profile() {
 								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left p-4'
 								type='button'
 							>
-								<img
-									src={urlImage}
-									className='w-32 h-32'
-									alt={name}
-								/>
+								<img src={urlImage} className='w-32 h-32' alt={name} />
 								<div className='flex flex-col gap-5'>
 									<h4 className='text-4xl'>{name}</h4>
 									<p className='text-3xl text-description'>

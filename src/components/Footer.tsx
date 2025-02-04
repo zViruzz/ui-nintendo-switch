@@ -29,7 +29,7 @@ function Footer({ className, ...otherProps }: Props) {
 					{buttonB.text === '' ? null : (
 						<button
 							id='buttonB'
-							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-none'
+							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-hidden'
 							type='button'
 							onClick={handleButtonBClick}
 						>
@@ -43,7 +43,7 @@ function Footer({ className, ...otherProps }: Props) {
 					{buttonA.text === '' ? null : (
 						<button
 							id='buttonA'
-							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-none'
+							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] active:bg-[#2fffea3c] focus-visible:outline-hidden'
 							type='button'
 							onClick={handleButtonAClick}
 						>

@@ -4,10 +4,7 @@ import CharacterProfile from '../../components/CharacterProfile'
 import Header from '../../components/Header'
 import PanelCharacter from '../../components/PanelCharacter'
 import PanelColors from '../../components/PanelColors'
-import {
-	changeBackground,
-	changeCharacter,
-} from '../../redux/userSlice'
+import { changeBackground, changeCharacter } from '../../redux/userSlice'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 function EditIcon() {
@@ -48,17 +45,17 @@ function EditIcon() {
 
 				<section className='grid grid-cols-[1fr_45%] w-screen text-[40px]'>
 					<div className='ml-12'>
-						<div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px_]'>
+						<div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px]'>
 							<button
 								onClick={handleClickCharacter}
-								className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
+								className='hover:bg-blue-highlight focus-visible:bg-blue-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
 								type='button'
 							>
 								Personaje/Mii
 							</button>
 							<button
 								onClick={handleClickBackground}
-								className='hover:bg-blueHight focus-visible:bg-blueHight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
+								className='hover:bg-blue-highlight focus-visible:bg-blue-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
 								type='button'
 							>
 								Fondo

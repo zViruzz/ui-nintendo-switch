@@ -25,7 +25,7 @@ function PanelColors({
 						<button
 							key={color}
 							className={
-								'aspect-square  outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'
+								'aspect-square  outline-wiggle-focus  hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle'
 							}
 							type='button'
 							style={{

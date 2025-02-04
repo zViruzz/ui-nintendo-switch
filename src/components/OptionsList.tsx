@@ -54,7 +54,7 @@ function OptionList({ options }: OptionListProps) {
 							handleFocusLink(item.path)
 						}}
 						onClick={handleClickLink}
-						className='outline-wiggle-focus focus:bg-blueHight group hover:bg-blueHight transition-color duration-150'
+						className='outline-wiggle-focus focus:bg-blue-highlight group hover:bg-blue-highlight transition-color duration-150'
 					>
 						<li className=' box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 hover:z-10 relative rounded-[0.1px] transition-all duration-100 '>
 							<div

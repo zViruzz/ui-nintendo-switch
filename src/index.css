@@ -1,157 +1,218 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-	/* font-family: 'Heebo', sans-serif; */
-	font-family: "Roboto", sans-serif;
+@plugin 'tailwind-scrollbar-hide';
 
-	line-height: 1.5;
-	font-weight: 400;
+@theme {
+  --grid-template-columns-res: repeat(auto-fill, minmax(20rem, 1fr));
+  --grid-template-columns-res-controllers: repeat(auto-fill,
+      minmax(min(100%, 14rem), 1fr));
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #2d2d2d;
+  --content-home: url("/src/assets/home.svg");
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  --list-style-image-checkmark: url("/src/assets/typescript.png");
+
+  --shadow-Nbutton: 0px 0px 8px 5px rgb(0 0 0 / 0.1);
+  --shadow-button: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
+
+  --color-gray-message: #484848;
+  --color-gray: #ffffff34;
+  --color-table: #393a3c;
+  --color-disabled: #6b6b6b;
+  --color-description: #939393;
+  --color-primary: #2d2d2d;
+  --color-secodary: #00ffc9;
+  --color-blue-highlight: #1f2227;
+  --color-blue-highlight-transparent: #1f222794;
+  --color-blue-hight-transparent: #1f222794;
+  --color-outline-effect1: #15bffd;
+  --color-outline-effect2: #71ffe0;
+
+  --animate-wiggle: wiggle 1s infinite;
+
+  @keyframes wiggle {
+    0% {
+      outline-color: #15bffd;
+    }
+
+    50% {
+      outline-color: #71ffe0;
+    }
+
+    100% {
+      outline-color: #15bffd;
+    }
+  }
 }
 
-@layer components {
-	.outline-wiggle {
-		@apply outline-[#15bffd] hover:outline outline-[7px] hover:animate-wiggle rounded-[1px];
-	}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-	.outline-wiggle-focus {
-		@apply outline-[#15bffd] focus-visible:outline outline-[7px] focus-visible:animate-wiggle rounded-[1px] hover:animate-wiggle hover:outline;
-	}
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
 
-	.bg-blue-hight-focus {
-		@apply hover:bg-blueHight focus-visible:bg-blueHight;
-	}
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility outline-wiggle {
+  @apply outline-[#15bffd] hover:outline-[7px] outline-[7px] hover:animate-wiggle rounded-[1px];
+}
+
+@utility outline-wiggle-focus {
+  @apply outline-[#15bffd] focus-visible:outline-[7px] focus-visible:animate-wiggle rounded-[1px] hover:animate-wiggle hover:outline-[7px];
+}
+
+@utility bg-blue-hight-focus {
+  @apply hover:bg-blue-highlight focus-visible:bg-blue-highlight;
+}
+
+@layer utilities {
+  :root {
+    /* font-family: 'Heebo', sans-serif; */
+    font-family: "Roboto", sans-serif;
+
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #2d2d2d;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 #root {
-	display: grid;
-	height: 100vh;
-	grid-template-rows: 90% 10%;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90% 10%;
 }
 
 input[type="range"] {
-	height: 60px;
-	-webkit-appearance: none;
-	background-color: transparent;
-	margin: 10px 0;
-	width: 100%;
+  height: 60px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 10px 0;
+  width: 100%;
 }
 
 input[type="range"]:focus {
-	outline: none;
+  outline: none;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-	width: 100%;
-	height: 10px;
-	/* cursor: pointer; */
-	animation: 0.2s;
-	box-shadow: 0px 0px 0px #000000;
-	background: #00ffc9;
-	border-radius: 5px;
-	border: 0px solid #000000;
+  width: 100%;
+  height: 10px;
+  /* cursor: pointer; */
+  animation: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #00ffc9;
+  border-radius: 5px;
+  border: 0px solid #000000;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-	box-shadow: 0px 0px 0px #000000;
-	border: 4px solid #767676;
-	height: 60px;
-	width: 60px;
-	border-radius: 50px;
-	background: #5c5c5c;
-	cursor: pointer;
-	-webkit-appearance: none;
-	margin-top: -24px;
-	transition: border .3s ease-in-out;
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #767676;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background: #5c5c5c;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -24px;
+  transition: border .3s ease-in-out;
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
-	box-shadow: 0px 0px 0px #000000;
-	border: 6px solid #00ffc9;
-	height: 60px;
-	width: 60px;
-	border-radius: 50px;
-	background: #5c5c5c;
-	cursor: pointer;
-	-webkit-appearance: none;
-	margin-top: -24px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 6px solid #00ffc9;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background: #5c5c5c;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -24px;
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-	background: #00ffc9;
+  background: #00ffc9;
 }
 
 input[type="range"]::-moz-range-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	animation: 0.2s;
-	box-shadow: 0px 0px 0px #000000;
-	background: #00ffc9;
-	border-radius: 5px;
-	border: 0px solid #000000;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #00ffc9;
+  border-radius: 5px;
+  border: 0px solid #000000;
 }
 
 input[type="range"]::-moz-range-thumb {
-	box-shadow: 0px 0px 0px #000000;
-	border: 4px solid #ff0303;
-	height: 50px;
-	width: 50px;
-	border-radius: 50px;
-	background: #5c5c5c;
-	cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #ff0303;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background: #5c5c5c;
+  cursor: pointer;
 }
 
 input[type="range"]::-ms-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	animation: 0.2s;
-	background: transparent;
-	border-color: transparent;
-	color: transparent;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animation: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
 
 input[type="range"]::-ms-fill-lower {
-	background: #00ffc9;
-	border: 0px solid #000000;
-	border-radius: 10px;
-	box-shadow: 0px 0px 0px #000000;
+  background: #00ffc9;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #000000;
 }
 
 input[type="range"]::-ms-fill-upper {
-	background: #00ffc9;
-	border: 0px solid #000000;
-	border-radius: 10px;
-	box-shadow: 0px 0px 0px #000000;
+  background: #00ffc9;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #000000;
 }
 
 input[type="range"]::-ms-thumb {
-	margin-top: 1px;
-	box-shadow: 0px 0px 0px #000000;
-	border: 4px solid #ff0303;
-	height: 50px;
-	width: 50px;
-	border-radius: 50px;
-	background: #5c5c5c;
-	cursor: pointer;
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #ff0303;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background: #5c5c5c;
+  cursor: pointer;
 }
 
 input[type="range"]:focus::-ms-fill-lower {
-	background: #00ffc9;
+  background: #00ffc9;
 }
 
 input[type="range"]:focus::-ms-fill-upper {
-	background: #00ffc9;
+  background: #00ffc9;
 }

@@ -74,7 +74,7 @@ export default function PlayActivitySettings() {
 				<main className={constainerMain()}>
 					<div className={containerOptions()}>
 						<SelectionSetting
-							className='border-y border-gray flex justify-between last:[&>div]:text-secodary'
+							className='border-y border-gray flex justify-between [&>div]:last:text-secodary'
 							onClick={handleClickMenuDisplayPlan}
 						>
 							<div>Display plan activity to:</div>

@@ -24,7 +24,7 @@ function SelectionSetting({
 			disabled: {
 				true: 'text-disabled',
 				false:
-					'outline-wiggle outline-wiggle-focus hover:bg-blueHight focus-visible:bg-blueHight',
+					'outline-wiggle outline-wiggle-focus hover:bg-blue-highlight focus-visible:bg-blue-highlight',
 			},
 		},
 	})

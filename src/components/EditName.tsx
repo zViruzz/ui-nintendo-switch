@@ -79,7 +79,7 @@ function EditName({ isHidden, setIsHidden }: Props) {
 				<form onSubmit={handleSubmit} ref={containerInputRef}>
 					<input
 						onChange={handleChange}
-						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl focus-within:border-b-4 focus-within:outline-none'
+						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl focus-within:border-b-4 focus-within:outline-hidden'
 						ref={inputRef}
 						type='text'
 						value={name}

@@ -18,14 +18,11 @@ function PanelCharacter({
 				isHiddenCharacter && 'invisible',
 			)}
 		>
-			<SelectionGrid
-				title='Personaje/Mii'
-				isHidden={isHiddenCharacter}
-			>
+			<SelectionGrid title='Personaje/Mii' isHidden={isHiddenCharacter}>
 				{characters.map((character) => (
 					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<img
-						className='outline-wiggle-focus outline-[7.5px] hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:outline-wiggle hover:bg-BlueHight'
+						className='outline-wiggle-focus hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:bg-blue-highlight'
 						// biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
 						tabIndex={0}
 						key={character}

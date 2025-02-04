@@ -13,7 +13,7 @@ export function HealthSecurity() {
 						sitio de soporte de Nintendo desde una computadora o un
 						dispositivo inteligente.
 					</p>
-					<div className='bg-[#3b3d3e] w-full h-[23.8rem] rounded-sm grid grid-rows-[2fr_1.1fr]'>
+					<div className='bg-[#3b3d3e] w-full h-[23.8rem] rounded-xs grid grid-rows-[2fr_1.1fr]'>
 						<div className='flex items-center justify-center'>
 							<img
 								className='w-[13rem]'

@@ -35,8 +35,8 @@ export function ControllersRoot() {
 				</div>
 			</div>
 
-			<nav className='min-h-full pr-[2.6%] bg-gradient-to-t from-transparent from-5% via-[#4e4e4e] via-50% to-transparent to-100% text-secodary text-[2.6rem]'>
-				<ul className='h-full w-full pl-12 pt-10 flex flex-col justify-evenly hover:[&>li>a]:bg-[#252d328a] focus-visible:[&>li>a]:bg-[#252d328a] [&>li>a]:outline-wiggle-focus [&>li]:w-full [&>li]:h-[7.4rem] [&>li>a]:w-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-5'>
+			<nav className='min-h-full pr-[2.6%] bg-linear-to-t from-transparent from-5% via-[#4e4e4e] via-50% to-transparent to-100% text-secodary text-[2.6rem]'>
+				<ul className='h-full w-full pl-12 pt-10 flex flex-col justify-evenly [&>li>a]:hover:bg-[#252d328a] [&>li>a]:focus-visible:bg-[#252d328a] [&>li>a]:outline-wiggle-focus [&>li]:w-full [&>li]:h-[7.4rem] [&>li>a]:w-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-5'>
 					<li>
 						<Link to='/change-grip-or-order'>Change Grid/Order</Link>
 					</li>
