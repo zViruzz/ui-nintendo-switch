@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import nintendoSwitchIcon from '../../../assets/images/nintendo-switch.webp'
 import Header from '../../../components/Header'
@@ -6,7 +7,13 @@ import ControllerIcon from '../../../icons/ControllerIcon'
 
 export function ControllersRoot() {
 	return (
-		<div className='w-full h-full grid grid-rows-[1fr_7.5fr] grid-cols-[3fr_1.8fr]'>
+		<motion.div
+			className='w-full h-full grid grid-rows-[1fr_7.5fr] grid-cols-[3fr_1.8fr]'
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5, delay: 0.5 }}
+		>
 			<Header>
 				<ControllerIcon width={83} height={83} />
 				<h2>Controllers</h2>
@@ -17,11 +24,7 @@ export function ControllersRoot() {
 					<div className='text-4xl flex-1 flex flex-col-reverse text-description'>
 						<p className='leading-[1.9]'>Console</p>
 					</div>
-					<img
-						className='w-[38%]'
-						src={nintendoSwitchIcon}
-						alt='Nintendo Switch Icon'
-					/>
+					<img className='w-[38%]' src={nintendoSwitchIcon} alt='Nintendo Switch Icon' />
 					<div className='flex-1 text-[52px] w-full'>
 						<div className='pt-3 flex gap-[7%] w-full justify-center'>
 							<BatteryIcon />
@@ -41,20 +44,16 @@ export function ControllersRoot() {
 						<Link to='/change-grip-or-order'>Change Grid/Order</Link>
 					</li>
 					<li>
-						<Link to='/controllers/find-controllers'>
-							Find Controllers
-						</Link>
+						<Link to='/controllers/find-controllers'>Find Controllers</Link>
 					</li>
 					<li>
-						<Link to='/controllers/new-controllers'>
-							Pairing New Controllers
-						</Link>
+						<Link to='/controllers/new-controllers'>Pairing New Controllers</Link>
 					</li>
 					<li>
 						<Link to='/'>Close</Link>
 					</li>
 				</ul>
 			</nav>
-		</div>
+		</motion.div>
 	)
 }
