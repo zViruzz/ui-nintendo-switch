@@ -75,6 +75,10 @@
   @apply hover:bg-blue-highlight focus-visible:bg-blue-highlight;
 }
 
+@utility bg-blue-hight-focus-transparent {
+  @apply hover:bg-blue-highlight-transparent focus-visible:bg-blue-highlight-transparent;
+}
+
 @layer utilities {
   :root {
     /* font-family: 'Heebo', sans-serif; */
