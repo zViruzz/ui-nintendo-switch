@@ -68,7 +68,7 @@
 }
 
 @utility outline-wiggle-focus {
-  @apply outline-[#15bffd] focus-visible:outline-[7px] focus-visible:animate-wiggle rounded-[1px] hover:animate-wiggle hover:outline-[7px];
+  @apply outline-[#15bffd] focus-visible:outline-[7px] focus-visible:animate-wiggle rounded-[1px] hover:animate-wiggle hover:outline-[7px] transition-[outline_color] cursor-pointer;
 }
 
 @utility bg-blue-hight-focus {

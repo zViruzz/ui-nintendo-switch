@@ -75,7 +75,7 @@ export function Profile() {
 
 					<div className='w-full h-full grid grid-rows-[2fr_3fr_1fr] pt-2 '>
 						<button
-							className='bg-transparent bg-blue-hight-focus border-none outline-wiggle-focus text-5xl border-t-[1px] border-gray flex justify-between items-center px-5'
+							className='bg-transparent bg-blue-hight-focus outline-wiggle-focus text-5xl border-t-[1px] border-gray flex justify-between items-center px-5'
 							onClick={() => {
 								setIsHiddenEditName(false)
 							}}
