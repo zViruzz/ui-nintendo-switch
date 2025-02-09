@@ -79,6 +79,46 @@
   @apply hover:bg-blue-highlight-transparent focus-visible:bg-blue-highlight-transparent;
 }
 
+@layer components {
+  .highlight-selection {
+    border-radius: 1px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.15s, outline-color 0.15s;
+  }
+
+  .highlight-selection:hover {
+    outline: 7px solid #15bffd;
+    animation: wiggle 1s infinite;
+    background-color: var(--color-blue-highlight);
+  }
+
+  .highlight-selection:focus-visible {
+    outline: 7px solid #15bffd;
+    animation: wiggle 1s infinite;
+    background-color: var(--color-blue-highlight);
+  }
+
+  .highlight-selection-light {
+    border-radius: 1px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.15s, outline-color 0.15s;
+  }
+
+  .highlight-selection-light:hover {
+    outline: 7px solid #15bffd;
+    animation: wiggle 1s infinite;
+    background-color: var(--color-blue-highlight-transparent);
+  }
+
+  .highlight-selection-light:focus-visible {
+    outline: 7px solid #15bffd;
+    animation: wiggle 1s infinite;
+    background-color: var(--color-blue-highlight-transparent);
+  }
+}
+
 @layer utilities {
   :root {
     /* font-family: 'Heebo', sans-serif; */
