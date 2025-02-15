@@ -28,6 +28,8 @@
   --color-outline-effect2: #71ffe0;
 
   --animate-wiggle: wiggle 1s infinite;
+  --animate-moveUpDown: moveUpDown 1s infinite;
+  --animate-arrowInitial: arrowInitial 1s infinite;
 
   @keyframes wiggle {
     0% {
@@ -40,6 +42,46 @@
 
     100% {
       outline-color: #15bffd;
+    }
+  }
+
+  @keyframes arrowInitial {
+    0% {
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+
+    10% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    90% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-60px);
     }
   }
 }
