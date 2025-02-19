@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import controllers from '../../../assets/images/nintendo-swith-gray-icon-none-left.webp'
 import controllersGrayLeft from '../../../assets/images/controllers-left-gray.webp'
 import ArrowDown from '../../../icons/ArrowDown'
+import { useTranslation } from 'react-i18next'
 
 export default function NewControllers() {
+  const { t } = useTranslation()
+
   return (
     <motion.div
       className='px-[3%] py-[4.9%] grid grid-rows-[2fr_5fr_1fr] w-full h-full'
@@ -15,11 +18,10 @@ export default function NewControllers() {
     >
       <div className='text-center'>
         <p className='text-3xl md:text-4xl lg:text-5xl '>
-          You can pair controllers at any time by attaching them to the console
+          {t('controllers.new-controllers.title')}
         </p>
         <p className='text-[3.4rem] md:text-3xl lg:text-4xl text-center pt-[1%] text-description'>
-          Once paired, you can use the controllers even then they aren't attached to the
-          console.
+          {t('controllers.new-controllers.description')}
         </p>
       </div>
 
@@ -39,14 +41,14 @@ export default function NewControllers() {
           className='border-[3px] border-white w-[44.2%] h-[6.6rem] flex justify-center items-center rounded-lg outline-offset-[-3px] highlight-selection-light'
           to='/controllers'
         >
-          Done
+          {t('controllers.new-controllers.button-1')}
         </Link>
 
         <Link
           className='border-[3px] border-white w-[33.5%] h-[5.4rem] flex justify-center items-center rounded-lg outline-offset-[-3px] highlight-selection-light'
           to='/controllers/new-controllers-detail'
         >
-          View Other Pairing Methods
+          {t('controllers.new-controllers.button-2')}
         </Link>
       </div>
     </motion.div>

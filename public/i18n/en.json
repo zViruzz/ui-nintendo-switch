@@ -69,5 +69,19 @@
 	"users.user-setting.album.option1": "Posting to Social Media",
 
 	"users.user-setting.user-support": "User Support",
-	"users.user-setting.user-support.option1": "Number for Customer Support"
+	"users.user-setting.user-support.option1": "Number for Customer Support",
+
+  "controllers.title": "Controllers",
+  "controllers.information": "No other controllers are connected.",
+  "controllers.console-label": "Consola",
+
+  "controllers.button.change-grip-or-order": "Change Grid/Order",
+  "controllers.button.find-controllers": "Find Controllers",
+  "controllers.button.pairing-new-controllers": "Pairing New Controllers",
+  "controllers.button.close": "Close",
+
+  "controllers.new-controllers.title": "You can pair controllers at any time by attaching them to the console.",
+  "controllers.new-controllers.description": "Once paired, you can use controllers even when they aren't attached to the console.",
+  "controllers.new-controllers.button-1": "Done",
+  "controllers.new-controllers.button-2": "View Other Pairing Methods"
 }

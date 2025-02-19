@@ -69,5 +69,19 @@
 	"users.user-setting.album.option1": "Publicar en las redes sociales",
 
 	"users.user-setting.user-support": "Asistencia al usuario",
-	"users.user-setting.user-support.option1": "Número de atención al cliente"
+	"users.user-setting.user-support.option1": "Número de atención al cliente",
+
+  "controllers.title": "Controles",
+  "controllers.information": "No hay otros controles conectados.",
+  "controllers.console-label": "Console",
+  "controllers.button.change-grip-or-order": "Cambiar la sujeción u orden",
+  "controllers.button.find-controllers": "Buscar controles",
+  "controllers.button.pairing-new-controllers": "Sincronizar nuevos controles nuevos",
+  "controllers.button.close": "Cerrar",
+
+  "controllers.new-controllers.title": "Para sincronizar los controles, basta con acoplarlos a la consola.",
+  "controllers.new-controllers.description": "Una vez sincronizados, podrás utilizar los controles incluso cuando estén desacoplados.",
+  "controllers.new-controllers.button-1": "Terminar",
+  "controllers.new-controllers.button-2": "Otros modos de sincronización"
+
 }
