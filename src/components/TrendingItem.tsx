@@ -10,7 +10,7 @@ export default function TrendingItem({ id, url, title }: Props) {
 	const { selectionTrending } = useTrendingContext()
 	return (
 		<>
-			<div className=' text-neutral-400 text-2xl text-center mb-10'>
+			<div className=' text-neutral-400 text-2xl text-center'>
 				<button
 					className='outline-wiggle-focus outline-offset-[3px] bg-transparent p-0'
 					type='button'
@@ -25,7 +25,7 @@ export default function TrendingItem({ id, url, title }: Props) {
 						}, 250)
 					}}
 				>
-					<img className='' src={url} alt='Pokemon unite' />
+					<img src={url} alt={title} />
 				</button>
 				<p />
 			</div>

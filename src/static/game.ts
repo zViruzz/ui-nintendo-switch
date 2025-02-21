@@ -1,4 +1,4 @@
-import AnimalCrossingUrl from '../assets/games/animal-crossing-new-horizons.jpg'
+import AnimalCrossingUrl from '../assets/games/animal-crossing-new-horizons.webp'
 import PokemonShieldUrl from '../assets/games/pokemon-shield.webp'
 import SumerMarioMakerUrl from '../assets/games/super-mario-maker.webp'
 import ZeldaBotwUrl from '../assets/games/zelda-botw.webp'

@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-export default function ListPageTransition({
-	children,
-}: { children: ReactNode }) {
+export default function ListPageTransition({ children }: { children: ReactNode }) {
 	return (
 		<motion.div
 			className='h-full w-full'
