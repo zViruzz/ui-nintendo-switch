@@ -25,17 +25,13 @@ export default function WelcomeMmessage() {
 				hiddenMessage ? 'invisible opacity-0' : 'visible',
 			)}
 		>
-			<div className='bg-gray-message w-[72rem] h-[35rem] rounded-lg flex flex-col relative'>
+			<div className='bg-gray-message-light dark:bg-gray-message w-[72rem] h-[35rem] rounded-lg flex flex-col relative'>
 				<NintendoSwitchLogoIcon className='absolute h-[8rem] w-auto top-7 right-10 opacity-30' />
 				<div className='w-full h-full text-4xl px-28 pt-20'>
-					<p className='font-semibold'>
-						{t('welcom.message.welcom')}
-					</p>
+					<p className='font-semibold'>{t('welcom.message.welcom')}</p>
 					<br />
 					<p>{t('welcom.message.suggestion')}</p>
-					<p className='text-description text-[35px] mt-6'>
-						{t('welcom.message.note')}
-					</p>
+					<p className='text-description text-[35px] mt-6'>{t('welcom.message.note')}</p>
 				</div>
 				<div className='w-full h-36'>
 					<button

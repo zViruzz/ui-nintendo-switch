@@ -9,8 +9,17 @@ import WelcomeMmessage from './components/WelcomeMmessage'
 import { CardMessageProvider } from './context/cardMessage'
 import { ControllerProvider } from './context/controller'
 import { OptionsMenuProvider } from './context/optionsMenu'
+import { useThemeContext } from './context/theme'
+import { useEffect } from 'react'
 
 function App() {
+	const { theme } = useThemeContext()
+
+	useEffect(() => {
+		localStorage.theme = theme
+		document.documentElement.setAttribute('data-theme', theme)
+	}, [theme])
+
 	return (
 		<>
 			<AnimatePresence>

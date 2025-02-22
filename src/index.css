@@ -2,6 +2,8 @@
 
 @plugin 'tailwind-scrollbar-hide';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --grid-template-columns-res: repeat(auto-fill, minmax(20rem, 1fr));
   --grid-template-columns-res-controllers: repeat(auto-fill,
@@ -13,6 +15,8 @@
 
   --shadow-Nbutton: 0px 0px 8px 5px rgb(0 0 0 / 0.1);
   --shadow-button: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
+
+  /* Dark mode */
 
   --color-gray-message: #484848;
   --color-gray: #ffffff34;
@@ -26,6 +30,23 @@
   --color-blue-hight-transparent: #1f222794;
   --color-outline-effect1: #15bffd;
   --color-outline-effect2: #71ffe0;
+
+  /* Light mode */
+
+  --color-gray-message-light: #ffffff;
+  --color-gray-light: #ffffff34;
+  --color-table-light: #393a3c;
+  --color-disabled-light: #6b6b6b;
+  --color-description-light: #939393;
+  --color-primary-light: #f2f2f2;
+  --color-secodary-light: #00ffc9;
+  --color-blue-highlight-light: #1f2227;
+  --color-blue-highlight-transparent-light: #1f222794;
+  --color-blue-hight-transparent-light: #1f222794;
+  --color-outline-effect1-light: #15bffd;
+  --color-outline-effect2-light: #71ffe0;
+
+  /* Animations */
 
   --animate-wiggle: wiggle 1s infinite;
   --animate-moveUpDown: moveUpDown 1s infinite;
@@ -170,8 +191,13 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #2d2d2d;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: var(--color-primary-light);
+
+    @variant dark {
+      color: rgba(255, 255, 255, 0.87);
+      background-color: var(--color-primary);
+    }
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
