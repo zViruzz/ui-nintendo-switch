@@ -18,13 +18,14 @@
 
   /* Dark mode */
 
+  --color-font: #ffffffde;
+  --color-description: #939393;
+  --color-primary: #2d2d2d;
+  --color-secodary: #00ffc9;
   --color-gray-message: #484848;
   --color-gray: #ffffff34;
   --color-table: #393a3c;
   --color-disabled: #6b6b6b;
-  --color-description: #939393;
-  --color-primary: #2d2d2d;
-  --color-secodary: #00ffc9;
   --color-blue-highlight: #1f2227;
   --color-blue-highlight-transparent: #1f222794;
   --color-blue-hight-transparent: #1f222794;
@@ -33,13 +34,14 @@
 
   /* Light mode */
 
-  --color-gray-message-light: #ffffff;
+  --color-font-light: #000000bf;
+  --color-description-light: #00000073;
+  --color-primary-light: #ebeaea;
+  --color-secodary-light: #314eee;
+  --color-gray-message-light: #f0f0f0;
   --color-gray-light: #ffffff34;
   --color-table-light: #393a3c;
   --color-disabled-light: #6b6b6b;
-  --color-description-light: #939393;
-  --color-primary-light: #f2f2f2;
-  --color-secodary-light: #00ffc9;
   --color-blue-highlight-light: #1f2227;
   --color-blue-highlight-transparent-light: #1f222794;
   --color-blue-hight-transparent-light: #1f222794;
@@ -191,11 +193,11 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(0, 0, 0, 0.87);
+    color: var(--color-font-light);
     background-color: var(--color-primary-light);
 
     @variant dark {
-      color: rgba(255, 255, 255, 0.87);
+      color: var(--color-font);
       background-color: var(--color-primary);
     }
 
