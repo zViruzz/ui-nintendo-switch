@@ -78,9 +78,9 @@ function ButtonMenu({
           {children}
         </Link>
       </div>
-      <div className='absolute left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-hover:opacity-100 group-focus-within:opacity-100 opacity-0 transition-all text-center '>
+      <p className='absolute translate-y-2 left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-hover:opacity-100 group-focus-within:opacity-100 opacity-0 transition-all text-center '>
         {text}
-      </div>
+      </p>
     </li>
   )
 }
