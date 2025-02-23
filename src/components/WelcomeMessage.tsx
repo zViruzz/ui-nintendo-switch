@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import NintendoSwitchLogoIcon from '../icons/NintendoSwitchLogoIcon'
 import cn from '../utils/cn'
 
-export default function WelcomeMmessage() {
+export default function WelcomeMessage() {
 	const firstTime = window.localStorage.getItem('firstTime') !== null
 	const [hiddenMessage, setHiddenMessage] = useState(firstTime)
 	const { t } = useTranslation()
@@ -22,7 +22,7 @@ export default function WelcomeMmessage() {
 		<div
 			className={cn(
 				'absolute w-screen h-screen bg-[#0c1720b1] z-40 flex justify-center items-center transition-all',
-				hiddenMessage ? '' : 'visible',
+				hiddenMessage ? 'invisible opacity-0' : 'visible',
 			)}
 		>
 			<div className='bg-gray-message-light dark:bg-gray-message w-[72rem] h-[35rem] rounded-lg flex flex-col relative'>

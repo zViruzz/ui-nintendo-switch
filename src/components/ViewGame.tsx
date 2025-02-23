@@ -9,17 +9,17 @@ function ViewGame() {
 	return (
 		<div className='flex'>
 			<Swiper
-				className=' w-screen overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x px-[8.5%] pt-[0.6%]'
+				className='w-screen overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x px-[8.5%] pt-[0.6%]'
 				wrapperClass='pl-[8.5%]'
 				spaceBetween={20}
-				slidesPerView={5}
+				slidesPerView={4}
 				freeMode={true}
 				modules={[FreeMode]}
 			>
 				{game.map(({ name, id, urlImage }) => (
 					<SwiperSlide
 						key={id}
-						className=' grow-0 shrink-0 box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 '
+						className='grow-0 shrink-0 box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 '
 						tabIndex={0}
 					>
 						<div className='h-16'>
@@ -27,7 +27,8 @@ function ViewGame() {
 								{name}
 							</div>
 						</div>
-						<div className='flex outline-offset-4 outline-0 outline-[#15bffd]  group-focus:outline-8 group-hover:outline-8 group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100 2xl:w-[385px] 2xl:h-[385px] xl:w-[340px] xl:h-[300px] w-[300px] h-[300px]'>
+						<div className='flex outline-offset-4 outline-0 outline-[#15bffd] group-focus:outline-8 group-hover:outline-8 group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100'>
+							{/* <div className='flex outline-offset-4 outline-0 outline-[#15bffd] group-focus:outline-8 group-hover:outline-8 group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100 2xl:w-[385px] 2xl:h-[385px] xl:w-[340px] xl:h-[340px] w-[300px] h-[300px]'> */}
 							<img src={urlImage} className='object-cover w-full h-full' alt={name} />
 						</div>
 					</SwiperSlide>

@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 import CardMessage from './components/CardMessage/CardMessage'
 import Footer from './components/Footer'
 import OptionsMenu from './components/OptionsMenu/OptionsMenu'
-import WelcomeMmessage from './components/WelcomeMmessage'
+import WelcomeMessage from './components/WelcomeMessage'
 import { CardMessageProvider } from './context/cardMessage'
 import { ControllerProvider } from './context/controller'
 import { OptionsMenuProvider } from './context/optionsMenu'
@@ -28,7 +28,7 @@ function App() {
 						<OptionsMenuProvider>
 							<main>
 								<OptionsMenu />
-								<WelcomeMmessage />
+								<WelcomeMessage />
 								<CardMessage />
 								<Outlet />
 							</main>
