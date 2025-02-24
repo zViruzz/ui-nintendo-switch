@@ -29,8 +29,11 @@
   --color-table: #393a3c;
   --color-disabled: #6b6b6b;
   --color-background-highlight: #1f2227;
+  --color-background-highlight-transparent: #1f222794;
+
   --color-blue-highlight: #1f2227;
   --color-blue-highlight-transparent: #1f222794;
+
   --color-blue-hight-transparent: #1f222794;
   --color-outline-effect1: #15bffd;
   --color-outline-effect2: #71ffe0;
@@ -47,6 +50,8 @@
   --color-table-light: #393a3c;
   --color-disabled-light: #6b6b6b;
   --color-background-highlight-light: #fcfcfd;
+  --color-background-highlight-transparent-light: #fcfcfd;
+
   --color-blue-highlight-light: #1f2227;
   --color-blue-highlight-transparent-light: #1f222794;
   --color-blue-hight-transparent-light: #1f222794;
@@ -114,14 +119,6 @@
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
 
   *,
@@ -147,6 +144,14 @@
 
 @utility bg-blue-hight-focus-transparent {
   @apply hover:bg-blue-highlight-transparent focus-visible:bg-blue-highlight-transparent;
+}
+
+@utility background-highlight {
+  @apply hover:bg-background-highlight-light focus-visible:bg-background-highlight-light dark:hover:bg-background-highlight dark:focus-visible:bg-background-highlight;
+}
+
+@utility background-highlight-transparent {
+  @apply hover:bg-background-highlight-transparent-light focus-visible:bg-background-highlight-transparent-light dark:hover:bg-background-highlight-transparent dark:focus-visible:bg-background-highlight-transparent;
 }
 
 @layer components {

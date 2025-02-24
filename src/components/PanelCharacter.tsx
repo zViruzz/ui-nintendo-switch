@@ -22,7 +22,7 @@ function PanelCharacter({
 				{characters.map((character) => (
 					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<img
-						className='outline-wiggle-focus hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] hover:bg-blue-highlight'
+						className='outline-wiggle-focus hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] background-highlight'
 						// biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
 						tabIndex={0}
 						key={character}

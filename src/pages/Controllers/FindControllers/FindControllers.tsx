@@ -56,13 +56,13 @@ export default function FindControllers() {
 			</div>
 			<div className='text-2xl md:text-3xl lg:text-4xl flex gap-[5.5%] items-end px-[5%]'>
 				<Link
-					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent flex justify-center items-center rounded-lg outline-offset-[-3px]  outline-wiggle-focus hover:bg-blue-highlight-transparent focus-visible:bg-blue-highlight-transparent'
+					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent flex justify-center items-center rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
 					to='/controllers'
 				>
 					Back
 				</Link>
 				<button
-					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px]  outline-wiggle-focus hover:bg-blue-highlight-transparent focus-visible:bg-blue-highlight-transparent'
+					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
 					type='button'
 				>
 					of controllers can t be found

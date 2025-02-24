@@ -56,7 +56,7 @@ function Users() {
 				{/* <h2>Pagina de {user.username}</h2> */}
 			</Header>
 
-			<nav className='pl-24 min-h-full  bg-linear-to-t from-transparent from-5% via-[#323232] via-50% to-transparent to-100%'>
+			<nav className='pl-24 min-h-full  bg-linear-to-t from-transparent from-5% dark:via-[#323232] via-[#f0f0f0] via-50% to-transparent to-100%'>
 				<OptionList options={options} />
 			</nav>
 

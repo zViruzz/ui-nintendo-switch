@@ -35,10 +35,10 @@ export default function WelcomeMessage() {
 						{t('welcom.message.note')}
 					</p>
 				</div>
-				<div className='w-full h-36 border-t-2 dark:border-neutral-500 border-neutral-300'>
+				<div className='w-full h-36 border-t-2 dark:border-neutral-600 border-neutral-300'>
 					<button
 						onClick={handleClick}
-						className='bg-blue-hight-focus outline-wiggle-focus focus:bg-opacity-40 hover:bg-opacity-40 bg-transparent border-0 text-secodary-light dark:text-secodary w-full h-full rounded-xs text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75'
+						className='background-highlight-transparent outline-wiggle-focus border-0 text-secodary-light dark:text-secodary w-full h-full rounded-xs text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75'
 						type='button'
 					>
 						Ok

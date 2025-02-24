@@ -75,7 +75,7 @@ export function Profile() {
 
 					<div className='w-full h-full grid grid-rows-[2fr_3fr_1fr] pt-2 '>
 						<button
-							className='bg-transparent bg-blue-hight-focus outline-wiggle-focus text-5xl border-t-[1px] border-gray flex justify-between items-center px-5'
+							className='bg-transparent background-highlight outline-wiggle-focus text-5xl border-t-[1px] border-gray flex justify-between items-center px-5'
 							onClick={() => {
 								setIsHiddenEditName(false)
 							}}
@@ -86,7 +86,7 @@ export function Profile() {
 						</button>
 						<button
 							type='button'
-							className='outline-wiggle-focus bg-blue-hight-focus flex items-center justify-between border-t-[1px] border-gray px-5'
+							className='outline-wiggle-focus background-highlight flex items-center justify-between border-t-[1px] border-gray px-5'
 							onClick={handleClickOnline}
 						>
 							<p>{t('users.profile.offline')}</p>
@@ -118,7 +118,7 @@ export function Profile() {
 						{game.slice(0, 3).map(({ id, urlImage, name }) => (
 							<button
 								key={id}
-								className='bg-transparent bg-blue-hight-focus border-0 flex gap-4 items-center outline-wiggle-focus text-left p-4'
+								className='bg-transparent background-highlight border-0 flex gap-4 items-center outline-wiggle-focus text-left p-4'
 								type='button'
 							>
 								<img src={urlImage} className='w-32 h-32' alt={name} />

@@ -48,14 +48,14 @@ function EditIcon() {
 						<div className='pr-16 pl-32 pt-[170px] h-full grid grid-rows-[176px_176px]'>
 							<button
 								onClick={handleClickCharacter}
-								className='hover:bg-blue-highlight focus-visible:bg-blue-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
+								className='background-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-y border-gray'
 								type='button'
 							>
 								Personaje/Mii
 							</button>
 							<button
 								onClick={handleClickBackground}
-								className='hover:bg-blue-highlight focus-visible:bg-blue-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
+								className='background-highlight bg-transparent border-0 outline-wiggle-focus hover:z-10 flex items-center px-10 border-b border-gray'
 								type='button'
 							>
 								Fondo

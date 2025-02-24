@@ -23,8 +23,7 @@ function SelectionSetting({
 		variants: {
 			disabled: {
 				true: 'text-disabled',
-				false:
-					'outline-wiggle outline-wiggle-focus hover:bg-blue-highlight focus-visible:bg-blue-highlight',
+				false: 'outline-wiggle outline-wiggle-focus background-highlight',
 			},
 		},
 	})

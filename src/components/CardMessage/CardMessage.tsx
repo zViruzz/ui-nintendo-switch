@@ -1,12 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { tv } from 'tailwind-variants'
 import { useCardMessageContext } from '../../context/cardMessage'
-import {
-	button,
-	constainerCard,
-	content,
-	styles,
-} from './CardMessageStyles'
+import { button, constainerCard, content, styles } from './CardMessageStyles'
 
 export default function CardMessage() {
 	const { setting, onToggleHidden } = useCardMessageContext()
@@ -18,25 +13,12 @@ export default function CardMessage() {
 			)
 			for (const element of focusableElements) {
 				if (!modalRef.current?.contains(element)) {
-					;(element as HTMLElement).setAttribute(
-						'tabIndex',
-						disable ? '-1' : '0',
-					)
+					;(element as HTMLElement).setAttribute('tabIndex', disable ? '-1' : '0')
 				}
 			}
 		}
 		disableTabbingBehind(!setting.isHidden)
 	}, [setting.isHidden])
-
-	const buttonsContainer = tv({
-		base: 'w-full flex',
-		variants: {
-			disabled: {
-				true: 'flex-col',
-				false: 'flex-row divide-x-2 divide-opacity-20 divide-white',
-			},
-		},
-	})
 
 	return (
 		<div
@@ -47,9 +29,7 @@ export default function CardMessage() {
 		>
 			<div className={constainerCard()}>
 				<div className={content()}>{setting.children}</div>
-				<div
-					className={buttonsContainer({ disabled: setting.column })}
-				>
+				<div className={styles.buttonsContainer({ disabled: setting.column })}>
 					{Array.isArray(setting.buttons) ? (
 						setting.buttons.map((item) => (
 							<button
