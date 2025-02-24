@@ -23,7 +23,7 @@ function ViewGame() {
 						tabIndex={0}
 					>
 						<div className='h-16'>
-							<div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center text-[#15bffd] text-[2.5rem]'>
+							<div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center text-font-highlight-light dark:text-font-highlight text-[2.5rem]'>
 								{name}
 							</div>
 						</div>

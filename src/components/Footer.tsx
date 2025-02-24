@@ -21,7 +21,7 @@ function Footer({ className, ...otherProps }: Props) {
 
 	return (
 		<footer className={cn('px-[2.5%] ', className)} {...otherProps}>
-			<div className='flex justify-between items-center h-full px-[1.8%] border-t-2'>
+			<div className='flex justify-between items-center h-full px-[1.8%] border-t-2 dark:border-white border-neutral-800'>
 				<div>
 					<NSwitchIcon width={100} height={60} />
 				</div>
@@ -34,7 +34,7 @@ function Footer({ className, ...otherProps }: Props) {
 							onClick={handleButtonBClick}
 						>
 							<div>
-								<ButtonBIcon width={42} height={42} />
+								<ButtonBIcon className='' width={42} height={42} />
 							</div>
 							<p>{buttonB.text}</p>
 						</button>

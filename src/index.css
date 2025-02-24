@@ -19,6 +19,8 @@
   /* Dark mode */
 
   --color-font: #ffffffde;
+  --color-font-highlight: #15bffd;
+
   --color-description: #939393;
   --color-primary: #2d2d2d;
   --color-secodary: #00ffc9;
@@ -26,6 +28,7 @@
   --color-gray: #ffffff34;
   --color-table: #393a3c;
   --color-disabled: #6b6b6b;
+  --color-background-highlight: #1f2227;
   --color-blue-highlight: #1f2227;
   --color-blue-highlight-transparent: #1f222794;
   --color-blue-hight-transparent: #1f222794;
@@ -35,6 +38,7 @@
   /* Light mode */
 
   --color-font-light: #000000bf;
+  --color-font-highlight-light: #00d2c7;
   --color-description-light: #00000073;
   --color-primary-light: #ebeaea;
   --color-secodary-light: #314eee;
@@ -42,6 +46,7 @@
   --color-gray-light: #ffffff34;
   --color-table-light: #393a3c;
   --color-disabled-light: #6b6b6b;
+  --color-background-highlight-light: #fcfcfd;
   --color-blue-highlight-light: #1f2227;
   --color-blue-highlight-transparent-light: #1f222794;
   --color-blue-hight-transparent-light: #1f222794;

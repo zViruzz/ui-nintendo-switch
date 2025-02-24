@@ -16,9 +16,9 @@ function UserStatus() {
 					to='users/profile'
 					className='group-focus-within:outline-wiggle-focus group-focus-within:block group-focus-within:rounded-full group-hover:outline-wiggle-focus group-hover:block group-hover:rounded-full group-hover:animate-wiggle transition-all duration-100'
 				>
-					<CharacterProfile className='border-zinc-700 border-4 rounded-full shadow-Nbutton w-[6.3rem]' />
+					<CharacterProfile className='border-neutral-100 dark:border-zinc-700 border-4 rounded-full shadow-Nbutton w-[5.8rem]' />
 				</Link>
-				<div className='text-[#15bffd] text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-focus-within:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center '>
+				<div className='text-font-highlight-light dark:text-font-highlight text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-focus-within:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center '>
 					Pagina de {user.username}
 				</div>
 			</div>

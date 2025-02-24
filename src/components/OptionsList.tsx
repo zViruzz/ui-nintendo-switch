@@ -54,19 +54,19 @@ function OptionList({ options }: OptionListProps) {
 							handleFocusLink(item.path)
 						}}
 						onClick={handleClickLink}
-						className='outline-wiggle-focus focus:bg-blue-highlight group hover:bg-blue-highlight transition-color duration-150'
+						className='group outline-wiggle-focus focus:bg-background-highlight-light dark:bg-background-highlight hover:bg-background-highlight-light dark:hover:bg-background-highlight transition-color duration-150'
 					>
 						<li className=' box-border p-4 h-[6.8rem] shrink-0 w-full flex items-center gap-4 hover:z-10 relative rounded-[0.1px] transition-all duration-100 '>
 							<div
 								className={cn(
-									'group-hover:bg-[#00ffc9] group-focus:bg-[#00ffc9] h-[100%] w-[8px]',
+									'group-hover:bg-secodary-light group-focus:bg-secodary-light dark:group-hover:bg-secodary dark:group-focus:bg-secodary h-[100%] w-[8px]',
 									{
-										'bg-[#00ffc9]': currentUrl === item.path,
+										'bg-secodary-light dark:bg-secodary': currentUrl === item.path,
 									},
 								)}
 							/>
 							<div
-								className={`group-hover:text-[#00ffc9] group-focus:text-[#00ffc9]  ${currentUrl === item.path ? 'text-[#00ffc9]' : ''}`}
+								className={`dark:group-hover:text-secodary dark:group-focus:text-secodary group-hover:text-secodary-light group-focus:text-secodary-light ${currentUrl === item.path ? 'dark:text-secodary text-secodary-light' : ''}`}
 							>
 								{item.name}
 							</div>
