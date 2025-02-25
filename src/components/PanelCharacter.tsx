@@ -14,7 +14,7 @@ function PanelCharacter({
 	return (
 		<div
 			className={cn(
-				'h-full  absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]',
+				'h-full absolute w-screen top-0 left-0 z-20 grid grid-cols-[1.46fr_1fr]',
 				isHiddenCharacter && 'invisible',
 			)}
 		>
@@ -22,7 +22,7 @@ function PanelCharacter({
 				{characters.map((character) => (
 					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<img
-						className='outline-wiggle-focus hover:z-10 outline-offset-[3px] focus-visible:bg-[#3f8f7c] background-highlight'
+						className='outline-wiggle-focus hover:z-10 outline-offset-[3px] focus-visible:bg-[#A6BAFA] dark:focus-visible:bg-[#3f8f7c] background-highlight'
 						// biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
 						tabIndex={0}
 						key={character}

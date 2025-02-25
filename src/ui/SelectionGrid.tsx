@@ -6,22 +6,16 @@ interface Props {
 	title: string
 	children: ReactNode
 }
-export default function SelectionGrid({
-	isHidden,
-	title,
-	children,
-}: Props) {
+export default function SelectionGrid({ isHidden, title, children }: Props) {
 	return (
 		<div
 			className={cn(
-				'grid min-h-full grid-rows-[1fr_6.4fr] bg-[#353535] transition-all ease-in-out',
-				isHidden
-					? 'opacity-0 -translate-x-14'
-					: 'opacity-100 delay-100',
+				'grid min-h-full grid-rows-[1fr_6.4fr] bg-gray-message-light dark:bg-[#353535] transition-all ease-in-out',
+				isHidden ? 'opacity-0 -translate-x-14' : 'opacity-100 delay-100',
 			)}
 		>
 			<div className='px-12'>
-				<div className='border-b-[2px] h-full flex items-center pt-6 px-[3.2rem]'>
+				<div className='border-b-2 dark:border-white border-neutral-800 h-full flex items-center pt-6 px-[3.2rem]'>
 					{title}
 				</div>
 			</div>

@@ -20,9 +20,9 @@ export default function FindControllers() {
 					Press ; or r on a searby controller to make the selected controller vibrate
 				</p>
 			</div>
-			<div className='px-[6.2%] py-[1.7%] gap-4 grid grid-cols-res-controllers xl:grid-rows-3 2xl:grid-rows-2 [&>div]:bg-[#535353] [&>div]:shadow-button'>
+			<div className='px-[6.2%] py-[1.7%] gap-4 grid grid-cols-res-controllers xl:grid-rows-3 2xl:grid-rows-2 [&>div]:bg-primary-light [&>div]:shadow-button'>
 				<div>
-					<div className='w-full h-full flex flex-col justify-evenly  items-center bg-[#767676]'>
+					<div className='w-full h-full flex flex-col justify-evenly items-center dark:bg-[#767676] background-highlight-light'>
 						<p className='text-[27px]'>Console</p>
 						<img
 							className='w-[22%]'
@@ -34,7 +34,7 @@ export default function FindControllers() {
 					</div>
 				</div>
 				<div>
-					<div className='w-full h-full flex flex-col justify-evenly  items-center bg-[#767676]'>
+					<div className='w-full h-full flex flex-col justify-evenly items-center dark:bg-[#767676] background-highlight-light'>
 						<p className='text-[27px]'>Console</p>
 						<img
 							className='w-[22%]'
@@ -56,13 +56,13 @@ export default function FindControllers() {
 			</div>
 			<div className='text-2xl md:text-3xl lg:text-4xl flex gap-[5.5%] items-end px-[5%]'>
 				<Link
-					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent flex justify-center items-center rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
+					className='border-[3px] dark:border-white border-neutral-600 w-full h-[6.6rem] bg-transparent flex justify-center items-center rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
 					to='/controllers'
 				>
 					Back
 				</Link>
 				<button
-					className='border-[3px] border-white w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
+					className='border-[3px] dark:border-white border-neutral-600 w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
 					type='button'
 				>
 					of controllers can t be found
