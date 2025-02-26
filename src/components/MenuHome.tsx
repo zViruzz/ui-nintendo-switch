@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 // import huhSound from '../assets/huh.mp3'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useControllerContext } from '../context/controller'
@@ -62,26 +63,41 @@ function ButtonMenu({
 	}
 
 	return (
-		<li
+		<motion.li
 			onMouseDown={() => {
 				// sound.play()
 				console.log('huh')
 			}}
-			className='ButtonMenu text-font-highlight-light dark:text-font-highlight text-center text-[2.5rem] relative group cursor-pointer'
+			className='ButtonMenu group text-font-highlight-light dark:text-font-highlight text-center text-[2.5rem] relative cursor-pointer rounded-full'
 		>
-			<div className='bg-[#fefffe] dark:bg-[#505050] text-[#717a7a] dark:text-[#d9d9d9] w-full h-full rounded-full grid place-content-center group-hover:outline-8 group-focus-within:outline-8 group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'>
-				<Link
-					onFocus={handleFocus}
-					className='h-full w-full rounded-full group-focus-within:outline-hidden'
-					to={router}
+			<Link
+				className='grid place-content-center outline-8 outline-none group-hover:outline-solid group-focus-within:outline-solid group-hover:animate-wiggle group-focus-within:animate-wiggle bg-[#fefffe] dark:bg-[#505050] text-[#717a7a] dark:text-[#d9d9d9] w-full h-full rounded-full shadow-Nbutton transition-all'
+				onFocus={handleFocus}
+				to={router}
+			>
+				<motion.span
+					className='h-full w-full rounded-full'
+					tabIndex={-1}
+					whileTap={{ rotate: 20 }}
+					transition={{ duration: 0.05 }}
 				>
 					{children}
-				</Link>
-			</div>
+				</motion.span>
+			</Link>
+
+			{/* <div className='bg-[#fefffe] dark:bg-[#505050] text-[#717a7a] dark:text-[#d9d9d9] w-full h-full rounded-full grid place-content-center group-hover:outline-8 group-focus-within:outline-8 group-hover:animate-wiggle group-focus-within:animate-wiggle shadow-Nbutton transition-all duration-100'> */}
+			{/* 	<Link */}
+			{/* 		onFocus={handleFocus} */}
+			{/* 		className='h-full w-full rounded-full group-focus-within:outline-hidden' */}
+			{/* 		to={router} */}
+			{/* 	> */}
+			{/* 		{children} */}
+			{/* 	</Link> */}
+			{/* </div> */}
 			<p className='absolute translate-y-2 left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-hover:opacity-100 group-focus-within:opacity-100 opacity-0 transition-all text-center '>
 				{text}
 			</p>
-		</li>
+		</motion.li>
 	)
 }
 

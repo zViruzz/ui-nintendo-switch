@@ -1,6 +1,6 @@
 import './global.css'
 import '@fontsource/roboto'
-import { AnimatePresence } from 'framer-motion'
+// import { AnimatePresence } from 'framer-motion'
 import { Outlet } from 'react-router-dom'
 import CardMessage from './components/CardMessage/CardMessage'
 import Footer from './components/Footer'
@@ -11,6 +11,7 @@ import { ControllerProvider } from './context/controller'
 import { OptionsMenuProvider } from './context/optionsMenu'
 import { useThemeContext } from './context/theme'
 import { useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
 	const { theme } = useThemeContext()
@@ -22,7 +23,7 @@ function App() {
 
 	return (
 		<>
-			<AnimatePresence>
+			<AnimatePresence mode='wait'>
 				<ControllerProvider>
 					<CardMessageProvider>
 						<OptionsMenuProvider>
