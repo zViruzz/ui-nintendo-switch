@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import controllersIllust3 from '../../assets/images/change-grip-or-order-controller3.webp'
 import controllersIllust4 from '../../assets/images/change-grip-or-order-controller4.webp'
 import controllersIllust from '../../assets/images/change-grip-or-order-controllers.webp'
@@ -9,6 +8,7 @@ import ButtonBIcon from '../../icons/ButtonBIcon'
 import MinusIcon from '../../icons/MinusIcon'
 import PlusIcon from '../../icons/PlusIcon'
 import SlashIcon from '../../icons/SlashIcon'
+import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 export default function ChangeGripOrOrder() {
 	const { buttonB } = useControllerContext()
@@ -28,13 +28,7 @@ export default function ChangeGripOrOrder() {
 	})
 
 	return (
-		<motion.div
-			className='grid grid-rows-[2.95fr_7fr_1.1fr] h-screen w-screen bg-[#0c1720b1] backdrop-blur-md'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.5 }}
-		>
+		<OpacityPageTransition className='grid grid-rows-[2.95fr_7fr_1.1fr] h-screen w-screen bg-[#0c1720b1] backdrop-blur-md'>
 			<div className='flex justify-center items-center'>
 				<div className='h-[47%]'>
 					<img className='h-full' src={controllersIllust} alt='controllers' />
@@ -87,6 +81,6 @@ export default function ChangeGripOrOrder() {
 					<p className='ml-4'>Back</p>
 				</button>
 			</div>
-		</motion.div>
+		</OpacityPageTransition>
 	)
 }

@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
 
 export default function NewControllersDetail() {
 	return (
-		<motion.div
-			className='px-[8.2%] py-[4%] grid grid-rows-[4fr_1.1fr] w-full h-full'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.3 }}
-		>
+		<OpacityPageTransition className='px-[8.2%] py-[4%] grid grid-rows-[4fr_1.1fr] w-full h-full'>
 			<div className='w-full h-full grid grid-rows-[1.6fr_2fr] gap-5'>
 				<div className='bg-primary-light rounded-md grid grid-cols-[2fr_1fr] '>
 					<div className='p-[4%]'>
@@ -40,6 +35,6 @@ export default function NewControllersDetail() {
 					Done
 				</Link>
 			</div>
-		</motion.div>
+		</OpacityPageTransition>
 	)
 }

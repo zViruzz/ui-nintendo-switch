@@ -1,17 +1,11 @@
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import controllersLeftUrl from '../../../assets/images/controllers-left.webp'
 import controllersRightUrl from '../../../assets/images/controllers-right.webp'
+import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
 
 export default function FindControllers() {
 	return (
-		<motion.div
-			className='px-[10.7%] py-[4.4%] grid grid-rows-[1fr_4fr_1.1fr] w-full h-full'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.3 }}
-		>
+		<OpacityPageTransition className='px-[10.7%] py-[4.4%] grid grid-rows-[1fr_4fr_1.1fr] w-full h-full'>
 			<div className='text-center'>
 				<p className='text-3xl md:text-4xl lg:text-5xl pt-[0.8%]'>
 					Controllers will be searched for by activating the vibration feature.
@@ -68,6 +62,6 @@ export default function FindControllers() {
 					of controllers can t be found
 				</button>
 			</div>
-		</motion.div>
+		</OpacityPageTransition>
 	)
 }

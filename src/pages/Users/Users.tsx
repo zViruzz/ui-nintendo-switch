@@ -48,7 +48,7 @@ function Users() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.5 }}
+			transition={{ duration: 0.2 }}
 		>
 			{/* <div className="grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5"> */}
 			<Header title={`Pagina de ${user.username}`}>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'
 import { useControllerContext } from '../../context/controller'
@@ -10,6 +10,7 @@ import SettingIcon from '../../icons/SettingIcon'
 function Setting() {
 	const { controllerButtonB } = useControllerContext()
 	const { t } = useTranslation()
+	const location = useLocation()
 
 	const options = [
 		{
@@ -67,15 +68,21 @@ function Setting() {
 			text: 'controller.buttonB.back',
 			route: '/',
 		})
-	}, [])
+	}, [location.pathname])
+
+	const isSettingAnimation =
+		location.pathname.includes('/setting') &&
+		!location.pathname.includes('/setting/airplane-mode')
 
 	return (
 		<motion.div
 			className='grid grid-rows-[1fr_7.5fr] grid-cols-[1fr_2.12fr] h-full w-full pt-[1.1%]'
-			initial={{ opacity: 0 }}
+			initial={{
+				opacity: isSettingAnimation ? 1 : 0,
+			}}
 			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.4 }}
+			exit={{ opacity: isSettingAnimation ? 1 : 0 }}
+			transition={{ duration: isSettingAnimation ? 0 : 0.2 }}
 		>
 			<Header>
 				<SettingIcon className='xl:w-[79px] xl:h-[79px] w-[59px] h-[59px]' />

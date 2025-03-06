@@ -13,7 +13,6 @@ interface OptionListProps {
 
 function OptionList({ options }: OptionListProps) {
 	const { controllerButtonA } = useControllerContext()
-
 	const location = useLocation()
 	const currentUrl = `/${location.pathname.split('/').pop()}`
 	const pathParent = `/${location.pathname.split('/')[1]}`

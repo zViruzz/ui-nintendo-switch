@@ -1,21 +1,15 @@
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import controllers from '../../../assets/images/nintendo-swith-gray-icon-none-left.webp'
 import controllersGrayLeft from '../../../assets/images/controllers-left-gray.webp'
 import ArrowDown from '../../../icons/ArrowDown'
 import { useTranslation } from 'react-i18next'
+import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
 
 export default function NewControllers() {
 	const { t } = useTranslation()
 
 	return (
-		<motion.div
-			className='px-[3%] py-[4.9%] grid grid-rows-[2fr_5fr_1fr] w-full h-full'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5, delay: 0.3 }}
-		>
+		<OpacityPageTransition className='px-[3%] py-[4.9%] grid grid-rows-[2fr_5fr_1fr] w-full h-full'>
 			<div className='text-center'>
 				<p className='text-3xl md:text-4xl lg:text-5xl '>
 					{t('controllers.new-controllers.title')}
@@ -51,6 +45,6 @@ export default function NewControllers() {
 					{t('controllers.new-controllers.button-2')}
 				</Link>
 			</div>
-		</motion.div>
+		</OpacityPageTransition>
 	)
 }
