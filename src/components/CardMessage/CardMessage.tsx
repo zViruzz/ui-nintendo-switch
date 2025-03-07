@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { tv } from 'tailwind-variants'
 import { useCardMessageContext } from '../../context/cardMessage'
 import { button, constainerCard, content, styles } from './CardMessageStyles'
 
