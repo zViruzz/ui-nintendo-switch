@@ -11,11 +11,11 @@ export const styles = {
 		},
 	}),
 	buttonsContainer: tv({
-		base: 'w-full flex border-t-3 dark:border-disabled border-neutral-300',
+		base: 'w-full flex border-t-3 dark:border-disabled border-neutral-300 divide-x-2 ',
 		variants: {
 			disabled: {
 				true: 'flex-col',
-				false: 'flex-row divide-x-2 divide-opacity-20 divide-white',
+				false: 'flex-row divide-x-3 divide-disabled',
 			},
 		},
 	}),
@@ -25,9 +25,9 @@ const stylesSlots = tv({
 	slots: {
 		constainerCard:
 			'relative flex w-[72rem] flex-col rounded-lg bg-gray-message-light dark:bg-gray-message [&div]:bg-white shadow-2xl',
-		content: 'w-full h-full text-4xl',
+		content: 'w-full h-full text-[2.6rem]/13.5',
 		button:
-			'background-highlight-transparent outline-wiggle-focus border-0 text-secodary-light dark:text-secodary w-full h-[6.7rem] rounded-xs text-[2.6rem] active:bg-secodary/[.06] active:outline-0 transition-all duration-75',
+			'background-highlight-transparent outline-wiggle-focus text-secodary-light dark:text-secodary w-full h-[6.7rem] rounded-xs text-[2.7rem] active:bg-secodary/[.06] active:outline-0 transition-all duration-75',
 	},
 })
 

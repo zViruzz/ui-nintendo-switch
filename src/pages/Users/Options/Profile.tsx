@@ -21,15 +21,15 @@ export function Profile() {
 			isHidden: false,
 			column: true,
 			children: (
-				<div className='flex justify-center items-center pb-20'>
+				<div className='flex justify-center items-center px-25 py-20'>
 					<p>
-						If this is not selected in-game, he or she will be displayed as offline even
-						if you are connected to the internet
+						If this user is not selected in-game, he or she will be displayed as offline
+						even if you are connected to the internet.
 					</p>
 				</div>
 			),
 			buttons: {
-				label: 'Ok',
+				label: 'OK',
 				onClick: () => {
 					onToggleHidden(true)
 					console.log('click Close')
@@ -43,15 +43,23 @@ export function Profile() {
 			isHidden: false,
 			column: true,
 			children: (
-				<div className='flex justify-center items-center pb-20'>
+				<div className='flex flex-col px-25 py-20'>
+					<p className='pb-5'>
+						Software played by this user will be displayed here. Up to 20 titles will be
+						displayed.
+					</p>
 					<p>
-						If this is not selected in-game, he or she will be displayed as offline even
-						if you are connected to the internet
+						You can change who can see your play activity or clear it completeley, via
+						User Settings.
+					</p>
+					<p className='text-[2rem]/10 text-description pt-3 pr-3'>
+						It may sometimes take a while for this information to update. Does not include
+						software played without selecting a user
 					</p>
 				</div>
 			),
 			buttons: {
-				label: 'Ok',
+				label: 'OK',
 				onClick: () => {
 					onToggleHidden(true)
 					console.log('click Close')

@@ -55,10 +55,10 @@ importers:
         version: 3.0.1
       tailwind-scrollbar-hide:
         specifier: 2.0.0
-        version: 2.0.0(tailwindcss@4.0.9)
+        version: 2.0.0(tailwindcss@4.0.12)
       tailwind-variants:
         specifier: 0.3.1
-        version: 0.3.1(tailwindcss@4.0.9)
+        version: 0.3.1(tailwindcss@4.0.12)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -79,8 +79,8 @@ importers:
         specifier: 3.7.2
         version: 3.7.2(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1))
       tailwindcss:
-        specifier: 4.0.9
-        version: 4.0.9
+        specifier: 4.0.12
+        version: 4.0.12
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -940,6 +940,9 @@ packages:
     peerDependencies:
       tailwindcss: '*'
 
+  tailwindcss@4.0.12:
+    resolution: {integrity: sha512-bT0hJo91FtncsAMSsMzUkoo/iEU0Xs5xgFgVC9XmdM9bw5MhZuQFjPNl6wxAE0SiQF/YTZJa+PndGWYSDtuxAg==}
+
   tailwindcss@4.0.3:
     resolution: {integrity: sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA==}
 
@@ -1654,14 +1657,16 @@ snapshots:
 
   tailwind-merge@3.0.1: {}
 
-  tailwind-scrollbar-hide@2.0.0(tailwindcss@4.0.9):
+  tailwind-scrollbar-hide@2.0.0(tailwindcss@4.0.12):
     dependencies:
-      tailwindcss: 4.0.9
+      tailwindcss: 4.0.12
 
-  tailwind-variants@0.3.1(tailwindcss@4.0.9):
+  tailwind-variants@0.3.1(tailwindcss@4.0.12):
     dependencies:
       tailwind-merge: 2.5.4
-      tailwindcss: 4.0.9
+      tailwindcss: 4.0.12
+
+  tailwindcss@4.0.12: {}
 
   tailwindcss@4.0.3: {}
 

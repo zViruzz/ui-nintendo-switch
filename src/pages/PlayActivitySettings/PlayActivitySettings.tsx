@@ -31,7 +31,7 @@ export default function PlayActivitySettings() {
 			isHidden: false,
 			column: false,
 			children: (
-				<div className='text-center pb-24 pt-5'>Your play activity will be deleted.</div>
+				<div className='text-center py-33 '>Your play activity will be deleted.</div>
 			),
 			buttons: [
 				{
