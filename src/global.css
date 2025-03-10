@@ -1,3 +1,18 @@
+.scroll-message::-webkit-scrollbar {
+  width: 6px;
+  /* or add it to the track */
+}
+
+.scroll-message::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* color of the tracking area */
+}
+
+.scroll-message::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 20px;
+}
+
 .swiper-slide {
   width: 300px !important;
   height: 300px !important;
