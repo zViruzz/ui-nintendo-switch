@@ -6,6 +6,7 @@ import QuestionIcon from '../../../icons/QuestionIcon'
 import { useAnimate, type ValueAnimationTransition } from 'framer-motion'
 import { type KeyboardEvent, useState } from 'react'
 import cn from '../../../utils/cn'
+import { useCardMessageContext } from '../../../context/cardMessage'
 
 type VibrationAnimationConfig = {
 	keyframes: { x: number[] | number }
@@ -79,6 +80,8 @@ function ControllerButton({ imageSrc, imageAlt }: ControllerButtonProps) {
 }
 
 export default function FindControllers() {
+	const { settingMessage, onToggleHidden } = useCardMessageContext()
+
 	return (
 		<OpacityPageTransition className='px-[10.7%] py-[4.4%] grid grid-rows-[1fr_4fr_1.1fr] w-full h-full'>
 			<div className='text-center'>
@@ -113,8 +116,48 @@ export default function FindControllers() {
 					Back
 				</Link>
 				<button
-					className='flex justify-center items-center gap-3 border-[3px] dark:border-white border-neutral-600 w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
 					type='button'
+					className='flex justify-center items-center gap-3 border-[3px] dark:border-white border-neutral-600 w-full h-[6.6rem] bg-transparent rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
+					onClick={() => {
+						settingMessage({
+							isHidden: false,
+							column: false,
+							children: (
+								<div className='pb-15'>
+									<ul className='list-disc flex flex-col gap-7 text-[2.6rem]/14 px-33 py-21 pr-18 h-[70vh] overflow-y-scroll'>
+										<li>
+											If a controller is on top of clothing or a soft object. like a
+											pillow, the vibration may become difficult to hear. Please be as
+											quiet as possible during the searching process.
+										</li>
+										<li>
+											Controllers that do not have a vibration feature cannot be searched
+											for by using this method.
+										</li>
+										<li>
+											If a controller is not vibrating, try moving the console closer to
+											where you think it might be or try searching for the controller
+											using a different console. Controllers may not vibrate if:{' '}
+										</li>
+										<p>- They are too far away from the console.</p>
+										<p>- They are out of battery power or have low battery power.</p>
+										<p>
+											- They are out not paired to a console or are paired to different
+											console.
+										</p>
+									</ul>
+								</div>
+							),
+							buttons: [
+								{
+									label: 'OK',
+									onClick: () => {
+										onToggleHidden(true)
+									},
+								},
+							],
+						})
+					}}
 				>
 					<QuestionIcon width={43} height={43} />
 					if controllers can t be found

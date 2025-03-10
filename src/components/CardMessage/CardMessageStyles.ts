@@ -25,7 +25,7 @@ const stylesSlots = tv({
 	slots: {
 		constainerCard:
 			'relative flex w-[72rem] flex-col rounded-lg bg-gray-message-light dark:bg-gray-message [&div]:bg-white',
-		content: 'w-full h-full text-4xl px-28 pt-20',
+		content: 'w-full h-full text-4xl',
 		button:
 			'background-highlight-transparent outline-wiggle-focus border-0 text-secodary-light dark:text-secodary w-full h-[6.7rem] rounded-xs text-4xl active:bg-secodary/[.06] active:outline-0 transition-all duration-75',
 	},
