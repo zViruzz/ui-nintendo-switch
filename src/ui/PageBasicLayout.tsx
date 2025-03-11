@@ -6,11 +6,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 	className?: string
 }
 
-export default function PageBasicLayout({
-	children,
-	className,
-	...otherProps
-}: Props) {
+export default function PageBasicLayout({ children, className, ...otherProps }: Props) {
 	return (
 		<section
 			className={cn(

@@ -68,7 +68,7 @@ export default function PlayActivitySettings() {
 	}
 
 	return (
-		<OpacityPageTransition>
+		<OpacityPageTransition className='w-full h-full'>
 			<PageBasicLayout>
 				<Header title='Play activity setting' />
 				<main className={constainerMain()}>
@@ -81,9 +81,9 @@ export default function PlayActivitySettings() {
 							<div>All Users</div>
 						</SelectionSetting>
 						<div className={detailSetting()}>
-							Information on thwn you started p;aying a sofware title and how long you
-							have playerd Information on thwn you started p;aying a sofware title and how
-							long you have playerdInformation on thwn you started p;aying a sofware title
+							Information on thwn you started playing a sofware title and how long you
+							have playerd Information on thwn you started playing a sofware title and how
+							long you have playerdInformation on thwn you started playing a sofware title
 							and how long you have playerd
 						</div>
 						<SelectionSetting
