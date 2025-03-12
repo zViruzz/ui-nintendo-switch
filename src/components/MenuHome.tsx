@@ -27,7 +27,7 @@ function MenuHome() {
 					<ShoppingBagIcon width={70} height={70} />
 				</ButtonMenu>
 				<ButtonMenu router='album' text={t('home.menu.album')}>
-					<GalleryIcon width={75} height={75} />
+					<GalleryIcon className='text-[#1ba3ff]' width={75} height={75} />
 				</ButtonMenu>
 
 				<ButtonMenu router='controllers' text={t('home.menu.controllers')}>

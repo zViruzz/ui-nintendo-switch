@@ -7,7 +7,7 @@ import { game } from '../static/game'
 
 function ViewGame() {
 	return (
-		<div className='flex'>
+		<div className='flex view-game'>
 			<Swiper
 				className='w-screen overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x px-[8.5%] pt-[0.6%]'
 				wrapperClass='pl-[8.5%]'

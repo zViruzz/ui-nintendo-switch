@@ -11,7 +11,7 @@ export function ControllersRoot() {
 
 	return (
 		<OpacityPageTransition className='w-full h-full grid grid-rows-[1fr_7.5fr]'>
-			<Header>
+			<Header isPageHeight={false}>
 				<ControllerIcon width={83} height={83} />
 				<h2>{t('controllers.title')}</h2>{' '}
 			</Header>

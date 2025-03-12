@@ -76,7 +76,7 @@ function Setting() {
 
 	return (
 		<motion.div
-			className='grid grid-rows-[1fr_7.5fr] grid-cols-[1fr_2.12fr] h-full w-full pt-[1.1%]'
+			className='grid grid-rows-[auto_7.5fr] grid-cols-[1fr_2.12fr] h-full w-full pt-[1.1%]'
 			initial={{
 				opacity: isSettingAnimation ? 1 : 0,
 			}}

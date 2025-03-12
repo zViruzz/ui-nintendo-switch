@@ -44,7 +44,7 @@ function Users() {
 	const user = useAppSelector((state) => state.user)
 	return (
 		<motion.section
-			className='grid grid-rows-[1fr_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5'
+			className='grid grid-rows-[auto_7.5fr] grid-cols-[38.3rem_1fr] h-full w-full pt-5'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}

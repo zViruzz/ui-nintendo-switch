@@ -13,20 +13,20 @@
   border-radius: 20px;
 }
 
-.swiper-slide {
+.view-game .swiper-slide {
   width: 300px !important;
   height: 300px !important;
 }
 
 @media (min-width: 1200px) {
-  .swiper-slide {
+  .view-game .swiper-slide {
     width: 340px !important;
     height: 300px !important;
   }
 }
 
 @media (min-width: 1600px) {
-  .swiper-slide {
+  .view-game .swiper-slide {
     width: 385px !important;
     height: 385px !important;
   }
