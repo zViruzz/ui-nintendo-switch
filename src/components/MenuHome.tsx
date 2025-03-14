@@ -10,9 +10,49 @@ import NewsIcon from '../icons/NewsIcon'
 import PowerIcon from '../icons/PowerIcon'
 import SettingIcon from '../icons/SettingIcon'
 import ShoppingBagIcon from '../icons/ShoppingBagIcon'
+import { useCardMessageContext } from '../context/cardMessage'
+import HomeIcon from '../icons/HomeIcon'
 
 function MenuHome() {
+	const { settingMessage } = useCardMessageContext()
 	const { t } = useTranslation()
+
+	const handleClickPower = () => {
+		settingMessage({
+			isHidden: false,
+			column: false,
+			children: (
+				<div className='px-12 py-22 mx-15'>
+					<p>The console will now enter sleep mode.</p>
+					<p className='inline-flex justify-center items-center gap-3'>
+						Press
+						<div className='inline-flex border-solid border-white border-2 rounded-full p-1'>
+							<HomeIcon className='w-5 h-5 text-white' />
+						</div>
+						to wake it.
+					</p>
+					<p className='text-description-message'>
+						You can also activate sleep mode from Quick Settings (hold{' '}
+						<div className='inline-flex border-solid border-description border-2 rounded-full p-1'>
+							<HomeIcon className='w-4 h-4 ' />
+						</div>
+						. )
+					</p>
+				</div>
+			),
+			buttons: [
+				{
+					label: 'Back',
+					isCloseButton: true,
+					onClick: () => {},
+				},
+				{
+					label: 'Sleep Mode',
+					onClick: () => {},
+				},
+			],
+		})
+	}
 
 	return (
 		<nav className='w-full h-full'>
@@ -36,7 +76,7 @@ function MenuHome() {
 				<ButtonMenu router='setting/airplane-mode' text={t('home.menu.settings')}>
 					<SettingIcon width={82} height={82} />
 				</ButtonMenu>
-				<ButtonMenu router='setting' text={t('home.menu.sleep-mode')}>
+				<ButtonMenu text={t('home.menu.sleep-mode')} onClick={handleClickPower}>
 					<PowerIcon width={75} height={75} />
 				</ButtonMenu>
 			</ul>
@@ -48,7 +88,8 @@ function ButtonMenu({
 	children,
 	router,
 	text,
-}: { children: ReactNode; router: string; text: string }) {
+	onClick,
+}: { children: ReactNode; router?: string; text: string; onClick?: () => void }) {
 	// const sound = new window.Audio(huhSound)
 	const { controllerButtonA } = useControllerContext()
 	const [isAnimating, setIsAnimating] = useState(false)
@@ -65,9 +106,14 @@ function ButtonMenu({
 	}
 	const handleClick = () => {
 		setIsAnimating(true)
-
 		setTimeout(() => {
-			navigate(router)
+			if (router) {
+				navigate(router)
+			}
+			if (onClick) {
+				onClick()
+			}
+			setIsAnimating(false)
 		}, 300)
 	}
 
@@ -95,7 +141,11 @@ function ButtonMenu({
 										'solid 1px rgb(255,255,255,0.7)',
 										'solid 22px rgb(255,255,255,0)',
 									],
-									backgroundColor: 'rgba(255, 255, 255, 0.15)',
+									backgroundColor: [
+										'rgba(255, 255, 255, 0.15)',
+										'rgba(255, 255, 255, 0.10)',
+										'rgba(255, 255, 255, 0)',
+									],
 									rotate: [20, -20, 0],
 									x: [0, -4, 4, -4, 4, 0],
 									y: [0, -2, 2, -2, 2, 0],

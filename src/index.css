@@ -154,6 +154,10 @@
   @apply hover:bg-background-highlight-transparent-light focus-visible:bg-background-highlight-transparent-light dark:hover:bg-background-highlight-transparent dark:focus-visible:bg-background-highlight-transparent;
 }
 
+@utility text-description-message {
+  @apply text-[2rem]/10 text-description pt-3 pr-3
+}
+
 @layer components {
   .highlight-selection {
     border-radius: 1px;
