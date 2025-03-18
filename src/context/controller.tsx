@@ -15,11 +15,21 @@ interface Props {
 interface ContextProps {
   controllerButtonA: (params: ControllerButtonParams) => void
   controllerButtonB: (params: ControllerButtonParams) => void
+  controllerButtonX: (params: ControllerButtonParams) => void
+  controllerButtonY: (params: ControllerButtonParams) => void
   buttonA: {
     text: string
     onClick: () => void
   }
   buttonB: {
+    text: string
+    onClick: () => void
+  }
+  buttonX: {
+    text: string
+    onClick: () => void
+  }
+  buttonY: {
     text: string
     onClick: () => void
   }
@@ -28,11 +38,21 @@ interface ContextProps {
 export const ControllerContext = createContext<ContextProps>({
   controllerButtonA: () => { },
   controllerButtonB: () => { },
+  controllerButtonX: () => { },
+  controllerButtonY: () => { },
   buttonA: {
     text: '',
     onClick: () => { },
   },
   buttonB: {
+    text: '',
+    onClick: () => { },
+  },
+  buttonX: {
+    text: '',
+    onClick: () => { },
+  },
+  buttonY: {
     text: '',
     onClick: () => { },
   },
@@ -48,6 +68,16 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
   })
 
   const [buttonB, setButtonB] = useState({
+    text: '',
+    onClick: () => { },
+  })
+
+  const [buttonX, setButtonX] = useState({
+    text: '',
+    onClick: () => { },
+  })
+
+  const [buttonY, setButtonY] = useState({
     text: '',
     onClick: () => { },
   })
@@ -84,13 +114,49 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
     })
   }
 
+  const controllerButtonX = ({ text, action, route }: ControllerButtonParams) => {
+    setButtonX({
+      text: t(text),
+      onClick: () => {
+        if (route !== undefined) {
+          if (typeof route === 'string') {
+            navigate(route)
+          } else if (typeof route === 'number') {
+            navigate(route)
+          }
+        }
+        if (action !== undefined) action()
+      },
+    })
+  }
+
+  const controllerButtonY = ({ text, action, route }: ControllerButtonParams) => {
+    setButtonY({
+      text: t(text),
+      onClick: () => {
+        if (route !== undefined) {
+          if (typeof route === 'string') {
+            navigate(route)
+          } else if (typeof route === 'number') {
+            navigate(route)
+          }
+        }
+        if (action !== undefined) action()
+      },
+    })
+  }
+
   return (
     <ControllerContext.Provider
       value={{
         controllerButtonA,
         controllerButtonB,
+        controllerButtonX,
+        controllerButtonY,
         buttonA,
         buttonB,
+        buttonX,
+        buttonY,
       }}
     >
       {children}

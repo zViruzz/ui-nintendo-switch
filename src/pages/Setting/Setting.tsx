@@ -1,16 +1,22 @@
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'
-import { useControllerContext } from '../../context/controller'
 import SettingIcon from '../../icons/SettingIcon'
+import useControllers from '../../hooks/useControllers'
 
 function Setting() {
-	const { controllerButtonB } = useControllerContext()
-	const { t } = useTranslation()
 	const location = useLocation()
+	const { t } = useTranslation()
+
+	useControllers({
+		settingButtonB: {
+			text: 'controller.buttonB.back',
+			route: '/',
+		},
+		dependence: true,
+	})
 
 	const options = [
 		{
@@ -62,13 +68,6 @@ function Setting() {
 		{ name: t('setting.options.tv-settings'), path: '/tv-settings' },
 		{ name: t('setting.options.system'), path: '/system' },
 	]
-
-	useEffect(() => {
-		controllerButtonB({
-			text: 'controller.buttonB.back',
-			route: '/',
-		})
-	}, [location.pathname])
 
 	const isSettingAnimation =
 		location.pathname.includes('/setting') &&

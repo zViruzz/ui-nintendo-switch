@@ -2,6 +2,8 @@ import type { HTMLAttributes } from 'react'
 import { useControllerContext } from '../context/controller'
 import ButtonAIcon from '../icons/ButtonAIcon'
 import ButtonBIcon from '../icons/ButtonBIcon'
+import ButtonXIcon from '../icons/ButtonXIcon'
+import ButtonYIcon from '../icons/ButtonYIcon'
 import NSwitchIcon from '../icons/NSwitchIcon'
 import cn from '../utils/cn'
 
@@ -10,13 +12,19 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 function Footer({ className, ...otherProps }: Props) {
-	const { buttonA, buttonB } = useControllerContext()
+	const { buttonA, buttonB, buttonX, buttonY } = useControllerContext()
 
 	const handleButtonAClick = () => {
 		buttonA.onClick()
 	}
 	const handleButtonBClick = () => {
 		buttonB.onClick()
+	}
+	const handleButtonXClick = () => {
+		buttonX.onClick()
+	}
+	const handleButtonYClick = () => {
+		buttonY.onClick()
 	}
 
 	return (
@@ -26,6 +34,34 @@ function Footer({ className, ...otherProps }: Props) {
 					<NSwitchIcon width={100} height={60} />
 				</div>
 				<div className='flex text-4xl h-full gap-8'>
+					{buttonY.text === '' ? null : (
+						<button
+							id='buttonY'
+							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] rounded-lg active:bg-[#2fffea3c] focus-visible:outline-hidden'
+							type='button'
+							onClick={handleButtonYClick}
+						>
+							<div>
+								<ButtonYIcon className='' width={42} height={42} />
+							</div>
+							<p>{buttonY.text}</p>
+						</button>
+					)}
+
+					{buttonX.text === '' ? null : (
+						<button
+							id='buttonX'
+							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] rounded-lg active:bg-[#2fffea3c] focus-visible:outline-hidden'
+							type='button'
+							onClick={handleButtonXClick}
+						>
+							<div>
+								<ButtonXIcon width={42} height={42} />
+							</div>
+							<p>{buttonX.text}</p>
+						</button>
+					)}
+
 					{buttonB.text === '' ? null : (
 						<button
 							id='buttonB'

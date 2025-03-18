@@ -32,6 +32,14 @@ export default function Album() {
 			text: 'controller.buttonB.back',
 			route: -1,
 		},
+		settingButtonX: {
+			text: 'controller.buttonA.ok',
+			route: -1,
+		},
+		settingButtonY: {
+			text: 'controller.buttonA.ok',
+			route: -1,
+		},
 	})
 
 	const imagesGallery = [
