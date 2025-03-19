@@ -1,5 +1,7 @@
 import './global.css'
 import '@fontsource/roboto'
+import { useEffect } from 'react'
+import AnimatedOutlet from './components/AnimatedOutlet'
 import CardMessage from './components/CardMessage/CardMessage'
 import Footer from './components/Footer'
 import OptionsMenu from './components/OptionsMenu/OptionsMenu'
@@ -8,8 +10,6 @@ import { CardMessageProvider } from './context/cardMessage'
 import { ControllerProvider } from './context/controller'
 import { OptionsMenuProvider } from './context/optionsMenu'
 import { useThemeContext } from './context/theme'
-import { useEffect } from 'react'
-import AnimatedOutlet from './components/AnimatedOutlet'
 
 function App() {
 	const { theme } = useThemeContext()

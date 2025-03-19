@@ -33,11 +33,11 @@ export default function Album() {
 			route: -1,
 		},
 		settingButtonX: {
-			text: 'controller.buttonA.ok',
+			text: 'Delete',
 			route: -1,
 		},
 		settingButtonY: {
-			text: 'controller.buttonA.ok',
+			text: 'Filter',
 			route: -1,
 		},
 	})

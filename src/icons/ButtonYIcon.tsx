@@ -1,22 +1,23 @@
 import type { SVGProps } from 'react'
 
 function ButtonYIcon(props: SVGProps<SVGSVGElement>) {
-	return (
-		<svg
-			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 24 24'
-			fill='none'
-			stroke='currentColor'
-			strokeWidth='2'
-			strokeLinecap='round'
-			strokeLinejoin='round'
-			aria-hidden='true'
-			{...props}
-		>
-			<circle cx='12' cy='12' r='10' fill='#FFD700' />
-			<path d='M12 8V12M12 12L8 16M12 12L16 16' stroke='white' strokeWidth='2' />
-		</svg>
-	)
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      transform="rotate(180)"
+      {...props}
+    >
+      <circle cx='12' cy='12' r='10' fill='currentColor' />
+      <path d='M12 8V12M12 12L8 16M12 12L16 16' stroke='black' strokeWidth='2' />
+    </svg>
+  )
 }
 
 export default ButtonYIcon

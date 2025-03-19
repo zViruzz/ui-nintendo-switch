@@ -51,12 +51,12 @@ function Footer({ className, ...otherProps }: Props) {
 					{buttonX.text === '' ? null : (
 						<button
 							id='buttonX'
-							className='flex my-2 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] rounded-lg active:bg-[#2fffea3c] focus-visible:outline-hidden'
+							className='flex my-3 gap-6 px-5 items-center bg-transparent border-none focus-visible:bg-[#2fffea3c] rounded-lg active:bg-[#2fffea3c] focus-visible:outline-hidden'
 							type='button'
 							onClick={handleButtonXClick}
 						>
 							<div>
-								<ButtonXIcon width={42} height={42} />
+								<ButtonXIcon width={41} height={42} />
 							</div>
 							<p>{buttonX.text}</p>
 						</button>
