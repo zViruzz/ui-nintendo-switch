@@ -1,20 +1,15 @@
-import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-import { useControllerContext } from '../../context/controller'
+import useControllers from '../../hooks/useControllers'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 export default function Controllers() {
-	const { controllerButtonB } = useControllerContext()
-
-	useEffect(() => {
-		controllerButtonB({
+	useControllers({
+		settingButtonB: {
 			text: 'controller.buttonB.back',
 			route: '/',
-			action: () => {
-				console.log('back')
-			},
-		})
-	}, [])
+			action: () => {},
+		},
+	})
 
 	return (
 		<OpacityPageTransition>

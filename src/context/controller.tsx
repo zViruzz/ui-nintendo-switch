@@ -86,14 +86,15 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
 			return
 		}
 		const { text, action, route } = setting
+
 		setButtonA({
 			text: t(text),
 			onClick: () => {
 				if (route !== undefined) {
 					if (typeof route === 'string') {
-						navigate(route) // Navegar a una ruta específica
+						navigate(route)
 					} else if (typeof route === 'number') {
-						navigate(route) // Navegar en el historial
+						navigate(route)
 					}
 				}
 				if (action !== undefined) action()
@@ -110,14 +111,15 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
 			return
 		}
 		const { text, action, route } = setting
+
 		setButtonB({
 			text: t(text),
 			onClick: () => {
 				if (route !== undefined) {
 					if (typeof route === 'string') {
-						navigate(route) // Navegar a una ruta específica
+						navigate(route)
 					} else if (typeof route === 'number') {
-						navigate(route) // Navegar en el historial
+						navigate(route)
 					}
 				}
 				if (action !== undefined) action()
