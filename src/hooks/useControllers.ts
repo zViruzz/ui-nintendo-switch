@@ -21,10 +21,10 @@ export default function useControllers({
 
 	useEffect(() => {
 		if (!dependence) return
-		if (settingButtonA) controllerButtonA(settingButtonA)
-		if (settingButtonB) controllerButtonB(settingButtonB)
-		if (settingButtonX) controllerButtonX(settingButtonX)
-		if (settingButtonY) controllerButtonY(settingButtonY)
+		controllerButtonA(settingButtonA)
+		controllerButtonB(settingButtonB)
+		controllerButtonX(settingButtonX)
+		controllerButtonY(settingButtonY)
 	}, [dependence])
 
 	return {}
