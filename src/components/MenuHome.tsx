@@ -1,17 +1,17 @@
-import { useState, type ReactNode } from 'react'
 // import huhSound from '../assets/huh.mp3'
 import { motion } from 'framer-motion'
+import { type ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { useCardMessageContext } from '../context/cardMessage'
 import { useControllerContext } from '../context/controller'
 import ControllerIcon from '../icons/ControllerIcon'
 import GalleryIcon from '../icons/GalleryIcon'
+import HomeIcon from '../icons/HomeIcon'
 import NewsIcon from '../icons/NewsIcon'
 import PowerIcon from '../icons/PowerIcon'
 import SettingIcon from '../icons/SettingIcon'
 import ShoppingBagIcon from '../icons/ShoppingBagIcon'
-import { useCardMessageContext } from '../context/cardMessage'
-import HomeIcon from '../icons/HomeIcon'
 
 function MenuHome() {
 	const { settingMessage } = useCardMessageContext()
@@ -93,6 +93,8 @@ function ButtonMenu({
 	// const sound = new window.Audio(huhSound)
 	const { controllerButtonA } = useControllerContext()
 	const [isAnimating, setIsAnimating] = useState(false)
+	const [isDisabled, setIsDisabled] = useState(false) // Agregar estado para deshabilitar el botón
+
 	const navigate = useNavigate()
 
 	const handleFocus = () => {
@@ -104,17 +106,22 @@ function ButtonMenu({
 			},
 		})
 	}
+
 	const handleClick = () => {
+		if (isDisabled) return
+		setIsDisabled(true)
 		setIsAnimating(true)
+
+		if (router && !isDisabled) {
+			navigate(router, { replace: true })
+		}
+		if (onClick) {
+			onClick()
+		}
 		setTimeout(() => {
-			if (router) {
-				navigate(router)
-			}
-			if (onClick) {
-				onClick()
-			}
+			setIsDisabled(false)
 			setIsAnimating(false)
-		}, 300)
+		}, 600)
 	}
 
 	return (
