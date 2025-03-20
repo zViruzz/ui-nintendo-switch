@@ -29,7 +29,7 @@ function Footer({ className, ...otherProps }: Props) {
 
 	return (
 		<footer className={cn('px-[2.5%] ', className)} {...otherProps}>
-			<div className='flex justify-between items-center h-full px-[1.8%] border-t-2 dark:border-white border-neutral-800'>
+			<div className='flex justify-between items-center h-full px-[1.8%] border-t-2 dark:border-neutral-300 border-neutral-800'>
 				<div>
 					<NSwitchIcon width={100} height={60} />
 				</div>
