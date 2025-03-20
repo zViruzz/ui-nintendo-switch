@@ -93,8 +93,7 @@ function ButtonMenu({
 	// const sound = new window.Audio(huhSound)
 	const { controllerButtonA } = useControllerContext()
 	const [isAnimating, setIsAnimating] = useState(false)
-	const [isDisabled, setIsDisabled] = useState(false) // Agregar estado para deshabilitar el botón
-
+	const [isDisabled, setIsDisabled] = useState(false)
 	const navigate = useNavigate()
 
 	const handleFocus = () => {

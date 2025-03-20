@@ -153,7 +153,7 @@ export default function Album() {
 									setSelectIndex(swiper.activeIndex)
 								}}
 							>
-								{imagesGallery.map((item, index) => (
+								{imagesGallery.map((item) => (
 									<SwiperSlide
 										key={item.name}
 										className='w-full h-full flex items-center justify-center'
