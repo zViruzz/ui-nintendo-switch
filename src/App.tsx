@@ -2,6 +2,7 @@ import './global.css'
 import '@fontsource/roboto'
 import { useEffect } from 'react'
 import AnimatedOutlet from './components/AnimatedOutlet'
+import { BrightnessLayout } from './components/BrightnessLayout'
 import CardMessage from './components/CardMessage/CardMessage'
 import Footer from './components/Footer'
 import OptionsMenu from './components/OptionsMenu/OptionsMenu'
@@ -24,14 +25,18 @@ function App() {
 			<ControllerProvider>
 				<CardMessageProvider>
 					<OptionsMenuProvider>
-						<main>
-							<OptionsMenu />
-							<WelcomeMessage />
-							<CardMessage />
+						<BrightnessLayout>
+							<div className='h-screen grid grid-rows-[90%_10%]'>
+								<main>
+									<OptionsMenu />
+									<WelcomeMessage />
+									<CardMessage />
 
-							<AnimatedOutlet />
-						</main>
-						<Footer />
+									<AnimatedOutlet />
+								</main>
+								<Footer />
+							</div>
+						</BrightnessLayout>
 					</OptionsMenuProvider>
 				</CardMessageProvider>
 			</ControllerProvider>

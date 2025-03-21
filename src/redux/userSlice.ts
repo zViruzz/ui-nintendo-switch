@@ -1,5 +1,5 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
-import mario from '../assets/ns-mario-profile-pg.png'
+import mario from '../assets/ns-mario-profile.png'
 
 export interface UserType {
 	username: string
@@ -31,7 +31,6 @@ export const userSlice = createSlice({
 	},
 })
 
-export const { changeCharacter, changeUsername, changeBackground } =
-	userSlice.actions
+export const { changeCharacter, changeUsername, changeBackground } = userSlice.actions
 
 export default userSlice.reducer

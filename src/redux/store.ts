@@ -1,16 +1,18 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import settingsReducer from './settingSlice'
 import userReducer from './userSlice'
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['user'],
+	whitelist: ['user', 'settings'],
 }
 
 const rootReducer = combineReducers({
 	user: userReducer,
+	setting: settingsReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
