@@ -33,12 +33,12 @@ export const game = [
 	},
 	{
 		id: '6',
-		name: 'Animal Crossing',
-		urlImage: AnimalCrossingUrl,
+		name: 'null',
+		urlImage: null,
 	},
 	{
 		id: '7',
-		name: 'Animal Crossing',
-		urlImage: AnimalCrossingUrl,
+		name: 'null',
+		urlImage: null,
 	},
 ]

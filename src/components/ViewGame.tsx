@@ -24,12 +24,15 @@ function ViewGame() {
 					>
 						<div className='h-16'>
 							<div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center text-font-highlight-light dark:text-font-highlight text-[2.5rem]'>
-								{name}
+								{urlImage ? name : ''}
 							</div>
 						</div>
 						<div className='flex outline-offset-4 outline-0 outline-[#15bffd] group-focus:outline-8 group-hover:outline-8 group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100'>
-							{/* <div className='flex outline-offset-4 outline-0 outline-[#15bffd] group-focus:outline-8 group-hover:outline-8 group-hover:animate-wiggle group-focus:animate-wiggle shadow-Nbutton transition-all duration-100 2xl:w-[385px] 2xl:h-[385px] xl:w-[340px] xl:h-[340px] w-[300px] h-[300px]'> */}
-							<img src={urlImage} className='object-cover w-full h-full' alt={name} />
+							{urlImage ? (
+								<img src={urlImage} className='object-cover w-full h-full' alt={name} />
+							) : (
+								<div className='w-full h-full aspect-square bg-[#323232] border-5 border-[#404040]' />
+							)}
 						</div>
 					</SwiperSlide>
 				))}
