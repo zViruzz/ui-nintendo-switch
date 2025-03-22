@@ -42,7 +42,9 @@ export default function TrendingView() {
 		const nub = index - 1
 		if (nub < 0) return
 		const { id: newId, name: newTitle, urlImage: newUrl } = trendingList[nub]
-		selectionTrending({ id: newId, title: newTitle, url: newUrl })
+		if (newUrl !== null) {
+			selectionTrending({ id: newId, title: newTitle, url: newUrl })
+		}
 	}
 
 	const handleClickNext = () => {
@@ -50,7 +52,9 @@ export default function TrendingView() {
 		const nub = index + 1
 		if (nub >= trendingList.length) return
 		const { id: newId, name: newTitle, urlImage: newUrl } = trendingList[nub]
-		selectionTrending({ id: newId, title: newTitle, url: newUrl })
+		if (newUrl !== null) {
+			selectionTrending({ id: newId, title: newTitle, url: newUrl })
+		}
 	}
 
 	return (

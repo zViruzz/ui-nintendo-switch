@@ -20,14 +20,16 @@ export function Trending() {
 					</div>
 
 					<div className='grid grid-cols-res h-full gap-5'>
-						{trendingList.map((game) => (
-							<TrendingItem
-								key={game.id}
-								id={game.id}
-								title={game.name}
-								url={game.urlImage}
-							/>
-						))}
+						{trendingList.map((game) =>
+							game.urlImage !== null ? (
+								<TrendingItem
+									key={game.id}
+									id={game.id}
+									title={game.name}
+									url={game.urlImage}
+								/>
+							) : null,
+						)}
 					</div>
 
 					<TrendingView />
