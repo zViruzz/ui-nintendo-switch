@@ -6,12 +6,20 @@ import SelectionSetting from './SelectionSetting'
 interface Props {
 	children: ReactNode
 	className?: string
+	onSwitch?: (bol: boolean) => void
+	initial?: boolean
 }
 
-function SelectionSwitch({ children, className }: Props) {
-	const [value, setValue] = useState(false)
+function SelectionSwitch({ children, className, initial = false, onSwitch }: Props) {
+	const [value, setValue] = useState(initial)
+
 	const handleClick = () => {
-		setValue(!value)
+		const newValue = !value
+		setValue(newValue)
+
+		if (onSwitch) {
+			onSwitch(newValue)
+		}
 	}
 
 	const isOn = tv({
@@ -33,9 +41,7 @@ function SelectionSwitch({ children, className }: Props) {
 				type='button'
 			>
 				<div>{children}</div>
-				<div className={isOn({ disabled: value })}>
-					{value ? 'Si' : 'No'}
-				</div>
+				<div className={isOn({ disabled: value })}>{value ? 'Si' : 'No'}</div>
 			</SelectionSetting>
 		</>
 	)

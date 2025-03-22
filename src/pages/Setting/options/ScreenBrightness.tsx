@@ -1,21 +1,40 @@
 import type { ChangeEvent } from 'react'
 import { useDispatch } from 'react-redux'
 import BrightnessIcon from '../../../icons/BrightnessIcon'
-import { changeBrightness } from '../../../redux/settingSlice'
+import { useAppSelector } from '../../../redux/hooks'
+import { changeAutoBrighness, changeBrightness } from '../../../redux/settingSlice'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function ScreenBrightness() {
 	const dispatch = useDispatch()
+	const brightness = useAppSelector((state) => state.settings.brightness.value)
+	const autoBrighness = useAppSelector(
+		(state) => state.settings.brightness.autoBrightness,
+	)
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const brighness = Number.parseInt(e.target.value)
+		if (autoBrighness) return
+
 		dispatch(changeBrightness(brighness))
 	}
+
+	const handleSwitch = (bol: boolean) => {
+		dispatch(changeAutoBrighness(bol))
+		if (bol) {
+			dispatch(changeBrightness(50))
+		}
+	}
+
 	return (
 		<ListPageTransition>
 			<div className=' h-full w-full flex flex-col'>
-				<SelectionSwitch className='border-y border-gray'>
+				<SelectionSwitch
+					className='border-y border-gray'
+					onSwitch={handleSwitch}
+					initial={autoBrighness}
+				>
 					Brillo automático
 				</SelectionSwitch>
 
@@ -25,6 +44,7 @@ export function ScreenBrightness() {
 						onChange={handleChange}
 						type='range'
 						className='w-full webkit-slider-thumb out-of-range:border-green-500'
+						value={brightness}
 					/>
 				</div>
 
