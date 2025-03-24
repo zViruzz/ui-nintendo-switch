@@ -34,11 +34,9 @@ export default function Album() {
 		},
 		settingButtonX: {
 			text: 'Delete',
-			route: -1,
 		},
 		settingButtonY: {
 			text: 'Filter',
-			route: -1,
 		},
 	})
 
@@ -103,9 +101,10 @@ export default function Album() {
 						key={item.name}
 						type='button'
 						onClick={(e) => handleClick(index, e)}
-						className='bg-neutral-800 outline-wiggle-focus'
+						className='outline-wiggle-focus relative'
 					>
 						<img alt={item.name} src={item.url} className='w-full h-full object-cover' />
+						<div className='active:bg-secodary/20 z-10 w-full h-full absolute top-0 left-0' />
 					</button>
 				))}
 			</section>
@@ -113,7 +112,7 @@ export default function Album() {
 			<AnimatePresence>
 				{isHiddenGallery && buttonPosition && (
 					<motion.div
-						className='fixed inset-0 z-10 bg-black/30 backdrop-blur-xs flex items-center justify-center'
+						className='fixed inset-0 z-30 bg-black/30 backdrop-blur-xs flex items-center justify-center'
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
