@@ -1,12 +1,13 @@
 import { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import App from './App.tsx'
 import './i18n.ts'
 import './index.css'
+import { ThemeProvider } from './context/theme.tsx'
 import {
 	Album,
 	BlockedUserList,
@@ -49,7 +50,6 @@ import {
 	UserSettings,
 } from './pages/Users/Options'
 import { store } from './redux/store.ts'
-import { ThemeProvider } from './context/theme.tsx'
 
 localStorage.theme = localStorage.theme || 'dark'
 document.documentElement.setAttribute('data-theme', localStorage.theme)

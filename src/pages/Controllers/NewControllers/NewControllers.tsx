@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import controllers from '../../../assets/images/nintendo-swith-gray-icon-none-left.webp'
-import controllersGrayLeft from '../../../assets/images/controllers-left-gray.webp'
-import ArrowDown from '../../../icons/ArrowDown'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
+import controllersGrayLeft from '../../../assets/images/controllers-left-gray.webp'
+import controllers from '../../../assets/images/nintendo-swith-gray-icon-none-left.webp'
+import ArrowDown from '../../../icons/ArrowDown'
 import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
 
 export default function NewControllers() {

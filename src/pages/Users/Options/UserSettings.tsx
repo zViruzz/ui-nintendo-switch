@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import CharacterProfile from '../../../components/CharacterProfile'
 import EditName from '../../../components/EditName'
 import { useCardMessageContext } from '../../../context/cardMessage'
@@ -49,9 +49,7 @@ export function UserSettings() {
 			column: true,
 			children: (
 				<div className='pb-20 flex items-center flex-col'>
-					<p className='leading-loose text-4xl'>
-						0590 - 2490 - 3728 - 6564 - 9837 - 7
-					</p>
+					<p className='leading-loose text-4xl'>0590 - 2490 - 3728 - 6564 - 9837 - 7</p>
 					<p className='text-3xl text-description'>
 						This number may be required for your inquiry.
 					</p>
@@ -69,10 +67,7 @@ export function UserSettings() {
 
 	return (
 		<ListPageTransition>
-			<EditName
-				isHidden={isHiddenEditName}
-				setIsHidden={setIsHiddenEditName}
-			/>
+			<EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
 
 			<div>
 				<div className='mb-28'>
@@ -87,9 +82,7 @@ export function UserSettings() {
 						}}
 					>
 						<div>{t('users.user-setting.nickname')}</div>
-						<div className='text-secodary bg-transparent p-0'>
-							{username}
-						</div>
+						<div className='text-secodary bg-transparent p-0'>{username}</div>
 					</SelectionSetting>
 					<SelectionSetting
 						as={Link}
@@ -146,10 +139,7 @@ export function UserSettings() {
 					<SelectionSetting className='border-y border-gray flex justify-between'>
 						{t('users.user-setting.nintendo-eshop.option1')}
 					</SelectionSetting>
-					<SelectionSetting
-						disabled={true}
-						className=' border-gray flex justify-between'
-					>
+					<SelectionSetting disabled={true} className=' border-gray flex justify-between'>
 						<div className='text-2xl text-description mb-11'>
 							{t('users.user-setting.nintendo-eshop.description')}
 						</div>

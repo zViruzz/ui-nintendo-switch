@@ -1,5 +1,5 @@
 import '@fontsource/roboto/500.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import BatteryIcon from '../icons/BatteryIcon'
 import WifiIcon from '../icons/WifiIcon'
 import { useAppSelector } from '../redux/hooks'

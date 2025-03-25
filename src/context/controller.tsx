@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { type To, useNavigate } from 'react-router-dom'
+import { type To, useNavigate } from 'react-router'
 
 export type ControllerButtonParams =
 	| {

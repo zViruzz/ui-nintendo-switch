@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import useControllers from '../../hooks/useControllers'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 

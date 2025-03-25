@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import nintendoSwitchIcon from '../../../assets/images/nintendo-switch.webp'
 import Header from '../../../components/Header'
 import BatteryIcon from '../../../icons/BatteryIcon'

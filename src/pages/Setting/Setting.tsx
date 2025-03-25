@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'
-import SettingIcon from '../../icons/SettingIcon'
 import useControllers from '../../hooks/useControllers'
+import SettingIcon from '../../icons/SettingIcon'
 
 function Setting() {
 	const location = useLocation()

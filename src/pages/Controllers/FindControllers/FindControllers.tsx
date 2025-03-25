@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
+import { type ValueAnimationTransition, useAnimate } from 'framer-motion'
+import { type KeyboardEvent, useState } from 'react'
+import { Link } from 'react-router'
 import controllersLeftUrl from '../../../assets/images/controllers-left.webp'
 import controllersRightUrl from '../../../assets/images/controllers-right.webp'
-import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
-import QuestionIcon from '../../../icons/QuestionIcon'
-import { useAnimate, type ValueAnimationTransition } from 'framer-motion'
-import { type KeyboardEvent, useState } from 'react'
-import cn from '../../../utils/cn'
 import { useCardMessageContext } from '../../../context/cardMessage'
+import QuestionIcon from '../../../icons/QuestionIcon'
+import OpacityPageTransition from '../../../transitions/OpacityPageTransition'
+import cn from '../../../utils/cn'
 
 type VibrationAnimationConfig = {
 	keyframes: { x: number[] | number }

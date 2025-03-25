@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import CharacterProfile from '../../components/CharacterProfile'
 import Header from '../../components/Header'
 import OptionList from '../../components/OptionsList'

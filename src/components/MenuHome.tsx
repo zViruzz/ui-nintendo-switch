@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { type ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import { useCardMessageContext } from '../context/cardMessage'
 import { useControllerContext } from '../context/controller'
 import ControllerIcon from '../icons/ControllerIcon'
