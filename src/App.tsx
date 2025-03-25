@@ -2,7 +2,7 @@ import './global.css'
 import '@fontsource/roboto'
 import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-// import AnimatedOutlet from './components/AnimatedOutlet'
+import AnimatedOutlet from './components/AnimatedOutlet'
 import { BrightnessLayout } from './components/BrightnessLayout'
 import CardMessage from './components/CardMessage/CardMessage'
 import Footer from './components/Footer'
@@ -33,7 +33,7 @@ function App() {
 									<WelcomeMessage />
 									<CardMessage />
 
-									{/* <AnimatedOutlet /> */}
+									<AnimatedOutlet />
 									<Outlet />
 								</main>
 								<Footer />
