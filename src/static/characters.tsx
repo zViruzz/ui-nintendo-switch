@@ -1,4 +1,3 @@
-import Luigi from '../assets/luigi.png'
 import Mario from '../assets/ns-mario-profile.png'
 
-export const characters = [Luigi, Mario]
+export const characters = [Mario]
