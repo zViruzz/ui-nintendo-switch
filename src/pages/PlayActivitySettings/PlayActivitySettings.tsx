@@ -21,7 +21,7 @@ export default function PlayActivitySettings() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: -1,
+			route: '/users/user-settings',
 		},
 		dependence: listOptions.isHidden,
 	})

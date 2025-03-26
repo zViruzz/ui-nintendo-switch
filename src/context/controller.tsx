@@ -111,6 +111,7 @@ export const ControllerProvider: React.FC<Props> = ({ children }) => {
 			return
 		}
 		const { text, action, route } = setting
+		console.log('🚀 ~ controllerButtonB ~ setting:', setting)
 
 		setButtonB({
 			text: t(text),
