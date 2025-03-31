@@ -43,17 +43,17 @@ export function ControllersRoot() {
 				<nav className='min-h-full pr-[2.6%] bg-linear-to-t from-transparent from-5% dark:via-[#4e4e4e] via-[#f4f5f5] via-50% to-transparent to-100% text-secodary-light dark:text-secodary text-[2.6rem]'>
 					<ul className='h-full w-full pl-12 pt-10 flex flex-col justify-evenly [&>li>a]:hover:background-highlight-transparent [&>li>a]:focus-visible:background-highlight-transparent [&>li>a]:outline-wiggle-focus [&>li]:w-full [&>li]:h-[7.4rem] [&>li>a]:w-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-5'>
 						<li>
-							<Link to='/change-grip-or-order'>
+							<Link to='/app/change-grip-or-order'>
 								{t('controllers.button.change-grip-or-order')}
 							</Link>
 						</li>
 						<li>
-							<Link to='/controllers/find-controllers'>
+							<Link to='find-controllers'>
 								{t('controllers.button.find-controllers')}
 							</Link>
 						</li>
 						<li>
-							<Link to='/controllers/new-controllers'>
+							<Link to='new-controllers'>
 								{t('controllers.button.pairing-new-controllers')}
 							</Link>
 						</li>

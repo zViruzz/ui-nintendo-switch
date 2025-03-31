@@ -76,7 +76,7 @@ export function Profile() {
 				<div className='h-[20.5rem] flex gap-12 '>
 					<Link
 						className='shrink-0 outline-wiggle-focus outline-offset-4 transition-all duration-100 '
-						to='/edit-icon'
+						to='/app/edit-icon'
 					>
 						<CharacterProfile className='w-full h-full' />
 					</Link>

@@ -66,14 +66,13 @@ function MenuHome() {
 				<ButtonMenu router='eshop' text={t('home.menu.eshop')}>
 					<ShoppingBagIcon width={70} height={70} />
 				</ButtonMenu>
-				<ButtonMenu router='album' text={t('home.menu.album')}>
+				<ButtonMenu router='app/album' text={t('home.menu.album')}>
 					<GalleryIcon className='text-[#1ba3ff]' width={75} height={75} />
 				</ButtonMenu>
-
-				<ButtonMenu router='controllers' text={t('home.menu.controllers')}>
+				<ButtonMenu router='app/controllers' text={t('home.menu.controllers')}>
 					<ControllerIcon width={83} height={83} />
 				</ButtonMenu>
-				<ButtonMenu router='setting/airplane-mode' text={t('home.menu.settings')}>
+				<ButtonMenu router='app/setting/airplane-mode' text={t('home.menu.settings')}>
 					<SettingIcon width={82} height={82} />
 				</ButtonMenu>
 				<ButtonMenu text={t('home.menu.sleep-mode')} onClick={handleClickPower}>
@@ -112,7 +111,7 @@ function ButtonMenu({
 		setIsAnimating(true)
 
 		if (router && !isDisabled) {
-			navigate(router, { replace: true })
+			navigate(`/${router}`, { replace: true })
 		}
 		if (onClick) {
 			onClick()

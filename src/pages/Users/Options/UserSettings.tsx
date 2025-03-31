@@ -86,7 +86,7 @@ export function UserSettings() {
 					</SelectionSetting>
 					<SelectionSetting
 						as={Link}
-						to='/edit-icon'
+						to='/app/edit-icon'
 						className='border-b border-gray flex justify-between'
 					>
 						<div>{t('users.user-setting.edit-icon')}</div>
@@ -96,7 +96,7 @@ export function UserSettings() {
 					</SelectionSetting>
 					<SelectionSetting
 						as={Link}
-						to='/play-activity-settings'
+						to='/app/play-activity-settings'
 						className='border-b border-gray'
 					>
 						{t('users.user-setting.play-activity-setting')}
@@ -157,14 +157,14 @@ export function UserSettings() {
 					<SelectionSetting
 						className='border-y border-gray flex justify-between'
 						as={Link}
-						to='/users/user-settings/friend-settings'
+						to='/app/friend-settings'
 					>
 						{t('users.user-setting.friend-functions.option1')}
 					</SelectionSetting>
 					<SelectionSetting
 						className='border-b border-gray flex justify-between'
 						as={Link}
-						to='/users/user-settings/blocked-user-list'
+						to='/app/users/user-settings/blocked-user-list'
 					>
 						{t('users.user-setting.friend-functions.option2')}
 					</SelectionSetting>

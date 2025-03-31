@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useControllerContext } from '../../context/controller'
+import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 export default function Eshop() {
 	const { controllerButtonB } = useControllerContext()
@@ -15,8 +16,8 @@ export default function Eshop() {
 	}, [])
 
 	return (
-		<div className='w-full h-full grid place-content-center text-5xl'>
+		<OpacityPageTransition className='w-full h-full grid place-content-center text-5xl'>
 			<h2>Cooming soon</h2>
-		</div>
+		</OpacityPageTransition>
 	)
 }

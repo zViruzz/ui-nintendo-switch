@@ -1,4 +1,4 @@
-import { motion, type MotionProps } from 'framer-motion'
+import { type MotionProps, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 interface OpacityPageTransitionProps extends MotionProps {

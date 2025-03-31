@@ -33,14 +33,14 @@ export default function NewControllers() {
 			<div className='text-2xl md:text-3xl lg:text-4xl flex flex-col items-center justify-center gap-5'>
 				<Link
 					className='border-[3px] dark:border-white border-neutral-600 w-[44.2%] h-[6.6rem] flex justify-center items-center rounded-lg outline-offset-[-3px] background-highlight outline-wiggle-focus'
-					to='/controllers'
+					to='/app/controllers'
 				>
 					{t('controllers.new-controllers.button-1')}
 				</Link>
 
 				<Link
 					className='border-[3px] dark:border-white border-neutral-600 w-[33.5%] h-[5.4rem] flex justify-center items-center rounded-lg outline-offset-[-3px] background-highlight outline-wiggle-focus'
-					to='/controllers/new-controllers-detail'
+					to='/app/controllers/new-controllers-detail'
 				>
 					{t('controllers.new-controllers.button-2')}
 				</Link>

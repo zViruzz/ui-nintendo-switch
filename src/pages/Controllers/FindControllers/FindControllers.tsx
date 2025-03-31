@@ -111,7 +111,7 @@ export default function FindControllers() {
 			<div className='text-2xl md:text-3xl lg:text-[2.40rem] flex gap-[5.5%] items-end px-[5%]'>
 				<Link
 					className='border-[3px] dark:border-white border-neutral-600 w-full h-[6.6rem] bg-transparent flex justify-center items-center rounded-lg outline-offset-[-3px] outline-wiggle-focus background-highlight'
-					to='/controllers'
+					to='/app/controllers'
 				>
 					Back
 				</Link>
