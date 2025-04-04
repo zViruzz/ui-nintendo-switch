@@ -244,6 +244,12 @@ const router = createBrowserRouter([
 						<Eshop />
 					</LoadingEshop>
 				),
+				children: [
+					{
+						path: 'featured',
+						element: <div>Featured</div>,
+					},
+				],
 			},
 		],
 	},

@@ -3,6 +3,12 @@ import { useThemeContext } from '../context/theme'
 
 function ButtonYIcon(props: SVGProps<SVGSVGElement>) {
 	const { theme } = useThemeContext()
+	let themeSet = theme
+
+	if (props.className) {
+		themeSet = props.className.includes('dark') ? 'dark' : 'light'
+	}
+
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -19,7 +25,7 @@ function ButtonYIcon(props: SVGProps<SVGSVGElement>) {
 			<circle cx='12' cy='12' r='10' fill='currentColor' />
 			<path
 				d='M12 8V12M12 12L8 16M12 12L16 16'
-				stroke={theme === 'dark' ? '#2d2d2d' : '#fff'}
+				stroke={themeSet === 'dark' ? '#2d2d2d' : '#fff'}
 				strokeWidth='2'
 			/>
 		</svg>
