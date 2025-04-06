@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router'
 import FooterEshop from '../../components/FooterEshop'
 import useControllers from '../../hooks/useControllers'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
@@ -15,16 +15,21 @@ export default function Eshop() {
 		},
 		{
 			name: 'Great Deals',
-			path: '/screen-brightness',
+			path: '/great-deals',
 		},
-		{ name: 'Best Sellers', path: '/bluetooth' },
-		{ name: 'Coming Soon', path: '/lock-screen' },
+		{ name: 'Best Sellers', path: '/best-sellers' },
+		{ name: 'Coming Soon', path: '/coming-soon' },
 		{
 			name: 'Nintendo Switch Online',
-			path: '/parental-control',
+			path: '/nintendo-switch-online',
 		},
-		{ name: 'Enter Code', path: '/internet' },
+		{ name: 'Enter Code', path: '/enter-code' },
 	]
+
+	const location = useLocation()
+	const pathParent = `/${location.pathname.split('/')[1]}`
+
+	const navigate = useNavigate()
 
 	useControllers({
 		settingButtonA: {
@@ -39,6 +44,10 @@ export default function Eshop() {
 		},
 	})
 
+	const handleFocusLink = (path: string) => {
+		navigate(`${pathParent}${path}`)
+	}
+
 	return (
 		<OpacityPageTransition className='w-full h-full grid grid-rows-[100%] text-5xl bg-white'>
 			<div className='w-full h-full grid grid-cols-[1.6fr_3fr]'>
@@ -47,6 +56,9 @@ export default function Eshop() {
 						<li className='h-full w-full'>
 							<Link
 								to='/eshop/search'
+								onFocus={() => {
+									handleFocusLink('/search')
+								}}
 								className='flex items-center h-full w-full outline-wiggle-focus hover:bg-[#FEA840] focus-visible:bg-[#FEA840] pl-[19%]'
 							>
 								Search
@@ -57,6 +69,9 @@ export default function Eshop() {
 								<Link
 									to={`/eshop${item.path}`}
 									className='flex items-center h-full w-full outline-wiggle-focus hover:bg-[#FEA840] focus-visible:bg-[#FEA840] pl-[19%]'
+									onFocus={() => {
+										handleFocusLink(item.path)
+									}}
 								>
 									{item.name}
 								</Link>
