@@ -1,12 +1,18 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { type ReactNode, useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router'
 import EshopIcon from '../../icons/EshopLogo'
 import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 export default function Loading({ children }: { children: ReactNode }) {
+	const location = useLocation()
 	const [isLoading, setIsLoading] = useState(true)
+	const navigate = useNavigate()
 
 	useEffect(() => {
+		if (location.pathname === '/eshop') {
+			navigate('/eshop/featured', { replace: true })
+		}
 		const timer = setTimeout(() => {
 			setIsLoading(false)
 		}, 1000)

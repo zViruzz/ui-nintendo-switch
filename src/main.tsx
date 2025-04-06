@@ -249,6 +249,10 @@ const router = createBrowserRouter([
 						path: 'featured',
 						element: <div>Featured</div>,
 					},
+					{
+						path: 'recent-releases',
+						element: <div>Recent Releases</div>,
+					},
 				],
 			},
 		],

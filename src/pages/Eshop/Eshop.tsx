@@ -7,11 +7,11 @@ export default function Eshop() {
 	const options = [
 		{
 			name: 'Featured',
-			path: '/health-security',
+			path: '/featured',
 		},
 		{
 			name: 'Reacent Releases',
-			path: '/airplane-mode',
+			path: '/recent-releases',
 		},
 		{
 			name: 'Great Deals',
