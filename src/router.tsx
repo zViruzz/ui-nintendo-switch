@@ -21,6 +21,16 @@ import {
 import { ControllersRoot } from './pages/Controllers/ControllersRoot/ControllersRoot.tsx'
 import ErrorMessage from './pages/ErrorMessage.tsx'
 import LoadingEshop from './pages/Eshop/Loading.tsx'
+import {
+	BestSellers,
+	ComingSoon,
+	EnterCode,
+	Featured,
+	GreatDeals,
+	NintendoSwitchOnline,
+	RecentRealeases,
+	Search,
+} from './pages/Eshop/options'
 import Home from './pages/Home.tsx'
 import {
 	AirplaneMode,
@@ -235,35 +245,35 @@ export const router = createBrowserRouter([
 				children: [
 					{
 						path: 'search',
-						element: <div>Search</div>,
+						element: <Search />,
 					},
 					{
 						path: 'featured',
-						element: <div>Featured</div>,
+						element: <Featured />,
 					},
 					{
 						path: 'recent-releases',
-						element: <div>Recent Releases</div>,
+						element: <RecentRealeases />,
 					},
 					{
 						path: 'great-deals',
-						element: <div>Great Deals</div>,
+						element: <GreatDeals />,
 					},
 					{
 						path: 'best-sellers',
-						element: <div>Best Sellers</div>,
+						element: <BestSellers />,
 					},
 					{
 						path: 'coming-soon',
-						element: <div>Coming Soon</div>,
+						element: <ComingSoon />,
 					},
 					{
 						path: 'nintendo-switch-online',
-						element: <div>Nintendo Switch Online</div>,
+						element: <NintendoSwitchOnline />,
 					},
 					{
 						path: 'enter-code',
-						element: <div>Enter Code</div>,
+						element: <EnterCode />,
 					},
 				],
 			},

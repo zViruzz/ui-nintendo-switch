@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router'
 import FooterEshop from '../../components/FooterEshop'
 import useControllers from '../../hooks/useControllers'
@@ -5,30 +7,18 @@ import OpacityPageTransition from '../../transitions/OpacityPageTransition'
 
 export default function Eshop() {
 	const options = [
-		{
-			name: 'Featured',
-			path: '/featured',
-		},
-		{
-			name: 'Reacent Releases',
-			path: '/recent-releases',
-		},
-		{
-			name: 'Great Deals',
-			path: '/great-deals',
-		},
+		{ name: 'Featured', path: '/featured' },
+		{ name: 'Reacent Releases', path: '/recent-releases' },
+		{ name: 'Great Deals', path: '/great-deals' },
 		{ name: 'Best Sellers', path: '/best-sellers' },
 		{ name: 'Coming Soon', path: '/coming-soon' },
-		{
-			name: 'Nintendo Switch Online',
-			path: '/nintendo-switch-online',
-		},
+		{ name: 'Nintendo Switch Online', path: '/nintendo-switch-online' },
 		{ name: 'Enter Code', path: '/enter-code' },
 	]
 
+	const [isFocusPage, setIsFocusPage] = useState(false)
 	const location = useLocation()
 	const pathParent = `/${location.pathname.split('/')[1]}`
-
 	const navigate = useNavigate()
 
 	useControllers({
@@ -48,10 +38,31 @@ export default function Eshop() {
 		navigate(`${pathParent}${path}`)
 	}
 
+	const handleClick = () => {
+		console.log('blur')
+		setIsFocusPage(true)
+	}
+
+	const transitionConfig = {
+		type: 'spring',
+		ease: 'easeInOut',
+		duration: 0.4,
+		bounce: 0,
+	}
+
 	return (
 		<OpacityPageTransition className='w-full h-full grid grid-rows-[100%] text-5xl bg-white'>
-			<div className='w-full h-full grid grid-cols-[1.6fr_3fr]'>
-				<nav className='bg-orange-400 text-white text-4xl font-thin grid grid-rows-[6fr_10.5%] pt-[7%]'>
+			<motion.div className='w-full h-full relative flex' transition={transitionConfig}>
+				<motion.div
+					animate={{ width: isFocusPage ? '7.2vw' : '51vw' }}
+					transition={transitionConfig}
+				/>
+				<motion.nav
+					className='bg-orange-400 text-white text-4xl font-thin grid grid-rows-[6fr_10.5%] pt-[7%] absolute h-full w-[33vw]'
+					onClick={() => setIsFocusPage(false)}
+					animate={{ x: isFocusPage ? '-80%' : 0 }}
+					transition={transitionConfig}
+				>
 					<ul className='grid grid-rows-[repeat(8,1fr)]'>
 						<li className='h-full w-full'>
 							<Link
@@ -78,11 +89,11 @@ export default function Eshop() {
 							</li>
 						))}
 					</ul>
-				</nav>
-				<div className='text-black'>
+				</motion.nav>
+				<motion.div className='text-black h-full w-full' onClick={handleClick}>
 					<Outlet />
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 			<FooterEshop />
 		</OpacityPageTransition>
 	)
