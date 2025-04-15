@@ -15,7 +15,7 @@ export default function Loading({ children }: { children: ReactNode }) {
 		}
 		const timer = setTimeout(() => {
 			setIsLoading(false)
-		}, 1000)
+		}, 2500)
 
 		return () => clearTimeout(timer)
 	}, [])

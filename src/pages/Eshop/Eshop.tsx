@@ -51,14 +51,14 @@ export default function Eshop() {
 	}
 
 	return (
-		<OpacityPageTransition className='w-full h-full grid grid-rows-[100%] text-5xl bg-white'>
+		<OpacityPageTransition className='w-full h-full grid grid-rows-[100%] text-5xl bg-neutral-100'>
 			<motion.div className='w-full h-full relative flex' transition={transitionConfig}>
 				<motion.div
 					animate={{ width: isFocusPage ? '7.2vw' : '51vw' }}
 					transition={transitionConfig}
 				/>
 				<motion.nav
-					className='bg-orange-400 text-white text-4xl font-thin grid grid-rows-[6fr_10.5%] pt-[7%] absolute h-full w-[33vw]'
+					className='bg-orange-400 text-white text-4xl font-thin grid grid-rows-[6fr_10.5%] pt-[3%] pb-2 absolute h-full w-[33vw]'
 					onClick={() => setIsFocusPage(false)}
 					animate={{ x: isFocusPage ? '-80%' : 0 }}
 					transition={transitionConfig}
@@ -72,7 +72,7 @@ export default function Eshop() {
 								}}
 								className='flex items-center h-full w-full outline-wiggle-focus hover:bg-[#FEA840] focus-visible:bg-[#FEA840] pl-[19%]'
 							>
-								Search
+								Search/Browse
 							</Link>
 						</li>
 						{options.map((item, index) => (

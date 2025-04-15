@@ -22,7 +22,7 @@ export default function FooterEshop() {
 	}
 
 	return (
-		<footer className='px-[2.5%] text-black bg-neutral-100 absolute bottom-0 left-0 w-full h-[10%]'>
+		<footer className='px-[2.5%] text-black bg-neutral-200 absolute bottom-0 left-0 w-full h-[10%]'>
 			<div className='flex justify-between items-center h-full px-[1.8%]'>
 				<div>
 					<NSwitchIcon width={100} height={60} />
