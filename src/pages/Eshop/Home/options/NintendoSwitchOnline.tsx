@@ -1,4 +1,4 @@
-import ListPageTransition from '../../../transitions/ListPageTransition'
+import ListPageTransition from '../../../../transitions/ListPageTransition'
 
 export function NintendoSwitchOnline() {
 	return (

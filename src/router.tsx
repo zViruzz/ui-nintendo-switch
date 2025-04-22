@@ -20,17 +20,16 @@ import {
 } from './pages'
 import { ControllersRoot } from './pages/Controllers/ControllersRoot/ControllersRoot.tsx'
 import ErrorMessage from './pages/ErrorMessage.tsx'
+import { EshopHome } from './pages/Eshop/Home/EshopHome.tsx'
+import { BestSellers } from './pages/Eshop/Home/options/BestSellers.tsx'
+import { ComingSoon } from './pages/Eshop/Home/options/ComingSoon.tsx'
+import { EnterCode } from './pages/Eshop/Home/options/EnterCode.tsx'
+import { Featured } from './pages/Eshop/Home/options/Featured.tsx'
+import { GreatDeals } from './pages/Eshop/Home/options/GreatDeals.tsx'
+import { NintendoSwitchOnline } from './pages/Eshop/Home/options/NintendoSwitchOnline.tsx'
+import { RecentRealeases } from './pages/Eshop/Home/options/RecentReleases.tsx'
+import { Search } from './pages/Eshop/Home/options/Search.tsx'
 import LoadingEshop from './pages/Eshop/Loading.tsx'
-import {
-	BestSellers,
-	ComingSoon,
-	EnterCode,
-	Featured,
-	GreatDeals,
-	NintendoSwitchOnline,
-	RecentRealeases,
-	Search,
-} from './pages/Eshop/options'
 import Home from './pages/Home.tsx'
 import {
 	AirplaneMode,
@@ -248,36 +247,42 @@ export const router = createBrowserRouter([
 				),
 				children: [
 					{
-						path: 'search',
-						element: <Search />,
-					},
-					{
-						path: 'featured',
-						element: <Featured />,
-					},
-					{
-						path: 'recent-releases',
-						element: <RecentRealeases />,
-					},
-					{
-						path: 'great-deals',
-						element: <GreatDeals />,
-					},
-					{
-						path: 'best-sellers',
-						element: <BestSellers />,
-					},
-					{
-						path: 'coming-soon',
-						element: <ComingSoon />,
-					},
-					{
-						path: 'nintendo-switch-online',
-						element: <NintendoSwitchOnline />,
-					},
-					{
-						path: 'enter-code',
-						element: <EnterCode />,
+						path: 'home',
+						element: <EshopHome />,
+						children: [
+							{
+								path: 'search',
+								element: <Search />,
+							},
+							{
+								path: 'featured',
+								element: <Featured />,
+							},
+							{
+								path: 'recent-releases',
+								element: <RecentRealeases />,
+							},
+							{
+								path: 'great-deals',
+								element: <GreatDeals />,
+							},
+							{
+								path: 'best-sellers',
+								element: <BestSellers />,
+							},
+							{
+								path: 'coming-soon',
+								element: <ComingSoon />,
+							},
+							{
+								path: 'nintendo-switch-online',
+								element: <NintendoSwitchOnline />,
+							},
+							{
+								path: 'enter-code',
+								element: <EnterCode />,
+							},
+						],
 					},
 				],
 			},
