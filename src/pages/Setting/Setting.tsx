@@ -58,7 +58,7 @@ function Setting() {
 		},
 		{
 			name: t('setting.options.standby-mode'),
-			path: '/standby-mode',
+			path: '/sleep-mode',
 		},
 		{ name: 'line', path: '' },
 		{

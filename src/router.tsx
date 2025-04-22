@@ -34,14 +34,18 @@ import {
 import Home from './pages/Home.tsx'
 import {
 	AirplaneMode,
+	Amiibo,
 	Bluetooth,
 	DataManagement,
 	HealthSecurity,
 	Internet,
 	LockScreen,
+	Mii,
+	Notifications,
 	ParentalControl,
 	ScreenBrightness,
 	SettingUser,
+	SleepMode,
 	Theme,
 } from './pages/Setting/options'
 import System from './pages/Setting/options/System.tsx'
@@ -197,11 +201,11 @@ export const router = createBrowserRouter([
 							},
 							{
 								path: 'mii',
-								element: <HealthSecurity />,
+								element: <Mii />,
 							},
 							{
 								path: 'amiibo',
-								element: <HealthSecurity />,
+								element: <Amiibo />,
 							},
 							{
 								path: 'theme',
@@ -209,11 +213,11 @@ export const router = createBrowserRouter([
 							},
 							{
 								path: 'notifications',
-								element: <HealthSecurity />,
+								element: <Notifications />,
 							},
 							{
-								path: 'standby-mode',
-								element: <HealthSecurity />,
+								path: 'sleep-mode',
+								element: <SleepMode />,
 							},
 							{
 								path: 'controls-sensors',
