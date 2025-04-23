@@ -10,12 +10,12 @@ export default function OptionsMenu() {
 	const { listOptions, onToggleHidden, activeOption } = useOptionsMenuContext()
 
 	if (listOptions.isHidden === true) {
-		return <></>
+		return null
 	}
 
 	return (
 		<motion.section
-			className='absolute top-0 left-0 w-full h-screen z-50 grid grid-rows-[90%_10%] transition-all'
+			className='absolute top-0 left-0 w-full h-screen z-50 grid grid-rows-[90%_10%]'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}

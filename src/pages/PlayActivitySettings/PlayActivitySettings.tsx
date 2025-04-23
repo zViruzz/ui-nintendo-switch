@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Header from '../../components/Header'
 import { useCardMessageContext } from '../../context/cardMessage'
 import { useOptionsMenuContext } from '../../context/optionsMenu'
@@ -13,7 +14,7 @@ import {
 
 export default function PlayActivitySettings() {
 	const { settingMessage } = useCardMessageContext()
-	const { configureListOptions, listOptions } = useOptionsMenuContext()
+	const { configureListOptions, listOptions, onToggleHidden } = useOptionsMenuContext()
 
 	useControllers({
 		settingButtonA: {
@@ -25,6 +26,27 @@ export default function PlayActivitySettings() {
 		},
 		dependence: listOptions.isHidden,
 	})
+
+	useEffect(() => {
+		configureListOptions({
+			isHidden: true,
+			options: [
+				{
+					label: 'All Users',
+					isOn: true,
+				},
+				{
+					label: 'Friends',
+				},
+				{
+					label: 'Best friends',
+				},
+				{
+					label: 'No One',
+				},
+			],
+		})
+	}, [])
 
 	const handleClickDeletePlayActivity = () => {
 		settingMessage({
@@ -47,25 +69,11 @@ export default function PlayActivitySettings() {
 		})
 	}
 	const handleClickMenuDisplayPlan = () => {
-		console.log('clickmenudisplayplan')
-		configureListOptions({
-			isHidden: false,
-			options: [
-				{
-					label: 'All Users',
-				},
-				{
-					label: 'Friends',
-				},
-				{
-					label: 'Best friends',
-				},
-				{
-					label: 'No One',
-				},
-			],
-		})
+		onToggleHidden(false)
 	}
+
+	const activeDisplay =
+		listOptions.options.find((option) => option.isOn)?.label || 'All Users'
 
 	return (
 		<OpacityPageTransition className='w-full h-full'>
@@ -78,7 +86,7 @@ export default function PlayActivitySettings() {
 							onClick={handleClickMenuDisplayPlan}
 						>
 							<div>Display plan activity to:</div>
-							<div>All Users</div>
+							<div>{activeDisplay}</div>
 						</SelectionSetting>
 						<div className={detailSetting()}>
 							Information on thwn you started playing a sofware title and how long you
