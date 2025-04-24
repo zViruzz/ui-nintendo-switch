@@ -35,6 +35,7 @@ import {
 	AirplaneMode,
 	Amiibo,
 	Bluetooth,
+	ControlsSensors,
 	DataManagement,
 	HealthSecurity,
 	Internet,
@@ -220,7 +221,7 @@ export const router = createBrowserRouter([
 							},
 							{
 								path: 'controls-sensors',
-								element: <HealthSecurity />,
+								element: <ControlsSensors />,
 							},
 							{
 								path: 'tv-settings',
