@@ -9,6 +9,8 @@ type Option = {
 interface ListOptions {
 	isHidden: boolean
 	options: Option[]
+	initial?: string
+	onSelectOption?: (option: Option) => void
 }
 
 interface Props {
@@ -53,8 +55,17 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	const { controllerButtonB } = useControllerContext()
 
 	const configureOptionsList = (listOptions: ListOptions) => {
-		console.log('🚀 ~ configureOptionsList ~ listOptions:', listOptions)
-		setListOptions(listOptions)
+		const newListOptions = listOptions.options.map((option) => ({
+			...option,
+			isOn: option.label === listOptions.initial,
+		}))
+
+		setListOptions(() => {
+			return {
+				...listOptions,
+				options: newListOptions,
+			}
+		})
 
 		controllerButtonB({
 			text: 'controller.buttonB.back',
@@ -77,16 +88,19 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	}
 
 	const activeOption = (index: number) => {
-		setListOptions((prev) => ({
-			...prev,
-			options: prev.options.map((option, i) => {
-				if (i === index) {
-					return { ...option, isOn: true }
-				}
-
-				return { ...option, isOn: false }
-			}),
-		}))
+		setListOptions((prev) => {
+			const newOptions = prev.options.map((option, i) => ({
+				...option,
+				isOn: i === index,
+			}))
+			if (prev.onSelectOption) {
+				prev.onSelectOption(newOptions[index])
+			}
+			return {
+				...prev,
+				options: newOptions,
+			}
+		})
 	}
 
 	return (
