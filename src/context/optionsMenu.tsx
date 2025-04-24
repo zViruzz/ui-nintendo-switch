@@ -42,6 +42,7 @@ export const OptionsMenuContext = createContext<ContextProps>({
 })
 
 export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
+	const { controllerButtonB } = useControllerContext()
 	const [listOptions, setListOptions] = useState<ListOptions>({
 		isHidden: true,
 		options: [
@@ -51,8 +52,6 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 			},
 		],
 	})
-
-	const { controllerButtonB } = useControllerContext()
 
 	const configureOptionsList = (listOptions: ListOptions) => {
 		const newListOptions = listOptions.options.map((option) => ({
