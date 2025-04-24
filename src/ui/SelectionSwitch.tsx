@@ -1,4 +1,5 @@
 import { type ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { tv } from 'tailwind-variants'
 import cn from '../utils/cn'
 import SelectionSetting from './SelectionSetting'
@@ -12,6 +13,7 @@ interface Props {
 
 function SelectionSwitch({ children, className, initial = false, onSwitch }: Props) {
 	const [value, setValue] = useState(initial)
+	const { t } = useTranslation()
 
 	const handleClick = () => {
 		const newValue = !value
@@ -41,7 +43,9 @@ function SelectionSwitch({ children, className, initial = false, onSwitch }: Pro
 				type='button'
 			>
 				<div>{children}</div>
-				<div className={isOn({ disabled: value })}>{value ? 'Si' : 'No'}</div>
+				<div className={isOn({ disabled: value })}>
+					{value ? t('common.on') : t('common.off')}
+				</div>
 			</SelectionSetting>
 		</>
 	)

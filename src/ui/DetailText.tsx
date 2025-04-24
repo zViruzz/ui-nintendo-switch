@@ -1,8 +1,16 @@
-import type { ReactNode } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
+import cn from '../utils/cn'
 
-function Detailtext({ children }: { children: ReactNode }) {
+interface Props extends HTMLAttributes<HTMLDivElement> {
+	children: ReactNode
+}
+
+function Detailtext({ children, className, ...props }: Props) {
 	return (
-		<div className='py-3 px-6 text-[1.83rem] text-description leading-snug'>
+		<div
+			className={cn('py-3 px-6 text-[1.83rem] text-description leading-snug', className)}
+			{...props}
+		>
 			{children}
 		</div>
 	)

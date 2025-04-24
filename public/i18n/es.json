@@ -82,6 +82,8 @@
   "controllers.new-controllers.title": "Para sincronizar los controles, basta con acoplarlos a la consola.",
   "controllers.new-controllers.description": "Una vez sincronizados, podrás utilizar los controles incluso cuando estén desacoplados.",
   "controllers.new-controllers.button-1": "Terminar",
-  "controllers.new-controllers.button-2": "Otros modos de sincronización"
+  "controllers.new-controllers.button-2": "Otros modos de sincronización",
 
+  "common.on": "Sí",
+  "common.off": "No"
 }

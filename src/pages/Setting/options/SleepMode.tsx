@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useOptionsMenuContext } from '../../../context/optionsMenu'
 import ListPageTransition from '../../../transitions/ListPageTransition'
+import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
+import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function SleepMode() {
 	const { configureListOptions } = useOptionsMenuContext()
@@ -60,7 +62,7 @@ export function SleepMode() {
 
 	return (
 		<ListPageTransition>
-			<div>
+			<div className='mb-20'>
 				<SelectionSetting
 					className='border-y flex justify-between'
 					onClick={handleClickAutoSleep}
@@ -70,7 +72,7 @@ export function SleepMode() {
 				</SelectionSetting>
 
 				<SelectionSetting
-					className='border-y flex justify-between'
+					className='border-b flex justify-between'
 					onClick={handleClickAutoSleepOnTv}
 				>
 					<div>Auto-sleep (Connected to TV)</div>
@@ -78,6 +80,40 @@ export function SleepMode() {
 						{autoSleepValueOnTv}
 					</div>
 				</SelectionSetting>
+			</div>
+
+			<div>
+				<SelectionSwitch className='border-y'>
+					Suspend Auto-Sleep While Playing Media Content
+				</SelectionSwitch>
+				<Detailtext className='mb-10'>
+					Prevents auto-sleep from activating while media content in playing. If this
+					option is disabled, the console will still go to sleep after four hours of media
+					playback.
+				</Detailtext>
+				<SelectionSwitch className='border-y'>
+					Maintain Internet Connection in Sleep Mode
+				</SelectionSwitch>
+				<Detailtext className='mb-10'>
+					If this option is enabled, downloads initialted from your PC or smartphone will
+					start right away , even when the console is in sleep mode. Disabling this option
+					will reduce the console's energy consumption during sleep mode while connected
+					to the Internet.
+					<ul className='list-image-checkmark pl-7 py-6'>
+						<li>
+							This will have an effect only when connected to the Internet via wired
+							connection.
+						</li>
+					</ul>
+				</Detailtext>
+
+				<SelectionSwitch className='border-y'>
+					Wake When AC Adapter Is Disconnected
+				</SelectionSwitch>
+				<Detailtext>
+					If this option is enabled, the console will wake from sleep mode when it is
+					removed from the dock
+				</Detailtext>
 			</div>
 		</ListPageTransition>
 	)

@@ -83,5 +83,8 @@
   "controllers.new-controllers.title": "You can pair controllers at any time by attaching them to the console.",
   "controllers.new-controllers.description": "Once paired, you can use controllers even when they aren't attached to the console.",
   "controllers.new-controllers.button-1": "Done",
-  "controllers.new-controllers.button-2": "View Other Pairing Methods"
+  "controllers.new-controllers.button-2": "View Other Pairing Methods",
+
+  "common.on": "On",
+  "common.off": "Off"
 }
