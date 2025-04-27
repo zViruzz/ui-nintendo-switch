@@ -6,7 +6,7 @@ export default function Controller() {
   useControllers({
     settingButtonB: {
       text: "controller.buttonB.back",
-      route: "/",
+      route: "/app",
       action: () => { },
     },
   });

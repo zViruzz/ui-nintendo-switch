@@ -22,7 +22,7 @@ export default function PlayActivitySettings() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/users/user-settings',
+			route: 'app/users/user-settings',
 		},
 		dependence: listOptions.isHidden,
 	})
@@ -59,11 +59,11 @@ export default function PlayActivitySettings() {
 				{
 					label: 'Cancel',
 					isCloseButton: true,
-					onClick: () => {},
+					onClick: () => { },
 				},
 				{
 					label: 'Delete',
-					onClick: () => {},
+					onClick: () => { },
 				},
 			],
 		})

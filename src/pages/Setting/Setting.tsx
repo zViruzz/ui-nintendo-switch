@@ -13,7 +13,7 @@ function Setting() {
 	useControllers({
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/app',
 		},
 		dependence: true,
 	})

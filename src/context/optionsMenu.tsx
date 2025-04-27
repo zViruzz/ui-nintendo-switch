@@ -35,10 +35,10 @@ export const OptionsMenuContext = createContext<ContextProps>({
 			},
 		],
 	},
-	activeOption: () => {},
-	setListOptions: () => {},
-	onToggleHidden: () => {},
-	configureListOptions: () => {},
+	activeOption: () => { },
+	setListOptions: () => { },
+	onToggleHidden: () => { },
+	configureListOptions: () => { },
 })
 
 export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {

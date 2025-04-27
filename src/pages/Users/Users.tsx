@@ -37,7 +37,7 @@ function Users() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/app',
 		},
 	})
 

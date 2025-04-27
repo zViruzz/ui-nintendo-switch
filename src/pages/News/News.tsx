@@ -7,7 +7,7 @@ export default function News() {
 	useEffect(() => {
 		controllerButtonB({
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/app',
 			action: () => {
 				console.log('back')
 			},

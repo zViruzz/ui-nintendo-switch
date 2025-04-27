@@ -20,7 +20,7 @@ export default function TrendingView() {
 		if (isHiddenMenu) {
 			controllerButtonB({
 				text: 'controller.buttonB.back',
-				route: '/',
+				route: '/app',
 			})
 			return
 		}

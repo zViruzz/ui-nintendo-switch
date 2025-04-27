@@ -10,7 +10,7 @@ export default function Eshop() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/app',
 		},
 		settingButtonY: {
 			text: 'controllers.button.close',

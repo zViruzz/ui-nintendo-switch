@@ -30,7 +30,7 @@ export default function Album() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/',
+			route: '/app',
 		},
 		settingButtonX: {
 			text: 'Delete',
