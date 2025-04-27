@@ -10,7 +10,7 @@ export function ControllersRoot() {
 	const { t } = useTranslation()
 
 	return (
-		<OpacityPageTransition className='w-full h-full grid grid-rows-[1fr_7.5fr]'>
+		<OpacityPageTransition className='w-full h-full grid grid-rows-[1fr_7.5fr] grid-cols-1'>
 			<Header isPageHeight={false}>
 				<ControllerIcon width={83} height={83} />
 				<h2>{t('controllers.title')}</h2>{' '}
