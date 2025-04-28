@@ -35,10 +35,10 @@ export const OptionsMenuContext = createContext<ContextProps>({
 			},
 		],
 	},
-	activeOption: () => { },
-	setListOptions: () => { },
-	onToggleHidden: () => { },
-	configureListOptions: () => { },
+	activeOption: () => {},
+	setListOptions: () => {},
+	onToggleHidden: () => {},
+	configureListOptions: () => {},
 })
 
 export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
@@ -69,7 +69,6 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 		controllerButtonB({
 			text: 'controller.buttonB.back',
 			action: () => {
-				console.log('optionmenu B')
 				onToggleHidden(true)
 			},
 		})
@@ -105,8 +104,8 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	return (
 		<OptionsMenuContext.Provider
 			value={{
-				activeOption,
 				listOptions,
+				activeOption,
 				setListOptions,
 				onToggleHidden,
 				configureListOptions: configureOptionsList,

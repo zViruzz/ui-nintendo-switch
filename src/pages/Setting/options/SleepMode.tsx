@@ -1,14 +1,23 @@
 import { useState } from 'react'
 import { useOptionsMenuContext } from '../../../context/optionsMenu'
+import useControllers from '../../../hooks/useControllers'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
 import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function SleepMode() {
-	const { configureListOptions } = useOptionsMenuContext()
+	const { configureListOptions, listOptions } = useOptionsMenuContext()
 	const [autoSleepValue, setAutoSleepValue] = useState('10min')
 	const [autoSleepValueOnTv, setAutoSleepValueOnTv] = useState('1hr')
+
+	useControllers({
+		dependence: listOptions.isHidden,
+		settingButtonB: {
+			text: 'Close',
+			route: '/app',
+		},
+	})
 
 	const handleClickAutoSleep = () => {
 		configureListOptions({
