@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 import Header from '../../components/Header'
 import { useCardMessageContext } from '../../context/cardMessage'
 import { useOptionsMenuContext } from '../../context/optionsMenu'
@@ -14,7 +14,8 @@ import {
 
 export default function PlayActivitySettings() {
 	const { settingMessage } = useCardMessageContext()
-	const { configureListOptions, listOptions, onToggleHidden } = useOptionsMenuContext()
+	const { configureListOptions, listOptions } = useOptionsMenuContext()
+	const [activeDisplay, setActiveDisplay] = useState('All Users')
 
 	useControllers({
 		settingButtonA: {
@@ -27,27 +28,6 @@ export default function PlayActivitySettings() {
 		dependence: listOptions.isHidden,
 	})
 
-	useEffect(() => {
-		configureListOptions({
-			isHidden: true,
-			options: [
-				{
-					label: 'All Users',
-					isOn: true,
-				},
-				{
-					label: 'Friends',
-				},
-				{
-					label: 'Best friends',
-				},
-				{
-					label: 'No One',
-				},
-			],
-		})
-	}, [])
-
 	const handleClickDeletePlayActivity = () => {
 		settingMessage({
 			isHidden: false,
@@ -59,21 +39,23 @@ export default function PlayActivitySettings() {
 				{
 					label: 'Cancel',
 					isCloseButton: true,
-					onClick: () => { },
+					onClick: () => {},
 				},
 				{
 					label: 'Delete',
-					onClick: () => { },
+					onClick: () => {},
 				},
 			],
 		})
 	}
 	const handleClickMenuDisplayPlan = () => {
-		onToggleHidden(false)
+		configureListOptions({
+			isHidden: false,
+			initial: activeDisplay,
+			onSelectOption: (option) => setActiveDisplay(option.label),
+			options: ['All Users', 'Friends', 'Best friends', 'No One'],
+		})
 	}
-
-	const activeDisplay =
-		listOptions.options.find((option) => option.isOn)?.label || 'All Users'
 
 	return (
 		<OpacityPageTransition className='w-full h-full'>
