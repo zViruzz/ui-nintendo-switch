@@ -6,16 +6,9 @@ type Option = {
 	isOn?: boolean
 }
 
-interface ListOptions {
+interface ListOptionsConfig {
 	isHidden: boolean
-	options: Option[]
-	initial?: string
-	onSelectOption?: (option: Option) => void
-}
-
-interface ConfigureListOptions {
-	isHidden: boolean
-	options: string[]
+	options: (string | Option)[]
 	initial?: string
 	onSelectOption?: (option: Option) => void
 }
@@ -25,22 +18,17 @@ interface Props {
 }
 
 interface ContextProps {
-	listOptions: ListOptions
-	setListOptions: (setting: ListOptions) => void
+	listOptions: ListOptionsConfig
+	setListOptions: (setting: ListOptionsConfig) => void
 	onToggleHidden: (bol: boolean) => void
-	configureListOptions: (setting: ConfigureListOptions) => void
+	configureListOptions: (setting: ListOptionsConfig) => void
 	activeOption: (index: number) => void
 }
 
 export const OptionsMenuContext = createContext<ContextProps>({
 	listOptions: {
 		isHidden: true,
-		options: [
-			{
-				label: 'Ok',
-				isOn: false,
-			},
-		],
+		options: ['Choose an option'],
 	},
 	activeOption: () => {},
 	setListOptions: () => {},
@@ -50,28 +38,21 @@ export const OptionsMenuContext = createContext<ContextProps>({
 
 export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	const { controllerButtonB } = useControllerContext()
-	const [listOptions, setListOptions] = useState<ListOptions>({
+	const [listOptions, setListOptions] = useState<ListOptionsConfig>({
 		isHidden: true,
-		options: [
-			{
-				label: 'Close',
-				isOn: false,
-			},
-		],
+		options: ['Choose an option'],
 	})
 
-	const configureListOptions = (listOptions: ConfigureListOptions) => {
-		const newListOptions = listOptions.options.map((option) => ({
-			label: option,
-			isOn: option === listOptions.initial,
-		}))
+	const configureListOptions = (config: ListOptionsConfig) => {
+		const options = config.options.map((opt) =>
+			typeof opt === 'string' ? { label: opt, isOn: opt === config.initial } : opt,
+		)
 
-		setListOptions(() => {
-			return {
-				...listOptions,
-				options: newListOptions,
-			}
-		})
+		setListOptions((prev) => ({
+			...prev,
+			...config,
+			options,
+		}))
 
 		controllerButtonB({
 			text: 'controller.buttonB.back',
@@ -94,13 +75,17 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 
 	const activeOption = (index: number) => {
 		setListOptions((prev) => {
-			const newOptions = prev.options.map((option, i) => ({
-				...option,
-				isOn: i === index,
-			}))
+			const newOptions = prev.options.map((option, i) => {
+				if (typeof option === 'string') {
+					return { label: option, isOn: i === index }
+				}
+				return { ...option, isOn: i === index }
+			})
+
 			if (prev.onSelectOption) {
 				prev.onSelectOption(newOptions[index])
 			}
+
 			return {
 				...prev,
 				options: newOptions,

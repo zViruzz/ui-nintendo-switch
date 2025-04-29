@@ -5,6 +5,7 @@ import { button, constainerCard, content, styles } from './CardMessageStyles'
 export default function CardMessage() {
 	const { setting, onToggleHidden } = useCardMessageContext()
 	const modalRef = useRef<HTMLDivElement>(null)
+
 	useEffect(() => {
 		const disableTabbingBehind = (disable: boolean) => {
 			const focusableElements = document.querySelectorAll(
