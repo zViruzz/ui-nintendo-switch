@@ -32,12 +32,12 @@ export default function OptionsMenu() {
 							return (
 								<SelectionSetting
 									onClick={() => activeOption(listOptions.options.indexOf(option))}
-									key={option.label}
+									key={typeof option === 'object' ? option.label : option}
 									className='border-b first:border-t border-description flex justify-between'
 								>
-									<div> {option.label}</div>
+									<div> {typeof option === 'object' ? option.label : option}</div>
 
-									{option.isOn && (
+									{typeof option === 'object' && option.isOn && (
 										<div>
 											<CheckIcon />
 										</div>
