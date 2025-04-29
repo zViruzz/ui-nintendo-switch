@@ -13,6 +13,13 @@ interface ListOptions {
 	onSelectOption?: (option: Option) => void
 }
 
+interface ConfigureListOptions {
+	isHidden: boolean
+	options: string[]
+	initial?: string
+	onSelectOption?: (option: Option) => void
+}
+
 interface Props {
 	children: ReactNode | ReactNode[]
 }
@@ -21,7 +28,7 @@ interface ContextProps {
 	listOptions: ListOptions
 	setListOptions: (setting: ListOptions) => void
 	onToggleHidden: (bol: boolean) => void
-	configureListOptions: (setting: ListOptions) => void
+	configureListOptions: (setting: ConfigureListOptions) => void
 	activeOption: (index: number) => void
 }
 
@@ -53,10 +60,10 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 		],
 	})
 
-	const configureOptionsList = (listOptions: ListOptions) => {
+	const configureListOptions = (listOptions: ConfigureListOptions) => {
 		const newListOptions = listOptions.options.map((option) => ({
-			...option,
-			isOn: option.label === listOptions.initial,
+			label: option,
+			isOn: option === listOptions.initial,
 		}))
 
 		setListOptions(() => {
@@ -108,7 +115,7 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 				activeOption,
 				setListOptions,
 				onToggleHidden,
-				configureListOptions: configureOptionsList,
+				configureListOptions,
 			}}
 		>
 			{children}

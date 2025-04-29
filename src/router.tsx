@@ -47,6 +47,7 @@ import {
 	SettingUser,
 	SleepMode,
 	Theme,
+	TvSettings,
 } from './pages/Setting/options'
 import System from './pages/Setting/options/System.tsx'
 import {
@@ -225,7 +226,7 @@ export const router = createBrowserRouter([
 							},
 							{
 								path: 'tv-settings',
-								element: <HealthSecurity />,
+								element: <TvSettings />,
 							},
 							{
 								path: 'system',
