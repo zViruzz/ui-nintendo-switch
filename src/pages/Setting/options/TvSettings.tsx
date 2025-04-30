@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useCardMessageContext } from '../../../context/cardMessage'
 import { useOptionsMenuContext } from '../../../context/optionsMenu'
+import useControllers from '../../../hooks/useControllers'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
@@ -8,10 +9,18 @@ import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function TvSettings() {
 	const { settingMessage } = useCardMessageContext()
-	const { configureListOptions } = useOptionsMenuContext()
+	const { configureListOptions, listOptions } = useOptionsMenuContext()
 	const [tvResolutionValue, setTvResolutionValue] = useState('1080p')
 	const [rgbRangeValue, setRgbRangeValue] = useState('Full Range')
 	const [tvSoundValue, setTvSound] = useState('Stereo')
+
+	useControllers({
+		dependence: listOptions.isHidden,
+		settingButtonB: {
+			text: 'Close',
+			route: '/app',
+		},
+	})
 
 	const handleClickTvResolution = () => {
 		configureListOptions({
