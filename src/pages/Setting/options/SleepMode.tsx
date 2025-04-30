@@ -21,6 +21,7 @@ export function SleepMode() {
 
 	const handleClickAutoSleep = () => {
 		configureListOptions({
+			title: 'Auto-Sleep (Playing on Console Screen)',
 			isHidden: false,
 			initial: autoSleepValue,
 			onSelectOption: (option) => setAutoSleepValue(option.label),
@@ -30,6 +31,7 @@ export function SleepMode() {
 
 	const handleClickAutoSleepOnTv = () => {
 		configureListOptions({
+			title: 'Auto-Sleep (Connected to TV)',
 			isHidden: false,
 			initial: autoSleepValueOnTv,
 			onSelectOption: (option) => setAutoSleepValueOnTv(option.label),

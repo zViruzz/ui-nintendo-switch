@@ -7,6 +7,7 @@ type Option = {
 }
 
 interface ListOptionsConfig {
+	title: string
 	isHidden: boolean
 	options: (string | Option)[]
 	initial?: string
@@ -27,6 +28,7 @@ interface ContextProps {
 
 export const OptionsMenuContext = createContext<ContextProps>({
 	listOptions: {
+		title: '',
 		isHidden: true,
 		options: ['Choose an option'],
 	},
@@ -39,6 +41,7 @@ export const OptionsMenuContext = createContext<ContextProps>({
 export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 	const { controllerButtonB } = useControllerContext()
 	const [listOptions, setListOptions] = useState<ListOptionsConfig>({
+		title: '',
 		isHidden: true,
 		options: ['Choose an option'],
 	})

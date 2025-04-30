@@ -24,6 +24,7 @@ export function TvSettings() {
 
 	const handleClickTvResolution = () => {
 		configureListOptions({
+			title: 'TV Resolution',
 			isHidden: false,
 			initial: tvResolutionValue,
 			onSelectOption: (option) => setTvResolutionValue(option.label),
@@ -33,6 +34,7 @@ export function TvSettings() {
 
 	const handleClickRgbRange = () => {
 		configureListOptions({
+			title: 'RGB Range',
 			isHidden: false,
 			initial: rgbRangeValue,
 			onSelectOption: (option) => setRgbRangeValue(option.label),
@@ -58,6 +60,7 @@ export function TvSettings() {
 
 	const handleClickTvSound = () => {
 		configureListOptions({
+			title: 'TV Sound',
 			isHidden: false,
 			initial: tvSoundValue,
 			onSelectOption: (option) => setTvSound(option.label),

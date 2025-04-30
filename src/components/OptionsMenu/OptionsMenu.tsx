@@ -21,12 +21,12 @@ export default function OptionsMenu() {
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.12 }}
 		>
-			<div className=' grid grid-rows-[3fr_5fr]'>
+			<div className='grid grid-rows-[3fr_5fr]'>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div className='bg-[#0c1720b1]' onClick={() => onToggleHidden(true)} />
 
 				<div className='bg-neutral-700 grid grid-rows-[1fr_4fr] grid-cols-1'>
-					<Header title='Display play activity to:' />
+					<Header title={listOptions.title} />
 					<div className='flex justify-center flex-col px-[20%]'>
 						{listOptions.options.map((option) => {
 							return (

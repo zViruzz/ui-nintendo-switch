@@ -50,6 +50,7 @@ export default function PlayActivitySettings() {
 	}
 	const handleClickMenuDisplayPlan = () => {
 		configureListOptions({
+			title: 'Display plan activity to:',
 			isHidden: false,
 			initial: activeDisplay,
 			onSelectOption: (option) => setActiveDisplay(option.label),
