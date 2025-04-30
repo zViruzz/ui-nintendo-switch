@@ -40,7 +40,7 @@ export default function CardMessage() {
 									if (item.isCloseButton) {
 										onToggleHidden(true)
 									}
-									item.onClick()
+									item.onClick?.()
 								}}
 							>
 								{item.label}
@@ -56,7 +56,7 @@ export default function CardMessage() {
 									if (setting.buttons.isCloseButton) {
 										onToggleHidden(true)
 									}
-									setting.buttons.onClick()
+									setting.buttons.onClick?.()
 								}
 							}}
 						>
