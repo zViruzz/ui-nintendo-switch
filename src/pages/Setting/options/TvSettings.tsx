@@ -63,30 +63,32 @@ export function TvSettings() {
 					className='border-y flex justify-between'
 					onClick={handleClickTvResolution}
 				>
-					<div>TV Resolution</div>
-					<div className='dark:text-secodary text-secodary-light'>
+					<span>TV Resolution</span>
+					<span className='dark:text-secodary text-secodary-light'>
 						{tvResolutionValue}
-					</div>
+					</span>
 				</SelectionSetting>
 				<SelectionSetting
 					className='border-b flex justify-between'
 					onClick={handleClickRgbRange}
 				>
-					<div>RGB Range</div>
-					<div className='dark:text-secodary text-secodary-light'>{rgbRangeValue}</div>
+					<span>RGB Range</span>
+					<span className='dark:text-secodary text-secodary-light'>{rgbRangeValue}</span>
 				</SelectionSetting>
 				<SelectionSetting className='border-b' onClick={handleClickAjustScreenSize}>
 					Adjust Screen Size
 				</SelectionSetting>
 				<SelectionSwitch className='border-b'>Screen Burn-In Reduction</SelectionSwitch>
 				<Detailtext className='pb-13'>
-					Reduce screen brightness after live minutes of inactivity.
+					<p>Reduce screen brightness after live minutes of inactivity.</p>
 				</Detailtext>
 				<SelectionSwitch className='border-y'>Match TV Power State</SelectionSwitch>
 				<Detailtext className='pb-11'>
-					When Switching to TV Mode with the console docked or when the console exits
-					sleep mode, the TV will turn on. Turning off the TV will put the console in
-					sleep mode.
+					<p>
+						When Switching to TV Mode with the console docked or when the console exits
+						sleep mode, the TV will turn on. Turning off the TV will put the console in
+						sleep mode.
+					</p>
 					<ul className='list-image-checkmark pl-7 py-6'>
 						<li>
 							HDMI settings must also be enabled on your TV. Some TV models may be unable
@@ -98,8 +100,8 @@ export function TvSettings() {
 					className='border-y flex justify-between'
 					onClick={handleClickTvSound}
 				>
-					<div>TV Sound</div>
-					<div className='dark:text-secodary text-secodary-light'>{tvSoundValue}</div>
+					<span>TV Sound</span>
+					<span className='dark:text-secodary text-secodary-light'>{tvSoundValue}</span>
 				</SelectionSetting>
 			</div>
 		</ListPageTransition>

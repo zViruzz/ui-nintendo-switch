@@ -35,12 +35,12 @@ export default function OptionsMenu() {
 									key={typeof option === 'object' ? option.label : option}
 									className='border-b first:border-t border-description flex justify-between'
 								>
-									<div> {typeof option === 'object' ? option.label : option}</div>
+									<span> {typeof option === 'object' ? option.label : option}</span>
 
 									{typeof option === 'object' && option.isOn && (
-										<div>
+										<span>
 											<CheckIcon />
-										</div>
+										</span>
 									)}
 								</SelectionSetting>
 							)

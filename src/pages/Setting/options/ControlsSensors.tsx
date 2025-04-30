@@ -20,25 +20,31 @@ export function ControlsSensors() {
 					Changa Button Mapping
 				</SelectionSetting>
 				<Detailtext className='mb-10'>
-					You can customize button mapping for each controller. Customized mapping
-					configurations can be saved as presets for easy acces in the future.
+					<p>
+						You can customize button mapping for each controller. Customized mapping
+						configurations can be saved as presets for easy acces in the future.
+					</p>
 				</Detailtext>
 				<SelectionSwitch className='border-y flex justify-between'>
 					Controller Vibration
 				</SelectionSwitch>
 				<Detailtext className='mb-10'>
-					{
-						'The vibration feature will be enabled on supporting controllers during gameplay. Vibration for alarm notifications can be changed in Notifications => Alarm Notifications.'
-					}
+					<p>
+						{
+							'The vibration feature will be enabled on supporting controllers during gameplay. Vibration for alarm notifications can be changed in Notifications => Alarm Notifications.'
+						}
+					</p>
 				</Detailtext>
 				<SelectionSwitch className='border-y flex justify-between'>
 					Pro Controller Wired Communication
 				</SelectionSwitch>
 				<Detailtext className='mb-10'>
-					If this option is enabled, the Nintendo Switch Pro Controller will communicate
-					with the console via wired communication when connected to it using the USB
-					charging cable. The NFC touchpoint on the Pro Controller will be disabled while
-					the controller is using wired communication.
+					<p>
+						If this option is enabled, the Nintendo Switch Pro Controller will communicate
+						with the console via wired communication when connected to it using the USB
+						charging cable. The NFC touchpoint on the Pro Controller will be disabled
+						while the controller is using wired communication.
+					</p>
 				</Detailtext>
 				<SelectionSetting className='border-y'>Update Controllers</SelectionSetting>
 				<Detailtext className='mb-10 flex flex-col'>
@@ -54,12 +60,14 @@ export function ControlsSensors() {
 			<div>
 				<SelectionSetting className='border-y'>Touch-Screen Sensitivity</SelectionSetting>
 				<Detailtext className='mb-10'>
-					Using the Stylus setting increase the sensitivity of the touch screen to enhance
-					stylus controls.
+					<p>
+						Using the Stylus setting increase the sensitivity of the touch screen to
+						enhance stylus controls.
+					</p>
 				</Detailtext>
 				<SelectionSetting className='border-y'>Test Input Devices</SelectionSetting>
 				<Detailtext className='mb-10'>
-					Check for porblems with the controllers or the touch screen.
+					<p>Check for porblems with the controllers or the touch screen.</p>
 				</Detailtext>
 				<SelectionSetting className='border-y'>Disconnect Controllers</SelectionSetting>
 			</div>

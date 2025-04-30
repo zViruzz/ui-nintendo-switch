@@ -42,10 +42,10 @@ function SelectionSwitch({ children, className, initial = false, onSwitch }: Pro
 				onClick={handleClick}
 				type='button'
 			>
-				<div>{children}</div>
-				<div className={isOn({ disabled: value })}>
+				<span>{children}</span>
+				<span className={isOn({ disabled: value })}>
 					{value ? t('common.on') : t('common.off')}
-				</div>
+				</span>
 			</SelectionSetting>
 		</>
 	)

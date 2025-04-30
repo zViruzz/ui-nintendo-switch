@@ -81,18 +81,18 @@ export function UserSettings() {
 							setIsHiddenEditName(false)
 						}}
 					>
-						<div>{t('users.user-setting.nickname')}</div>
-						<div className='text-secodary bg-transparent p-0'>{username}</div>
+						<span>{t('users.user-setting.nickname')}</span>
+						<span className='text-secodary bg-transparent p-0'>{username}</span>
 					</SelectionSetting>
 					<SelectionSetting
 						as={Link}
 						to='/app/edit-icon'
 						className='border-b border-gray flex justify-between'
 					>
-						<div>{t('users.user-setting.edit-icon')}</div>
-						<div>
+						<span>{t('users.user-setting.edit-icon')}</span>
+						<span>
 							<CharacterProfile className='h-16 w-16' />
-						</div>
+						</span>
 					</SelectionSetting>
 					<SelectionSetting
 						as={Link}
@@ -140,9 +140,9 @@ export function UserSettings() {
 						{t('users.user-setting.nintendo-eshop.option1')}
 					</SelectionSetting>
 					<SelectionSetting disabled={true} className=' border-gray flex justify-between'>
-						<div className='text-2xl text-description mb-11'>
+						<span className='text-2xl text-description mb-11'>
 							{t('users.user-setting.nintendo-eshop.description')}
-						</div>
+						</span>
 					</SelectionSetting>
 					<SelectionSetting className='border-y border-gray flex justify-between'>
 						{t('users.user-setting.nintendo-eshop.option2')}

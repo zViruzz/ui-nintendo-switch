@@ -67,8 +67,8 @@ export default function PlayActivitySettings() {
 							className='border-y border-gray flex justify-between [&>div]:last:text-secodary'
 							onClick={handleClickMenuDisplayPlan}
 						>
-							<div>Display plan activity to:</div>
-							<div>{activeDisplay}</div>
+							<span>Display plan activity to:</span>
+							<span>{activeDisplay}</span>
 						</SelectionSetting>
 						<div className={detailSetting()}>
 							Information on thwn you started playing a sofware title and how long you

@@ -6,7 +6,7 @@ export function AddFriends() {
 		<div>
 			<SelectionSetting className='border-gray border-y mb-20'>
 				<ReceiveMailIcon />
-				<div>Receive Friend Requests</div>
+				<span>Receive Friend Requests</span>
 			</SelectionSetting>
 
 			<SelectionSetting className='border-gray border-y'>

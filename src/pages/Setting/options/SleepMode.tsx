@@ -44,18 +44,18 @@ export function SleepMode() {
 					className='border-y flex justify-between'
 					onClick={handleClickAutoSleep}
 				>
-					<div>Auto-Sleep (Playing on Console Screen)</div>
-					<div className='dark:text-secodary text-secodary-light'>{autoSleepValue}</div>
+					<span>Auto-Sleep (Playing on Console Screen)</span>
+					<span className='dark:text-secodary text-secodary-light'>{autoSleepValue}</span>
 				</SelectionSetting>
 
 				<SelectionSetting
 					className='border-b flex justify-between'
 					onClick={handleClickAutoSleepOnTv}
 				>
-					<div>Auto-sleep (Connected to TV)</div>
-					<div className='dark:text-secodary text-secodary-light'>
+					<span>Auto-sleep (Connected to TV)</span>
+					<span className='dark:text-secodary text-secodary-light'>
 						{autoSleepValueOnTv}
-					</div>
+					</span>
 				</SelectionSetting>
 			</div>
 
@@ -64,9 +64,11 @@ export function SleepMode() {
 					Suspend Auto-Sleep While Playing Media Content
 				</SelectionSwitch>
 				<Detailtext className='mb-10'>
-					Prevents auto-sleep from activating while media content in playing. If this
-					option is disabled, the console will still go to sleep after four hours of media
-					playback.
+					<p>
+						Prevents auto-sleep from activating while media content in playing. If this
+						option is disabled, the console will still go to sleep after four hours of
+						media playback.
+					</p>
 				</Detailtext>
 				<SelectionSwitch className='border-y'>
 					Maintain Internet Connection in Sleep Mode
@@ -88,8 +90,10 @@ export function SleepMode() {
 					Wake When AC Adapter Is Disconnected
 				</SelectionSwitch>
 				<Detailtext>
-					If this option is enabled, the console will wake from sleep mode when it is
-					removed from the dock
+					<p>
+						If this option is enabled, the console will wake from sleep mode when it is
+						removed from the dock
+					</p>
 				</Detailtext>
 			</div>
 		</ListPageTransition>
