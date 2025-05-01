@@ -21,19 +21,19 @@ export default function OptionsMenu() {
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.12 }}
 		>
-			<div className='grid grid-rows-[3fr_5fr]'>
+			<div className='grid grid-rows-[1fr_auto] grid-cols-1'>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div className='bg-[#0c1720b1]' onClick={() => onToggleHidden(true)} />
 
-				<div className='bg-neutral-700 grid grid-rows-[1fr_4fr] grid-cols-1'>
-					<Header title={listOptions.title} />
-					<div className='flex justify-center flex-col px-[20%]'>
+				<div className='bg-neutral-700 grid grid-rows-[6.7rem_6.2fr] grid-cols-1 max-h-[72vh]'>
+					<Header title={listOptions.title} isPageHeight={false} />
+					<div className='flex flex-col px-[22%] py-12 overflow-y-scroll'>
 						{listOptions.options.map((option) => {
 							return (
 								<SelectionSetting
 									onClick={() => activeOption(listOptions.options.indexOf(option))}
 									key={typeof option === 'object' ? option.label : option}
-									className='border-b first:border-t border-description flex justify-between'
+									className='border-b first:border-t border-description flex justify-between h-[6rem]'
 								>
 									<span> {typeof option === 'object' ? option.label : option}</span>
 

@@ -17,7 +17,7 @@ function Header({ children, isPageHeight = true, className = '', title }: Props)
 				isPageHeight ? 'h-[10.3vh]' : '',
 			)}
 		>
-			<div className='flex items-center  w-full h-full px-[2.6%] gap-4 border-b-2 dark:border-neutral-300 border-neutral-800 xl:text-5xl lg:text-4xl md:text-4xl text-3xl'>
+			<div className='flex items-center w-full h-full px-[2.6%] gap-4 border-b-2 dark:border-neutral-300 border-neutral-800 xl:text-5xl lg:text-4xl md:text-4xl text-3xl'>
 				{children}
 				{title !== undefined ? <h2>{title}</h2> : null}
 			</div>

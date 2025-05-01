@@ -25,7 +25,7 @@ export function SleepMode() {
 			isHidden: false,
 			initial: autoSleepValue,
 			onSelectOption: (option) => setAutoSleepValue(option.label),
-			options: ['10min', '20min', '30min', '1h', 'Never'],
+			options: ['1min', '3min', '5min', '10min', '30min', 'Never'],
 		})
 	}
 
@@ -35,7 +35,7 @@ export function SleepMode() {
 			isHidden: false,
 			initial: autoSleepValueOnTv,
 			onSelectOption: (option) => setAutoSleepValueOnTv(option.label),
-			options: ['15min', '1hr', '2hr', '3hr', 'Never'],
+			options: ['15min', '1hr', '2hr', '3hr', '6hr', '12hr', 'Never'],
 		})
 	}
 
