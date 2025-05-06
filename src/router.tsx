@@ -46,10 +46,10 @@ import {
 	ScreenBrightness,
 	SettingUser,
 	SleepMode,
+	System,
 	Theme,
 	TvSettings,
 } from './pages/Setting/options'
-import System from './pages/Setting/options/System.tsx'
 import {
 	AddFriends,
 	FriendList,

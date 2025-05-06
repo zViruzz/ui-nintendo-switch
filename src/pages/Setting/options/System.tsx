@@ -1,7 +1,11 @@
 import type { ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
+import ListPageTransition from '../../../transitions/ListPageTransition'
+import Detailtext from '../../../ui/DetailText'
+import SelectionSetting from '../../../ui/SelectionSetting'
+import SelectionSwitch from '../../../ui/SelectionSwitch'
 
-function System() {
+export function System() {
 	const { i18n, t } = useTranslation()
 
 	const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -11,15 +15,79 @@ function System() {
 	}
 
 	return (
-		<div>
-			<select defaultValue={i18n.language} onChange={handleChange}>
-				<option value='en'>EN</option>
-				<option value='es'>ES</option>
-			</select>
+		<ListPageTransition>
+			<div className='mb-[6.7rem]'>
+				<SelectionSetting className='border-y'>System Update</SelectionSetting>
+				<Detailtext>! System update is ready</Detailtext>
+				<SelectionSetting className='border-y'>Update Dock</SelectionSetting>
+				<Detailtext>Update the Nintendo Switch dock firmware.</Detailtext>
+				<SelectionSetting className='border-y flex justify-between'>
+					<span>Console Nickname</span>
+					<span className='dark:text-secodary text-secodary-light'>Switch1</span>
+				</SelectionSetting>
+			</div>
+			<div>
+				<SelectionSetting className='border-y flex justify-between'>
+					<span>Language</span>
+					<span className='dark:text-secodary text-secodary-light'>English</span>
+				</SelectionSetting>
+				<SelectionSetting className='border-y flex justify-between'>
+					<span>Region</span>
+					<span className='dark:text-secodary text-secodary-light'>The Americas</span>
+				</SelectionSetting>
+				<SelectionSetting className='border-y flex justify-between'>
+					Data and Time
+				</SelectionSetting>
+				<Detailtext>Current data and time: 5/6/2025 4:14 a.m.</Detailtext>
+				<SelectionSwitch className='border-y flex justify-between'>
+					Console Battery (%)
+				</SelectionSwitch>
+				<Detailtext>
+					The console battery will be displayed on the HOME Menu as percentage.
+				</Detailtext>
+				<SelectionSetting className='border-y flex justify-between'>
+					<span>Console Sound</span>
+					<span className='dark:text-secodary text-secodary-light'>Stereo</span>
+				</SelectionSetting>
+				<Detailtext>
+					You can configure sound in the TV Settings menu when the console is connected to
+					a TV.
+				</Detailtext>
+				<SelectionSwitch className='border-y flex justify-between'>
+					Mute When Headphones Are Sisconnected
+				</SelectionSwitch>
+				<SelectionSwitch className='border-b flex justify-between'>
+					Lowe Max Headephone Volume
+				</SelectionSwitch>
+				<Detailtext>
+					Set a maximun volume for headphones or speakers connected to the console.
+				</Detailtext>
+				<SelectionSetting className='border-b flex justify-between'>
+					<span>USB Keyboard</span>
+					<span className='dark:text-secodary text-secodary-light'>English</span>
+				</SelectionSetting>
+				<SelectionSetting className='border-b flex justify-between'>
+					<span>Change Display Colors</span>
+					<span className='dark:text-secodary text-secodary-light'>Default</span>
+				</SelectionSetting>
+				<SelectionSwitch className='border-b'>Zoom</SelectionSwitch>
+				<Detailtext>You can zoom in be pressing twice quickly.</Detailtext>
+				<SelectionSetting className='border-y'>Serial Information</SelectionSetting>
+				<SelectionSetting className='border-b'>
+					End-User License Agreement
+				</SelectionSetting>
+				<SelectionSetting className='border-b'>
+					Intellectual Property Notices
+				</SelectionSetting>
+				<SelectionSetting className='border-b mb-10'>Wireless E-Label</SelectionSetting>
 
-			<div>ejem: {t('home.menu.news')}</div>
-		</div>
+				<select defaultValue={i18n.language} onChange={handleChange}>
+					<option value='en'>EN</option>
+					<option value='es'>ES</option>
+				</select>
+
+				<div>ejem: {t('home.menu.news')}</div>
+			</div>
+		</ListPageTransition>
 	)
 }
-
-export default System
