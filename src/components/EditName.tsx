@@ -1,30 +1,36 @@
 import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useAppSelector } from '../redux/hooks'
-import { changeUsername } from '../redux/userSlice'
 import cn from '../utils/cn'
 
 interface Props {
+	title: string
 	isHidden: boolean
 	setIsHidden: (bol: boolean) => void
+	initialValue: string
+	onSubmit: (value: string) => void
+	maxLength: number
 }
 
-function EditName({ isHidden, setIsHidden }: Props) {
-	const { username } = useAppSelector((state) => state.user)
+export default function EditField({
+	title,
+	isHidden,
+	setIsHidden,
+	initialValue,
+	onSubmit,
+	maxLength,
+}: Props) {
 	const containerRef = useRef<HTMLDivElement>(null)
 	const containerInputRef = useRef<HTMLFormElement>(null)
 	const inputRef = useRef<HTMLInputElement>(null)
-	const [name, setName] = useState<string>(username)
-	const dispatch = useDispatch()
+	const [value, setValue] = useState<string>(initialValue)
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
-		dispatch(changeUsername(name))
+		onSubmit(value)
 		setIsHidden(true)
 	}
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setName(e.target.value)
+		setValue(e.target.value)
 	}
 
 	useEffect(() => {
@@ -50,12 +56,11 @@ function EditName({ isHidden, setIsHidden }: Props) {
 			if (containerRef.current.classList.contains('invisible')) return
 			if (event.key === 'Escape') {
 				setIsHidden(true)
-				setName(username)
+				setValue(initialValue)
 			}
 		}
 
 		document.addEventListener('keydown', handleClickEsc)
-
 		document.addEventListener('mousedown', handleClickOutside)
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside)
@@ -72,7 +77,7 @@ function EditName({ isHidden, setIsHidden }: Props) {
 			)}
 		>
 			<div className='ml-48 mt-20 text-4xl'>
-				<h2>Introduce un apodo.</h2>
+				<h2>{title}</h2>
 			</div>
 
 			<div className='grid place-content-center'>
@@ -82,14 +87,12 @@ function EditName({ isHidden, setIsHidden }: Props) {
 						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl focus-within:border-b-4 focus-within:outline-hidden'
 						ref={inputRef}
 						type='text'
-						value={name}
-						maxLength={10}
+						value={value}
+						maxLength={maxLength}
 					/>
-					<div className='flex justify-end text-disabled'>{name.length} / 10</div>
+					<div className='flex justify-end text-disabled'>{value.length} / 10</div>
 				</form>
 			</div>
 		</div>
 	)
 }
-
-export default EditName

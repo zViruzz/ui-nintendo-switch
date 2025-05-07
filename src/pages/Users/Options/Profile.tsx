@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router'
 import CharacterProfile from '../../../components/CharacterProfile'
-import EditName from '../../../components/EditName'
+import EditField from '../../../components/EditName'
 import { useCardMessageContext } from '../../../context/cardMessage'
 import PencilIcon from '../../../icons/PencilIcon'
 import QuestionIcon from '../../../icons/QuestionIcon'
 import { useAppSelector } from '../../../redux/hooks'
+import { changeUsername } from '../../../redux/userSlice'
 import { game } from '../../../static/game'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 
@@ -15,6 +17,8 @@ export function Profile() {
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
 	const { username } = useAppSelector((state) => state.user)
 	const { t } = useTranslation()
+	const dispatch = useDispatch()
+	const handleChangeUsername = (name: string) => dispatch(changeUsername(name))
 
 	const handleClickOnline = () => {
 		settingMessage({
@@ -71,7 +75,14 @@ export function Profile() {
 	return (
 		<ListPageTransition>
 			<div className='flex gap-[6.7rem] flex-col'>
-				<EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
+				<EditField
+					title='Introduce un apodo.'
+					isHidden={isHiddenEditName}
+					setIsHidden={setIsHiddenEditName}
+					onSubmit={handleChangeUsername}
+					initialValue={username}
+					maxLength={10}
+				/>
 
 				<div className='h-[20.5rem] flex gap-12 '>
 					<Link

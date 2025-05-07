@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router'
 import CharacterProfile from '../../../components/CharacterProfile'
-import EditName from '../../../components/EditName'
+import EditField from '../../../components/EditName'
 import { useCardMessageContext } from '../../../context/cardMessage'
 import { useAppSelector } from '../../../redux/hooks'
+import { changeUsername } from '../../../redux/userSlice'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import SelectionSetting from '../../../ui/SelectionSetting'
 import Subheading from '../../../ui/Subheading'
@@ -12,9 +14,10 @@ import Subheading from '../../../ui/Subheading'
 export function UserSettings() {
 	const [isHiddenEditName, setIsHiddenEditName] = useState(true)
 	const { onToggleHidden, settingMessage } = useCardMessageContext()
-
-	const { t } = useTranslation()
+	const dispatch = useDispatch()
+	const handleChangeUsername = (name: string) => dispatch(changeUsername(name))
 	const { username, email } = useAppSelector((state) => state.user)
+	const { t } = useTranslation()
 
 	const onToggleHiddenQrMessage = () => {
 		settingMessage({
@@ -67,7 +70,14 @@ export function UserSettings() {
 
 	return (
 		<ListPageTransition>
-			<EditName isHidden={isHiddenEditName} setIsHidden={setIsHiddenEditName} />
+			<EditField
+				title='Introduce un apodo.'
+				isHidden={isHiddenEditName}
+				setIsHidden={setIsHiddenEditName}
+				onSubmit={handleChangeUsername}
+				initialValue={username}
+				maxLength={10}
+			/>
 
 			<div>
 				<div className='mb-28'>
