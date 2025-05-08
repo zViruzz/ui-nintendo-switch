@@ -22,6 +22,7 @@ export default function EditField({
 	const containerInputRef = useRef<HTMLFormElement>(null)
 	const inputRef = useRef<HTMLInputElement>(null)
 	const [value, setValue] = useState<string>(initialValue)
+	console.log('🚀 ~ value:', value)
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
@@ -90,7 +91,9 @@ export default function EditField({
 						value={value}
 						maxLength={maxLength}
 					/>
-					<div className='flex justify-end text-disabled'>{value.length} / 10</div>
+					<div className='flex justify-end text-disabled'>
+						{value.length} / {maxLength}
+					</div>
 				</form>
 			</div>
 		</div>

@@ -1,5 +1,9 @@
-import type { ChangeEvent } from 'react'
+import { type ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import EditField from '../../../components/EditField'
+import { useAppSelector } from '../../../redux/hooks'
+import { changeConsoleNickname } from '../../../redux/userSlice'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
@@ -7,6 +11,11 @@ import SelectionSwitch from '../../../ui/SelectionSwitch'
 
 export function System() {
 	const { i18n, t } = useTranslation()
+	const [isHiddenEditField, setIsHiddenEditField] = useState(true)
+	const { consoleNickname } = useAppSelector((state) => state.user)
+	const dispatch = useDispatch()
+	const handleChangeConsoleNickname = (name: string) =>
+		dispatch(changeConsoleNickname(name))
 
 	const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const lang = e.target.value
@@ -16,14 +25,28 @@ export function System() {
 
 	return (
 		<ListPageTransition>
+			<EditField
+				title='Name switch'
+				isHidden={isHiddenEditField}
+				setIsHidden={setIsHiddenEditField}
+				initialValue={consoleNickname}
+				onSubmit={handleChangeConsoleNickname}
+				maxLength={32}
+			/>
+
 			<div className='mb-[6.7rem]'>
 				<SelectionSetting className='border-y'>System Update</SelectionSetting>
 				<Detailtext>! System update is ready</Detailtext>
 				<SelectionSetting className='border-y'>Update Dock</SelectionSetting>
 				<Detailtext>Update the Nintendo Switch dock firmware.</Detailtext>
-				<SelectionSetting className='border-y flex justify-between'>
+				<SelectionSetting
+					className='border-y flex justify-between'
+					onClick={() => setIsHiddenEditField(false)}
+				>
 					<span>Console Nickname</span>
-					<span className='dark:text-secodary text-secodary-light'>Switch1</span>
+					<span className='dark:text-secodary text-secodary-light'>
+						{consoleNickname}
+					</span>
 				</SelectionSetting>
 			</div>
 			<div>

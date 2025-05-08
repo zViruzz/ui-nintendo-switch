@@ -6,6 +6,7 @@ export interface UserType {
 	background: string
 	character: string
 	email: string
+	consoleNickname: string
 }
 
 const initialState: UserType = {
@@ -13,6 +14,7 @@ const initialState: UserType = {
 	background: '#ff0000',
 	character: mario,
 	email: 'nintendo@gmail.com',
+	consoleNickname: 'Switch1',
 }
 
 export const userSlice = createSlice({
@@ -28,9 +30,17 @@ export const userSlice = createSlice({
 		changeUsername: (state, action: PayloadAction<string>) => {
 			state.username = action.payload
 		},
+		changeConsoleNickname: (state, action: PayloadAction<string>) => {
+			state.consoleNickname = action.payload
+		},
 	},
 })
 
-export const { changeCharacter, changeUsername, changeBackground } = userSlice.actions
+export const {
+	changeCharacter,
+	changeUsername,
+	changeBackground,
+	changeConsoleNickname,
+} = userSlice.actions
 
 export default userSlice.reducer

@@ -1,13 +1,27 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { persistReducer } from 'redux-persist'
+import { type PersistedState, createMigrate, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import settingsReducer from './settingSlice'
-import userReducer from './userSlice'
+import userReducer, { type UserType } from './userSlice'
+
+const migrations = {
+	0: (state: PersistedState) => {
+		if (state && typeof state === 'object' && 'user' in state) {
+			const userState = state.user as UserType
+			if (userState && !userState.consoleNickname) {
+				userState.consoleNickname = 'Switch1'
+			}
+		}
+		return state
+	},
+}
 
 const persistConfig = {
 	key: 'root',
 	storage,
 	whitelist: ['user', 'settings'],
+	version: 1,
+	migrate: createMigrate(migrations, { debug: false }),
 }
 
 const rootReducer = combineReducers({
