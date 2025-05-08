@@ -22,7 +22,6 @@ export default function EditField({
 	const containerInputRef = useRef<HTMLFormElement>(null)
 	const inputRef = useRef<HTMLInputElement>(null)
 	const [value, setValue] = useState<string>(initialValue)
-	console.log('🚀 ~ value:', value)
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
@@ -85,7 +84,7 @@ export default function EditField({
 				<form onSubmit={handleSubmit} ref={containerInputRef}>
 					<input
 						onChange={handleChange}
-						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl focus-within:border-b-4 focus-within:outline-hidden'
+						className='w-[37rem] rounded-t-lg border-white bg-transparent px-5 text-6xl border-b-4 outline-hidden'
 						ref={inputRef}
 						type='text'
 						value={value}
