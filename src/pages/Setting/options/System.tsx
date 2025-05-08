@@ -2,6 +2,7 @@ import { type ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import EditField from '../../../components/EditField'
+import { useOptionsMenuContext } from '../../../context/optionsMenu'
 import { useAppSelector } from '../../../redux/hooks'
 import { changeConsoleNickname } from '../../../redux/userSlice'
 import ListPageTransition from '../../../transitions/ListPageTransition'
@@ -14,13 +15,43 @@ export function System() {
 	const [isHiddenEditField, setIsHiddenEditField] = useState(true)
 	const { consoleNickname } = useAppSelector((state) => state.user)
 	const dispatch = useDispatch()
+	const { configureListOptions } = useOptionsMenuContext()
 	const handleChangeConsoleNickname = (name: string) =>
 		dispatch(changeConsoleNickname(name))
+
+	const getLanguageName = (code: string): string => {
+		return (
+			{
+				English: 'en',
+				Spanish: 'es',
+			}[code] || code
+		)
+	}
 
 	const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const lang = e.target.value
 		i18n.changeLanguage(lang)
 		localStorage.setItem('lang', lang)
+	}
+
+	const changeLanguage = (lang: string) => {
+		console.log('🚀 ~ changeLanguage ~ lang:', lang)
+		const language = getLanguageName(lang)
+		console.log('🚀 ~ changeLanguage ~ language:', language)
+		// const language = lang
+
+		i18n.changeLanguage(language)
+		localStorage.setItem('lang', language)
+	}
+
+	const handleClickLanguage = () => {
+		configureListOptions({
+			title: 'Language',
+			isHidden: false,
+			initial: i18n.language,
+			onSelectOption: (option) => changeLanguage(option.label),
+			options: ['English', 'Spanish'],
+		})
 	}
 
 	return (
@@ -50,9 +81,12 @@ export function System() {
 				</SelectionSetting>
 			</div>
 			<div>
-				<SelectionSetting className='border-y flex justify-between'>
+				<SelectionSetting
+					className='border-y flex justify-between'
+					onClick={handleClickLanguage}
+				>
 					<span>Language</span>
-					<span className='dark:text-secodary text-secodary-light'>English</span>
+					<span className='dark:text-secodary text-secodary-light'>{i18n.language}</span>
 				</SelectionSetting>
 				<SelectionSetting className='border-y flex justify-between'>
 					<span>Region</span>
