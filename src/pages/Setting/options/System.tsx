@@ -1,4 +1,4 @@
-import { type ChangeEvent, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import EditField from '../../../components/EditField'
