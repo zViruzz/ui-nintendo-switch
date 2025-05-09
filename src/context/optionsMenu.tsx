@@ -78,7 +78,6 @@ export const OptionsMenuProvider: React.FC<Props> = ({ children }) => {
 
 	const activeOption = (index: number) => {
 		setListOptions((prev) => {
-			console.log('🚀 ~ setListOptions ~ prev:', prev)
 			const newOptions = prev.options.map((option, i) => {
 				if (typeof option === 'string') {
 					return { label: option, isOn: i === index }

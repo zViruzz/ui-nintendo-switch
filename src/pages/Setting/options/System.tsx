@@ -28,17 +28,17 @@ export function System() {
 		)
 	}
 
-	const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		const lang = e.target.value
-		i18n.changeLanguage(lang)
-		localStorage.setItem('lang', lang)
+	const getLanguageCode = (code: string): string => {
+		return (
+			{
+				en: 'English',
+				es: 'Spanish',
+			}[code] || code
+		)
 	}
 
 	const changeLanguage = (lang: string) => {
-		console.log('🚀 ~ changeLanguage ~ lang:', lang)
 		const language = getLanguageName(lang)
-		console.log('🚀 ~ changeLanguage ~ language:', language)
-		// const language = lang
 
 		i18n.changeLanguage(language)
 		localStorage.setItem('lang', language)
@@ -48,7 +48,7 @@ export function System() {
 		configureListOptions({
 			title: 'Language',
 			isHidden: false,
-			initial: i18n.language,
+			initial: getLanguageCode(i18n.language),
 			onSelectOption: (option) => changeLanguage(option.label),
 			options: ['English', 'Spanish'],
 		})
@@ -86,7 +86,9 @@ export function System() {
 					onClick={handleClickLanguage}
 				>
 					<span>Language</span>
-					<span className='dark:text-secodary text-secodary-light'>{i18n.language}</span>
+					<span className='dark:text-secodary text-secodary-light'>
+						{getLanguageCode(i18n.language)}
+					</span>
 				</SelectionSetting>
 				<SelectionSetting className='border-y flex justify-between'>
 					<span>Region</span>
@@ -137,11 +139,6 @@ export function System() {
 					Intellectual Property Notices
 				</SelectionSetting>
 				<SelectionSetting className='border-b mb-10'>Wireless E-Label</SelectionSetting>
-
-				<select defaultValue={i18n.language} onChange={handleChange}>
-					<option value='en'>EN</option>
-					<option value='es'>ES</option>
-				</select>
 
 				<div>ejem: {t('home.menu.news')}</div>
 			</div>
