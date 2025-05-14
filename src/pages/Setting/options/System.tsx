@@ -9,33 +9,19 @@ import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
 import SelectionSwitch from '../../../ui/SelectionSwitch'
+import { getLanguageCode, getLanguageName } from '../../../utils/languageDictionary'
 
 export function System() {
 	const { i18n, t } = useTranslation()
 	const [isHiddenEditField, setIsHiddenEditField] = useState(true)
+	const [regionValue, setRegionValue] = useState('The Americas')
+	const [consoleSoundValue, setConsoleSoundValue] = useState('Stereo')
+	const [usbKeyboardValue, setUsbKeyboardValue] = useState('English (US)')
 	const { consoleNickname } = useAppSelector((state) => state.user)
 	const dispatch = useDispatch()
 	const { configureListOptions } = useOptionsMenuContext()
 	const handleChangeConsoleNickname = (name: string) =>
 		dispatch(changeConsoleNickname(name))
-
-	const getLanguageName = (code: string): string => {
-		return (
-			{
-				English: 'en',
-				Spanish: 'es',
-			}[code] || code
-		)
-	}
-
-	const getLanguageCode = (code: string): string => {
-		return (
-			{
-				en: 'English',
-				es: 'Spanish',
-			}[code] || code
-		)
-	}
 
 	const changeLanguage = (lang: string) => {
 		const language = getLanguageName(lang)
@@ -51,6 +37,54 @@ export function System() {
 			initial: getLanguageCode(i18n.language),
 			onSelectOption: (option) => changeLanguage(option.label),
 			options: ['English', 'Spanish'],
+		})
+	}
+
+	const handleClickRegion = () => {
+		configureListOptions({
+			title: 'Region',
+			isHidden: false,
+			initial: regionValue,
+			onSelectOption: (option) => setRegionValue(option.label),
+			options: [
+				'Japan',
+				'The Americas',
+				'Europe',
+				'Australia / New Zealand',
+				'Hong Kong / Taiwan / South Korea',
+			],
+		})
+	}
+	const handleClickConsoleSound = () => {
+		configureListOptions({
+			title: 'Console Sound',
+			isHidden: false,
+			initial: consoleSoundValue,
+			onSelectOption: (option) => setConsoleSoundValue(option.label),
+			options: ['Stereo', 'Mono'],
+		})
+	}
+
+	const handleClickUSBKeyboard = () => {
+		configureListOptions({
+			title: 'USB Keyboard',
+			isHidden: false,
+			initial: usbKeyboardValue,
+			onSelectOption: (option) => setUsbKeyboardValue(option.label),
+			options: [
+				'English (US)',
+				'English (UK)',
+				'Spanish (Spain)',
+				'French (France)',
+				'German (Germany)',
+				'Italian (Italy)',
+				'Dutch (Netherlands)',
+				'Portuguese (Brazil)',
+				'Russian (Russia)',
+				'Chinese (China)',
+				'Japanese (Japan)',
+				'Korean (Korea)',
+			],
 		})
 	}
 
@@ -90,9 +124,12 @@ export function System() {
 						{getLanguageCode(i18n.language)}
 					</span>
 				</SelectionSetting>
-				<SelectionSetting className='border-y flex justify-between'>
+				<SelectionSetting
+					className='border-y flex justify-between'
+					onClick={handleClickRegion}
+				>
 					<span>Region</span>
-					<span className='dark:text-secodary text-secodary-light'>The Americas</span>
+					<span className='dark:text-secodary text-secodary-light'>{regionValue}</span>
 				</SelectionSetting>
 				<SelectionSetting className='border-y flex justify-between'>
 					Data and Time
@@ -104,9 +141,14 @@ export function System() {
 				<Detailtext>
 					The console battery will be displayed on the HOME Menu as percentage.
 				</Detailtext>
-				<SelectionSetting className='border-y flex justify-between'>
+				<SelectionSetting
+					className='border-y flex justify-between'
+					onClick={handleClickConsoleSound}
+				>
 					<span>Console Sound</span>
-					<span className='dark:text-secodary text-secodary-light'>Stereo</span>
+					<span className='dark:text-secodary text-secodary-light'>
+						{consoleSoundValue}
+					</span>
 				</SelectionSetting>
 				<Detailtext>
 					You can configure sound in the TV Settings menu when the console is connected to
@@ -121,9 +163,14 @@ export function System() {
 				<Detailtext>
 					Set a maximun volume for headphones or speakers connected to the console.
 				</Detailtext>
-				<SelectionSetting className='border-b flex justify-between'>
+				<SelectionSetting
+					className='border-b flex justify-between'
+					onClick={handleClickUSBKeyboard}
+				>
 					<span>USB Keyboard</span>
-					<span className='dark:text-secodary text-secodary-light'>English</span>
+					<span className='dark:text-secodary text-secodary-light'>
+						{usbKeyboardValue}
+					</span>
 				</SelectionSetting>
 				<SelectionSetting className='border-b flex justify-between'>
 					<span>Change Display Colors</span>
