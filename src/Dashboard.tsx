@@ -5,6 +5,7 @@ import AnimatedOutlet from './components/AnimatedOutlet'
 import { BrightnessLayout } from './components/BrightnessLayout'
 import CardMessage from './components/CardMessage/CardMessage'
 import OptionsMenu from './components/OptionsMenu/OptionsMenu'
+import { ScreenFilter } from './components/ScreenFilter'
 import WelcomeMessage from './components/WelcomeMessage'
 import { CardMessageProvider } from './context/cardMessage'
 import { ControllerProvider } from './context/controller'
@@ -25,11 +26,13 @@ function Dashboard() {
 				<CardMessageProvider>
 					<OptionsMenuProvider>
 						<BrightnessLayout>
-							<OptionsMenu />
-							<WelcomeMessage />
-							<CardMessage />
+							<ScreenFilter>
+								<OptionsMenu />
+								<WelcomeMessage />
+								<CardMessage />
 
-							<AnimatedOutlet />
+								<AnimatedOutlet />
+							</ScreenFilter>
 						</BrightnessLayout>
 					</OptionsMenuProvider>
 				</CardMessageProvider>

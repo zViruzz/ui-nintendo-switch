@@ -7,6 +7,7 @@ interface BrightnessSettings {
 
 interface SettingsType {
 	brightness: BrightnessSettings
+	filter: 'Grayscale' | 'Default' | 'Invert'
 }
 
 const initialState: SettingsType = {
@@ -14,6 +15,7 @@ const initialState: SettingsType = {
 		value: 50,
 		autoBrightness: false,
 	},
+	filter: 'Default',
 }
 
 export const settingsSlice = createSlice({
@@ -26,8 +28,12 @@ export const settingsSlice = createSlice({
 		changeAutoBrighness: (state, action: PayloadAction<boolean>) => {
 			state.brightness.autoBrightness = action.payload
 		},
+		changeFilter: (state, action: PayloadAction<'Grayscale' | 'Default' | 'Invert'>) => {
+			state.filter = action.payload
+		},
 	},
 })
 
-export const { changeBrightness, changeAutoBrighness } = settingsSlice.actions
+export const { changeBrightness, changeAutoBrighness, changeFilter } =
+	settingsSlice.actions
 export default settingsSlice.reducer

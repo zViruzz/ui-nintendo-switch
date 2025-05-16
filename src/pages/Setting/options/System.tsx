@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import EditField from '../../../components/EditField'
 import { useOptionsMenuContext } from '../../../context/optionsMenu'
 import { useAppSelector } from '../../../redux/hooks'
+import { changeFilter } from '../../../redux/settingSlice'
 import { changeConsoleNickname } from '../../../redux/userSlice'
 import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
@@ -18,6 +19,7 @@ export function System() {
 	const [consoleSoundValue, setConsoleSoundValue] = useState('Stereo')
 	const [usbKeyboardValue, setUsbKeyboardValue] = useState('English (US)')
 	const { consoleNickname } = useAppSelector((state) => state.user)
+	const { filter } = useAppSelector((state) => state.settings)
 	const dispatch = useDispatch()
 	const { configureListOptions } = useOptionsMenuContext()
 	const handleChangeConsoleNickname = (name: string) =>
@@ -85,6 +87,17 @@ export function System() {
 				'Japanese (Japan)',
 				'Korean (Korea)',
 			],
+		})
+	}
+
+	const handleClickFilter = () => {
+		configureListOptions({
+			title: 'Change Display Colors',
+			isHidden: false,
+			initial: filter,
+			onSelectOption: (option) =>
+				dispatch(changeFilter(option.label as 'Default' | 'Grayscale' | 'Invert')),
+			options: ['Default', 'Grayscale', 'Invert'],
 		})
 	}
 
@@ -172,9 +185,12 @@ export function System() {
 						{usbKeyboardValue}
 					</span>
 				</SelectionSetting>
-				<SelectionSetting className='border-b flex justify-between'>
+				<SelectionSetting
+					className='border-b flex justify-between'
+					onClick={handleClickFilter}
+				>
 					<span>Change Display Colors</span>
-					<span className='dark:text-secodary text-secodary-light'>Default</span>
+					<span className='dark:text-secodary text-secodary-light'>{filter}</span>
 				</SelectionSetting>
 				<SelectionSwitch className='border-b'>Zoom</SelectionSwitch>
 				<Detailtext>You can zoom in be pressing twice quickly.</Detailtext>
