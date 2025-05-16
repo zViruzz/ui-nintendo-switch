@@ -13,7 +13,7 @@ import SelectionSwitch from '../../../ui/SelectionSwitch'
 import { getLanguageCode, getLanguageName } from '../../../utils/languageDictionary'
 
 export function System() {
-	const { i18n, t } = useTranslation()
+	const { i18n } = useTranslation()
 	const [isHiddenEditField, setIsHiddenEditField] = useState(true)
 	const [regionValue, setRegionValue] = useState('The Americas')
 	const [consoleSoundValue, setConsoleSoundValue] = useState('Stereo')
@@ -201,9 +201,20 @@ export function System() {
 				<SelectionSetting className='border-b'>
 					Intellectual Property Notices
 				</SelectionSetting>
-				<SelectionSetting className='border-b mb-10'>Wireless E-Label</SelectionSetting>
+				<SelectionSetting className='border-b mb-[6.7rem]'>
+					Wireless E-Label
+				</SelectionSetting>
 
-				<div>ejem: {t('home.menu.news')}</div>
+				<SelectionSwitch className='border-y'>Auto-Update Software</SelectionSwitch>
+				<SelectionSetting className='border-b'>Wireless E-Label</SelectionSetting>
+				<SelectionSwitch className='border-b mb-35'>
+					Share Error Information
+				</SelectionSwitch>
+
+				<SelectionSetting className='border-y mb-[6.7rem]'>
+					System Transfer to Nintendo Switch 2
+				</SelectionSetting>
+				<SelectionSetting className='border-y'>Formatting Options</SelectionSetting>
 			</div>
 		</ListPageTransition>
 	)
