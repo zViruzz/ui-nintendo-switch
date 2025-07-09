@@ -24,7 +24,7 @@ export const styles = {
 const stylesSlots = tv({
 	slots: {
 		constainerCard:
-			'relative flex w-[72rem] flex-col rounded-lg bg-gray-message-light dark:bg-gray-message [&div]:bg-white shadow-2xl',
+			'relative flex w-[72rem] flex-col rounded-lg bg-gray-message-light dark:bg-gray-message shadow-2xl',
 		content: 'w-full h-full text-[2.6rem]/13.5',
 		button:
 			'background-highlight-transparent outline-wiggle-focus text-secodary-light dark:text-secodary w-full h-[6.7rem] rounded-xs text-[2.7rem] active:bg-secodary/[.06] active:outline-0 transition-all duration-75',
