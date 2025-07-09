@@ -10,7 +10,7 @@ const LensIcon = (props: SVGProps<SVGSVGElement>) => (
 		aria-hidden='true'
 		{...props}
 	>
-		<g stroke='#fff' strokeWidth={2}>
+		<g stroke='currentColor' strokeWidth={2}>
 			<path d='M19.96 11.48a8.45 8.45 0 0 1-2.458 5.971 8.438 8.438 0 0 1-6.022 2.51 8.48 8.48 0 1 1 8.48-8.48Z' />
 			<path strokeLinecap='round' d='m18.155 18.155 3.732 3.732' />
 		</g>
