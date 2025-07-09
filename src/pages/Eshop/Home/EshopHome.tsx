@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router'
+import LensIcon from '../../../icons/LensIcon'
 
 export function EshopHome() {
 	const [isFocusPage, setIsFocusPage] = useState(false)
@@ -10,13 +11,10 @@ export function EshopHome() {
 	const navigate = useNavigate()
 
 	const handleFocusLink = (path: string) => {
-		console.log('🚀 ~ handleFocusLink ~ pathParent:', pathParent)
-		console.log('🚀 ~ handleFocusLink ~ path:', path)
 		navigate(`${pathParent}${path}`)
 	}
 
 	const handleClick = () => {
-		console.log('blur')
 		setIsFocusPage(true)
 	}
 
@@ -56,8 +54,9 @@ export function EshopHome() {
 							onFocus={() => {
 								handleFocusLink('/search')
 							}}
-							className='flex items-center h-full w-full outline-wiggle-focus hover:bg-[#FEA840] focus-visible:bg-[#FEA840] pl-[19%]'
+							className='flex items-center gap-3 h-full w-full outline-wiggle-focus hover:bg-[#FEA840] focus-visible:bg-[#FEA840] pl-[19%]'
 						>
+							<LensIcon />
 							Search/Browse
 						</Link>
 					</li>

@@ -26,7 +26,6 @@ if (persistedState) {
 
 const migrations = {
 	0: (state: PersistedState) => {
-		console.log('stateeeeeeeeeee migrate 0')
 		if (state && typeof state === 'object' && 'user' in state) {
 			const userState = state.user as UserType
 			if (userState && !userState.consoleNickname) {
@@ -38,15 +37,10 @@ const migrations = {
 	1: (state: PersistedState) => {
 		if (state && typeof state === 'object' && 'settings' in state) {
 			const settingsState = state.settings as SettingsType
-			console.log('settingsState antes:', settingsState)
 			if (settingsState && !settingsState.filter) {
 				settingsState.filter = 'Default'
-				console.log('✅ Filter agregado con valor dafault')
-			} else {
-				console.log('❌ No se agregó filter. Valor actual:', settingsState?.filter)
 			}
 		}
-		console.log('Estado después de migración 1:', state)
 		return state
 	},
 }
