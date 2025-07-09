@@ -5,9 +5,7 @@ export function DataManagement() {
 		<div className='h-full w-full'>
 			<div className='grid grid-cols-2 px-3 gap-[4.8rem]'>
 				<div>
-					<h4 className='text-4xl leading-normal'>
-						Memoria de consola
-					</h4>
+					<h4 className='text-4xl leading-normal'>Memoria de consola</h4>
 					<div className=' w-full h-6 rounded-xs border-2 p-[3px]'>
 						<div className='bg-white w-2/3 h-full' />
 					</div>
@@ -29,10 +27,7 @@ export function DataManagement() {
 			</div>
 
 			<div className='mt-16'>
-				<SelectionSetting
-					className='border-gray border-y'
-					disabled={true}
-				>
+				<SelectionSetting className='border-gray border-y' disabled={true}>
 					Mover datos entre la consola y una tarjeta microSD
 				</SelectionSetting>
 				<SelectionSetting className='border-gray border-b'>
@@ -40,8 +35,7 @@ export function DataManagement() {
 				</SelectionSetting>
 
 				<div className='text-[1.8rem] px-7 py-2 text-description h-[6.3rem] w-full '>
-					Esta opción permite archivar los programas seleccionados
-					para liberar espacio.
+					Esta opción permite archivar los programas seleccionados para liberar espacio.
 				</div>
 
 				<SelectionSetting className='border-gray border-y'>

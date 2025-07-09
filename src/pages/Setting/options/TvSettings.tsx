@@ -64,7 +64,7 @@ export function TvSettings() {
 			isHidden: false,
 			initial: tvSoundValue,
 			onSelectOption: (option) => setTvSound(option.label),
-			options: ['Automatic', 'Limited Range', 'Full Range'],
+			options: ['Automatic', 'Surround Sound', 'Stereo', 'Mono'],
 		})
 	}
 

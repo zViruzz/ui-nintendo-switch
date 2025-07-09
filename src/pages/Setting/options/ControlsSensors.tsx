@@ -3,8 +3,23 @@ import ListPageTransition from '../../../transitions/ListPageTransition'
 import Detailtext from '../../../ui/DetailText'
 import SelectionSetting from '../../../ui/SelectionSetting'
 import SelectionSwitch from '../../../ui/SelectionSwitch'
+import { useState } from 'react'
+import { useOptionsMenuContext } from '../../../context/optionsMenu'
 
 export function ControlsSensors() {
+	const { configureListOptions } = useOptionsMenuContext()
+	const [touchSensitivity, setTouchSensitivity] = useState('Standard')
+
+	const handleClickTouchSensitivity = () => {
+		configureListOptions({
+			title: 'Touch-Screen Sensitivity',
+			isHidden: false,
+			initial: touchSensitivity,
+			onSelectOption: (option) => setTouchSensitivity(option.label),
+			options: ['Standard', 'Stylus'],
+		})
+	}
+
 	return (
 		<ListPageTransition>
 			<div className='mb-20'>
@@ -58,7 +73,15 @@ export function ControlsSensors() {
 			</div>
 
 			<div>
-				<SelectionSetting className='border-y'>Touch-Screen Sensitivity</SelectionSetting>
+				<SelectionSetting
+					className='border-y flex justify-between'
+					onClick={handleClickTouchSensitivity}
+				>
+					<span>Touch-Screen Sensitivity</span>
+					<span className='dark:text-secodary text-secodary-light'>
+						{touchSensitivity}
+					</span>
+				</SelectionSetting>
 				<Detailtext className='mb-10'>
 					<p>
 						Using the Stylus setting increase the sensitivity of the touch screen to

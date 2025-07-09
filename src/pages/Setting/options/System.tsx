@@ -177,7 +177,7 @@ export function System() {
 					Set a maximun volume for headphones or speakers connected to the console.
 				</Detailtext>
 				<SelectionSetting
-					className='border-b flex justify-between'
+					className='border-y flex justify-between'
 					onClick={handleClickUSBKeyboard}
 				>
 					<span>USB Keyboard</span>
