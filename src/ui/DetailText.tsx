@@ -9,7 +9,7 @@ function Detailtext({ children, className, ...props }: Props) {
 	return (
 		<div
 			className={cn(
-				'h-[6.7rem] py-3 px-6 text-[1.83rem] text-description leading-snug',
+				'min-h-[6.7rem] py-3 px-6 text-[1.83rem] text-description leading-snug',
 				className,
 			)}
 			{...props}

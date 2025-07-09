@@ -66,7 +66,7 @@ export function ControlsSensors() {
 					</p>
 				</Detailtext>
 				<SelectionSetting className='border-y'>Test Input Devices</SelectionSetting>
-				<Detailtext className='mb-10'>
+				<Detailtext className=''>
 					<p>Check for porblems with the controllers or the touch screen.</p>
 				</Detailtext>
 				<SelectionSetting className='border-y'>Disconnect Controllers</SelectionSetting>
