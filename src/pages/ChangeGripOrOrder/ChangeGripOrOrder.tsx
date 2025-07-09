@@ -23,7 +23,7 @@ export default function ChangeGripOrOrder() {
 		},
 		settingButtonB: {
 			text: 'controller.buttonB.back',
-			route: '/app/controllers',
+			route: -1,
 		},
 	})
 
