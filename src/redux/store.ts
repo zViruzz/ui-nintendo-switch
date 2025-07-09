@@ -1,11 +1,32 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { type PersistedState, createMigrate, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import settingsReducer from './settingSlice'
+import settingsReducer, { type SettingsType } from './settingSlice'
 import userReducer, { type UserType } from './userSlice'
+
+const persistedState = localStorage.getItem('persist:root')
+if (persistedState) {
+	try {
+		const parsed = JSON.parse(persistedState)
+
+		// Verificar si el usuario no tiene settings.filter
+		const settings = parsed.settings ? JSON.parse(parsed.settings) : null
+		const hasFilter = settings?.filter
+
+		// Si no tiene filter, resetear la versión para forzar migración
+		if (!hasFilter && parsed._persist) {
+			localStorage.removeItem('persist:root')
+		}
+	} catch (e) {
+		console.log('Error parseando estado persistido:', e)
+	}
+} else {
+	console.log('No hay estado persistido en localStorage')
+}
 
 const migrations = {
 	0: (state: PersistedState) => {
+		console.log('stateeeeeeeeeee migrate 0')
 		if (state && typeof state === 'object' && 'user' in state) {
 			const userState = state.user as UserType
 			if (userState && !userState.consoleNickname) {
@@ -14,13 +35,27 @@ const migrations = {
 		}
 		return state
 	},
+	1: (state: PersistedState) => {
+		if (state && typeof state === 'object' && 'settings' in state) {
+			const settingsState = state.settings as SettingsType
+			console.log('settingsState antes:', settingsState)
+			if (settingsState && !settingsState.filter) {
+				settingsState.filter = 'Default'
+				console.log('✅ Filter agregado con valor dafault')
+			} else {
+				console.log('❌ No se agregó filter. Valor actual:', settingsState?.filter)
+			}
+		}
+		console.log('Estado después de migración 1:', state)
+		return state
+	},
 }
 
 const persistConfig = {
 	key: 'root',
 	storage,
 	whitelist: ['user', 'settings'],
-	version: 1,
+	version: 2,
 	migrate: createMigrate(migrations, { debug: false }),
 }
 
@@ -37,7 +72,5 @@ export const store = configureStore({
 		getDefaultMiddleware({ serializableCheck: false }),
 })
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch

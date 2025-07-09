@@ -5,7 +5,7 @@ interface BrightnessSettings {
 	autoBrightness: boolean
 }
 
-interface SettingsType {
+export interface SettingsType {
 	brightness: BrightnessSettings
 	filter: 'Grayscale' | 'Default' | 'Invert'
 }
