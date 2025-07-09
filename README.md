@@ -27,5 +27,5 @@ npm install
 npm start
 ```
 
->  La aplicación estará disponible en tu navegador en http://localhost:3000.
+>  La aplicación estará disponible en tu navegador en http://localhost:5173.
 
