@@ -10,7 +10,7 @@ export function Search() {
 			<main className='w-full h-full px-[6.5%] py-20 flex flex-col items-center overflow-auto'>
 				<div className='flex w-full justify-between'>
 					<h1>Search/Browse</h1>
-					<Link to='profile' className='rounded items-center outline-wiggle-focus'>
+					<Link to='' className='rounded items-center outline-wiggle-focus'>
 						<CharacterProfile className='w-20 h-20 rounded-full' />
 					</Link>
 				</div>
@@ -37,26 +37,26 @@ export function Search() {
 					</div>
 					<div className='grid grid-cols-2 grid-rows-2 gap-3 text-[2.4rem] text-center'>
 						<Link
-							to='/genre'
-							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center'
+							to=''
+							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center outline-wiggle-focus focus:bg-red-500 focus:text-white outline-offset-0'
 						>
 							Genre
 						</Link>
 						<Link
-							to='/genre'
-							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center'
+							to=''
+							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center outline-wiggle-focus focus:bg-red-500 focus:text-white outline-offset-0'
 						>
 							Price Range
 						</Link>
 						<Link
-							to='/genre'
-							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center'
+							to=''
+							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center outline-wiggle-focus focus:bg-red-500 focus:text-white outline-offset-0'
 						>
 							Games with Demos
 						</Link>
 						<Link
-							to='/genre'
-							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center'
+							to=''
+							className='border-3 border-red-500 rounded-sm h-28  text-red-500 grid place-content-center outline-wiggle-focus focus:bg-red-500 focus:text-white outline-offset-0'
 						>
 							Dowloadable Content
 						</Link>

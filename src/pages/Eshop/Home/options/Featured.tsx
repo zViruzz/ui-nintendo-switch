@@ -16,10 +16,7 @@ export function Featured() {
 			<main className='w-full h-full px-[6.5%] py-20 pb-40 overflow-auto'>
 				<div className='flex w-full justify-between'>
 					<h1>Featured</h1>
-					<Link
-						to='profile'
-						className='rounded flex gap-3 items-center outline-wiggle-focus'
-					>
+					<Link to='' className='rounded flex gap-3 items-center outline-wiggle-focus'>
 						<CharacterProfile className='w-20 h-20 rounded-full' />
 						<ArrowThisRightIcon className='w-8 h-8 text-red-500' />
 					</Link>
