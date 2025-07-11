@@ -13,7 +13,10 @@ import ListPageTransition from '../../../../transitions/ListPageTransition'
 export function Featured() {
 	return (
 		<ListPageTransition>
-			<main className='w-full h-full px-[6.5%] py-20 pb-40 overflow-auto'>
+			<main
+				tabIndex={-1}
+				className='w-full h-full px-[6.5%] py-20 pb-40 overflow-auto focus-main'
+			>
 				<div className='flex w-full justify-between'>
 					<h1>Featured</h1>
 					<Link to='' className='rounded flex gap-3 items-center outline-wiggle-focus'>

@@ -17,6 +17,12 @@ export function EshopHome() {
 	const handleClick = () => {
 		setIsFocusPage(true)
 	}
+	const handleClickLink = () => {
+		const section = document.querySelector('.focus-main')
+		if (section instanceof HTMLElement) {
+			section.focus()
+		}
+	}
 
 	const transitionConfig = {
 		type: 'spring',
@@ -68,6 +74,7 @@ export function EshopHome() {
 								onFocus={() => {
 									handleFocusLink(item.path)
 								}}
+								onClick={handleClickLink}
 							>
 								{item.name}
 							</Link>

@@ -15,10 +15,8 @@ function OptionList({ options }: OptionListProps) {
 	const { controllerButtonA } = useControllerContext()
 	const location = useLocation()
 	const currentUrl = `/${location.pathname.split('/').pop()}`
-	// const pathParent = `/${location.pathname.split('/')[1]}}`
 	const pathParent = `/${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}`
 	const navigate = useNavigate()
-	// console.log('🚀 ~ OptionList ~ pathParent:', pathParent)
 
 	const handleClickLink = () => {
 		const section = document.querySelector('.section-focus')
