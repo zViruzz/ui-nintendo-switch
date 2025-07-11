@@ -1,13 +1,18 @@
+import { Link } from 'react-router'
+
 export function CardGameFeatured({
 	title,
 	urlImage,
 }: { title: string; urlImage: string }) {
 	return (
-		<div className='w-full bg-white grid grid-rows-[10fr_auto] shadow outline-wiggle-focus'>
+		<Link
+			to=''
+			className='w-full bg-white grid grid-rows-[10fr_auto] shadow outline-wiggle-focus'
+		>
 			<img className='object-cover w-full h-full' src={urlImage} alt={title} />
 			<div className='text-xl px-3 py-1'>
 				<p>{title}</p>
 			</div>
-		</div>
+		</Link>
 	)
 }
