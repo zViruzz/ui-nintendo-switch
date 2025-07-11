@@ -21,7 +21,7 @@ export function Featured() {
 						className='rounded flex gap-3 items-center outline-wiggle-focus'
 					>
 						<CharacterProfile className='w-20 h-20 rounded-full' />
-						<ArrowThisRightIcon className='w-8 h-8' />
+						<ArrowThisRightIcon className='w-8 h-8 text-red-500' />
 					</Link>
 				</div>
 				<div className='w-full mt-5 grid grid-cols-2 gap-3 grid-rows-3'>

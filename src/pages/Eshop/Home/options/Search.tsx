@@ -2,29 +2,27 @@ import { Link } from 'react-router'
 import ListPageTransition from '../../../../transitions/ListPageTransition'
 import CharacterProfile from '../../../../components/CharacterProfile'
 import LensIcon from '../../../../icons/LensIcon'
+import ArrowThisRightIcon from '../../../../icons/ArrowThinRight'
 
 export function Search() {
 	return (
 		<ListPageTransition>
-			<main className='w-full h-full px-[6.5%] py-20 pb-40 flex flex-col items-center'>
+			<main className='w-full h-full px-[6.5%] py-20 flex flex-col items-center overflow-auto'>
 				<div className='flex w-full justify-between'>
-					<h1>Featured</h1>
-					<Link
-						to='profile'
-						className='rounded flex gap-3 items-center outline-wiggle-focus'
-					>
+					<h1>Search/Browse</h1>
+					<Link to='profile' className='rounded items-center outline-wiggle-focus'>
 						<CharacterProfile className='w-20 h-20 rounded-full' />
 					</Link>
 				</div>
 
-				<div className='flex w-[43rem]'>
+				<div className='flex w-[43rem] mt-12'>
 					<form className='flex flex-col w-full'>
 						<label htmlFor='Search' className='text-3xl text-description py-5'>
 							Search by Keyword
 						</label>
 						<div className='relative'>
 							<input
-								className='w-full h-20 rounded-t-lg border-red-500 bg-transparent px-5 pl-16 text-4xl border-b-4 outline-hidden'
+								className='w-full h-23 rounded-t-xs border-red-500 bg-transparent px-5 pl-16 text-4xl border-b-4 outline-wiggle-focus'
 								type='text'
 								placeholder='Enter keyword'
 							/>
@@ -33,7 +31,7 @@ export function Search() {
 					</form>
 				</div>
 
-				<div className='w-[43rem] mt-15'>
+				<div className='w-[43rem] mt-18'>
 					<div>
 						<p className='text-3xl text-description py-5'>Browse by Filter</p>
 					</div>
@@ -64,8 +62,11 @@ export function Search() {
 						</Link>
 					</div>
 
-					<div className='flex justify-end text-3xl text-description py-5'>
+					<div className='flex justify-end text-3xl text-description py-5 items-center gap-3'>
 						<p>Other Search Filter</p>
+						<span className='bg-red-500 rounded-full h-6 w-6 flex items-center justify-center '>
+							<ArrowThisRightIcon className='text-white h-3 w-3' />
+						</span>
 					</div>
 				</div>
 			</main>
