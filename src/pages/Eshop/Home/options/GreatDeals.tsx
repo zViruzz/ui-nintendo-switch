@@ -1,8 +1,13 @@
-import { CardGameRecent } from '../../../../components/Eshop/CardGameRecent'
+import { CardGame } from '../../../../components/Eshop/CardGame'
 import { HeaderTitle } from '../../../../components/Eshop/HeaderTitle'
 import ListPageTransition from '../../../../transitions/ListPageTransition'
 import { EshopOptionsContainer } from '../../../../ui/EshopOptionsContainer'
-import imageUrlNintendoSwitch2 from '../../../../assets/NSwitch2_HWKeyvisual.jpg'
+import imageUrlLuigisMansion from '../../../../assets/luigis-mansion.webp'
+import imageUrlMarioKart from '../../../../assets/mario-kart-8-deluxe.webp'
+import imageUrlSuperMarioBros from '../../../../assets/super-mario-bros.webp'
+import imageUrlSuperMario from '../../../../assets/super-mario-odyssey.webp'
+import imageUrlXenoblade from '../../../../assets/xenoblade-chronicles-x.webp'
+import imageUrlZelda from '../../../../assets/zelda.webp'
 
 export function GreatDeals() {
 	return (
@@ -49,12 +54,42 @@ export function GreatDeals() {
 				</div>
 
 				<div className='w-full mt-6 grid grid-cols-3 gap-3'>
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
-					<CardGameRecent price='48,74' urlImage={imageUrlNintendoSwitch2} />
+					<CardGame
+						price={59.99}
+						discount={50}
+						urlImage={imageUrlLuigisMansion}
+						dayRemaining={2}
+					/>
+					<CardGame
+						price={59.99}
+						discount={50}
+						urlImage={imageUrlMarioKart}
+						dayRemaining={7}
+					/>
+					<CardGame
+						price={59.99}
+						discount={25}
+						urlImage={imageUrlSuperMario}
+						dayRemaining={4}
+					/>
+					<CardGame
+						price={69.99}
+						discount={20}
+						urlImage={imageUrlZelda}
+						dayRemaining={10}
+					/>
+					<CardGame
+						price={69.99}
+						discount={10}
+						urlImage={imageUrlSuperMarioBros}
+						dayRemaining={3}
+					/>
+					<CardGame
+						price={49.99}
+						discount={15}
+						urlImage={imageUrlXenoblade}
+						dayRemaining={5}
+					/>
 				</div>
 			</EshopOptionsContainer>
 		</ListPageTransition>
