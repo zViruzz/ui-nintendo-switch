@@ -1,4 +1,5 @@
 import imageUrlLuigisMansion from '../../../../assets/luigis-mansion.webp'
+import imageUrlXenobladeChroniclesX from '../../../../assets/xenoblade-chronicles-x.webp'
 import imageUrlMarioKart from '../../../../assets/mario-kart-8-deluxe.webp'
 import imageUrlSuperMarioBros from '../../../../assets/super-mario-bros.webp'
 import imageUrlSuperMario from '../../../../assets/super-mario-odyssey.webp'
@@ -19,6 +20,7 @@ export function RecentRealeases() {
 					<CardGame price={69.99} urlImage={imageUrlSuperMarioBros} />
 					<CardGame price={69.99} urlImage={imageUrlZelda} />
 					<CardGame price={49.99} urlImage={imageUrlLuigisMansion} />
+					<CardGame price={49.99} urlImage={imageUrlXenobladeChroniclesX} />
 				</div>
 			</EshopOptionsContainer>
 		</ListPageTransition>
