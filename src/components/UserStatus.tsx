@@ -10,25 +10,25 @@ function UserStatus() {
 	const user = useAppSelector((state) => state.user)
 
 	return (
-		<div className='flex justify-between items-center px-24'>
+		<div className='flex justify-between items-center px-13 lg:px-24'>
 			<div className='group relative'>
 				<Link
 					to='users/profile'
 					className='group-focus-within:outline-wiggle-focus group-focus-within:block group-focus-within:rounded-full group-hover:outline-wiggle-focus group-hover:block group-hover:rounded-full group-hover:animate-wiggle transition-all duration-100'
 				>
-					<CharacterProfile className='border-neutral-100 dark:border-zinc-700 border-4 rounded-full shadow-Nbutton w-[5.8rem]' />
+					<CharacterProfile className='border-neutral-100 dark:border-zinc-700 rounded-full shadow-Nbutton border-2 w-[2.5rem] lg:w-[5.8rem] lg:border-4' />
 				</Link>
-				<div className='text-font-highlight-light dark:text-font-highlight text-[2.5rem] absolute left-[-40px] w-auto whitespace-nowrap group-focus-within:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center '>
+				<div className='text-font-highlight-light dark:text-font-highlight text-[1.3rem] absolute left-[-40px] w-auto whitespace-nowrap group-focus-within:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center lg:text-[2.5rem]'>
 					Pagina de {user.username}
 				</div>
 			</div>
-			<div className='text-[2.35rem] flex items-center font-medium'>
+			<div className='text-[1.3rem] flex items-center font-medium lg:text-[2.35rem] '>
 				<span>{getDate()}</span>
-				<WifiIcon width={58} height={58} className='mx-4' />
+				<WifiIcon className='mx-3 w-7 h-7 lg:w-[3.6rem] lg:h-[3.6rem] lg:mx-4' />
 				<span className='flex items-end mr-2'>
-					100<div className='text-[1.6rem] leading-relaxed'>%</div>
+					100<div className='text-sm leading-relaxed lg:text-[1.6rem]'>%</div>
 				</span>
-				<BatteryIcon width={59} height={59} />
+				<BatteryIcon className='mx-1 w-7 h-7 lg:w-[3.6rem] lg:h-[3.6rem] lg:mx-2' />
 			</div>
 		</div>
 	)
