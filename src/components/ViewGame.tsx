@@ -10,8 +10,8 @@ function ViewGame() {
 		<div className='flex view-game'>
 			<Swiper
 				className='w-screen overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide snap-x px-[8.5%] pt-[0.6%]'
-				wrapperClass='pl-[8.5%]'
-				spaceBetween={20}
+				wrapperClass='pl-[8.5%] gap-3 lg:gap-5'
+				// spaceBetween={20}
 				slidesPerView={4}
 				freeMode={true}
 				modules={[FreeMode]}
@@ -22,8 +22,8 @@ function ViewGame() {
 						className='grow-0 shrink-0 box-border relative group snap-star scroll-ml-5 focus-visible:outline-0 '
 						tabIndex={0}
 					>
-						<div className='h-16'>
-							<div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center text-font-highlight-light dark:text-font-highlight text-[2.5rem]'>
+						<div className='h-6 lg:h-16'>
+							<div className='absolute top-0 leading-none left-1/2 transform -translate-x-1/2 w-auto whitespace-nowrap group-focus:opacity-100 group-hover:opacity-100 opacity-0 transition-all text-center text-font-highlight-light dark:text-font-highlight text-[1rem] lg:text-[2.5rem]'>
 								{urlImage ? name : ''}
 							</div>
 						</div>

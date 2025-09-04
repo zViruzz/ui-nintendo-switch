@@ -58,25 +58,25 @@ function MenuHome() {
 		<nav className='w-full h-full'>
 			<ul className='flex justify-center w-full gap-[1.7%]'>
 				{/* <ButtonMenu router='news' text={t('home.menu.news')}>
-          <NewsIcon width={75} height={75} />
-        </ButtonMenu> */}
+										<NewsIcon className='w-[75px] h-[75px]' />
+								</ButtonMenu> */}
 				<ButtonMenu router='news' text={t('home.menu.news')}>
-					<NewsIcon width={75} height={75} />
+					<NewsIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[75px] xl:h-[75px]' />
 				</ButtonMenu>
 				<ButtonMenu router='eshop/home' text={t('home.menu.eshop')}>
-					<ShoppingBagIcon width={70} height={70} />
+					<ShoppingBagIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[70px] xl:h-[70px]' />
 				</ButtonMenu>
 				<ButtonMenu router='app/album' text={t('home.menu.album')}>
-					<GalleryIcon className='text-[#1ba3ff]' width={75} height={75} />
+					<GalleryIcon className='text-[#1ba3ff] w-7 h-7 lg:w-12 lg:h-12 xl:w-[75px] xl:h-[75px]' />
 				</ButtonMenu>
 				<ButtonMenu router='app/controllers' text={t('home.menu.controllers')}>
-					<ControllerIcon width={83} height={83} />
+					<ControllerIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[83px] xl:h-[83px]' />
 				</ButtonMenu>
 				<ButtonMenu router='app/setting/airplane-mode' text={t('home.menu.settings')}>
-					<SettingIcon width={82} height={82} />
+					<SettingIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[82px] xl:h-[82px]' />
 				</ButtonMenu>
 				<ButtonMenu text={t('home.menu.sleep-mode')} onClick={handleClickPower}>
-					<PowerIcon width={75} height={75} />
+					<PowerIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[75px] xl:h-[75px]' />
 				</ButtonMenu>
 			</ul>
 		</nav>
@@ -128,11 +128,11 @@ function ButtonMenu({
 				// sound.play()
 				console.log('huh')
 			}}
-			className='ButtonMenu group text-font-highlight-light dark:text-font-highlight text-center text-[2.5rem] relative rounded-full '
+			className='ButtonMenu group text-font-highlight-light dark:text-font-highlight text-center text-[1.1rem] relative rounded-full h-11 w-11 lg:h-20 lg:w-20 xl:h-[8.1rem] xl:w-[8.1rem] xl:text-[2.5rem]'
 		>
 			<button
 				type='button'
-				className='flex outline-8 outline-none group-hover:outline-solid group-focus-within:outline-solid group-hover:animate-wiggle group-focus-within:animate-wiggle bg-[#fefffe] dark:bg-[#505050] text-[#717a7a] dark:text-[#d9d9d9] w-full h-full rounded-full shadow-Nbutton transition-all cursor-pointer'
+				className='flex outline-3 outline-none group-hover:outline-solid group-focus-within:outline-solid group-hover:animate-wiggle group-focus-within:animate-wiggle bg-[#fefffe] dark:bg-[#505050] text-[#717a7a] dark:text-[#d9d9d9] w-full h-full rounded-full shadow-Nbutton transition-all cursor-pointer lg:outline-4 xl:outline-8'
 				onFocus={handleFocus}
 				onClick={handleClick}
 			>
