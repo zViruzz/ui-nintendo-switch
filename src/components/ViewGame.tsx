@@ -31,7 +31,7 @@ function ViewGame() {
 							{urlImage ? (
 								<img src={urlImage} className='object-cover w-full h-full' alt={name} />
 							) : (
-								<div className='w-full h-full aspect-square bg-[#323232] border-5 border-[#404040]' />
+								<div className='w-full h-full aspect-square bg-[#323232] border-3 border-[#404040] lg:border-5' />
 							)}
 						</div>
 					</SwiperSlide>

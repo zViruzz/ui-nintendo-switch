@@ -63,7 +63,7 @@ function MenuHome() {
 				<ButtonMenu router='news' text={t('home.menu.news')}>
 					<NewsIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[75px] xl:h-[75px]' />
 				</ButtonMenu>
-				<ButtonMenu router='eshop/home' text={t('home.menu.eshop')}>
+				<ButtonMenu router='eshop/home/featured' text={t('home.menu.eshop')}>
 					<ShoppingBagIcon className='w-7 h-7 lg:w-12 lg:h-12 xl:w-[70px] xl:h-[70px]' />
 				</ButtonMenu>
 				<ButtonMenu router='app/album' text={t('home.menu.album')}>
