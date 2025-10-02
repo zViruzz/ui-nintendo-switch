@@ -24,7 +24,7 @@ export function EshopHome() {
 		}
 	}
 
-	const transitionConfig = {
+	const transitionConfig:object = {
 		type: 'spring',
 		ease: 'easeInOut',
 		duration: 0.4,
