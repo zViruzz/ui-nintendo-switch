@@ -43,7 +43,7 @@ function Footer({ className, ...otherProps }: Props) {
 							onClick={handleButtonYClick}
 						>
 							<div>
-								<ButtonYIcon width={42} height={42} />
+								<ButtonYIcon className='lg:w-[2.64rem] lg:h-[2.64rem] w-[1.2rem] h-[1.2rem]' />
 							</div>
 							<p>{buttonY.text}</p>
 						</button>
@@ -57,7 +57,7 @@ function Footer({ className, ...otherProps }: Props) {
 							onClick={handleButtonXClick}
 						>
 							<div>
-								<ButtonXIcon width={41} height={42} />
+								<ButtonXIcon className='lg:w-[2.64rem] lg:h-[2.64rem] w-[1.2rem] h-[1.2rem]' />
 							</div>
 							<p>{buttonX.text}</p>
 						</button>

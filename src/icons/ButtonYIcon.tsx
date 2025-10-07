@@ -5,8 +5,8 @@ function ButtonYIcon(props: SVGProps<SVGSVGElement>) {
 	const { theme } = useThemeContext()
 	let themeSet = theme
 
-	if (props.className) {
-		themeSet = props.className.includes('dark') ? 'dark' : 'light'
+	if (props.className?.includes('light')) {
+     themeSet = 'light'
 	}
 
 	return (

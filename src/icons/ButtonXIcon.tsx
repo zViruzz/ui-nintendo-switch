@@ -2,7 +2,13 @@ import type { SVGProps } from 'react'
 import { useThemeContext } from '../context/theme'
 
 function ButtonXIcon(props: SVGProps<SVGSVGElement>) {
-	const { theme } = useThemeContext()
+  const { theme } = useThemeContext()
+	let themeSet = theme
+
+	if (props.className?.includes('light')) {
+     themeSet = 'light'
+	}
+
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -18,7 +24,7 @@ function ButtonXIcon(props: SVGProps<SVGSVGElement>) {
 			<circle cx='12' cy='12' r='10' fill='currentColor' />
 			<path
 				d='M8 8L16 16M8 16L16 8'
-				stroke={theme === 'dark' ? '#2d2d2d' : '#fff'}
+				stroke={themeSet === 'dark' ? '#2d2d2d' : '#fff'}
 				strokeWidth='2'
 			/>
 		</svg>
