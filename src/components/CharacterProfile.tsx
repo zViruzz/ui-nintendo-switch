@@ -1,12 +1,8 @@
 import { type CanvasHTMLAttributes, useEffect, useRef } from 'react'
 import { useAppSelector } from '../redux/hooks'
 
-function CharacterProfile({
-	...props
-}: CanvasHTMLAttributes<HTMLCanvasElement>) {
-	const { character, background } = useAppSelector(
-		(state) => state.user,
-	)
+function CharacterProfile({ ...props }: CanvasHTMLAttributes<HTMLCanvasElement>) {
+	const { character, background } = useAppSelector((state) => state.user)
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 
 	useEffect(() => {
@@ -29,8 +25,6 @@ function CharacterProfile({
 		}
 	}, [character, background])
 
-	return (
-		<canvas ref={canvasRef} width={379} height={379} {...props} />
-	)
+	return <canvas ref={canvasRef} width={379} height={379} {...props} />
 }
 export default CharacterProfile

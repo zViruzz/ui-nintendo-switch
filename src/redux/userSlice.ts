@@ -1,5 +1,5 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
-import mario from '../assets/ns-mario-profile.png'
+import mario from '../assets/ns-mario-profile-400x.webp'
 
 export interface UserType {
 	username: string

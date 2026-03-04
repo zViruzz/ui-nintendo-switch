@@ -39,8 +39,11 @@ function PanelColors({
 					)
 				})}
 			</SelectionGrid>
-			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-			<div onClick={handleClickOutside} />
+			<button
+				type='button'
+				onClick={handleClickOutside}
+				className='appearance-none border-none bg-transparent cursor-default'
+			/>
 		</div>
 	)
 }
