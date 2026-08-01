@@ -8,18 +8,13 @@ export function HealthSecurity() {
 			<div className='h-full w-full flex flex-col gap-8'>
 				<div className='px-6 flex flex-col gap-2'>
 					<p>
-						Para consultar informacion mas detallada sobre el uso de
-						la consola Nintendo Switch y sus funciones, visita el
-						sitio de soporte de Nintendo desde una computadora o un
-						dispositivo inteligente.
+						Para consultar informacion mas detallada sobre el uso de la consola Nintendo
+						Switch y sus funciones, visita el sitio de soporte de Nintendo desde una
+						computadora o un dispositivo inteligente.
 					</p>
 					<div className='bg-[#3b3d3e] w-full h-[23.8rem] rounded-xs grid grid-rows-[2fr_1.1fr]'>
 						<div className='flex items-center justify-center'>
-							<img
-								className='w-[13rem]'
-								src={healthSecurityilus}
-								alt=''
-							/>
+							<img className='w-[13rem]' src={healthSecurityilus} alt='' />
 						</div>
 						<div className='text-center'>
 							<div className='text-[2.4rem] leading-tight'>
@@ -35,12 +30,10 @@ export function HealthSecurity() {
 				</div>
 
 				<div>
-					<SelectionSetting className='border-t border-gray'>
+					<SelectionSetting className='border-t'>
 						Informacion sobre salud y seguridad
 					</SelectionSetting>
-					<SelectionSetting className='border-y border-gray'>
-						Historial de errores
-					</SelectionSetting>
+					<SelectionSetting className='border-y'>Historial de errores</SelectionSetting>
 				</div>
 			</div>
 		</ListPageTransition>

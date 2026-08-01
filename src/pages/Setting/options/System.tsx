@@ -137,10 +137,7 @@ export function System() {
 						{getLanguageCode(i18n.language)}
 					</span>
 				</SelectionSetting>
-				<SelectionSetting
-					className='border-y flex justify-between'
-					onClick={handleClickRegion}
-				>
+				<SelectionSetting className='flex justify-between' onClick={handleClickRegion}>
 					<span>Region</span>
 					<span className='dark:text-secodary text-secodary-light'>{regionValue}</span>
 				</SelectionSetting>

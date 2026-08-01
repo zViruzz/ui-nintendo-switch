@@ -1,4 +1,5 @@
 import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
+
 import { tv } from 'tailwind-variants'
 
 interface Props extends Omit<AllHTMLAttributes<HTMLElement>, 'as'> {
@@ -19,7 +20,8 @@ function SelectionSetting({
 	...otherProps
 }: Props) {
 	const layout = tv({
-		base: 'relative box-border flex h-[6.7rem] w-full shrink-0 items-center gap-4 rounded-[0.5px] px-5 text-[2.5rem] transition-all duration-100 hover:z-10 border-gray text-left',
+				base: 'relative box-border flex h-[6.7rem] w-full shrink-0 items-center gap-4 rounded-[0.5px] px-5 text-[2.5rem] transition-all duration-100 hover:z-10 border-gray-light dark:border-gray text-left',
+		// base: 'relative box-border flex h-[6.7rem] w-full shrink-0 items-center gap-4 rounded-[0.5px] px-5 text-[2.5rem] transition-all duration-100 hover:z-10 border-gray text-left',
 		variants: {
 			disabled: {
 				true: 'text-disabled',
