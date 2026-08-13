@@ -23,26 +23,18 @@ export function ControlsSensors() {
 	return (
 		<ListPageTransition>
 			<div className='mb-20'>
-				<SelectionSetting
-					className='border-y flex justify-between'
-					as={Link}
-					to={'/app/change-grip-or-order'}
-				>
-					<div>Change Grip/Order</div>
+				<SelectionSetting edgeDirection='both' as={Link} to={'/app/change-grip-or-order'}>
+					Change Grip/Order
 				</SelectionSetting>
 
-				<SelectionSetting className='border-b flex justify-between'>
-					Changa Button Mapping
-				</SelectionSetting>
+				<SelectionSetting edgeDirection='bottom'>Changa Button Mapping</SelectionSetting>
 				<Detailtext className='mb-10'>
 					<p>
 						You can customize button mapping for each controller. Customized mapping
 						configurations can be saved as presets for easy acces in the future.
 					</p>
 				</Detailtext>
-				<SelectionSwitch className='border-y flex justify-between'>
-					Controller Vibration
-				</SelectionSwitch>
+				<SelectionSwitch>Controller Vibration</SelectionSwitch>
 				<Detailtext className='mb-10'>
 					<p>
 						{
@@ -50,9 +42,7 @@ export function ControlsSensors() {
 						}
 					</p>
 				</Detailtext>
-				<SelectionSwitch className='border-y flex justify-between'>
-					Pro Controller Wired Communication
-				</SelectionSwitch>
+				<SelectionSwitch>Pro Controller Wired Communication</SelectionSwitch>
 				<Detailtext className='mb-10'>
 					<p>
 						If this option is enabled, the Nintendo Switch Pro Controller will communicate
@@ -61,20 +51,21 @@ export function ControlsSensors() {
 						while the controller is using wired communication.
 					</p>
 				</Detailtext>
-				<SelectionSetting className='border-y'>Update Controllers</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Update Controllers</SelectionSetting>
 				<Detailtext className='mb-10 flex flex-col'>
 					<p>Update connected controllers.</p>
 					<p>Some controllers cannot be updated.</p>
 				</Detailtext>
-				<SelectionSetting className='border-y'>Calibrate Control Sticks</SelectionSetting>
-				<SelectionSetting className='border-b'>
+				<SelectionSetting edgeDirection='both'>Calibrate Control Sticks</SelectionSetting>
+				<SelectionSetting edgeDirection='bottom'>
 					Calibrate Motion Controls
 				</SelectionSetting>
 			</div>
 
 			<div>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickTouchSensitivity}
 				>
 					<span>Touch-Screen Sensitivity</span>
@@ -88,11 +79,11 @@ export function ControlsSensors() {
 						enhance stylus controls.
 					</p>
 				</Detailtext>
-				<SelectionSetting className='border-y'>Test Input Devices</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Test Input Devices</SelectionSetting>
 				<Detailtext className=''>
 					<p>Check for porblems with the controllers or the touch screen.</p>
 				</Detailtext>
-				<SelectionSetting className='border-y'>Disconnect Controllers</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Disconnect Controllers</SelectionSetting>
 			</div>
 		</ListPageTransition>
 	)

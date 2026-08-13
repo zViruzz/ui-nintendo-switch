@@ -5,7 +5,7 @@ export function AirplaneMode() {
 	return (
 		<ListPageTransition>
 			<div className=' h-full w-full flex flex-col'>
-				<SelectionSwitch className='border-y border-gray'>Modo avion</SelectionSwitch>
+				<SelectionSwitch>Modo avion</SelectionSwitch>
 
 				<div className='py-3 pl-6 text-[1.83rem] text-[#8c8c8c] leading-snug'>
 					<p>

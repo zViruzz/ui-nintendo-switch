@@ -113,12 +113,12 @@ export function System() {
 			/>
 
 			<div className='mb-[6.7rem]'>
-				<SelectionSetting className='border-y'>System Update</SelectionSetting>
+				<SelectionSetting>System Update</SelectionSetting>
 				<Detailtext>! System update is ready</Detailtext>
-				<SelectionSetting className='border-y'>Update Dock</SelectionSetting>
+				<SelectionSetting>Update Dock</SelectionSetting>
 				<Detailtext>Update the Nintendo Switch dock firmware.</Detailtext>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					className='flex justify-between'
 					onClick={() => setIsHiddenEditField(false)}
 				>
 					<span>Console Nickname</span>
@@ -129,7 +129,8 @@ export function System() {
 			</div>
 			<div>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickLanguage}
 				>
 					<span>Language</span>
@@ -137,22 +138,22 @@ export function System() {
 						{getLanguageCode(i18n.language)}
 					</span>
 				</SelectionSetting>
-				<SelectionSetting className='flex justify-between' onClick={handleClickRegion}>
+				<SelectionSetting
+					className='border-none flex justify-between'
+					onClick={handleClickRegion}
+				>
 					<span>Region</span>
 					<span className='dark:text-secodary text-secodary-light'>{regionValue}</span>
 				</SelectionSetting>
-				<SelectionSetting className='border-y flex justify-between'>
-					Data and Time
-				</SelectionSetting>
+				<SelectionSetting>Data and Time</SelectionSetting>
 				<Detailtext>Current data and time: 5/6/2025 4:14 a.m.</Detailtext>
-				<SelectionSwitch className='border-y flex justify-between'>
-					Console Battery (%)
-				</SelectionSwitch>
+				<SelectionSwitch>Console Battery (%)</SelectionSwitch>
 				<Detailtext>
 					The console battery will be displayed on the HOME Menu as percentage.
 				</Detailtext>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickConsoleSound}
 				>
 					<span>Console Sound</span>
@@ -164,17 +165,18 @@ export function System() {
 					You can configure sound in the TV Settings menu when the console is connected to
 					a TV.
 				</Detailtext>
-				<SelectionSwitch className='border-y flex justify-between'>
+				<SelectionSwitch className='border-t-2 border-b-0 flex justify-between'>
 					Mute When Headphones Are Sisconnected
 				</SelectionSwitch>
-				<SelectionSwitch className='border-b flex justify-between'>
+				<SelectionSwitch className='flex justify-between'>
 					Lowe Max Headephone Volume
 				</SelectionSwitch>
 				<Detailtext>
 					Set a maximun volume for headphones or speakers connected to the console.
 				</Detailtext>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='top'
+					className=' flex justify-between'
 					onClick={handleClickUSBKeyboard}
 				>
 					<span>USB Keyboard</span>
@@ -183,35 +185,32 @@ export function System() {
 					</span>
 				</SelectionSetting>
 				<SelectionSetting
-					className='border-b flex justify-between'
+					edgeDirection='top'
+					className='flex justify-between'
 					onClick={handleClickFilter}
 				>
 					<span>Change Display Colors</span>
 					<span className='dark:text-secodary text-secodary-light'>{filter}</span>
 				</SelectionSetting>
-				<SelectionSwitch className='border-b'>Zoom</SelectionSwitch>
+				<SelectionSwitch>Zoom</SelectionSwitch>
 				<Detailtext>You can zoom in be pressing twice quickly.</Detailtext>
-				<SelectionSetting className='border-y'>Serial Information</SelectionSetting>
-				<SelectionSetting className='border-b'>
+				<SelectionSetting edgeDirection='top'>Serial Information</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>
 					End-User License Agreement
 				</SelectionSetting>
-				<SelectionSetting className='border-b'>
+				<SelectionSetting className='border-none'>
 					Intellectual Property Notices
 				</SelectionSetting>
-				<SelectionSetting className='border-b mb-[6.7rem]'>
-					Wireless E-Label
-				</SelectionSetting>
+				<SelectionSetting className='mb-[6.7rem]'>Wireless E-Label</SelectionSetting>
 
-				<SelectionSwitch className='border-y'>Auto-Update Software</SelectionSwitch>
-				<SelectionSetting className='border-b'>Wireless E-Label</SelectionSetting>
-				<SelectionSwitch className='border-b mb-35'>
-					Share Error Information
-				</SelectionSwitch>
+				<SelectionSwitch>Auto-Update Software</SelectionSwitch>
+				<SelectionSetting className='border-none'>Wireless E-Label</SelectionSetting>
+				<SelectionSwitch className='mb-35'>Share Error Information</SelectionSwitch>
 
-				<SelectionSetting className='border-y mb-[6.7rem]'>
+				<SelectionSetting edgeDirection='both' className='mb-[6.7rem]'>
 					System Transfer to Nintendo Switch 2
 				</SelectionSetting>
-				<SelectionSetting className='border-y'>Formatting Options</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Formatting Options</SelectionSetting>
 			</div>
 		</ListPageTransition>
 	)

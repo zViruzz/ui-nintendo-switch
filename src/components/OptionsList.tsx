@@ -40,7 +40,7 @@ function OptionList({ options }: OptionListProps) {
 				if (item.name === 'line') {
 					return (
 						<div
-							className='w-full h-[1px] bg-[#ffffff34] shrink-0 my-5'
+							className='w-full h-[2px] bg-[#ffffff34] shrink-0 my-5'
 							key={`${item.name}${index}`}
 						/>
 					)

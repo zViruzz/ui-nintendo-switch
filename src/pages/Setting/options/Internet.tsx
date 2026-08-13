@@ -6,12 +6,8 @@ export function Internet() {
 		<ListPageTransition>
 			<div className='h-full w-full flex flex-col gap-10'>
 				<div>
-					<SelectionSetting className='border-y border-gray'>
-						Configuración de internet
-					</SelectionSetting>
-					<SelectionSetting className='border-b border-gray'>
-						Prueba de conexión
-					</SelectionSetting>
+					<SelectionSetting>Configuración de internet</SelectionSetting>
+					<SelectionSetting edgeDirection='bottom'>Prueba de conexión</SelectionSetting>
 				</div>
 
 				<div>

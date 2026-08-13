@@ -8,13 +8,9 @@ export function Amiibo() {
 				<div className='bg-white h-36 min-w-111' />
 				<p>You can edit and delete data saved to amiibo.</p>
 			</div>
-			<SelectionSetting className='border-y border-gray'>
-				Create/Edit a Mii
-			</SelectionSetting>
-			<SelectionSetting className='border-b border-gray'>
-				Delete Game Data
-			</SelectionSetting>
-			<SelectionSetting className='border-b border-gray'>Reset amiibo</SelectionSetting>
+			<SelectionSetting edgeDirection='both'>Create/Edit a Mii</SelectionSetting>
+			<SelectionSetting edgeDirection='bottom'>Delete Game Data</SelectionSetting>
+			<SelectionSetting edgeDirection='bottom'>Reset amiibo</SelectionSetting>
 		</ListPageTransition>
 	)
 }

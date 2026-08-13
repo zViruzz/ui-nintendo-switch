@@ -43,7 +43,8 @@ export function SleepMode() {
 		<ListPageTransition>
 			<div className='mb-20'>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickAutoSleep}
 				>
 					<span>Auto-Sleep (Playing on Console Screen)</span>
@@ -51,7 +52,8 @@ export function SleepMode() {
 				</SelectionSetting>
 
 				<SelectionSetting
-					className='border-b flex justify-between'
+					edgeDirection='bottom'
+					className='flex justify-between'
 					onClick={handleClickAutoSleepOnTv}
 				>
 					<span>Auto-sleep (Connected to TV)</span>
@@ -62,9 +64,7 @@ export function SleepMode() {
 			</div>
 
 			<div>
-				<SelectionSwitch className='border-y'>
-					Suspend Auto-Sleep While Playing Media Content
-				</SelectionSwitch>
+				<SelectionSwitch>Suspend Auto-Sleep While Playing Media Content</SelectionSwitch>
 				<Detailtext className='mb-10'>
 					<p>
 						Prevents auto-sleep from activating while media content in playing. If this
@@ -88,9 +88,7 @@ export function SleepMode() {
 					</ul>
 				</Detailtext>
 
-				<SelectionSwitch className='border-y'>
-					Wake When AC Adapter Is Disconnected
-				</SelectionSwitch>
+				<SelectionSwitch>Wake When AC Adapter Is Disconnected</SelectionSwitch>
 				<Detailtext>
 					<p>
 						If this option is enabled, the console will wake from sleep mode when it is

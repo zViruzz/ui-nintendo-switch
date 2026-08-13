@@ -7,24 +7,22 @@ export function Notifications() {
 	return (
 		<ListPageTransition>
 			<div className='mb-26'>
-				<SelectionSwitch className='border-y'>
-					"Download Complete" Notifications
-				</SelectionSwitch>
-				<SelectionSetting className='border-b'>Friend Notifications</SelectionSetting>
-				<SelectionSetting className='border-b'>
+				<SelectionSwitch>"Download Complete" Notifications</SelectionSwitch>
+				<SelectionSetting edgeDirection='bottom'>Friend Notifications</SelectionSetting>
+				<SelectionSetting edgeDirection='bottom'>
 					Platinum Point Notifications
 				</SelectionSetting>
 			</div>
 
 			<div>
-				<SelectionSetting className='border-y'>Alarm Notifications</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Alarm Notifications</SelectionSetting>
 				<Detailtext>
 					<p className='dark:text-description text-description-light mb-10'>
 						After Setting an alarm, you will get a notification at the date and time of
 						your choosing
 					</p>
 				</Detailtext>
-				<SelectionSwitch className='border-y'>Notifacation Sound</SelectionSwitch>
+				<SelectionSwitch>Notifacation Sound</SelectionSwitch>
 			</div>
 		</ListPageTransition>
 	)

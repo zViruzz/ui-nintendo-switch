@@ -72,7 +72,8 @@ export function TvSettings() {
 		<ListPageTransition>
 			<div>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickTvResolution}
 				>
 					<span>TV Resolution</span>
@@ -81,20 +82,21 @@ export function TvSettings() {
 					</span>
 				</SelectionSetting>
 				<SelectionSetting
-					className='border-b flex justify-between'
+					edgeDirection='bottom'
+					className='flex justify-between'
 					onClick={handleClickRgbRange}
 				>
 					<span>RGB Range</span>
 					<span className='dark:text-secodary text-secodary-light'>{rgbRangeValue}</span>
 				</SelectionSetting>
-				<SelectionSetting className='border-b' onClick={handleClickAjustScreenSize}>
+				<SelectionSetting className='border-none' onClick={handleClickAjustScreenSize}>
 					Adjust Screen Size
 				</SelectionSetting>
-				<SelectionSwitch className='border-b'>Screen Burn-In Reduction</SelectionSwitch>
+				<SelectionSwitch>Screen Burn-In Reduction</SelectionSwitch>
 				<Detailtext className='pb-13'>
 					<p>Reduce screen brightness after live minutes of inactivity.</p>
 				</Detailtext>
-				<SelectionSwitch className='border-y'>Match TV Power State</SelectionSwitch>
+				<SelectionSwitch>Match TV Power State</SelectionSwitch>
 				<Detailtext className='pb-11'>
 					<p>
 						When Switching to TV Mode with the console docked or when the console exits
@@ -109,7 +111,8 @@ export function TvSettings() {
 					</ul>
 				</Detailtext>
 				<SelectionSetting
-					className='border-y flex justify-between'
+					edgeDirection='both'
+					className='flex justify-between'
 					onClick={handleClickTvSound}
 				>
 					<span>TV Sound</span>

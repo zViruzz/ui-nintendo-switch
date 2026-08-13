@@ -27,32 +27,28 @@ export function DataManagement() {
 			</div>
 
 			<div className='mt-16'>
-				<SelectionSetting className='border-gray border-y' disabled={true}>
+				<SelectionSetting disabled={true}>
 					Mover datos entre la consola y una tarjeta microSD
 				</SelectionSetting>
-				<SelectionSetting className='border-gray border-b'>
-					Archivo rápido
-				</SelectionSetting>
+				<SelectionSetting edgeDirection='bottom'>Archivo rápido</SelectionSetting>
 
 				<div className='text-[1.8rem] px-7 py-2 text-description h-[6.3rem] w-full '>
 					Esta opción permite archivar los programas seleccionados para liberar espacio.
 				</div>
 
-				<SelectionSetting className='border-gray border-y'>
-					Gestionar programa
-				</SelectionSetting>
+				<SelectionSetting edgeDirection='both'>Gestionar programa</SelectionSetting>
 
-				<SelectionSetting className='border-gray mt-[5.9rem] border-y'>
+				<SelectionSetting className='mt-[5.9rem]' edgeDirection='both'>
 					Guardado de datos en la nube
 				</SelectionSetting>
-				<SelectionSetting className='border-gray  '>
+				<SelectionSetting edgeDirection='bottom'>
 					Transferencia de datos de guardado
 				</SelectionSetting>
-				<SelectionSetting className='border-gray  border-y'>
+				<SelectionSetting edgeDirection='bottom'>
 					Gestionar capturas y videos
 				</SelectionSetting>
 
-				<SelectionSetting className='border-gray mt-[10rem] border-y'>
+				<SelectionSetting className='mt-[10rem]' edgeDirection='both'>
 					Borrar datos de guardado
 				</SelectionSetting>
 			</div>

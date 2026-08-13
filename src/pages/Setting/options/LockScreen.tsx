@@ -7,7 +7,7 @@ export function LockScreen() {
 		<ListPageTransition>
 			<div className='h-full w-full flex flex-col'>
 				<div>
-					<SelectionSwitch className='border-y border-gray'>
+					<SelectionSwitch>
 						Bloquear la consola en el modo de espera
 					</SelectionSwitch>
 				</div>

@@ -30,10 +30,10 @@ export function HealthSecurity() {
 				</div>
 
 				<div>
-					<SelectionSetting className='border-t'>
+					<SelectionSetting edgeDirection='top'>
 						Informacion sobre salud y seguridad
 					</SelectionSetting>
-					<SelectionSetting className='border-y'>Historial de errores</SelectionSetting>
+					<SelectionSetting edgeDirection='both'>Historial de errores</SelectionSetting>
 				</div>
 			</div>
 		</ListPageTransition>

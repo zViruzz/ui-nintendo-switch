@@ -30,11 +30,7 @@ export function ScreenBrightness() {
 	return (
 		<ListPageTransition>
 			<div className=' h-full w-full flex flex-col'>
-				<SelectionSwitch
-					className='border-y border-gray'
-					onSwitch={handleSwitch}
-					initial={autoBrighness}
-				>
+				<SelectionSwitch onSwitch={handleSwitch} initial={autoBrighness}>
 					Brillo automático
 				</SelectionSwitch>
 

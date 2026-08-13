@@ -11,7 +11,7 @@ export function Mii() {
 					compatible software.
 				</p>
 			</div>
-			<SelectionSetting className='border-y'>Create/Edit a Mii</SelectionSetting>
+			<SelectionSetting edgeDirection='both'>Create/Edit a Mii</SelectionSetting>
 		</ListPageTransition>
 	)
 }
