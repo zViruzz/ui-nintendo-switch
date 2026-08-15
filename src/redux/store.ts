@@ -47,7 +47,7 @@ const migrations = {
 
 const persistConfig = {
 	key: 'root',
-	storage,
+	storage: storage.default || storage,
 	whitelist: ['user', 'settings'],
 	version: 2,
 	migrate: createMigrate(migrations, { debug: false }),
